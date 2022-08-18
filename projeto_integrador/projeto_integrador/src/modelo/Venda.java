@@ -1,16 +1,14 @@
-package controle;
+package modelo;
 
 import java.sql.Date;
 
-public class VendaBD {
+public class Venda {
 	
 	private int idVenda;
 	private int SKULivro;
 	private String formaPagamento;
 	private Date data;
 	private double valor;
-	private int idCliente;
-	private int idVendedor;
 
 	public int getIdVenda() {
 		return idVenda;
@@ -42,18 +40,5 @@ public class VendaBD {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}
-	public int getIdCliente() {
-		return idCliente;
-	}
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
-	}
-	public int getIdVendedor() {
-		return idVendedor;
-	}
-	public void setIdVendedor(int idVendedor) {
-		this.idVendedor = idVendedor;
-	}
-	
 	
 }

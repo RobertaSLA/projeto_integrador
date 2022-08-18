@@ -1,6 +1,6 @@
-package controle;
+package modelo;
 
-public class VendedorBD {
+public class Vendedor {
 	
 	private int idVendedor;
 	private double Comissao;

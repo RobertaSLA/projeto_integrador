@@ -1,6 +1,6 @@
-package controle;
+package modelo;
 
-public class ClienteBD {
+public class Cliente {
 	
 	private int idCliente;
 	private String Nome;

@@ -1,6 +1,6 @@
-package controle;
+package modelo;
 
-public class AutorBD {
+public class Autor {
 	
 	private int idAutor;
 	private String nome;
@@ -17,6 +17,5 @@ public class AutorBD {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
 	
 }

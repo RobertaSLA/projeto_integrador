@@ -1,8 +1,8 @@
-package controle;
+package modelo;
 
 import java.sql.Date;
 
-public class CompraBD {
+public class Compra {
 	
 	private int idCompra;
 	private int SKULivro;
