@@ -43,12 +43,23 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   `CEP` CHAR(9) NULL,
   `CPF` CHAR(14) NULL,
   `Telefone` CHAR(15) NULL,
-	`Usuario` CHAR(20) NOT NULL,
-    `Senha` CHAR (20) NOT NULL,
   PRIMARY KEY (`idVendedor`),
   UNIQUE INDEX `idVandedor_UNIQUE` (`idVendedor` ASC))
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `mydb`.`Usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
+  `idUsuario` INT NOT NULL,
+  `User` Varchar(30) NOT NULL,
+  `Nome` VARCHAR(50) NULL,
+  `Email` VARCHAR(100) NULL,
+  `Senha` VARCHAR(20) NOT NULL,
+  `Administrador` BOOLEAN NOT NULL,
+  PRIMARY KEY (`IdUsuario`),
+  UNIQUE INDEX `IdUsuario_UNIQUE` (`IdUsuario` ASC))
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Venda`
