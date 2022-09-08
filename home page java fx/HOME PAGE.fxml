@@ -1,71 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="715.0" prefWidth="889.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1648.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="715.0" prefWidth="224.0" style="-fx-background-color: dbb0ea;">
+      <Pane prefHeight="68.0" prefWidth="1648.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <Label layoutX="5.0" layoutY="-1.0" prefHeight="100.0" prefWidth="240.0" text="ROSADA VIRTUAL MANAGER" textFill="#fffdfd">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </Label>
-            <BottomNavigationButton layoutX="-2.0" layoutY="207.0" prefHeight="75.0" prefWidth="245.0" style="-fx-background-color: DBB0EA;" text="GERAL" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <effect>
-                  <ColorAdjust brightness="-0.1" />
-               </effect>
-            </BottomNavigationButton>
-            <BottomNavigationButton layoutX="-1.0" layoutY="399.0" prefHeight="75.0" prefWidth="245.0" style="-fx-background-color: DBB0EA;" text="PESSOA" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <effect>
-                  <ColorAdjust brightness="-0.1" />
-               </effect>
-            </BottomNavigationButton>
-            <BottomNavigationButton layoutY="302.0" prefHeight="75.0" prefWidth="245.0" style="-fx-background-color: DBB0EA;" text="VENDA" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <effect>
-                  <ColorAdjust brightness="-0.1" />
-               </effect>
-            </BottomNavigationButton>
-            <BottomNavigationButton layoutY="498.0" prefHeight="75.0" prefWidth="245.0" style="-fx-background-color: DBB0EA;" text="FISCAL" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-               <effect>
-                  <ColorAdjust brightness="-0.1" />
-               </effect>
-            </BottomNavigationButton>
-            <ImageView fitHeight="100.0" fitWidth="245.0" layoutX="-1.0" layoutY="62.0">
+            <TitledPane animated="false" layoutX="272.0" layoutY="11.0" prefHeight="250.0" prefWidth="205.0" text="Venda">
+               <content>
+                  <Pane prefHeight="227.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnDevolucao" layoutY="128.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Devolução" />
+                        <Button id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Consulta Preço" />
+                        <Button id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Consulta Venda" />
+                        <Button id="btnAlterarPreco" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Alterar Preço" />
+                        <Button id="btnConsultaSaldo" layoutX="-4.0" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Consulta Saldo" />
+                        <Button id="btnVenda" layoutY="160.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Processamento Venda" />
+                        <Button id="btnVenda" layoutY="192.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Emissão Relatório" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="778.0" layoutY="11.0" prefHeight="57.0" prefWidth="205.0" text="Fiscal">
+               <content>
+                  <Pane prefHeight="31.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Emissao NF" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="1120.0" layoutY="17.0">
+               <image>
+                  <Image url="@imagens/userbranco.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1073.0" layoutY="18.0">
+               <image>
+                  <Image url="@imagens/icon%20config%20brabnco.jpg" />
+               </image>
+            </ImageView>
+            <TitledPane animated="false" layoutX="14.0" layoutY="11.0" prefHeight="154.0" prefWidth="205.0" text="Home">
+               <content>
+                  <Pane prefHeight="141.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnCadastroProduto" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Cadastro Produtos" />
+                        <Button id="btnVenda" layoutX="-4.0" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Processamento Venda" />
+                        <Button id="btnCadastroCliente" layoutX="-4.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" layoutX="-4.0" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Consulta Preço" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="530.0" layoutY="11.0" prefHeight="154.0" prefWidth="205.0" text="Pessoa">
+               <content>
+                  <Pane prefHeight="123.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Consulta Ficha Cliente" />
+                        <Button id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Cadastro Fornecedor" />
+                        <Button id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="211.0" text="Consulta Venda" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <ImageView fitHeight="68.0" fitWidth="158.0" layoutX="1490.0" layoutY="2.0">
                <image>
                   <Image url="@imagens/booksasdad-removebg-preview.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="54.0" layoutY="233.0">
-               <image>
-                  <Image url="@imagens/globo-removebg-preview.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="54.0" layoutY="328.0">
-               <image>
-                  <Image url="@imagens/download-removebg-preview.png" />
-               </image>
-            </ImageView>
+            <Text fill="WHITE" layoutX="1296.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="228.47265625">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="1348.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Text>
          </children>
-      </AnchorPane>
+      </Pane>
    </children>
 </AnchorPane>
