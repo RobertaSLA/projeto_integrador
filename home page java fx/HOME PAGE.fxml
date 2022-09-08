@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1648.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane prefHeight="68.0" prefWidth="1648.0" style="-fx-background-color: dbb0ea;">
+         <children>
+            <TitledPane animated="false" cache="true" layoutX="272.0" layoutY="11.0" mnemonicParsing="true" prefHeight="217.0" prefWidth="205.0" text="Venda">
+               <content>
+                  <Pane prefHeight="191.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnDevolucao" layoutY="128.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Devolução" />
+                        <Button id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Preço" />
+                        <Button id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Venda" />
+                        <Button id="btnAlterarPreco" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Alterar Preço" />
+                        <Button id="btnConsultaSaldo" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Saldo" />
+                        <Button id="btnVenda" layoutY="160.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Emissão Relatório" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <BottomNavigationButton id="btnConfiguracoes" layoutX="1057.0" layoutY="12.0" prefHeight="44.0" prefWidth="59.0" style="-fx-background-color: dbb0ea;" />
+            <TitledPane animated="false" layoutX="778.0" layoutY="11.0" prefHeight="56.0" prefWidth="205.0" text="Fiscal">
+               <content>
+                  <Pane prefHeight="31.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Emissao NF" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="1120.0" layoutY="17.0">
+               <image>
+                  <Image url="@imagens/userbranco.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1073.0" layoutY="18.0">
+               <image>
+                  <Image url="@imagens/icon%20config%20brabnco.jpg" />
+               </image>
+            </ImageView>
+            <TitledPane animated="false" layoutX="530.0" layoutY="11.0" prefHeight="154.0" prefWidth="205.0" text="Pessoa">
+               <content>
+                  <Pane prefHeight="123.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Ficha Cliente" />
+                        <Button id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Cadastro Fornecedor" />
+                        <Button id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Venda" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <ImageView fitHeight="68.0" fitWidth="158.0" layoutX="1466.0" layoutY="5.0">
+               <image>
+                  <Image url="@imagens/booksasdad-removebg-preview.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="1258.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="228.47265625">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="1307.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Text>
+            <TitledPane animated="false" layoutX="14.0" layoutY="11.0" prefHeight="154.0" prefWidth="204.0" text="Home">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0">
+                     <children>
+                        <Button id="btnCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Cadastro Produtos" />
+                        <Button id="btnVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Processamento Venda" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
+         </children>
+      </Pane>
+      <Accordion layoutX="342.0" layoutY="292.0" />
+      <SplitPane dividerPositions="0.6370370370370371" layoutX="60.0" layoutY="337.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="246.0" style="-fx-background-color: dbb0ea;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0">
+               <children>
+                  <Text fill="WHITE" layoutX="8.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOVOS PEDIDOS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESUMO DIÁRIO" textAlignment="CENTER" wrappingWidth="243.9999999999999">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <TextArea disable="true" layoutX="157.0" layoutY="60.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="203.0">
+               <children>
+                  <Text fill="WHITE" layoutX="5.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTAS FISCAIS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextArea disable="true" layoutX="157.0" layoutY="2.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.6370370370370371" layoutX="385.0" layoutY="344.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="372.0" style="-fx-background-color: dbb0ea;">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0">
+               <children>
+                  <Text fill="WHITE" layoutX="71.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="-1.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS E MENSAIS " textAlignment="CENTER" wrappingWidth="372.0">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <TextArea disable="true" layoutX="244.0" layoutY="56.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="203.0">
+               <children>
+                  <Text fill="WHITE" layoutX="68.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS MENSAIS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextArea disable="true" layoutX="248.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
