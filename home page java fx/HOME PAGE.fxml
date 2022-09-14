@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gluonhq.charm.glisten.control.BottomNavigationButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.SplitPane?>
@@ -22,12 +23,12 @@
                <content>
                   <Pane prefHeight="191.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnDevolucao" layoutY="128.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Devolução" />
-                        <Button id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Preço" />
-                        <Button id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Venda" />
-                        <Button id="btnAlterarPreco" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Alterar Preço" />
-                        <Button id="btnConsultaSaldo" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Saldo" />
-                        <Button id="btnVenda" layoutY="160.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Emissão Relatório" />
+                        <Button id="btnDevolucao" fx:id="btnDevolucao" layoutY="128.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Devolução" />
+                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Preço" />
+                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Venda" />
+                        <Button id="btnAlterarPreco" fx:id="V" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Alterar Preço" />
+                        <Button id="btnConsultaSaldo" fx:id="btnConsultaSaldo" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Saldo" />
+                        <Button id="btnVenda" fx:id="btnVenda" layoutY="160.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Emissão Relatório" />
                      </children>
                   </Pane>
                </content>
@@ -37,7 +38,7 @@
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Emissao NF" />
+                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Emissao NF" />
                      </children>
                   </Pane>
                </content>
@@ -56,10 +57,10 @@
                <content>
                   <Pane prefHeight="123.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Cadastro Cliente" />
-                        <Button id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Ficha Cliente" />
-                        <Button id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Cadastro Fornecedor" />
-                        <Button id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Ficha Cliente" />
+                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Cadastro Fornecedor" />
+                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="204.0" text="Consulta Venda" />
                      </children>
                   </Pane>
                </content>
@@ -86,10 +87,10 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0">
                      <children>
-                        <Button id="btnCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Cadastro Cliente" />
-                        <Button id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Cadastro Produtos" />
-                        <Button id="btnVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Processamento Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnaAcessoCadastroCliente" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Cadastro Produtos" />
+                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="202.0" text="Processamento Venda" />
                      </children>
                   </AnchorPane>
               </content>
@@ -97,7 +98,7 @@
          </children>
       </Pane>
       <Accordion layoutX="342.0" layoutY="292.0" />
-      <SplitPane dividerPositions="0.6370370370370371" layoutX="60.0" layoutY="337.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="246.0" style="-fx-background-color: dbb0ea;">
+      <SplitPane dividerPositions="0.5794871794871795" layoutX="103.0" layoutY="292.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="246.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0">
                <children>
@@ -116,19 +117,22 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="203.0">
                <children>
-                  <Text fill="WHITE" layoutX="5.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTAS FISCAIS">
+                  <Text fill="WHITE" layoutX="5.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTAS FISCAIS">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
                   </Text>
-                  <TextArea disable="true" layoutX="157.0" layoutY="2.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                  <TextArea disable="true" layoutX="157.0" layoutY="15.0" prefHeight="32.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
                </children>
             </AnchorPane>
         </items>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
       </SplitPane>
-      <SplitPane dividerPositions="0.6370370370370371" layoutX="385.0" layoutY="344.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="372.0" style="-fx-background-color: dbb0ea;">
+      <SplitPane dividerPositions="0.6370370370370371" layoutX="592.0" layoutY="292.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="372.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
          <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0" style="-fx-border-radius: 32;">
                <children>
                   <Text fill="WHITE" layoutX="71.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS">
                      <font>
@@ -146,6 +150,35 @@
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="203.0">
                <children>
                   <Text fill="WHITE" layoutX="68.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS MENSAIS">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <TextArea disable="true" layoutX="248.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane dividerPositions="0.6370370370370371" layoutX="1130.0" layoutY="293.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="372.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0" style="-fx-border-radius: 32;">
+               <children>
+                  <Text fill="WHITE" layoutX="71.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDEDOR X">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="-1.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS E MENSAIS " textAlignment="CENTER" wrappingWidth="372.0">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Text>
+                  <TextArea disable="true" layoutX="244.0" layoutY="56.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+               </children>
+            </AnchorPane>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="203.0">
+               <children>
+                  <Text fill="WHITE" layoutX="68.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDEDOR Y">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font>
