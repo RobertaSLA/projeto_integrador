@@ -21,27 +21,19 @@
    <right>
       <AnchorPane prefHeight="1000.0" prefWidth="800.0" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="219.0" layoutY="236.0" promptText="Usuário" style="-fx-background-color: transparent; -fx-border-color: #dbb0ea; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="236.0">
+            <TextField fx:id="txtUsuario" layoutX="220.0" layoutY="321.0" promptText="Usuário" style="-fx-background-color: transparent; -fx-border-color: #dbb0ea; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="321.0">
                <font>
                   <Font size="15.0" />
                </font></TextField>
-            <PasswordField layoutX="219.0" layoutY="296.0" promptText="Senha" style="-fx-background-color: transparent; -fx-border-color: #dbb0ea; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="296.0">
+            <PasswordField fx:id="txtSenha" layoutX="220.0" layoutY="381.0" promptText="Senha" style="-fx-background-color: transparent; -fx-border-color: #dbb0ea; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.topAnchor="381.0">
                <font>
                   <Font size="15.0" />
                </font></PasswordField>
-            <Button layoutX="240.0" layoutY="371.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="146.0" style="-fx-background-color: #dbb0ea;" text="Login" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="371.0">
+            <Button fx:id="btnLogin" layoutX="241.0" layoutY="456.0" mnemonicParsing="false" onAction="#Login" prefHeight="44.0" prefWidth="146.0" style="-fx-background-color: #dbb0ea;" text="Login" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="456.0">
                <font>
                   <Font size="20.0" />
                </font></Button>
-            <Button layoutX="240.0" layoutY="424.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="144.0" style="-fx-background-color: #dbb0ea;" text="Cadastre-se" textAlignment="CENTER" textFill="WHITE" AnchorPane.topAnchor="424.0">
-               <font>
-                  <Font size="20.0" />
-               </font></Button>
-            <Hyperlink layoutX="238.0" layoutY="511.0" style="-fx-background-color: transparent;" text="Esqueceu sua senha?" textAlignment="CENTER" textFill="#dbb0ea" AnchorPane.topAnchor="511.0">
-               <font>
-                  <Font size="15.0" />
-               </font></Hyperlink>
-            <Text boundsType="VISUAL" fill="#dbb0ea" layoutX="207.0" layoutY="193.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faça seu login!" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="210.7890625" AnchorPane.topAnchor="178.37353515625">
+            <Text fx:id="txtFacaLogin" boundsType="VISUAL" fill="#dbb0ea" layoutX="208.0" layoutY="278.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Faça seu login!" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="210.7890625" AnchorPane.topAnchor="263.37353515625">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
