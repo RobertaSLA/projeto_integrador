@@ -19,7 +19,7 @@
    <children>
       <Pane prefHeight="68.0" prefWidth="1648.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <TitledPane cache="true" expanded="false" layoutX="232.0" layoutY="27.0" mnemonicParsing="true" prefHeight="154.0" prefWidth="172.0" text="Venda">
+            <TitledPane cache="true" layoutX="232.0" layoutY="27.0" mnemonicParsing="true" prefHeight="154.0" prefWidth="172.0" text="Venda">
                <content>
                   <Pane prefHeight="170.0" prefWidth="203.0">
                      <children>
@@ -32,11 +32,12 @@
                </content>
             </TitledPane>
             <BottomNavigationButton id="btnConfiguracoes" layoutX="1057.0" layoutY="12.0" prefHeight="44.0" prefWidth="59.0" style="-fx-background-color: dbb0ea;" />
-            <TitledPane expanded="false" layoutX="636.0" layoutY="26.0" prefHeight="56.0" prefWidth="172.0" text="Produtos">
+            <TitledPane layoutX="638.0" layoutY="26.0" prefHeight="88.0" prefWidth="170.0" text="Produtos">
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" text="Cadastro de Livros" />
+                        <Button id="btnEmissaoNF" fx:id="btnCadsatroLivros" layoutY="-2.0" mnemonicParsing="false" onAction="#CadsatroLivros" prefHeight="32.0" prefWidth="170.0" text="Cadastro de Livros" />
+                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivros" layoutX="-1.0" layoutY="30.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" text="Consulta de Livros" />
                      </children>
                   </Pane>
                </content>
@@ -51,7 +52,7 @@
                   <Image url="@imagens/icon%20config%20brabnco.jpg" />
                </image>
             </ImageView>
-            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Pessoa">
+            <TitledPane layoutX="434.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Pessoa">
                <content>
                   <Pane prefHeight="123.0" prefWidth="203.0">
                      <children>
@@ -81,7 +82,7 @@
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
-            <TitledPane expanded="false" layoutX="30.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Home">
+            <TitledPane layoutX="30.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Home">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0">
                      <children>
@@ -93,11 +94,11 @@
                   </AnchorPane>
               </content>
             </TitledPane>
-            <TitledPane expanded="false" layoutX="838.0" layoutY="26.0" prefHeight="56.0" prefWidth="172.0" text="Fiscal">
+            <TitledPane layoutX="838.0" layoutY="26.0" prefHeight="56.0" prefWidth="172.0" text="Fiscal">
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF1" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" text="Emissao NF" />
+                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" text="Emissao NF" />
                      </children>
                   </Pane>
                </content>
