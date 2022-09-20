@@ -49,7 +49,7 @@
             <Cursor fx:constant="DISAPPEAR" />
          </cursor>
       </SplitPane>
-      <SplitPane dividerPositions="0.5384615384615384" layoutX="342.0" layoutY="151.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="372.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
+      <SplitPane dividerPositions="0.56" layoutX="342.0" layoutY="161.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="372.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
          <items>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0" style="-fx-border-radius: 32;">
                <children>
