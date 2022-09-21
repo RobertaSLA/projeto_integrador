@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1648.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="homePageId" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1648.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="HomePageClass">
    <children>
       <SplitPane dividerPositions="0.5487179487179488" layoutX="27.0" layoutY="151.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="246.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
         <items>
