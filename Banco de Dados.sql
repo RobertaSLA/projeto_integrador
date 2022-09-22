@@ -37,7 +37,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   `idVendedor` INT NOT NULL,
-  `Comissao` INT NULL, /* é FLOAT */
+  `Comissao` FLOAT NULL, /* é FLOAT */
   `Nome` VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
   `CEP` CHAR(9) NULL,
@@ -85,6 +85,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
     FOREIGN KEY (`Vendedor_idVendedor`)
     REFERENCES `mydb`.`Vendedor` (`idVendedor`)
     ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_VendaLivro` 
+	FOREIGN KEY (`SKULivro`) 
+	REFERENCES `Livro` (`SKU`)
+    ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
@@ -120,6 +125,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
   `Nome` VARCHAR(100) NULL,
   `Editora` VARCHAR(50) NULL,
   `Estoque` INT NULL,
+  `Genero` VARCHAR(50) NULL,
+  `Preco` FLOAT NULL,
   `IdAutor` INT NULL,
   UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
   PRIMARY KEY (`SKU`),
@@ -145,8 +152,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
   `IdHistoricoDePrecos` INT NOT NULL,
   `DataAlteracao` DATE NULL,
   `Preco` DOUBLE NULL,
-  `CodLivro` VARCHAR(45) NULL, /* tem que ser SKU e foreign key */
-  PRIMARY KEY (`IdHistoricoDePrecos`))
+  `SKULivro` VARCHAR(45) NULL, /* tem que ser SKU e foreign key */
+  PRIMARY KEY (`IdHistoricoDePrecos`),
+  CONSTRAINT `fk_HisPrecoLivro` 
+	FOREIGN KEY (`SKULivro`) 
+	REFERENCES `Livro` (`SKU`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -157,8 +169,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `IdCompra` INT NOT NULL,
   `SKULivro` INT NOT NULL,
   `Quantidade` INT NOT NULL,
-  `Valor` DOUBLE NULL, /* tem que ser float */
-  `Fornecedor` VARCHAR(50) NULL, /* tirar o fornecedor, vamos fazer uma tabela só para isso */
+  `Valor` FLOAT NULL, /* tem que ser float */
   `Data` DATE NULL,
   PRIMARY KEY (`IdCompra`),
   UNIQUE INDEX `IdCompra_UNIQUE` (`IdCompra` ASC),
@@ -264,6 +275,37 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Venda` (
   CONSTRAINT `fk_Livro_has_Venda_Venda1`
     FOREIGN KEY (`Venda_idVenda`)
     REFERENCES `mydb`.`Venda` (`idVenda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Fornecedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
+  `CNPJ` INT NOT NULL,
+  `Razao Social` INT NOT NULL,
+  `Endereco` VARCHAR(100) NULL,
+  `Email` VARCHAR (100) NULL,
+  `Telefone` VARCHAR(15)  NULL,
+  PRIMARY KEY (`CNPJ`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Compra_has_Fornecedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
+  `CNPJ_Fornecedor` INT NOT NULL,
+  `Id_Compra` INT NOT NULL,
+  PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
+  CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
+    FOREIGN KEY (`CNPJ_Fornecedor`)
+    REFERENCES `mydb`.`Fornecedor` (`CNPJ`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Forneecdor_has_Compra_ID_compra`
+    FOREIGN KEY (`Id_Compra`)
+    REFERENCES `mydb`.`Compra` (`IdCompra`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
