@@ -48,21 +48,21 @@ insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (384, '24/04/2022', '$22.44');
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (565, '09/09/2021', '$13.57');
 
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (9528, '317520929-7', 'Doctor and the Devils, The', 'Hoeger-Shanahan', 5);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (5737, '722980865-0', 'Back to the Future Part III', 'MacGyver-Nitzsche', 18);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (7145, '500689995-6', 'Lacombe Lucien', 'Predovic, Hegmann and Cassin', 9);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (4602, '984460768-X', 'Step Up 3D', 'Hegmann, Sanford and Little', 16);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (2264, '757463261-8', 'Turin Horse, The (A Torinói ló)', 'Murray-Blick', 28);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (2693, '979530424-0', 'The Red Inn', 'Lueilwitz-Abernathy', 6);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (1374, '449833111-7', 'Internship, The', 'Lesch, Green and Osinski', 0);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (1897, '925550478-9', 'Patrik Age 1.5 (Patrik 1,5)', 'Bartoletti, Klein and Williamson', 1);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (8492, '942487661-0', 'From Up on Poppy Hill (Kokuriko-zaka kara)', 'Shields, Wilkinson and Ward', 18);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (1772, '989906771-7', 'Moonwalker', 'Hintz, Mosciski and Tremblay', 18);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (8337, '902676563-0', 'Debt, The', 'Parisian, Shields and Roob', 0);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (8011, '614916874-3', 'The Magical Legend of the Leprechauns', 'Reynolds-Purdy', 1);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (4699, '832517274-6', 'Food of Love (Manjar de Amor)', 'Renner-Beahan', 26);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (7284, '103622114-8', 'One Missed Call (Chakushin ari)', 'Schuster Inc', 19);
-insert into Livro (SKU, ISBN, Nome, Editora, Estoque) values (8178, '127493136-3', 'Grand Day Out with Wallace and Gromit, A', 'Towne-Brakus', 27);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (9528, '317520929-7', 'Doctor and the Devils, The', 'Hoeger-Shanahan', 5, 'Ação', 20.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (5737, '722980865-0', 'Back to the Future Part III', 'MacGyver-Nitzsche', 18, 'Romance', 15.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (7145, '500689995-6', 'Lacombe Lucien', 'Predovic, Hegmann and Cassin', 9, 'Ficção Científica', 10.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (4602, '984460768-X', 'Step Up 3D', 'Hegmann, Sanford and Little', 16, 'Infantil', 17.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (2264, '757463261-8', 'Turin Horse, The (A Torinói ló)', 'Murray-Blick', 28, 'Gastronomia', 39.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (2693, '979530424-0', 'The Red Inn', 'Lueilwitz-Abernathy', 6, 'Ação', 50.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (1374, '449833111-7', 'Internship, The', 'Lesch, Green and Osinski', 0, 'Romance', 59.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (1897, '925550478-9', 'Patrik Age 1.5 (Patrik 1,5)', 'Bartoletti, Klein and Williamson', 1, 'Gastronomia', 79.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (8492, '942487661-0', 'From Up on Poppy Hill (Kokuriko-zaka kara)', 'Shields, Wilkinson and Ward', 18, 'Ficção Científica', 35.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (1772, '989906771-7', 'Moonwalker', 'Hintz, Mosciski and Tremblay', 18, 'Infantil', 44.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (8337, '902676563-0', 'Debt, The', 'Parisian, Shields and Roob', 0, 'Romance', 38.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (8011, '614916874-3', 'The Magical Legend of the Leprechauns', 'Reynolds-Purdy', 1, 'Ficção Científica', 42.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (4699, '832517274-6', 'Food of Love (Manjar de Amor)', 'Renner-Beahan', 26, 'Gastronomia', 31.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (7284, '103622114-8', 'One Missed Call (Chakushin ari)', 'Schuster Inc', 19, 'Terror', 63.99);
+insert into Livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (8178, '127493136-3', 'Grand Day Out with Wallace and Gromit, A', 'Towne-Brakus', 27, 'Terror', 25.99);
 
 insert into Livro_has_Venda (Quantidade) values (45);
 insert into Livro_has_Venda (Quantidade) values (22);
@@ -113,3 +113,12 @@ insert into Vendedor (idVendedor, Comissao, Nome, Endereco, CEP, CPF, Telefone) 
 insert into Vendedor (idVendedor, Comissao, Nome, Endereco, CEP, CPF, Telefone) values (3, 3, 'Clair Cornelius', '9 Gateway Parkway', '37012-994', '419-75-3208', '9699054276');
 insert into Vendedor (idVendedor, Comissao, Nome, Endereco, CEP, CPF, Telefone) values (4, 4, 'Kim Borit', '30 Arrowood Alley', '55111-529', '376-11-0018', '8686278448');
 insert into Vendedor (idVendedor, Comissao, Nome, Endereco, CEP, CPF, Telefone) values (5, 5, 'Carolin Reimer', '53 Butternut Way', '58118-5016', '258-16-7631', '1063314593');
+
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('0886553067', 'Nuveen Short Duration Credit Opportunities Fund', '1489 Park Meadow Lane', 'rgreatreax0@sitemeter.com', '(803) 9598473');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('8224755177', 'KB Financial Group Inc', '553 Bluestem Court', 'eprivost1@java.com', '(849) 9046648');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('3725588546', 'Astec Industries, Inc.', '1700 Brown Road', 'sstibbs2@desdev.cn', '(566) 7233472');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('1190718715', 'Blackrock MuniYield Pennsylvania Quality Fund', '03853 Hayes Pass', 'rjoslin3@blinklist.com', '(481) 1705779');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('8461886372', 'Verizon Communications Inc.', '909 Truax Place', 'mparham4@flickr.com', '(336) 3031398');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('7399022399', 'Zimmer Biomet Holdings, Inc.', '36 Duke Road', 'wwace5@godaddy.com', '(411) 9435170');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('9258970160', 'AnaptysBio, Inc.', '3532 Eastwood Trail', 'sdionisetti6@imgur.com', '(834) 5359615');
+insert into Fornecedor (CNPJ, Razao_Social, Endereco, email, telefone) values ('9776094880', 'Ramco-Gershenson Properties Trust', '5514 Loeprich Circle', 'tcarnihan7@so-net.ne.jp', '(491) 1645910');

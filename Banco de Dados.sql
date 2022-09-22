@@ -284,7 +284,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `CNPJ` INT NOT NULL,
-  `Razao Social` INT NOT NULL,
+  `Razao_Social` INT NOT NULL,
   `Endereco` VARCHAR(100) NULL,
   `Email` VARCHAR (100) NULL,
   `Telefone` VARCHAR(15)  NULL,
