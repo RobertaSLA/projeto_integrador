@@ -80,8 +80,8 @@
          <font>
             <Font size="15.0" />
          </font></Text>
-      <TextField fx:id="txtAutor" layoutX="28.0" layoutY="352.0" onAction="#AdicionarAutor" prefHeight="26.0" prefWidth="280.0" />
-      <TextField fx:id="txtGenero" layoutX="336.0" layoutY="352.0" onAction="#AdicionarGenero" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtAutor" layoutX="28.0" layoutY="365.0" onAction="#AdicionarAutor" prefHeight="26.0" prefWidth="280.0" />
+      <TextField fx:id="txtGenero" layoutX="338.0" layoutY="365.0" onAction="#AdicionarGenero" prefHeight="26.0" prefWidth="124.0" />
       <Text layoutX="15.0" layoutY="435.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estoque">
          <font>
             <Font name="System Bold" size="20.0" />
@@ -91,12 +91,12 @@
          <font>
             <Font size="15.0" />
          </font></Text>
-      <TextField fx:id="txtQuantidade" layoutX="28.0" layoutY="458.0" onAction="#AdicionarQuantidade" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtQuantidade" layoutX="28.0" layoutY="468.0" onAction="#AdicionarQuantidade" prefHeight="26.0" prefWidth="124.0" />
       <Text layoutX="485.0" layoutY="359.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editora">
          <font>
             <Font size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="txtEditora" layoutX="485.0" layoutY="352.0" onAction="#AdicionarEditora" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtEditora" layoutX="485.0" layoutY="365.0" onAction="#AdicionarEditora" prefHeight="26.0" prefWidth="124.0" />
    </children>
 </AnchorPane>
