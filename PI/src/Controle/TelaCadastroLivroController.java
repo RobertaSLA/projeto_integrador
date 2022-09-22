@@ -43,7 +43,7 @@ public class TelaCadastroLivroController {
 
     @FXML
     void AdicionarAutor(ActionEvent event) {
-
+    	
     }
 
     @FXML
@@ -83,12 +83,14 @@ public class TelaCadastroLivroController {
 
     @FXML
     void CancelarCadastro(ActionEvent event) {
-
+    	
     }
 
     @FXML
     void SalvarCadastro(ActionEvent event) {
-
+    	
+    	//UsuarioBD usuario = new UsuarioBD();
+    	//usuario.AutenticarLogin(us);
     }
 
 }

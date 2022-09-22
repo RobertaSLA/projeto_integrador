@@ -62,7 +62,7 @@ public class TelaHomeController {
 
     @FXML
     void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
-    	AnchorPane telaCadastroPane = FXMLLoader.load(getClass().getResource("/visao/telaCadastroLivro.fxml"));
+    	AnchorPane telaCadastroPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
     	idTelaHome.getChildren().setAll(telaCadastroPane);
     }
 
