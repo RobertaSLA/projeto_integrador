@@ -1,7 +1,10 @@
 package Controle;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 
@@ -9,7 +12,7 @@ public class TelaHomeController {
 
     @FXML
     private Button btnAcessoCadastroProduto;
-
+    	
     @FXML
     private Button btnAcessoConsultaPreco;
 
@@ -50,7 +53,7 @@ public class TelaHomeController {
     private Button btnaAcessoCadastroCliente;
 
     @FXML
-    private AnchorPane homePageId;
+    private AnchorPane idTelaHome;
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) {
@@ -58,8 +61,9 @@ public class TelaHomeController {
     }
 
     @FXML
-    void AcessoCadsatroProdutos(ActionEvent event) {
-
+    void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
+    	AnchorPane telaCadastroPane = FXMLLoader.load(getClass().getResource("/visao/telaCadastroLivro.fxml"));
+    	idTelaHome.getChildren().setAll(telaCadastroPane);
     }
 
     @FXML

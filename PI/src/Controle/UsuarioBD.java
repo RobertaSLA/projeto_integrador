@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 import Modelo.Usuario;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.layout.AnchorPane;
 
 
 public class UsuarioBD {
@@ -24,9 +26,9 @@ public class UsuarioBD {
 			ResultSet rs = stmt.executeQuery();
 			
 			if(rs.next()) {
-		
+				
 			}else {
-				JOptionPane.showMessageDialog(null, "Esse usuario não existe");
+				JOptionPane.showMessageDialog(null, "Esse usuario nï¿½o existe");
 			}
 			
 			stmt.close();
