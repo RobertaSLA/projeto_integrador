@@ -152,8 +152,9 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void ConsultaLivro(ActionEvent event) {
-
+    void ConsultaLivro(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML

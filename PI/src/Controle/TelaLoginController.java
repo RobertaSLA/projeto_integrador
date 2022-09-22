@@ -1,7 +1,12 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import javax.swing.JOptionPane;
 
 import Modelo.Usuario;
 import javafx.event.ActionEvent;
@@ -35,11 +40,31 @@ public class TelaLoginController {
     void Login(ActionEvent event) throws SQLException, IOException {
     	Usuario us = new Usuario(txtUsuario.getText(), txtSenha.getText());
     	
-    	UsuarioBD usuario = new UsuarioBD();
-    	usuario.AutenticarLogin(us);
+    	try {
+    		Connection con = ConexaoBD.Conexao_BD();
+    		String sql = "select * from usuario where user=? and senha=?";
+    		PreparedStatement stmt = con.prepareStatement(sql);
+    		
+    		stmt.setString(1, us.getUsername());
+    		stmt.setString(2, us.getSenha());
+    		
+    		ResultSet rs = stmt.executeQuery();
+    		
+    		if(rs.next()) {
+    			AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	        TelaLoginBorder.getChildren().setAll(telaHomePane);
+    		}else {
+    			JOptionPane.showMessageDialog(null, "Esse usuario não existe");
+    		}
+    		
+    		stmt.close();
+    		con.close();
+        	
+    	} catch (SQLException e1) {
+			e1.printStackTrace();
+		}
     	
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
-        TelaLoginBorder.getChildren().setAll(telaHomePane);
+    	
     	}
     	
     }
