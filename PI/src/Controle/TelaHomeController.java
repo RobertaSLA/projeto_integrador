@@ -12,7 +12,7 @@ public class TelaHomeController {
 
     @FXML
     private Button btnAcessoCadastroProduto;
-    	
+
     @FXML
     private Button btnAcessoConsultaPreco;
 
@@ -26,7 +26,7 @@ public class TelaHomeController {
     private Button btnCadastroFornecedor;
 
     @FXML
-    private Button btnCadsatroLivros;
+    private Button btnCadastroLivros;
 
     @FXML
     private Button btnConsultaCliente;
@@ -62,8 +62,8 @@ public class TelaHomeController {
 
     @FXML
     void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
-    	AnchorPane telaCadastroPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
-    	idTelaHome.getChildren().setAll(telaCadastroPane);
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -87,13 +87,20 @@ public class TelaHomeController {
     }
 
     @FXML
-    void CadsatroLivros(ActionEvent event) {
-
+    void CadastroLivros(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML
     void ConsultaCliente(ActionEvent event) {
 
+    }
+
+    @FXML
+    void ConsultaLivro(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML

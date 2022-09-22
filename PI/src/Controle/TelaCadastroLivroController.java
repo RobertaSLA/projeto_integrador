@@ -1,10 +1,16 @@
 package Controle;
 
+import java.io.IOException;
+import java.sql.SQLException;
+
+import Modelo.Livro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaCadastroLivroController {
 
@@ -82,15 +88,17 @@ public class TelaCadastroLivroController {
     }
 
     @FXML
-    void CancelarCadastro(ActionEvent event) {
-    	
+    void CancelarCadastro(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	telaCadastroPane.getChildren().setAll(telaHomePane);
     }
-
+   
     @FXML
-    void SalvarCadastro(ActionEvent event) {
+    void SalvarCadastro(ActionEvent event) throws SQLException {
+    	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), Integer.parseInt(txtISBN.getText()), txtTitulo.getText(), txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()));
     	
-    	//UsuarioBD usuario = new UsuarioBD();
-    	//usuario.AutenticarLogin(us);
+    	LivroBD livbd = new LivroBD();
+    	livbd.InserirLivro(liv);
     }
 
 }

@@ -97,8 +97,8 @@
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnEmissaoNF" fx:id="btnCadsatroLivros" layoutY="-2.0" mnemonicParsing="false" onAction="#CadsatroLivros" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro de Livros" />
-                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivros" layoutX="-1.0" layoutY="30.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta de Livros" />
+                        <Button id="btnEmissaoNF" fx:id="btnCadastroLivros" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivros" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro de Livros" />
+                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivros" layoutX="-1.0" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta de Livros" />
                      </children>
                   </Pane>
                </content>

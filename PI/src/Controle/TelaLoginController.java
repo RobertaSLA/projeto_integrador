@@ -33,14 +33,15 @@ public class TelaLoginController {
 
     @FXML
     void Login(ActionEvent event) throws SQLException, IOException {
-    	//Usuario us = new Usuario(txtUsuario.getText(), txtSenha.getText());
+    	Usuario us = new Usuario(txtUsuario.getText(), txtSenha.getText());
     	
-    	//UsuarioBD usuario = new UsuarioBD();
-    	//usuario.AutenticarLogin(us);
+    	UsuarioBD usuario = new UsuarioBD();
+    	usuario.AutenticarLogin(us);
     	
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
-    	TelaLoginBorder.getChildren().setAll(telaHomePane);
+        TelaLoginBorder.getChildren().setAll(telaHomePane);
+    	}
+    	
     }
 
-}
 
