@@ -1,12 +1,11 @@
 package Controle;
 
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
@@ -94,7 +93,25 @@ public class TelaListagemProdutoController {
     private CheckBox chkValorAcima130;
 
     @FXML
+    private TableColumn<?, ?> clmAutor;
+
+    @FXML
+    private TableColumn<?, ?> clmEditora;
+
+    @FXML
+    private TableColumn<?, ?> clmGenero;
+
+    @FXML
+    private TableColumn<?, ?> clmSKU;
+
+    @FXML
+    private TableColumn<?, ?> clmTitulo;
+
+    @FXML
     private AnchorPane layoutListagem;
+
+    @FXML
+    private TableView<?> tblListagem;
 
     @FXML
     private TextField txtPesquisarLivro;
@@ -114,7 +131,7 @@ public class TelaListagemProdutoController {
     	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaListagemPane);
     }
-
+    
     @FXML
     void AcessoConsultaPreco(ActionEvent event) {
 
@@ -145,7 +162,7 @@ public class TelaListagemProdutoController {
     	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaListagemPane);
     }
-
+    
     @FXML
     void ConsultaCliente(ActionEvent event) {
 
@@ -156,7 +173,7 @@ public class TelaListagemProdutoController {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
-
+    
     @FXML
     void ConsultaPreco(ActionEvent event) {
 
