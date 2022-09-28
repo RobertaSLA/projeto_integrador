@@ -149,7 +149,7 @@
             </TitledPane>
          </children>
       </Pane>
-      <TableView layoutX="276.0" layoutY="321.0" prefHeight="475.0" prefWidth="1303.0">
+      <TableView fx:id="tblListagem" layoutX="276.0" layoutY="321.0" prefHeight="475.0" prefWidth="1303.0">
         <columns>
           <TableColumn prefWidth="353.33331298828125" style="-fx-background-color: dbb0ea; -fx-border-color: 000000;" text="Título" />
           <TableColumn minWidth="8.0" prefWidth="283.6666259765625" style="-fx-background-color: dbb0ea;" text="Autor" />
