@@ -152,12 +152,13 @@
       <TableView fx:id="tblListagem" layoutX="177.0" layoutY="321.0" prefHeight="475.0" prefWidth="1405.0">
         <columns>
           <TableColumn fx:id="clmSKU" prefWidth="84.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
-          <TableColumn fx:id="clmTitulo" minWidth="8.0" prefWidth="337.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Titulo" />
-            <TableColumn fx:id="clmAutor" minWidth="8.0" prefWidth="304.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Autor" />
-            <TableColumn fx:id="clmEditora" minWidth="8.0" prefWidth="219.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Editora" />
-            <TableColumn fx:id="clmGenero" minWidth="8.0" prefWidth="175.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Gênero" />
-            <TableColumn fx:id="clmISBN" minWidth="0.0" prefWidth="191.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ISBN" />
-            <TableColumn fx:id="clmPreco" minWidth="0.0" prefWidth="94.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preco" />
+          <TableColumn fx:id="clmTitulo" minWidth="8.0" prefWidth="273.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Titulo" />
+            <TableColumn fx:id="clmAutor" minWidth="8.0" prefWidth="300.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Autor" />
+            <TableColumn fx:id="clmEditora" minWidth="8.0" prefWidth="249.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Editora" />
+            <TableColumn fx:id="clmGenero" minWidth="8.0" prefWidth="163.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Gênero" />
+            <TableColumn fx:id="clmISBN" minWidth="0.0" prefWidth="158.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ISBN" />
+            <TableColumn fx:id="clmPreco" minWidth="0.0" prefWidth="92.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preco" />
+            <TableColumn fx:id="clmEstoque" minWidth="0.0" prefWidth="85.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Estoque" />
         </columns>
       </TableView>
       <TextField fx:id="txtPesquisarLivro" layoutX="177.0" layoutY="275.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
