@@ -29,7 +29,7 @@ public class UsuarioBD {
 			if(rs.next()) {
 				
 			}else {
-				JOptionPane.showMessageDialog(null, "Esse usuario n�o existe");
+				JOptionPane.showMessageDialog(null, "Esse usuario não existe");
 			}
 			
 			stmt.close();
