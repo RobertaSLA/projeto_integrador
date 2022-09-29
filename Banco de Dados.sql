@@ -22,11 +22,20 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `idCliente` INT NOT NULL,
-  `Nome` VARCHAR(50) NULL,
-  `Telefone` CHAR(15) NULL,
-  `CPF` CHAR(14) NULL,
+  `Nome` VARCHAR(50) NOT NULL,
+  `CPF` CHAR(14) NOT NULL,
+  'DataNascimento' VARCHAR(10) NULL,
+  'Sexo' VARCHAR(15) NULL,
+  `CEP` CHAR(15) NULL,
+  'UF' VARCHAR(2) NULL,
+  'Cidade' VARCHAR(30) NULL,
+  'Bairro' VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
-  `CEP` CHAR(9) NULL,
+  'Numero' CHAR(4) NULL,
+  'Complemento' VARCHAR(30) NULL,
+  'Fone' CHAR(15) NULL,
+  `Celular` CHAR(15) NOT NULL,
+  'email' VARCHAR(40) NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `idCliente_UNIQUE` (`idCliente` ASC))
 ENGINE = InnoDB;
@@ -37,12 +46,21 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   `idVendedor` INT NOT NULL,
-  `Comissao` FLOAT NULL, /* é FLOAT */
   `Nome` VARCHAR(50) NULL,
-  `Endereco` VARCHAR(100) NULL,
-  `CEP` CHAR(9) NULL,
   `CPF` CHAR(14) NULL,
-  `Telefone` CHAR(15) NULL,
+  'Sexo' VARCHAR(15) NULL,
+  'DataNascimento' VARCHAR(10) NULL,
+  `Comissao` FLOAT NULL,
+  `CEP` CHAR(15) NULL,
+  'UF' VARCHAR(2) NULL,
+  'Cidade' VARCHAR(30) NULL,
+  'Bairro' VARCHAR(50) NULL,
+  `Endereco` VARCHAR(100) NULL,
+  'Numero' CHAR(4) NULL,
+  'Complemento' VARCHAR(30) NULL,
+  'Fone' CHAR(15) NULL,
+  `Celular` CHAR(15) NOT NULL,
+  'email' VARCHAR(40) NULL,
   PRIMARY KEY (`idVendedor`),
   UNIQUE INDEX `idVandedor_UNIQUE` (`idVendedor` ASC))
 ENGINE = InnoDB;
@@ -66,7 +84,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL,
-  `SKULivro` INT NULL,  /* não é aqui, tem que ser uma foreign key */
+  `SKULivro` INT NULL, 
   `FormaPagamento` VARCHAR(45) NULL,
   `Data` DATE NULL,
   `Valor` DOUBLE NULL,
@@ -152,7 +170,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
   `IdHistoricoDePrecos` INT NOT NULL,
   `DataAlteracao` DATE NULL,
   `Preco` DOUBLE NULL,
-  `SKULivro` VARCHAR(45) NULL, /* tem que ser SKU e foreign key */
+  `SKULivro` VARCHAR(45) NULL,
   PRIMARY KEY (`IdHistoricoDePrecos`),
   CONSTRAINT `fk_HisPrecoLivro` 
 	FOREIGN KEY (`SKULivro`) 
@@ -169,25 +187,12 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `IdCompra` INT NOT NULL,
   `SKULivro` INT NOT NULL,
   `Quantidade` INT NOT NULL,
-  `Valor` FLOAT NULL, /* tem que ser float */
+  `Valor` FLOAT NULL,
   `Data` DATE NULL,
   PRIMARY KEY (`IdCompra`),
   UNIQUE INDEX `IdCompra_UNIQUE` (`IdCompra` ASC),
   UNIQUE INDEX `SKULivro_UNIQUE` (`SKULivro` ASC))
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Livro_Venda`
--- -----------------------------------------------------
-/* CREATE TABLE IF NOT EXISTS `mydb`.`Livro_Venda` (
-  `SKULivro` INT NOT NULL,
-  `IdVenda` INT NULL,
-  `QuantidadeItem` INT NULL,
-  PRIMARY KEY (`SKULivro`)) 
-ENGINE = InnoDB; 
-
-ver para excluir isso */
 
 
 -- -----------------------------------------------------
@@ -283,8 +288,20 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
-  `CNPJ` INT NOT NULL,
-  `Razao_Social` INT NOT NULL,
+  `idForncedor` INT NOT NULL,
+  `Nome` VARCHAR(50) NULL,
+  `CNPJ` CHAR(14) NULL,
+  `Inscricao_Estadual` CHAR(12) NOT NULL,
+  `CEP` CHAR(15) NULL,
+  'UF' VARCHAR(2) NULL,
+  'Cidade' VARCHAR(30) NULL,
+  'Bairro' VARCHAR(50) NULL,
+  `Endereco` VARCHAR(100) NULL,
+  'Numero' CHAR(4) NULL,
+  'Complemento' VARCHAR(30) NULL,
+  'Fone' CHAR(15) NULL,
+  `Celular` CHAR(15) NOT NULL,
+  'email' VARCHAR(40) NULL,
   `Endereco` VARCHAR(100) NULL,
   `Email` VARCHAR (100) NULL,
   `Telefone` VARCHAR(15)  NULL,
