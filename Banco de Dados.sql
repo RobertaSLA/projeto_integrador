@@ -37,7 +37,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   `idVendedor` INT NOT NULL,
-  `Comissao` INT NULL, /* é FLOAT */
+  `Comissao` FLOAT NULL, /* é FLOAT */
   `Nome` VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
   `CEP` CHAR(9) NULL,
@@ -84,6 +84,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   CONSTRAINT `fk_Venda_Vendedor1`
     FOREIGN KEY (`Vendedor_idVendedor`)
     REFERENCES `mydb`.`Vendedor` (`idVendedor`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_VendaLivro` 
+	FOREIGN KEY (`SKULivro`) 
+	REFERENCES `Livro` (`SKU`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -147,8 +152,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
   `IdHistoricoDePrecos` INT NOT NULL,
   `DataAlteracao` DATE NULL,
   `Preco` DOUBLE NULL,
-  `CodLivro` VARCHAR(45) NULL, /* tem que ser SKU e foreign key */
-  PRIMARY KEY (`IdHistoricoDePrecos`))
+  `SKULivro` VARCHAR(45) NULL, /* tem que ser SKU e foreign key */
+  PRIMARY KEY (`IdHistoricoDePrecos`),
+  CONSTRAINT `fk_HisPrecoLivro` 
+	FOREIGN KEY (`SKULivro`) 
+	REFERENCES `Livro` (`SKU`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
@@ -159,8 +169,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `IdCompra` INT NOT NULL,
   `SKULivro` INT NOT NULL,
   `Quantidade` INT NOT NULL,
-  `Valor` DOUBLE NULL, /* tem que ser float */
-  `Fornecedor` VARCHAR(50) NULL, /* tirar o fornecedor, vamos fazer uma tabela só para isso */
+  `Valor` FLOAT NULL, /* tem que ser float */
   `Data` DATE NULL,
   PRIMARY KEY (`IdCompra`),
   UNIQUE INDEX `IdCompra_UNIQUE` (`IdCompra` ASC),
