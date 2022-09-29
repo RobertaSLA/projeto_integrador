@@ -17,11 +17,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1608.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemProdutoController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemProdutoController">
    <children>
-      <Pane layoutY="68.0" prefHeight="940.0" prefWidth="275.0">
+      <Pane layoutY="68.0" prefHeight="940.0" prefWidth="172.0">
          <children>
-            <Label prefHeight="120.0" prefWidth="275.0" style="-fx-background-color: e3e3e3;" text="      Filtros">
+            <Label layoutX="-5.0" prefHeight="122.0" prefWidth="177.0" style="-fx-background-color: e3e3e3;" text="     Filtros">
                <font>
                   <Font name="System Bold" size="38.0" />
                </font>
@@ -29,32 +29,32 @@
                   <Glow level="0.0" />
                </effect>
             </Label>
-            <Accordion layoutY="120.0" prefHeight="297.0" prefWidth="275.0">
+            <Accordion layoutY="120.0" prefHeight="297.0" prefWidth="172.0">
               <panes>
-                <TitledPane expanded="false" prefHeight="235.0" prefWidth="275.0" text="Gênero">
+                <TitledPane fx:id="filtroGenero" expanded="false" prefHeight="257.0" prefWidth="198.0" text="Gênero">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="252.0" prefWidth="273.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="235.0">
                            <children>
-                              <CheckBox fx:id="chkAcaoAventura" mnemonicParsing="false" onAction="#AcaoAventura" prefHeight="41.0" prefWidth="275.0" text="Aventura/Acção" />
-                              <CheckBox fx:id="chkAutoajuda" layoutY="41.0" mnemonicParsing="false" onAction="#Autoajuda" prefHeight="41.0" prefWidth="275.0" text="Autoajuda" />
-                              <CheckBox fx:id="chkFiccao" layoutY="82.0" mnemonicParsing="false" onAction="#Ficcao" prefHeight="41.0" prefWidth="275.0" text="Ficção Científica" />
-                              <CheckBox fx:id="chkTerror" layoutY="205.0" mnemonicParsing="false" onAction="#Terror" prefHeight="41.0" prefWidth="275.0" text="Terror" />
-                              <CheckBox fx:id="chkGastronomia" layoutX="-1.0" layoutY="123.0" mnemonicParsing="false" onAction="#Gastronomia" prefHeight="41.0" prefWidth="275.0" text="Gastronomia" />
-                              <CheckBox fx:id="chkRomance" layoutY="164.0" mnemonicParsing="false" onAction="#Romance" prefHeight="41.0" prefWidth="275.0" text="Romance" />
+                              <CheckBox fx:id="chkAcaoAventura" mnemonicParsing="false" onAction="#AcaoAventura" prefHeight="41.0" prefWidth="172.0" text="Aventura/Acção" />
+                              <CheckBox fx:id="chkAutoajuda" layoutY="41.0" mnemonicParsing="false" onAction="#Autoajuda" prefHeight="41.0" prefWidth="172.0" text="Autoajuda" />
+                              <CheckBox fx:id="chkFiccao" layoutY="82.0" mnemonicParsing="false" onAction="#Ficcao" prefHeight="41.0" prefWidth="172.0" text="Ficção Científica" />
+                              <CheckBox fx:id="chkTerror" layoutY="205.0" mnemonicParsing="false" onAction="#Terror" prefHeight="41.0" prefWidth="172.0" text="Terror" />
+                              <CheckBox fx:id="chkGastronomia" layoutX="-1.0" layoutY="123.0" mnemonicParsing="false" onAction="#Gastronomia" prefHeight="41.0" prefWidth="172.0" text="Gastronomia" />
+                              <CheckBox fx:id="chkRomance" layoutY="164.0" mnemonicParsing="false" onAction="#Romance" prefHeight="41.0" prefWidth="172.0" text="Romance" />
                            </children>
                         </AnchorPane>
                   </content>
                 </TitledPane>
-                <TitledPane animated="false" text="Preço">
+                <TitledPane fx:id="filtroPreco" animated="false" prefHeight="272.0" prefWidth="226.0" text="Preço">
                   <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="213.0">
                            <children>
-                              <CheckBox fx:id="chkValor1030" layoutX="-1.0" layoutY="-6.0" mnemonicParsing="false" onAction="#Valor1030" prefHeight="41.0" prefWidth="275.0" text="R$10,00 - R$30,00" />
-                              <CheckBox fx:id="chkValor3050" layoutX="-1.0" layoutY="35.0" mnemonicParsing="false" onAction="#Valor3050" prefHeight="41.0" prefWidth="275.0" text="R$30,00 - R$50,00" />
-                              <CheckBox fx:id="chkValor5070" layoutX="-1.0" layoutY="76.0" mnemonicParsing="false" onAction="#Valor5070" prefHeight="41.0" prefWidth="275.0" text="R$50,00 - R$70,00" />
-                              <CheckBox fx:id="chkValor7090" layoutX="-1.0" layoutY="117.0" mnemonicParsing="false" onAction="#Valor7090" prefHeight="41.0" prefWidth="275.0" text="R$70,00 - R$90,00" />
-                              <CheckBox fx:id="chkValor1101130" layoutX="-1.0" layoutY="158.0" mnemonicParsing="false" onAction="#VAlor1101130" prefHeight="41.0" prefWidth="275.0" text="R$110,00 - R$130,00" />
-                              <CheckBox fx:id="chkValorAcima130" layoutX="-1.0" layoutY="199.0" mnemonicParsing="false" onAction="#ValorAcima130" prefHeight="41.0" prefWidth="275.0" text="Acima de R$130,00" />
+                              <CheckBox fx:id="chkValor1030" layoutX="-1.0" layoutY="-6.0" mnemonicParsing="false" onAction="#Valor1030" prefHeight="41.0" prefWidth="172.0" text="R$10,00 - R$30,00" />
+                              <CheckBox fx:id="chkValor3050" layoutX="-1.0" layoutY="35.0" mnemonicParsing="false" onAction="#Valor3050" prefHeight="41.0" prefWidth="172.0" text="R$30,00 - R$50,00" />
+                              <CheckBox fx:id="chkValor5070" layoutX="-1.0" layoutY="76.0" mnemonicParsing="false" onAction="#Valor5070" prefHeight="41.0" prefWidth="172.0" text="R$50,00 - R$70,00" />
+                              <CheckBox fx:id="chkValor7090" layoutX="-1.0" layoutY="117.0" mnemonicParsing="false" onAction="#Valor7090" prefHeight="41.0" prefWidth="172.0" text="R$70,00 - R$90,00" />
+                              <CheckBox fx:id="chkValor90110" layoutX="-1.0" layoutY="158.0" mnemonicParsing="false" onAction="#Valor90110" prefHeight="41.0" prefWidth="172.0" text="R$90,00 - R$110,00" />
+                              <CheckBox fx:id="chkValorAcima110" layoutX="-1.0" layoutY="199.0" mnemonicParsing="false" onAction="#ValorAcima110" prefHeight="41.0" prefWidth="172.0" text="Acima de R$110,00" />
                            </children></AnchorPane>
                   </content>
                 </TitledPane>
@@ -123,18 +123,6 @@
                   </Pane>
                </content>
             </TitledPane>
-            <TitledPane expanded="false" layoutX="30.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Home">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
-                     <children>
-                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
-                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Produtos" />
-                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Processamento Venda" />
-                     </children>
-                  </AnchorPane>
-              </content>
-            </TitledPane>
             <TitledPane expanded="false" layoutX="234.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Venda">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
@@ -147,18 +135,32 @@
                   </AnchorPane>
                </content>
             </TitledPane>
+            <TitledPane expanded="false" layoutX="29.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Home">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
+                     <children>
+                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Produtos" />
+                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Processamento Venda" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
          </children>
       </Pane>
-      <TableView layoutX="276.0" layoutY="321.0" prefHeight="475.0" prefWidth="1303.0">
+      <TableView fx:id="tblListagem" layoutX="177.0" layoutY="321.0" prefHeight="475.0" prefWidth="1405.0">
         <columns>
-          <TableColumn prefWidth="353.33331298828125" style="-fx-background-color: dbb0ea; -fx-border-color: 000000;" text="Título" />
-          <TableColumn minWidth="8.0" prefWidth="283.6666259765625" style="-fx-background-color: dbb0ea;" text="Autor" />
-            <TableColumn minWidth="8.0" prefWidth="229.0" style="-fx-background-color: dbb0ea;" text="Editora" />
-            <TableColumn minWidth="8.0" prefWidth="278.6666259765625" style="-fx-background-color: dbb0ea;" text="Gênero" />
-            <TableColumn minWidth="8.0" prefWidth="179.3333740234375" style="-fx-background-color: dbb0ea;" text="SKU" />
+          <TableColumn fx:id="clmSKU" prefWidth="84.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
+          <TableColumn fx:id="clmTitulo" minWidth="8.0" prefWidth="337.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Titulo" />
+            <TableColumn fx:id="clmAutor" minWidth="8.0" prefWidth="304.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Autor" />
+            <TableColumn fx:id="clmEditora" minWidth="8.0" prefWidth="219.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Editora" />
+            <TableColumn fx:id="clmGenero" minWidth="8.0" prefWidth="175.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Gênero" />
+            <TableColumn fx:id="clmISBN" minWidth="0.0" prefWidth="191.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ISBN" />
+            <TableColumn fx:id="clmPreco" minWidth="0.0" prefWidth="94.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preco" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarLivro" layoutX="306.0" layoutY="254.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
+      <TextField fx:id="txtPesquisarLivro" layoutX="177.0" layoutY="275.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
       <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Produtos" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
