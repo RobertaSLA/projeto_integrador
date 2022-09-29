@@ -1,16 +1,21 @@
 package Modelo;
 
+import java.util.ArrayList;
+
 public class Livro {
 	
 	private int sku;
-	private int isbn;
+	private String isbn;
 	private String nome;
 	private String editora;
 	private int estoque;
 	private String genero;
 	private float preco;
+	private Autor autor;
 	
-	public Livro(int sku, int isbn, String nome, String editora, int estoque, String genero, float preco) {
+	
+	public Livro(int sku, String isbn, String nome, String editora, int estoque, String genero, float preco,
+			Autor autor) {
 		super();
 		this.sku = sku;
 		this.isbn = isbn;
@@ -19,6 +24,7 @@ public class Livro {
 		this.estoque = estoque;
 		this.genero = genero;
 		this.preco = preco;
+		this.autor = autor;
 	}
 	
 	public int getSku() {
@@ -27,10 +33,10 @@ public class Livro {
 	public void setSku(int sku) {
 		this.sku = sku;
 	}
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	public String getNome() {
@@ -63,6 +69,17 @@ public class Livro {
 	public void setPreco(float preco) {
 		this.preco = preco;
 	}
+
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+
+	public void setAutor(Autor autor) {
+		this.autor = autor;
+	}
+
 	
 	
 }

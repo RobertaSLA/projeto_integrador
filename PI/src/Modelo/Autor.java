@@ -6,6 +6,12 @@ public class Autor {
 	private String nome;
 
 	
+	public Autor(int idAutor, String nome) {
+		super();
+		this.idAutor = idAutor;
+		this.nome = nome;
+	}
+
 	public int getIdAutor() {
 		return idAutor;
 	}
