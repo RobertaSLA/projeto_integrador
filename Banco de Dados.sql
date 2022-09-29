@@ -279,6 +279,37 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Venda` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `mydb`.`Fornecedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
+  `CNPJ` INT NOT NULL,
+  `Razao_Social` INT NOT NULL,
+  `Endereco` VARCHAR(100) NULL,
+  `Email` VARCHAR (100) NULL,
+  `Telefone` VARCHAR(15)  NULL,
+  PRIMARY KEY (`CNPJ`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Compra_has_Fornecedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
+  `CNPJ_Fornecedor` INT NOT NULL,
+  `Id_Compra` INT NOT NULL,
+  PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
+  CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
+    FOREIGN KEY (`CNPJ_Fornecedor`)
+    REFERENCES `mydb`.`Fornecedor` (`CNPJ`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Forneecdor_has_Compra_ID_compra`
+    FOREIGN KEY (`Id_Compra`)
+    REFERENCES `mydb`.`Compra` (`IdCompra`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
