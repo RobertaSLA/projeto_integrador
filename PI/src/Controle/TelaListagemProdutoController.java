@@ -1,12 +1,24 @@
 package Controle;
 
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import Modelo.Autor;
+import Modelo.Livro;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaListagemProdutoController {
@@ -93,25 +105,25 @@ public class TelaListagemProdutoController {
     private CheckBox chkValorAcima130;
 
     @FXML
-    private TableColumn<?, ?> clmAutor;
+    private TableColumn<Livro, String> clmAutor;
 
     @FXML
-    private TableColumn<?, ?> clmEditora;
+    private TableColumn<Livro, String> clmEditora;
 
     @FXML
-    private TableColumn<?, ?> clmGenero;
+    private TableColumn<Livro, String> clmGenero;
 
     @FXML
-    private TableColumn<?, ?> clmSKU;
+    private TableColumn<Livro, String> clmSKU;
 
     @FXML
-    private TableColumn<?, ?> clmTitulo;
+    private TableColumn<Livro, String> clmTitulo;
 
     @FXML
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblListagem;
+    private TableView<Livro> tblListagem;
 
     @FXML
     private TextField txtPesquisarLivro;
@@ -253,5 +265,20 @@ public class TelaListagemProdutoController {
     void ValorAcima130(ActionEvent event) {
 
     }
+    
+    @FXML
+    public void initialize() throws SQLException {
+    	System.out.println(clmAutor);
+		LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarLivro();
+		//clmAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		System.out.print(l.size());
+		Autor autor = new Autor(2, "j");
+		List<Livro> pessoas = Arrays.asList(
+                new Livro(1, "a", "a", "a", 1, "a", (float) 2.5, autor)
+                );
+		tblListagem.setItems(FXCollections.observableArrayList(pessoas));
+
+	}
 
 }
