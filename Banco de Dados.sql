@@ -116,10 +116,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
   `SKU` INT NOT NULL,
-  `ISBN` INT NOT NULL,
+  `ISBN` VARCHAR(20) NOT NULL,
   `Nome` VARCHAR(100) NULL,
   `Editora` VARCHAR(50) NULL,
   `Estoque` INT NULL,
+  `Genero` VARCHAR(30) NULL,
+  `Preco` FLOAT NULL,
   `IdAutor` INT NULL,
   UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
   PRIMARY KEY (`SKU`),
