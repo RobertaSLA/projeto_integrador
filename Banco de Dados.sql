@@ -5,7 +5,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=`TRADITIONAL,ALLOW_INVALID_DATES`;
 
 -- -----------------------------------------------------
 -- Schema mydb
@@ -24,18 +24,16 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `idCliente` INT NOT NULL,
   `Nome` VARCHAR(50) NOT NULL,
   `CPF` CHAR(14) NOT NULL,
-  'DataNascimento' VARCHAR(10) NULL,
-  'Sexo' VARCHAR(15) NULL,
-  `CEP` CHAR(15) NULL,
-  'UF' VARCHAR(2) NULL,
-  'Cidade' VARCHAR(30) NULL,
-  'Bairro' VARCHAR(50) NULL,
-  `Endereco` VARCHAR(100) NULL,
-  'Numero' CHAR(4) NULL,
-  'Complemento' VARCHAR(30) NULL,
-  'Fone' CHAR(15) NULL,
+  `DataNascimento` VARCHAR(10) NULL,
+  `Sexo` VARCHAR(15) NULL,
+  `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
-  'email' VARCHAR(40) NULL,
+  `email` VARCHAR(40) NULL,
+  `IdEndreco` INT NOT NULL,
+  FOREIGN KEY (`IdEndereco`)
+  REFERENCES `mydb`.`Endereco` (`IdEndereco`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `idCliente_UNIQUE` (`idCliente` ASC))
 ENGINE = InnoDB;
@@ -48,21 +46,36 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   `idVendedor` INT NOT NULL,
   `Nome` VARCHAR(50) NULL,
   `CPF` CHAR(14) NULL,
-  'Sexo' VARCHAR(15) NULL,
-  'DataNascimento' VARCHAR(10) NULL,
+  `Sexo` VARCHAR(15) NULL,
+  `DataNascimento` VARCHAR(10) NULL,
   `Comissao` FLOAT NULL,
-  `CEP` CHAR(15) NULL,
-  'UF' VARCHAR(2) NULL,
-  'Cidade' VARCHAR(30) NULL,
-  'Bairro' VARCHAR(50) NULL,
-  `Endereco` VARCHAR(100) NULL,
-  'Numero' CHAR(4) NULL,
-  'Complemento' VARCHAR(30) NULL,
-  'Fone' CHAR(15) NULL,
+  `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
-  'email' VARCHAR(40) NULL,
+  `email` VARCHAR(40) NULL,
+  `IdEndreco` INT NOT NULL,
+  FOREIGN KEY (`IdEndereco`)
+  REFERENCES `mydb`.`Endereco` (`IdEndereco`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   PRIMARY KEY (`idVendedor`),
   UNIQUE INDEX `idVandedor_UNIQUE` (`idVendedor` ASC))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Endereco`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
+  `IdEndreco` INT NOT NULL,
+  `CEP` CHAR(15) NULL,
+  `UF` VARCHAR(2) NULL,
+  `Cidade` VARCHAR(30) NULL,
+  `Bairro` VARCHAR(50) NULL,
+  `Endereco` VARCHAR(100) NULL,
+  `Numero` CHAR(4) NULL,
+  `Complemento` VARCHAR(30) NULL,
+  PRIMARY KEY (`IdEndereco`),
+  UNIQUE INDEX `IdEndereco_UNIQUE` (`IdEndereco` ASC))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
@@ -293,15 +306,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `CNPJ` CHAR(14) NULL,
   `Inscricao_Estadual` CHAR(12) NOT NULL,
   `CEP` CHAR(15) NULL,
-  'UF' VARCHAR(2) NULL,
-  'Cidade' VARCHAR(30) NULL,
-  'Bairro' VARCHAR(50) NULL,
+  `UF` VARCHAR(2) NULL,
+  `Cidade` VARCHAR(30) NULL,
+  `Bairro` VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
-  'Numero' CHAR(4) NULL,
-  'Complemento' VARCHAR(30) NULL,
-  'Fone' CHAR(15) NULL,
+  `Numero` CHAR(4) NULL,
+  `Complemento` VARCHAR(30) NULL,
+  `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
-  'email' VARCHAR(40) NULL,
+  `email` VARCHAR(40) NULL,
   `Endereco` VARCHAR(100) NULL,
   `Email` VARCHAR (100) NULL,
   `Telefone` VARCHAR(15)  NULL,
