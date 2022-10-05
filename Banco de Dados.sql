@@ -21,7 +21,7 @@ USE `mydb` ;
 -- Table `mydb`.`Cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
-  `idCliente` INT NOT NULL,
+  `idCliente` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(50) NOT NULL,
   `CPF` CHAR(14) NOT NULL,
   `DataNascimento` VARCHAR(10) NULL,
@@ -43,7 +43,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Vendedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
-  `idVendedor` INT NOT NULL,
+  `idVendedor` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(50) NULL,
   `CPF` CHAR(14) NULL,
   `Sexo` VARCHAR(15) NULL,
@@ -66,7 +66,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
-  `IdEndreco` INT NOT NULL,
+  `IdEndreco` INT NOT NULL AUTO_INCREMENT,
   `CEP` CHAR(15) NULL,
   `UF` VARCHAR(2) NULL,
   `Cidade` VARCHAR(30) NULL,
@@ -96,7 +96,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
-  `idVenda` INT NOT NULL,
+  `idVenda` INT NOT NULL AUTO_INCREMENT,
   `SKULivro` INT NULL, 
   `FormaPagamento` VARCHAR(45) NULL,
   `Data` DATE NULL,
@@ -129,9 +129,9 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Devolucao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Devolucao` (
-  `codDevolucao` INT NOT NULL,
-  `IdProduto` INT NULL,
-  `IdVenda` INT NULL,
+  `codDevolucao` INT NOT NULL AUTO_INCREMENT,
+  `IdProduto` INT NULL AUTO_INCREMENT,
+  `IdVenda` INT NULL AUTO_INCREMENT,
   `Motivo` VARCHAR(100) NULL,
   `Data` DATE NULL,
   `Venda_idVenda` INT NOT NULL,
@@ -158,7 +158,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
   `Estoque` INT NULL,
   `Genero` VARCHAR(30) NULL,
   `Preco` FLOAT NULL,
-  `IdAutor` INT NULL,
+  `IdAutor` INT NULL AUTO_INCREMENT,
   UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
   PRIMARY KEY (`SKU`),
   UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC))
@@ -169,7 +169,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Autor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Autor` (
-  `IdAutor` INT NOT NULL,
+  `IdAutor` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(100) NULL,
   PRIMARY KEY (`IdAutor`),
   UNIQUE INDEX `IdAutor_UNIQUE` (`IdAutor` ASC))
@@ -180,7 +180,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`HistoricoDePrecos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
-  `IdHistoricoDePrecos` INT NOT NULL,
+  `IdHistoricoDePrecos` INT NOT NULL AUTO_INCREMENT,
   `DataAlteracao` DATE NULL,
   `Preco` DOUBLE NULL,
   `SKULivro` VARCHAR(45) NULL,
@@ -197,7 +197,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Compra`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
-  `IdCompra` INT NOT NULL,
+  `IdCompra` INT NOT NULL AUTO_INCREMENT,
   `SKULivro` INT NOT NULL,
   `Quantidade` INT NOT NULL,
   `Valor` FLOAT NULL,
@@ -301,23 +301,21 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
-  `idForncedor` INT NOT NULL,
+  `idForncedor` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(50) NULL,
   `CNPJ` CHAR(14) NULL,
   `Inscricao_Estadual` CHAR(12) NOT NULL,
-  `CEP` CHAR(15) NULL,
-  `UF` VARCHAR(2) NULL,
-  `Cidade` VARCHAR(30) NULL,
-  `Bairro` VARCHAR(50) NULL,
-  `Endereco` VARCHAR(100) NULL,
-  `Numero` CHAR(4) NULL,
-  `Complemento` VARCHAR(30) NULL,
   `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
   `email` VARCHAR(40) NULL,
   `Endereco` VARCHAR(100) NULL,
   `Email` VARCHAR (100) NULL,
   `Telefone` VARCHAR(15)  NULL,
+  `IdEndreco` INT NOT NULL,
+  FOREIGN KEY (`IdEndereco`)
+  REFERENCES `mydb`.`Endereco` (`IdEndereco`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
   PRIMARY KEY (`CNPJ`))
 ENGINE = InnoDB;
 
@@ -326,7 +324,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
   `CNPJ_Fornecedor` INT NOT NULL,
-  `Id_Compra` INT NOT NULL,
+  `Id_Compra` INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
   CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
     FOREIGN KEY (`CNPJ_Fornecedor`)
