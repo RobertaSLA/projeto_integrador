@@ -7,16 +7,18 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroClienteController">
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroClienteController">
    <children>
       <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <Text fill="WHITE" layoutX="652.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
+            <Text fill="WHITE" layoutX="542.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -24,7 +26,7 @@
                   <Glow />
                </effect>
             </Text>
-            <Text fill="WHITE" layoutX="612.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
+            <Text fill="WHITE" layoutX="502.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -34,6 +36,11 @@
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
+            <ImageView fitHeight="59.0" fitWidth="135.0" layoutX="665.0" layoutY="4.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Text layoutX="19.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados Cadastrais" AnchorPane.leftAnchor="25.0">

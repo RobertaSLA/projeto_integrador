@@ -3,16 +3,18 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroLivroController">
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroLivroController">
    <children>
       <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <Text fill="WHITE" layoutX="652.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
+            <Text fill="WHITE" layoutX="530.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -20,7 +22,7 @@
                   <Glow />
                </effect>
             </Text>
-            <Text fill="WHITE" layoutX="612.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
+            <Text fill="WHITE" layoutX="490.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
                <font>
                   <Font name="System Bold Italic" size="17.0" />
                </font>
@@ -30,6 +32,11 @@
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
+            <ImageView fitHeight="60.0" fitWidth="158.0" layoutX="642.0" layoutY="3.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <TextField fx:id="txtTitulo" layoutX="22.0" layoutY="110.0" onAction="#AdicionarTitulo" prefHeight="26.0" prefWidth="722.0" AnchorPane.leftAnchor="20.0" />
