@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaPesquisarFornecedorController">
+   <children>
+      <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
+         <children>
+            <Text fill="WHITE" layoutX="652.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="612.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="26.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fornecedor" wrappingWidth="173.8645782470703">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <Text layoutX="20.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados Cadastrais" AnchorPane.leftAnchor="20.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCodFornecedor" layoutX="20.0" layoutY="132.0" onAction="#AdicionarCodFornecedor" prefHeight="26.0" prefWidth="149.0" AnchorPane.leftAnchor="20.0" />
+      <Button fx:id="btnPesquisarFornecedor" layoutX="180.0" layoutY="130.0" mnemonicParsing="false" onAction="#ActionPesquisarFornecedor" style="-fx-background-color: dbb0ea;" text="Pesquisar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtNomeFant" layoutX="20.0" layoutY="191.0" onAction="#AdicionarNomeFant" prefHeight="26.0" prefWidth="579.0" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="191.0" />
+      <TextField fx:id="txtCNPJ" layoutX="21.0" layoutY="246.0" onAction="#AdicionarCNPJ" prefHeight="26.0" prefWidth="276.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="246.0" />
+      <TextField fx:id="txtInscEstd" layoutX="320.0" layoutY="246.0" onAction="#AdicionarInscEstd" prefHeight="26.0" prefWidth="276.0" />
+      <TextField fx:id="txtCEP" layoutX="20.0" layoutY="349.0" onAction="#AdicionarCEP" prefHeight="26.0" prefWidth="102.0" AnchorPane.leftAnchor="20.0" />
+      <ChoiceBox fx:id="ChoiceBoxUF" layoutX="134.0" layoutY="347.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: transparent; -fx-border-color: #d3d3d3;">
+	  		<items>
+			<FXCollections fx:factory="observableArrayList">
+				<String fx:value="AC" />
+				<String fx:value="AL" />
+				<String fx:value="AP" />
+				<String fx:value="AM" />
+				<String fx:value="BA" />
+				<String fx:value="CE" />
+				<String fx:value="DF" />
+				<String fx:value="ES" />
+				<String fx:value="GO" />
+				<String fx:value="MA" />
+				<String fx:value="MT" />
+				<String fx:value="MS" />
+				<String fx:value="MG" />
+				<String fx:value="PA" />
+				<String fx:value="PB" />
+				<String fx:value="PR" />
+				<String fx:value="PE" />
+				<String fx:value="PI" />
+				<String fx:value="RJ" />
+				<String fx:value="RN" />
+				<String fx:value="RS" />
+				<String fx:value="RO" />
+				<String fx:value="RR" />
+				<String fx:value="SC" />
+				<String fx:value="SP" />
+				<String fx:value="SE" />
+				<String fx:value="TO" />
+			</FXCollections>
+		</items>
+	  </ChoiceBox>
+      <TextField fx:id="txtCidade" layoutX="230.0" layoutY="348.0" onAction="#AdicionarCidade" prefHeight="26.0" prefWidth="236.0" />
+      <TextField fx:id="txtBairro" layoutX="485.0" layoutY="347.0" onAction="#AdicionarBairro" prefHeight="26.0" prefWidth="283.0" />
+      <TextField fx:id="txtEndereco" layoutX="20.0" layoutY="409.0" onAction="#AdicionarEndereco" prefHeight="26.0" prefWidth="315.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtNum" layoutX="359.0" layoutY="409.0" onAction="#AdicionarNum" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtComplemento" layoutX="504.0" layoutY="409.0" onAction="#AdicionarComplemento" prefHeight="26.0" prefWidth="263.0" />
+      <TextField fx:id="txtFone" layoutX="20.0" layoutY="500.0" onAction="#AdicionarFone" prefHeight="26.0" prefWidth="186.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtCelular" layoutX="216.0" layoutY="499.0" onAction="#AdicionarCelular" prefHeight="26.0" prefWidth="196.0" />
+      <TextField fx:id="txtEmail" layoutX="425.0" layoutY="499.0" onAction="#AdicionarEmail" prefHeight="26.0" prefWidth="342.0" />
+      <Text layoutX="21.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CNPJ" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="25.0" layoutY="315.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="343.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="138.0" layoutY="339.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UF">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="25.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contato" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="230.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade" wrappingWidth="55.06201171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Fantasia" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="490.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro" wrappingWidth="55.06201171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" wrappingWidth="65.06201171875" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="359.0" layoutY="399.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="504.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complemento" wrappingWidth="102.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="494.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fone" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="215.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Celular">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="425.0" layoutY="493.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail" wrappingWidth="65.06201171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="22.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cód. Fornecedor" AnchorPane.leftAnchor="22.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnEditar" layoutX="498.0" layoutY="588.0" mnemonicParsing="false" onAction="#ActionEditarCadastro" prefHeight="32.0" prefWidth="135.0" style="-fx-background-color: dbb0ea;" text="Editar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancelar" layoutX="649.0" layoutY="588.0" mnemonicParsing="false" onAction="#CancelarCadastro" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="320.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inscrição Estadual">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
