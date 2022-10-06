@@ -80,7 +80,7 @@
             </Text>
             <Button fx:id="btnEnviar" layoutX="1029.0" layoutY="238.0" mnemonicParsing="false" onAction="#ConfirmarProduto" prefHeight="32.0" prefWidth="69.0" text="Confirmar" />
             <Separator layoutX="1132.0" layoutY="13.0" orientation="VERTICAL" prefHeight="246.0" prefWidth="5.0" />
-            <Text layoutX="1287.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forma de Pagamento" textAlignment="CENTER" wrappingWidth="131.291015625">
+            <Text layoutX="1287.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Formas de Pagamento" textAlignment="CENTER" wrappingWidth="131.291015625">
                <font>
                   <Font size="22.0" />
                </font>
