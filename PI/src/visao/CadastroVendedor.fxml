@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroClienteController">
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroVendedorController">
    <children>
       <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
          <children>
@@ -41,8 +41,7 @@
             <Font name="System Bold" size="20.0" />
          </font>
       </Text>
-      <TextField fx:id="txtCodVendedor" layoutX="19.0" layoutY="143.0" onAction="#AdicionarCodVendedor" prefHeight="26.0" prefWidth="135.0" AnchorPane.leftAnchor="20.0" />
-      <TextField fx:id="txtNome" layoutX="168.0" layoutY="143.0" onAction="#AdicionarNome" prefHeight="26.0" prefWidth="597.0" AnchorPane.leftAnchor="168.0" AnchorPane.topAnchor="143.0" />
+      <TextField fx:id="txtNome" layoutX="22.0" layoutY="142.0" onAction="#AdicionarNome" prefHeight="26.0" prefWidth="747.0" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="142.0" />
       <TextField fx:id="txtCPF" layoutX="21.0" layoutY="201.0" onAction="#AdicionarCPF" prefHeight="26.0" prefWidth="186.0" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="201.0" />
       <ChoiceBox fx:id="ChoiceBoxSexo" layoutX="223.0" layoutY="201.0" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: transparent; -fx-border-color: #d3d3d3;">
 		<items>
@@ -129,7 +128,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Text layoutX="168.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" AnchorPane.leftAnchor="168.0">
+      <Text layoutX="22.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" AnchorPane.leftAnchor="22.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -170,11 +169,6 @@
          </font>
       </Text>
       <Text layoutX="358.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Text>
-      <Text layoutX="21.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cód. Vendedor" AnchorPane.leftAnchor="21.0">
          <font>
             <Font size="15.0" />
          </font>
