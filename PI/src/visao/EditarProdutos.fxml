@@ -99,7 +99,7 @@
             <Font size="15.0" />
          </font>
       </Text>
-      <Button fx:id="btnProcurarSKU" layoutX="160.0" layoutY="123.0" mnemonicParsing="false" onAction="#ActionProcuraSKU" style="-fx-background-color: dbb0ea;" text="Procurar">
+      <Button fx:id="btnPesquisarSKU" layoutX="160.0" layoutY="123.0" mnemonicParsing="false" onAction="#ActionPesquisarSKU" style="-fx-background-color: dbb0ea;" text="Pesquisar">
          <font>
             <Font size="14.0" />
          </font>
