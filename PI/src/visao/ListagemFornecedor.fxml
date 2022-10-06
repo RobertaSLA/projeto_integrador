@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemClientesController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemFornecedorController">
    <children>
       <Pane layoutY="68.0" prefHeight="940.0" prefWidth="172.0">
          <children>
@@ -112,18 +112,18 @@
             </ImageView>
          </children>
       </Pane>
-      <TableView fx:id="tblListagem" layoutX="187.0" layoutY="254.0" prefHeight="531.0" prefWidth="1228.0">
+      <TableView fx:id="tblListagem" layoutX="165.0" layoutY="254.0" prefHeight="531.0" prefWidth="1272.0">
         <columns>
-          <TableColumn fx:id="clmCodigo" prefWidth="97.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Código" />
-          <TableColumn fx:id="clmNome" minWidth="8.0" prefWidth="260.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Nome" />
-            <TableColumn fx:id="clmCPF" minWidth="8.0" prefWidth="213.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CPF" />
-            <TableColumn fx:id="clmTelefone" minWidth="8.0" prefWidth="226.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Telefone" />
-            <TableColumn fx:id="clmEmail" minWidth="8.0" prefWidth="293.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="E-mail" />
-            <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
+          <TableColumn fx:id="clmCodigo" prefWidth="96.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Código" />
+          <TableColumn fx:id="clmNome" minWidth="8.0" prefWidth="273.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Nome" />
+            <TableColumn fx:id="clmCNPJ" minWidth="8.0" prefWidth="257.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CNPJ" />
+            <TableColumn fx:id="clmInsEstadual" minWidth="8.0" prefWidth="280.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Inscrição Estadual" />
+            <TableColumn fx:id="clmEmail" minWidth="8.0" prefWidth="242.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="E-mail" />
+            <TableColumn fx:id="clmTelefone" minWidth="0.0" prefWidth="123.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Telefone" />
         </columns>
       </TableView>
       <TextField fx:id="txtPesquisarLivro" layoutX="187.0" layoutY="208.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
-      <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Clientes" wrappingWidth="428.7161865234375">
+      <Text layoutX="661.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Fornecedor" wrappingWidth="467.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>

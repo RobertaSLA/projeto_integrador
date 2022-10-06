@@ -306,7 +306,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `CNPJ` CHAR(14) NULL,
   `Inscricao_Estadual` CHAR(12) NOT NULL,
   `Fone` CHAR(15) NULL,
-  `Celular` CHAR(15) NOT NULL,
   `email` VARCHAR(40) NULL,
   `Endereco` VARCHAR(100) NULL,
   `Email` VARCHAR (100) NULL,
