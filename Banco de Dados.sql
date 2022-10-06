@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
   `email` VARCHAR(40) NULL,
-  `IdEndreco` INT NOT NULL,
+  `IdEndereco` INT NOT NULL,
   FOREIGN KEY (`IdEndereco`)
   REFERENCES `mydb`.`Endereco` (`IdEndereco`)
     ON DELETE NO ACTION
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
   `email` VARCHAR(40) NULL,
-  `IdEndreco` INT NOT NULL,
+  `IdEndereco` INT NOT NULL,
   FOREIGN KEY (`IdEndereco`)
   REFERENCES `mydb`.`Endereco` (`IdEndereco`)
     ON DELETE NO ACTION
@@ -68,7 +68,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
   `IdEndreco` INT NOT NULL AUTO_INCREMENT,
   `CEP` CHAR(15) NULL,
-  `UF` VARCHAR(2) NULL,
+  `UF` VARCHAR(5) NULL,
   `Cidade` VARCHAR(30) NULL,
   `Bairro` VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
@@ -308,7 +308,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `Celular` CHAR(15) NULL,
   `Email` VARCHAR (100) NULL,
   `Telefone` VARCHAR(15)  NULL,
-  `IdEndreco` INT NOT NULL,
+  `IdEndereco` INT NOT NULL,
   FOREIGN KEY (`IdEndereco`)
   REFERENCES `mydb`.`Endereco` (`IdEndereco`)
     ON DELETE NO ACTION
