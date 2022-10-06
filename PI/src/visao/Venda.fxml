@@ -18,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaVendaController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaVendaController">
    <children>
       <Pane layoutY="68.0" prefHeight="292.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;">
          <children>
@@ -253,7 +253,7 @@
             </TextField>
          </children>
       </Pane>
-      <TableView fx:id="tblVenda" layoutX="120.0" layoutY="350.0" onSort="#TabelaVenda" prefHeight="376.0" prefWidth="1338.0" style="-fx-background-color: ffffff;">
+      <TableView fx:id="tblVenda" layoutX="73.0" layoutY="350.0" onSort="#TabelaVenda" prefHeight="376.0" prefWidth="1338.0" style="-fx-background-color: ffffff;">
         <columns>
           <TableColumn fx:id="clmItem" prefWidth="175.0" style="-fx-border-color: ffffff; -fx-background-color: dbb0ea;" text="Item" />
           <TableColumn fx:id="clmSKUVenda" prefWidth="149.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
@@ -261,5 +261,6 @@
             <TableColumn fx:id="clmPrecoVenda" prefWidth="234.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
         </columns>
       </TableView>
+      <Button fx:id="btnExcluirItem" layoutX="1431.0" layoutY="350.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
    </children>
 </AnchorPane>
