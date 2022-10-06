@@ -112,7 +112,7 @@
             </ImageView>
          </children>
       </Pane>
-      <TableView fx:id="tblListagem" layoutX="187.0" layoutY="321.0" prefHeight="475.0" prefWidth="1228.0">
+      <TableView fx:id="tblListagem" layoutX="187.0" layoutY="254.0" prefHeight="531.0" prefWidth="1228.0">
         <columns>
           <TableColumn fx:id="clmCodigo" prefWidth="84.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Código" />
           <TableColumn fx:id="clmNome" minWidth="8.0" prefWidth="273.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Nome" />
@@ -122,24 +122,24 @@
             <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="158.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarLivro" layoutX="187.0" layoutY="275.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
+      <TextField fx:id="txtPesquisarLivro" layoutX="187.0" layoutY="208.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
       <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Clientes" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Button fx:id="btnAlterar" layoutX="1119.0" layoutY="276.0" mnemonicParsing="false" onAction="#ActionAlterarCliente" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="1269.0" layoutY="276.0" mnemonicParsing="false" onAction="#ActionExcluirCliente" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
-      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="1364.0" layoutY="282.0">
+      <Button fx:id="btnAlterar" layoutX="1119.0" layoutY="209.0" mnemonicParsing="false" onAction="#ActionAlterarCliente" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="1269.0" layoutY="209.0" mnemonicParsing="false" onAction="#ActionExcluirCliente" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
+      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="1364.0" layoutY="215.0">
          <image>
             <Image url="@imagens/icon%20deletar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1208.0" layoutY="276.0">
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1208.0" layoutY="209.0">
          <image>
             <Image url="@imagens/icon%20alterar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnPesquisarCliente" layoutX="549.0" layoutY="280.0" mnemonicParsing="false" onAction="#ActionPesquisarCliente" text="Pesquisar" />
+      <Button fx:id="btnPesquisarCliente" layoutX="549.0" layoutY="213.0" mnemonicParsing="false" onAction="#ActionPesquisarCliente" text="Pesquisar" />
    </children>
 </AnchorPane>
