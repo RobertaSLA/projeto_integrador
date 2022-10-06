@@ -23,6 +23,8 @@ public class ClienteBD {
 			stmt.setString(7, cliente.getEmail());
 			stmt.setInt(8, cliente.getEndereco().getIdEndereco());
 			
+			System.out.println(stmt);
+			
 			stmt.execute();
 			stmt.close(); 
 			con.close();

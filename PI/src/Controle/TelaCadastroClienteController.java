@@ -21,10 +21,10 @@ import javafx.scene.layout.AnchorPane;
 public class TelaCadastroClienteController {
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxSexo;
+    private ChoiceBox<String> ChoiceBoxSexo;
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxUF;
+    private ChoiceBox<String> ChoiceBoxUF;
 
     @FXML
     private DatePicker DatePickerDataNascimento;
@@ -134,11 +134,11 @@ public class TelaCadastroClienteController {
 
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException, IOException {
-    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getTypeSelector(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
     	LocalDate localDate = DatePickerDataNascimento.getValue();
     	Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
     	Date date = Date.from(instant);
-    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date, ChoiceBoxSexo.getTypeSelector(), txtCelular.getText(), txtEmail.getText());
+    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date, ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
     	
     	EnderecoBD endbd = new EnderecoBD();
     	endbd.InserirEndereco(end);
