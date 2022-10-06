@@ -113,28 +113,28 @@ public class TelaListagemProdutoController {
     private CheckBox chkValorAcima110;
 
     @FXML
-    private TableColumn<?, ?> clmAutor;
+    private TableColumn<Autor, String> clmAutor;
 
     @FXML
-    private TableColumn<?, ?> clmEditora;
+    private TableColumn<Livro, String> clmEditora;
 
     @FXML
-    private TableColumn<?, ?> clmEstoque;
+    private TableColumn<Livro, String> clmEstoque;
 
     @FXML
-    private TableColumn<?, ?> clmGenero;
+    private TableColumn<Livro, String> clmGenero;
 
     @FXML
-    private TableColumn<?, ?> clmISBN;
+    private TableColumn<Livro, String> clmISBN;
 
     @FXML
-    private TableColumn<?, ?> clmPreco;
+    private TableColumn<Livro, String> clmPreco;
 
     @FXML
-    private TableColumn<?, ?> clmSKU;
+    private TableColumn<Livro, String> clmSKU;
 
     @FXML
-    private TableColumn<?, ?> clmTitulo;
+    private TableColumn<Livro, String> clmTitulo;
 
     @FXML
     private TitledPane filtroGenero;
@@ -155,7 +155,7 @@ public class TelaListagemProdutoController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblListagem;
+    private TableView<Livro> tblListagem;
 
     @FXML
     private TextField txtPesquisarLivro;
@@ -310,17 +310,21 @@ public class TelaListagemProdutoController {
     
     @FXML
     public void initialize() throws SQLException {
-    	System.out.println(clmAutor);
 		LivroBD liv = new LivroBD();
 		List<Livro> l  = liv.BuscarLivro();
+		
 		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		System.out.print(l.size());
-		Autor autor = new Autor(2, "j");
-		List<Livro> pessoas = Arrays.asList(
-                new Livro(1, "a", "a", "a", 1, "a", (float) 2.5, autor)
-                );
-		tblListagem.setItems(FXCollections.observableArrayList(pessoas));
-
+		clmEditora.setCellValueFactory(new PropertyValueFactory<>("editora"));
+		clmEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
+		clmGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
+		clmISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
+		clmPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));		
+		clmSKU.setCellValueFactory(new PropertyValueFactory<>("sku"));
+		clmTitulo.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
+		
 	}
 
 }

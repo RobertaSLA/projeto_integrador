@@ -9,19 +9,19 @@ import Modelo.Vendedor;
 
 public class VendedorBD{
 	
-	public void CadastrarVendedor(Vendedor vendedor) throws SQLException {
+	public void InserirVendedor(Vendedor vendedor) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "insert into vendedor (Nome, CPF, CEP, Endereco, Telefone) values (?, ?, ?, ?, ?);";
+			String sql = "insert into vendedor (Nome, CPF, Telefone, Celular, idEndereco) values (?, ?, ?, ?, ?);";
 			
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			stmt.setString(1, vendedor.getNome());
 			stmt.setString(2, vendedor.getCpf());
-			stmt.setString(3, vendedor.getCep());
-			stmt.setString(4, vendedor.getEndereco());
-			stmt.setString(5, vendedor.getTelefone());
+			stmt.setString(3, vendedor.getTelefone());
+			stmt.setString(4, vendedor.getCelular());
+			stmt.setInt(5, vendedor.getEndereco().getIdEndereco());
 			
 			stmt.execute();
 			stmt.close(); 

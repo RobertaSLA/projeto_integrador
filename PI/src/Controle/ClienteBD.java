@@ -3,7 +3,6 @@ package Controle;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import Modelo.Cliente;
-import Modelo.Livro;
 
 
 public class ClienteBD {
