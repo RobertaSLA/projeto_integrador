@@ -18,16 +18,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaVendaController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaVendaController">
    <children>
       <Pane layoutY="68.0" prefHeight="292.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;">
          <children>
-            <TextField fx:id="txtCodVendedor" layoutX="55.0" layoutY="83.0" onAction="#InserirCodVendedor" prefHeight="32.0" prefWidth="146.0" promptText="Insira o Código do Vendedor..." />
+            <TextField fx:id="txtCodVendedor" layoutX="43.0" layoutY="83.0" onAction="#InserirCodVendedor" prefHeight="32.0" prefWidth="158.0" promptText="Código do Vendedor" />
             <Button fx:id="btnCodVendedor" layoutX="171.0" layoutY="87.0" mnemonicParsing="false" onAction="#CodVendedor" text="..." />
-            <TextField fx:id="txtCodCliente" layoutX="55.0" layoutY="162.0" onAction="#InserirCodCliente" prefHeight="32.0" prefWidth="146.0" promptText="Insira o Código do Cliente..." />
+            <TextField fx:id="txtCodCliente" layoutX="43.0" layoutY="162.0" onAction="#InserirCodCliente" prefHeight="32.0" prefWidth="158.0" promptText="Código do Cliente" />
             <Button fx:id="btnCodCliente" layoutX="171.0" layoutY="166.0" mnemonicParsing="false" onAction="#CodCliente" text="..." />
-            <TextField fx:id="txtCodProduto" layoutX="55.0" layoutY="236.0" onAction="#InserirCodProduto" prefHeight="32.0" prefWidth="146.0" promptText="Insira o Código do Produto..." />
-            <TextField fx:id="txtQuantidade" layoutX="882.0" layoutY="238.0" onAction="#Quantidade" prefHeight="32.0" prefWidth="138.0" promptText="Insira a qtde..." />
+            <TextField fx:id="txtCodProduto" layoutX="43.0" layoutY="236.0" onAction="#InserirCodProduto" prefHeight="32.0" prefWidth="158.0" promptText="Código do Produto" />
+            <TextField fx:id="txtQuantidade" layoutX="882.0" layoutY="238.0" onAction="#Quantidade" prefHeight="32.0" prefWidth="138.0" promptText="Quantidade" />
             <DatePicker fx:id="dtDataVenda" editable="false" layoutX="882.0" layoutY="163.0" onAction="#DataVenda" prefHeight="32.0" prefWidth="138.0" promptText="Data de venda">
                <opaqueInsets>
                   <Insets />
@@ -203,14 +203,24 @@
       </Pane>
       <Pane layoutY="726.0" prefHeight="119.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <Pane layoutX="759.0" layoutY="13.0" prefHeight="90.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
+            <Pane layoutX="759.0" layoutY="13.0" prefHeight="90.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;" />
+            <Pane layoutX="453.0" layoutY="13.0" prefHeight="90.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
                <children>
-                  <Text layoutX="15.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
+                  <Text layoutX="24.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtValorTotal" editable="false" layoutX="15.0" layoutY="24.0" onAction="#ValorTotal" prefHeight="46.0" prefWidth="108.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+               </children>
+            </Pane>
+            <Pane layoutX="180.0" layoutY="13.0" prefHeight="90.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
+               <children>
+                  <Text layoutX="52.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itens">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtTotalItens" editable="false" layoutX="21.0" layoutY="26.0" onAction="#TotalItens" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -220,40 +230,27 @@
                   </TextField>
                </children>
             </Pane>
-            <Pane layoutX="479.0" layoutY="15.0" prefHeight="90.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
-               <children>
-                  <Text layoutX="15.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desconto">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="txtDesconto" editable="false" layoutX="14.0" layoutY="26.0" onAction="#Desconto" prefHeight="35.0" prefWidth="94.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </TextField>
-               </children>
-            </Pane>
-            <Pane layoutX="180.0" layoutY="13.0" prefHeight="90.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
-               <children>
-                  <Text layoutX="15.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itens">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="txtTotalItens" editable="false" layoutX="15.0" layoutY="24.0" onAction="#TotalItens" prefHeight="46.0" prefWidth="108.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </TextField>
-               </children>
-            </Pane>
+            <Text layoutX="350.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desconto">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtDesconto" editable="false" layoutX="338.0" layoutY="40.0" onAction="#Desconto" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="txtValorTotal" editable="false" layoutX="470.0" layoutY="40.0" onAction="#ValorTotal" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
          </children>
       </Pane>
       <TableView fx:id="tblVenda" layoutX="120.0" layoutY="350.0" onSort="#TabelaVenda" prefHeight="376.0" prefWidth="1338.0" style="-fx-background-color: ffffff;">
