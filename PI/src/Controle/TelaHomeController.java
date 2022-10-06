@@ -56,8 +56,9 @@ public class TelaHomeController {
     private AnchorPane idTelaHome;
 
     @FXML
-    void AcessoCadastroCliente(ActionEvent event) {
-
+    void AcessoCadastroCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -77,13 +78,15 @@ public class TelaHomeController {
     }
 
     @FXML
-    void CadastroCliente(ActionEvent event) {
-
+    void CadastroCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void CadastroFornecedor(ActionEvent event) {
-
+    void CadastroFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML

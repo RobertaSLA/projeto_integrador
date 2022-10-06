@@ -18,6 +18,8 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
+import javafx.scene.image.ImageView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -34,6 +36,9 @@ public class TelaListagemProdutoController {
 
     @FXML
     private Button btnAcessoVenda;
+    
+    @FXML
+    private Button btnAlterar;
 
     @FXML
     private Button btnCadastroFornecedor;
@@ -64,6 +69,9 @@ public class TelaListagemProdutoController {
 
     @FXML
     private Button btnEmissaoRelatorio;
+    
+    @FXML
+    private Button btnExcluir;
 
     @FXML
     private Button btnVendaConsulta;
@@ -90,9 +98,6 @@ public class TelaListagemProdutoController {
     private CheckBox chkValor1030;
 
     @FXML
-    private CheckBox chkValor1101130;
-
-    @FXML
     private CheckBox chkValor3050;
 
     @FXML
@@ -102,28 +107,55 @@ public class TelaListagemProdutoController {
     private CheckBox chkValor7090;
 
     @FXML
-    private CheckBox chkValorAcima130;
+    private CheckBox chkValor90110;
 
     @FXML
-    private TableColumn<Livro, String> clmAutor;
+    private CheckBox chkValorAcima110;
 
     @FXML
-    private TableColumn<Livro, String> clmEditora;
+    private TableColumn<?, ?> clmAutor;
 
     @FXML
-    private TableColumn<Livro, String> clmGenero;
+    private TableColumn<?, ?> clmEditora;
 
     @FXML
-    private TableColumn<Livro, String> clmSKU;
+    private TableColumn<?, ?> clmEstoque;
 
     @FXML
-    private TableColumn<Livro, String> clmTitulo;
+    private TableColumn<?, ?> clmGenero;
+
+    @FXML
+    private TableColumn<?, ?> clmISBN;
+
+    @FXML
+    private TableColumn<?, ?> clmPreco;
+
+    @FXML
+    private TableColumn<?, ?> clmSKU;
+
+    @FXML
+    private TableColumn<?, ?> clmTitulo;
+
+    @FXML
+    private TitledPane filtroGenero;
+
+    @FXML
+    private TitledPane filtroPreco;
+    
+    @FXML
+    private ImageView imgAlterar;
+
+    @FXML
+    private ImageView imgExcluir;
+
+    @FXML
+    private ImageView imgFiltro;
 
     @FXML
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<Livro> tblListagem;
+    private TableView<?> tblListagem;
 
     @FXML
     private TextField txtPesquisarLivro;
@@ -143,7 +175,7 @@ public class TelaListagemProdutoController {
     	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaListagemPane);
     }
-    
+
     @FXML
     void AcessoConsultaPreco(ActionEvent event) {
 
@@ -151,6 +183,11 @@ public class TelaListagemProdutoController {
 
     @FXML
     void AcessoProcessamentoVenda(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void AlterarProduto(ActionEvent event) {
 
     }
 
@@ -174,7 +211,7 @@ public class TelaListagemProdutoController {
     	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaListagemPane);
     }
-    
+
     @FXML
     void ConsultaCliente(ActionEvent event) {
 
@@ -185,7 +222,7 @@ public class TelaListagemProdutoController {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
-    
+
     @FXML
     void ConsultaPreco(ActionEvent event) {
 
@@ -208,6 +245,11 @@ public class TelaListagemProdutoController {
 
     @FXML
     void EmissaoRelatorio(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ExcluirProduto(ActionEvent event) {
 
     }
 
@@ -237,11 +279,6 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void VAlor1101130(ActionEvent event) {
-
-    }
-
-    @FXML
     void Valor1030(ActionEvent event) {
 
     }
@@ -262,7 +299,12 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void ValorAcima130(ActionEvent event) {
+    void Valor90110(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ValorAcima110(ActionEvent event) {
 
     }
     

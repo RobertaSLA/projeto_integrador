@@ -7,11 +7,21 @@ public class Vendedor {
 	private String cpf;
 	private String telefone;
 	private String cep;
-	private String endereco;
 	private float comissao;
+	private Endereco endereco;
 	
 	
-	
+	public Vendedor(int idVendedor, String nome, String cpf, String telefone, String cep, float comissao,
+			Endereco endereco) {
+		super();
+		this.idVendedor = idVendedor;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.cep = cep;
+		this.comissao = comissao;
+		this.endereco = endereco;
+	}
 	public int getIdVendedor() {
 		return idVendedor;
 	}
@@ -42,17 +52,17 @@ public class Vendedor {
 	public void setCep(String cep) {
 		this.cep = cep;
 	}
-	public String getEndereco() {
-		return endereco;
-	}
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
 	public float getComissao() {
 		return comissao;
 	}
 	public void setComissao(float comissao) {
 		this.comissao = comissao;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
 	

@@ -12,6 +12,13 @@ public class Autor {
 		this.nome = nome;
 	}
 
+	public Autor(String nome) {
+		super();
+		this.nome = nome;
+	}
+
+
+
 	public int getIdAutor() {
 		return idAutor;
 	}

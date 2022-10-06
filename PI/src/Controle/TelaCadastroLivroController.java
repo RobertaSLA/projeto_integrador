@@ -3,6 +3,7 @@ package Controle;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import Modelo.Autor;
 import Modelo.Livro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -95,7 +96,11 @@ public class TelaCadastroLivroController {
    
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException {
-    	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), Integer.parseInt(txtISBN.getText()), txtTitulo.getText(), txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()));
+    	Autor aut = new Autor(txtAutor.getText());
+    	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), txtISBN.getText(), txtTitulo.getText(), txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()), aut);
+    	
+    	AutorBD autbd = new AutorBD();
+    	autbd.InserirAutor(aut);
     	
     	LivroBD livbd = new LivroBD();
     	livbd.InserirLivro(liv);

@@ -18,7 +18,7 @@ public class LivroBD {
 	public void InserirLivro(Livro livro) throws SQLException {
 			try {
 				Connection con = ConexaoBD.Conexao_BD();
-				String sql = "insert into livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco) values (?, ?, ?, ?, ?, ?, ?);";
+				String sql = "insert into livro (SKU, ISBN, Nome, Editora, Estoque, Genero, Preco, idAutor) values (?, ?, ?, ?, ?, ?, ?, ?);";
 				
 				PreparedStatement stmt = con.prepareStatement(sql);
 				
@@ -29,6 +29,7 @@ public class LivroBD {
 				stmt.setInt(5, livro.getEstoque());
 				stmt.setString(6, livro.getGenero());
 				stmt.setFloat(7, livro.getPreco());
+				stmt.setInt(8, livro.getAutor().getIdAutor());
 				
 				stmt.execute();
 				stmt.close(); 

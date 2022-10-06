@@ -1,15 +1,32 @@
 package Modelo;
 
+import java.sql.Date;
+
 public class Cliente {
 	
 	private int idCliente;
 	private String nome;
 	private String telefone;
 	private String cpf;
-	private String endereco;
-	private String cep;
+	private Endereco endereco;
+	private Date dataNascimento;
+	private String sexo;
+	private String celular;
+	private String email;
+
 	
-	
+	public Cliente(String nome, String telefone, String cpf, Endereco endereco, Date dataNascimento,
+			String sexo, String celular, String email) {
+		super();
+		this.nome = nome;
+		this.telefone = telefone;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		this.dataNascimento = dataNascimento;
+		this.sexo = sexo;
+		this.celular = celular;
+		this.email = email;
+	}
 	
 	public int getIdCliente() {
 		return idCliente;
@@ -35,18 +52,55 @@ public class Cliente {
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	public String getEndereco() {
+
+	public Endereco getEndereco() {
 		return endereco;
 	}
-	public void setEndereco(String endereco) {
+
+	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	public String getCep() {
-		return cep;
+
+
+	public Date getDataNascimento() {
+		return dataNascimento;
 	}
-	public void setCep(String cep) {
-		this.cep = cep;
+
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
 	}
+
+
+	public String getSexo() {
+		return sexo;
+	}
+
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+
+	public String getCelular() {
+		return celular;
+	}
+
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	
 	
 	
 	
