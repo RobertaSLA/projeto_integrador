@@ -52,7 +52,7 @@
 			</FXCollections>
 		</items>
 	  </ChoiceBox>
-      <DatePicker layoutX="359.0" layoutY="202.0" />
+      <DatePicker fx:id="DatePickerDataNascimento" layoutX="359.0" layoutY="202.0" />
       <TextField fx:id="txtCEP" layoutX="20.0" layoutY="304.0" onAction="#AdicionarCEP" prefHeight="26.0" prefWidth="102.0" AnchorPane.leftAnchor="20.0" />
       <ChoiceBox fx:id="ChoiceBoxUF" layoutX="134.0" layoutY="302.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: transparent; -fx-border-color: #d3d3d3;">
 	  		<items>
