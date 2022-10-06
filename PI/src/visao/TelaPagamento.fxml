@@ -11,7 +11,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="545.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane prefHeight="91.0" prefWidth="585.0" style="-fx-background-color: dbb0ea;">
@@ -50,20 +49,16 @@
                         <Font size="22.0" />
                      </font>
                   </Text>
-                  <Button layoutX="29.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
-                  <Button layoutX="158.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
-                  <Button layoutX="287.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="110.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
-                  <Button layoutX="416.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: dbb0ea;" text="Visa" textAlignment="JUSTIFY" />
+                  <Button layoutX="29.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
+                  <Button layoutX="158.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
+                  <Button layoutX="287.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
+                  <Button layoutX="416.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="    Visa" textAlignment="JUSTIFY" />
                   <Text layoutX="14.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cartão de Débito">
                      <font>
                         <Font size="22.0" />
                      </font>
                   </Text>
-                  <Button layoutX="29.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: dbb0ea;" text="Mastercard" textAlignment="JUSTIFY" />
-                  <Button layoutX="158.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: dbb0ea;" text="Elo" textAlignment="JUSTIFY" />
-                  <Button layoutX="287.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: dbb0ea;" text="HiperCard" textAlignment="JUSTIFY" />
-                  <Button layoutX="416.0" layoutY="195.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="100.0" style="-fx-background-color: dbb0ea;" text="Visa" textAlignment="JUSTIFY" />
-                  <ImageView fitHeight="20.0" fitWidth="33.0" layoutX="31.0" layoutY="65.0">
+                  <ImageView fitHeight="20.0" fitWidth="33.0" layoutX="31.0" layoutY="67.0">
                      <image>
                         <Image url="@imagens/icon%20mastercard.png" />
                      </image>
@@ -78,12 +73,35 @@
                         <Image url="@imagens/icon%20hipercard.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="225.0">
+                  <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="426.0" layoutY="61.0">
                      <image>
                         <Image url="@imagens/icon%20visa.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="341.0" layoutY="119.0" mnemonicParsing="false" text="Button" />
+                  <Button layoutX="29.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
+                  <Button layoutX="158.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
+                  <Button layoutX="287.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
+                  <Button layoutX="416.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="    Visa" textAlignment="JUSTIFY" />
+                  <ImageView fitHeight="20.0" fitWidth="33.0" layoutX="31.0" layoutY="206.0">
+                     <image>
+                        <Image url="@imagens/icon%20mastercard.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="51.0" layoutX="160.0" layoutY="206.0">
+                     <image>
+                        <Image url="@imagens/icon%20elo.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="20.0" fitWidth="51.0" layoutX="287.0" layoutY="206.0">
+                     <image>
+                        <Image url="@imagens/icon%20hipercard.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="33.0" layoutX="426.0" layoutY="200.0">
+                     <image>
+                        <Image url="@imagens/icon%20visa.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="583.0">
