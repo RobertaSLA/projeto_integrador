@@ -166,6 +166,21 @@
                   </AnchorPane>
               </content>
             </TitledPane>
+            <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="1441.0" layoutY="1.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1066.0" layoutY="18.0">
+               <image>
+                  <Image url="@imagens/icon%20user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1201.0" layoutY="17.0">
+               <image>
+                  <Image url="@imagens/icon%20configuracao.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Pane layoutY="726.0" prefHeight="119.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">

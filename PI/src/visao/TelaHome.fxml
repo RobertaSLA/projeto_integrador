@@ -164,19 +164,19 @@
                   </Pane>
                </content>
             </TitledPane>
-            <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="1448.0">
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1208.0" layoutY="16.0">
                <image>
-                  <Image url="@imagens/ilustracao%20livro.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1073.0" layoutY="17.0">
-               <image>
-                  <Image url="@imagens/icon%20user.png" />
+                  <Image url="@imagens/icon%20configuracao.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1208.0" layoutY="16.0">
                <image>
                   <Image url="@imagens/icon%20configuracao.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="1448.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
                </image>
             </ImageView>
          </children>
@@ -211,5 +211,10 @@
             </AnchorPane>
          </items>
       </SplitPane>
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1073.0" layoutY="17.0">
+         <image>
+            <Image url="@imagens/icon%20user.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
