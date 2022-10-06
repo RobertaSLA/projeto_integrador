@@ -301,7 +301,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
-  `idForncedor` INT NOT NULL AUTO_INCREMENT,
+  `idFornecedor` INT AUTO_INCREMENT,
   `Nome` VARCHAR(50) NULL,
   `CNPJ` CHAR(14) NULL,
   `Inscricao_Estadual` CHAR(12) NOT NULL,
@@ -313,7 +313,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   REFERENCES `mydb`.`Endereco` (`IdEndereco`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  PRIMARY KEY (`CNPJ`))
+  PRIMARY KEY (`idFornecedor`),
+  UNIQUE INDEX `idFornecedor_UNIQUE` (`IdFornecedor` ASC))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
