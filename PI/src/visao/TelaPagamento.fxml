@@ -49,10 +49,10 @@
                         <Font size="22.0" />
                      </font>
                   </Text>
-                  <Button layoutX="29.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
-                  <Button layoutX="158.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
-                  <Button layoutX="287.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
-                  <Button layoutX="416.0" layoutY="61.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="    Visa" textAlignment="JUSTIFY" />
+                  <Button fx:id="MastercardCredito" layoutX="29.0" layoutY="61.0" mnemonicParsing="false" onAction="#MastercardCredito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
+                  <Button fx:id="btnEloCredito" layoutX="158.0" layoutY="61.0" mnemonicParsing="false" onAction="#EloCredito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
+                  <Button fx:id="btnHipercardCredito" layoutX="287.0" layoutY="61.0" mnemonicParsing="false" onAction="#HipercardCredito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
+                  <Button fx:id="btnVisaCredito" layoutX="416.0" layoutY="61.0" mnemonicParsing="false" onAction="#VisaCredito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="    Visa" textAlignment="JUSTIFY" />
                   <Text layoutX="14.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cartão de Débito">
                      <font>
                         <Font size="22.0" />
@@ -78,10 +78,10 @@
                         <Image url="@imagens/icon%20visa.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="29.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
-                  <Button layoutX="158.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
-                  <Button layoutX="287.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
-                  <Button layoutX="416.0" layoutY="200.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="    Visa" textAlignment="JUSTIFY" />
+                  <Button fx:id="MastercardDebito" layoutX="29.0" layoutY="200.0" mnemonicParsing="false" onAction="#MastercardDebito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="         Mastercard" />
+                  <Button fx:id="btnEloDebito" layoutX="158.0" layoutY="200.0" mnemonicParsing="false" onAction="#EloDebito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="             Elo" textAlignment="JUSTIFY" />
+                  <Button fx:id="btnHipercardDebito" layoutX="287.0" layoutY="200.0" mnemonicParsing="false" onAction="#HipercardDebito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="              Hipercard" textAlignment="JUSTIFY" />
+                  <Button fx:id="btnVisaDebito" layoutX="416.0" layoutY="200.0" mnemonicParsing="false" onAction="#VisaDebito" prefHeight="32.0" prefWidth="116.0" style="-fx-background-color: dbb0ea;" text="    Visa" textAlignment="JUSTIFY" />
                   <ImageView fitHeight="20.0" fitWidth="33.0" layoutX="31.0" layoutY="206.0">
                      <image>
                         <Image url="@imagens/icon%20mastercard.png" />
@@ -111,19 +111,19 @@
                         <Font size="22.0" />
                      </font>
                   </Text>
-                  <TextField editable="false" layoutX="28.0" layoutY="76.0" prefHeight="44.0" prefWidth="88.0" />
+                  <TextField fx:id="txtValorTotalPagamento" editable="false" layoutX="28.0" layoutY="76.0" onAction="#ValorTotalPagamento" prefHeight="44.0" prefWidth="88.0" />
                   <Text layoutX="28.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <TextField layoutX="161.0" layoutY="76.0" prefHeight="44.0" prefWidth="88.0" />
+                  <TextField fx:id="txtValorRecebido" layoutX="161.0" layoutY="76.0" onAction="#ValorRecebido" prefHeight="44.0" prefWidth="88.0" />
                   <Text layoutX="160.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor recebido">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <TextField editable="false" layoutX="302.0" layoutY="76.0" prefHeight="44.0" prefWidth="88.0" />
+                  <TextField fx:id="txtValorTroco" editable="false" layoutX="302.0" layoutY="76.0" onAction="#ValorTroco" prefHeight="44.0" prefWidth="88.0" />
                   <Text layoutX="301.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor troco">
                      <font>
                         <Font size="14.0" />
