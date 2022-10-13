@@ -77,27 +77,12 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="btnEnviar" layoutX="1029.0" layoutY="238.0" mnemonicParsing="false" onAction="#ConfirmarProduto" prefHeight="32.0" prefWidth="69.0" text="Confirmar" />
+            <Button fx:id="btnConfirmar" layoutX="1029.0" layoutY="238.0" mnemonicParsing="false" onAction="#ConfirmarProduto" prefHeight="32.0" prefWidth="69.0" text="Confirmar" />
          </children>
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
             <BottomNavigationButton id="btnConfiguracoes" layoutX="1066.0" layoutY="15.0" minWidth="32.0" prefHeight="35.0" prefWidth="32.0" style="-fx-background-color: dbb0ea;" />
-            <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="1120.0" layoutY="17.0">
-               <image>
-                  <Image url="@../home%20page%20java%20fx/imagens/userbranco.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1077.0" layoutY="17.0">
-               <image>
-                  <Image url="@../home%20page%20java%20fx/imagens/icon%20config%20brabnco.jpg" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="68.0" fitWidth="158.0" layoutX="1450.0" layoutY="5.0">
-               <image>
-                  <Image url="@../home%20page%20java%20fx/imagens/booksasdad-removebg-preview.png" />
-               </image>
-            </ImageView>
             <Text fill="WHITE" layoutX="1258.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="228.47265625">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
