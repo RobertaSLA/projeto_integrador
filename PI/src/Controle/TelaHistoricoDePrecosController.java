@@ -8,7 +8,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class TelaListagemFornecedorController {
+public class TelaHistoricoDePrecosController {
 
     @FXML
     private Button btnAcessoCadastroCliente;
