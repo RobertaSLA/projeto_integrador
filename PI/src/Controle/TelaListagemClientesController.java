@@ -74,28 +74,28 @@ public class TelaListagemClientesController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<?, ?> clmCEP;
+    private TableColumn<Cliente, String> clmCEP;
 
     @FXML
-    private TableColumn<?, ?> clmCPF;
+    private TableColumn<Cliente, String> clmCPF;
 
     @FXML
-    private TableColumn<?, ?> clmCodigo;
+    private TableColumn<Cliente, Integer> clmCodigo;
 
     @FXML
-    private TableColumn<?, ?> clmEmail;
+    private TableColumn<Cliente, String> clmEmail;
 
     @FXML
-    private TableColumn<?, ?> clmNome;
+    private TableColumn<Cliente, String> clmNome;
 
     @FXML
-    private TableColumn<?, ?> clmTelefone;
+    private TableColumn<Cliente, String> clmTelefone;
 
     @FXML
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblListagem;
+    private TableView<Cliente> tblListagem;
 
     @FXML
     private TextField txtPesquisarLivro;
@@ -202,14 +202,12 @@ public class TelaListagemClientesController {
 		ClienteBD clibd = new ClienteBD();
 		List<Cliente> l  = clibd.BuscarCliente();
 		
-		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
-		clmEditora.setCellValueFactory(new PropertyValueFactory<>("editora"));
-		clmEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
-		clmGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
-		clmISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
-		clmPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));		
-		clmSKU.setCellValueFactory(new PropertyValueFactory<>("sku"));
-		clmTitulo.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmCodigo.setCellValueFactory(new PropertyValueFactory<>("idCliente"));
+		clmNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		clmEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		clmTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));		
 		
 		
 		tblListagem.setItems(FXCollections.observableArrayList(l));

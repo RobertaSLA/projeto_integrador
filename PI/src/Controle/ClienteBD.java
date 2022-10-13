@@ -67,7 +67,11 @@ public class ClienteBD {
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero, livro.isbn, livro.preco, livro.estoque from livro inner join autor where autor.idAutor=livro.idAutor;";
+			String query = "select endereco.idEndereco, endereco.cep, endereco.uf, endereco.cidade, endereco.bairro, "
+					+ "endereco.endereco, endereco.numero, endereco.complemento, cliente.idCliente, cliente.nome, "
+					+ "cliente.fone, cliente.cpf, cliente.dataNascimento, cliente.sexo, cliente.celular, cliente.email "
+					+ "from cliente inner join endereco where cliente.idEndereco=endereco.idEndereco;";
+			
 			
 			ResultSet rs = stmt.executeQuery(query);
 			
@@ -75,7 +79,8 @@ public class ClienteBD {
 			while(rs.next()){
 				Endereco end = new Endereco(rs.getInt(1), rs.getString(2), rs.getString(3), 
 						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8));
-				Cliente cli = new Cliente(rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12), end, rs.getDate(13), rs.getString(14), rs.getString(15), rs.getString(16));
+				Cliente cli = new Cliente(rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12), 
+						end, rs.getDate(13), rs.getString(14), rs.getString(15), rs.getString(16));
 				Lista.add(cli);
 			}
 			
