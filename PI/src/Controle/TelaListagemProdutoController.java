@@ -14,6 +14,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
@@ -23,6 +24,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaListagemProdutoController {
 
@@ -193,6 +195,11 @@ public class TelaListagemProdutoController {
     	Livro livro = tblListagem.getSelectionModel().getSelectedItem();
     	
     	
+    	  Node node = (Node) event.getSource();
+    	  // Step 3
+    	  Stage stage = (Stage) node.getScene().getWindow();
+    	  stage.setUserData(livro);
+    	  
     	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/EditarProdutos.fxml"));
     	layoutListagem.getChildren().setAll(telaListagemPane);
     }

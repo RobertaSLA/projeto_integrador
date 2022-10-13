@@ -138,7 +138,7 @@ public class TelaCadastroClienteController {
     	LocalDate localDate = DatePickerDataNascimento.getValue();
     	Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
     	Date date = Date.from(instant);
-    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date, ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
+    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date.toString(), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
     	
     	EnderecoBD endbd = new EnderecoBD();
     	endbd.InserirEndereco(end);

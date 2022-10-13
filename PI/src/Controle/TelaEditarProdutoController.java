@@ -2,13 +2,19 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
+import Modelo.Livro;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaEditarProdutoController {
 
@@ -103,5 +109,30 @@ public class TelaEditarProdutoController {
     void AdicionarTitulo(ActionEvent event) {
 
     }
+
+
+    
+    @FXML
+    public void initialize() {
+    	
+    	  Stage stage = (Stage) telaCadastroPane.getParent().getScene().getWindow();
+    	  // Step 2
+    	  
+    	  Livro u = (Livro) stage.getUserData();
+    	  DefinirLivro(u);
+		
+		
+	}
+
+	public void DefinirLivro(Livro livro) {
+		txtSKU.setText(String.valueOf(livro.getSku()));
+    	txtISBN.setText(livro.getIsbn());
+    	txtTitulo.setText(livro.getNome());
+    	txtAutor.setText(livro.getAutor().getNome());
+    	txtEditora.setText(livro.getEditora());
+    	txtGenero.setText(livro.getGenero());
+    	txtPrecoVenda.setText(String.valueOf(livro.getPreco()));
+    	txtQuantidade.setText(String.valueOf(livro.getEstoque()));
+	}
 
 }

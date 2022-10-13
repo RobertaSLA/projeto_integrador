@@ -9,12 +9,12 @@ public class Cliente {
 	private String telefone;
 	private String cpf;
 	private Endereco endereco;
-	private Date dataNascimento;
+	private String dataNascimento;
 	private String sexo;
 	private String celular;
 	private String email;
 	
-	public Cliente(int idCliente, String nome, String telefone, String cpf, Endereco endereco, Date dataNascimento,
+	public Cliente(int idCliente, String nome, String telefone, String cpf, Endereco endereco, String dataNascimento,
 			String sexo, String celular, String email) {
 		super();
 		this.idCliente = idCliente;
@@ -28,7 +28,7 @@ public class Cliente {
 		this.email = email;
 	}
 
-	public Cliente(String nome, String telefone, String cpf, Endereco endereco, Date dataNascimento,
+	public Cliente(String nome, String telefone, String cpf, Endereco endereco, String dataNascimento,
 			String sexo, String celular, String email) {
 		super();
 		this.nome = nome;
@@ -75,12 +75,12 @@ public class Cliente {
 	}
 
 
-	public Date getDataNascimento() {
+	public String getDataNascimento() {
 		return dataNascimento;
 	}
 
 
-	public void setDataNascimento(Date dataNascimento) {
+	public void setDataNascimento(String dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
 

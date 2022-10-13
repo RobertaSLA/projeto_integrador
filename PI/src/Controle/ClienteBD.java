@@ -1,6 +1,11 @@
 package Controle;
 
-import java.sql.*;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
@@ -22,7 +27,7 @@ public class ClienteBD {
 			
 			stmt.setString(1, cliente.getNome());
 			stmt.setString(2, cliente.getCpf());
-			stmt.setDate(3, new java.sql.Date(cliente.getDataNascimento().getTime()));
+			stmt.setString(3, cliente.getDataNascimento());
 			stmt.setString(4, cliente.getSexo());
 			stmt.setString(5, cliente.getTelefone());
 			stmt.setString(6, cliente.getCelular());
@@ -80,7 +85,7 @@ public class ClienteBD {
 				Endereco end = new Endereco(rs.getInt(1), rs.getString(2), rs.getString(3), 
 						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8));
 				Cliente cli = new Cliente(rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12), 
-						end, rs.getDate(13), rs.getString(14), rs.getString(15), rs.getString(16));
+						end, rs.getString(13), rs.getString(14), rs.getString(15), rs.getString(16));
 				Lista.add(cli);
 			}
 			

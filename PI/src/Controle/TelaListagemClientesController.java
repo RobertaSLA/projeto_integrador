@@ -117,7 +117,7 @@ public class TelaListagemClientesController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<Cliente> tblListagemCliente;
+    private TableView<Cliente> tblListagem;
 
     @FXML
     private TextField txtPesquisarCliente;
@@ -262,7 +262,7 @@ public class TelaListagemClientesController {
 		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));		
 		
 		
-		tblListagemCliente.setItems(FXCollections.observableArrayList(l));
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
