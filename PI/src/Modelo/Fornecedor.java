@@ -11,7 +11,19 @@ public class Fornecedor {
 	private String email;
 	private Endereco endereco;
 	
-	
+	public Fornecedor(int idFornecdor, String nome, String cnpj, String insEstadual, String telefone, String celular,
+			String email, Endereco endereco) {
+		super();
+		this.idFornecdor = idFornecdor;
+		this.nome = nome;
+		this.cnpj = cnpj;
+		this.insEstadual = insEstadual;
+		this.telefone = telefone;
+		this.celular = celular;
+		this.email = email;
+		this.endereco = endereco;
+	}
+
 	public Fornecedor(String nome, String cnpj, String insEstadual, String telefone, String celular,
 			String email, Endereco endereco) {
 		super();
