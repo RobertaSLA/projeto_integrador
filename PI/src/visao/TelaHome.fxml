@@ -15,69 +15,102 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
+<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
    <children>
-      <SplitPane dividerPositions="0.5487179487179488" layoutX="27.0" layoutY="151.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="246.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
-        <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="105.0" prefWidth="244.0">
-               <children>
-                  <Text fill="WHITE" layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOVOS PEDIDOS">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESUMO DIÁRIO" textAlignment="CENTER" wrappingWidth="243.9999999999999">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Text>
-                  <TextArea disable="true" layoutX="157.0" layoutY="60.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
-               </children>
-            </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="85.0" prefWidth="244.0">
-               <children>
-                  <Text fill="WHITE" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTAS FISCAIS">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Text>
-                  <TextArea disable="true" layoutX="157.0" layoutY="15.0" prefHeight="32.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
-               </children>
-            </AnchorPane>
-        </items>
-         <cursor>
-            <Cursor fx:constant="DISAPPEAR" />
-         </cursor>
-      </SplitPane>
-      <SplitPane dividerPositions="0.56" layoutX="342.0" layoutY="161.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="372.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
-         <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="78.0" prefWidth="203.0" style="-fx-border-radius: 32;">
-               <children>
-                  <Text fill="WHITE" layoutX="70.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDEDOR X">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="-1.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS E MENSAIS " textAlignment="CENTER" wrappingWidth="372.0">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Text>
-                  <TextArea disable="true" layoutX="248.0" layoutY="46.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
-               </children>
-            </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="52.0" prefWidth="203.0">
-               <children>
-                  <Text fill="WHITE" layoutX="70.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDEDOR Y">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Text>
-                  <TextArea disable="true" layoutX="248.0" layoutY="10.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
-               </children>
-            </AnchorPane>
-         </items>
-      </SplitPane>
+      <Pane layoutX="-1.0" layoutY="68.0" prefHeight="934.0" prefWidth="299.0" style="-fx-background-color: e8d6ef;">
+         <children>
+            <SplitPane dividerPositions="0.25316455696202533" layoutX="19.0" layoutY="89.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="101.0" prefWidth="259.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="8.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="RESUMO DIÁRIO" textAlignment="CENTER" wrappingWidth="243.9999999999999">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="104.0" prefWidth="259.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="14.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOTAS FISCAIS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <TextArea disable="true" layoutX="172.0" layoutY="16.0" prefHeight="32.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="NOVOS PEDIDOS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <TextArea disable="true" layoutX="172.0" layoutY="61.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                     </children>
+                  </AnchorPane>
+              </items>
+               <cursor>
+                  <Cursor fx:constant="DISAPPEAR" />
+               </cursor>
+            </SplitPane>
+            <SplitPane dividerPositions="0.3028571428571429" layoutX="19.0" layoutY="269.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="280.0" style="-fx-border-radius: 32;">
+                     <children>
+                        <Text fill="WHITE" layoutX="18.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS E MENSAIS " textAlignment="CENTER" wrappingWidth="243.99999999999983">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0" prefWidth="280.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="20.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS MENSAIS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <TextArea disable="true" layoutX="172.0" layoutY="11.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                        <Text fill="WHITE" layoutX="14.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <TextArea disable="true" layoutX="172.0" layoutY="58.0" prefHeight="38.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+            <SplitPane dividerPositions="0.3028571428571429" layoutX="19.0" layoutY="467.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="280.0" style="-fx-border-radius: 32;">
+                     <children>
+                        <Text fill="WHITE" layoutX="18.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS E MENSAIS " textAlignment="CENTER" wrappingWidth="243.99999999999983">
+                           <font>
+                              <Font name="System Bold" size="17.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="72.0" prefWidth="280.0">
+                     <children>
+                        <Text fill="WHITE" layoutX="28.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDEDOR X">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <TextArea disable="true" layoutX="172.0" layoutY="11.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                        <Text fill="WHITE" layoutX="28.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDEDOR Y">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <TextArea disable="true" layoutX="172.0" layoutY="58.0" prefHeight="38.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </Pane>
       <Pane prefHeight="68.0" prefWidth="1604.0" style="-fx-background-color: dbb0ea;">
          <children>
             <TitledPane cache="true" expanded="false" layoutX="232.0" layoutY="27.0" mnemonicParsing="true" prefHeight="154.0" prefWidth="172.0" text="Venda">
@@ -182,35 +215,6 @@
          </children>
       </Pane>
       <Accordion layoutX="342.0" layoutY="292.0" />
-      <SplitPane dividerPositions="0.5885714285714285" layoutX="27.0" layoutY="402.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="372.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
-         <items>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="112.0" prefWidth="370.0" style="-fx-border-radius: 32;">
-               <children>
-                  <Text fill="WHITE" layoutX="63.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Text>
-                  <Text fill="WHITE" layoutX="-1.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS SEMANAIS E MENSAIS " textAlignment="CENTER" wrappingWidth="372.0">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </Text>
-                  <TextArea disable="true" layoutX="248.0" layoutY="56.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
-               </children>
-            </AnchorPane>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="55.0" prefWidth="370.0">
-               <children>
-                  <Text fill="WHITE" layoutX="67.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VENDAS MENSAIS">
-                     <font>
-                        <Font name="System Bold" size="16.0" />
-                     </font>
-                  </Text>
-                  <TextArea disable="true" layoutX="249.0" layoutY="10.0" prefHeight="5.0" prefWidth="73.0" style="-fx-background-color: dbb0ea;" />
-               </children>
-            </AnchorPane>
-         </items>
-      </SplitPane>
       <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1073.0" layoutY="17.0">
          <image>
             <Image url="@imagens/icon%20user.png" />
