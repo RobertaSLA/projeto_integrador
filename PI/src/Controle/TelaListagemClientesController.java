@@ -1,7 +1,12 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
+import Modelo.Cliente;
+import Modelo.Livro;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaListagemClientesController {
@@ -190,5 +196,24 @@ public class TelaListagemClientesController {
     void PesquisarLivro(ActionEvent event) {
 
     }
+    
+    @FXML
+    public void initialize() throws SQLException {
+		ClienteBD clibd = new ClienteBD();
+		List<Cliente> l  = clibd.BuscarCliente();
+		
+		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmEditora.setCellValueFactory(new PropertyValueFactory<>("editora"));
+		clmEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
+		clmGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
+		clmISBN.setCellValueFactory(new PropertyValueFactory<>("isbn"));
+		clmPreco.setCellValueFactory(new PropertyValueFactory<>("preco"));		
+		clmSKU.setCellValueFactory(new PropertyValueFactory<>("sku"));
+		clmTitulo.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
+		
+	}
 
 }

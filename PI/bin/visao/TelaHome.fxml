@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1648.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
+<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
    <children>
       <SplitPane dividerPositions="0.5487179487179488" layoutX="27.0" layoutY="151.0" orientation="VERTICAL" prefHeight="197.0" prefWidth="246.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 50;">
         <items>
@@ -78,7 +78,7 @@
             </AnchorPane>
          </items>
       </SplitPane>
-      <Pane prefHeight="68.0" prefWidth="1648.0" style="-fx-background-color: dbb0ea;">
+      <Pane prefHeight="68.0" prefWidth="1604.0" style="-fx-background-color: dbb0ea;">
          <children>
             <TitledPane cache="true" expanded="false" layoutX="232.0" layoutY="27.0" mnemonicParsing="true" prefHeight="154.0" prefWidth="172.0" text="Venda">
                <content>
@@ -164,6 +164,21 @@
                   </Pane>
                </content>
             </TitledPane>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1208.0" layoutY="16.0">
+               <image>
+                  <Image url="@imagens/icon%20configuracao.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1208.0" layoutY="16.0">
+               <image>
+                  <Image url="@imagens/icon%20configuracao.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="1448.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Accordion layoutX="342.0" layoutY="292.0" />
@@ -196,5 +211,10 @@
             </AnchorPane>
          </items>
       </SplitPane>
+      <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1073.0" layoutY="17.0">
+         <image>
+            <Image url="@imagens/icon%20user.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

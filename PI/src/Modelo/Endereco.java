@@ -10,6 +10,19 @@ public class Endereco {
 	private int numero;
 	private String complemento;
 	
+	public Endereco(int idEndereco, String cep, String uf, String cidade, String bairro, String endereco, int numero,
+			String complemento) {
+		super();
+		this.idEndereco = idEndereco;
+		this.cep = cep;
+		this.uf = uf;
+		this.cidade = cidade;
+		this.bairro = bairro;
+		this.endereco = endereco;
+		this.numero = numero;
+		this.complemento = complemento;
+	}
+
 	public Endereco(String cep, String uf, String cidade, String bairro, String endereco, int numero,
 			String complemento) {
 		super();

@@ -13,8 +13,21 @@ public class Cliente {
 	private String sexo;
 	private String celular;
 	private String email;
-
 	
+	public Cliente(int idCliente, String nome, String telefone, String cpf, Endereco endereco, Date dataNascimento,
+			String sexo, String celular, String email) {
+		super();
+		this.idCliente = idCliente;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		this.dataNascimento = dataNascimento;
+		this.sexo = sexo;
+		this.celular = celular;
+		this.email = email;
+	}
+
 	public Cliente(String nome, String telefone, String cpf, Endereco endereco, Date dataNascimento,
 			String sexo, String celular, String email) {
 		super();
