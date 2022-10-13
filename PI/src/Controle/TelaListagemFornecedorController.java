@@ -1,8 +1,10 @@
 package Controle;
 
 import java.io.IOException;
-
+import java.sql.SQLException;
+import java.util.List;
 import Modelo.Fornecedor;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaListagemFornecedorController {
@@ -190,4 +193,21 @@ public class TelaListagemFornecedorController {
 
     }
 
+    
+    @FXML
+    public void initialize() throws SQLException {
+		FornecedorBD forbd = new FornecedorBD();
+		List<Fornecedor> l  = forbd.BuscarFornecedor();
+		
+		clmCodigo.setCellValueFactory(new PropertyValueFactory<>("idFornecedor"));
+		clmNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmCNPJ.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
+		clmInsEstadual.setCellValueFactory(new PropertyValueFactory<>("insEstadual"));
+		clmEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+		clmTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));	
+		
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
+		
+	}
 }

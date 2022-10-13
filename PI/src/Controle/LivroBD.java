@@ -93,7 +93,9 @@ public class LivroBD {
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero, livro.isbn, livro.preco, livro.estoque from livro inner join autor where autor.idAutor=livro.idAutor;";
+			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero, "
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor where autor.idAutor=livro.idAutor";
+			
 			
 			ResultSet rs = stmt.executeQuery(query);
 			

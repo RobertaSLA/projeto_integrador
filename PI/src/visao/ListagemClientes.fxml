@@ -122,7 +122,7 @@
             <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarLivro" layoutX="187.0" layoutY="208.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
+      <TextField fx:id="txtPesquisarCliente" layoutX="187.0" layoutY="208.0" onAction="#PesquisarCliente" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
       <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Clientes" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />

@@ -5,15 +5,16 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Cliente;
-import Modelo.Livro;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.TitledPane;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
@@ -74,13 +75,31 @@ public class TelaListagemClientesController {
     private Button btnVendaConsulta;
 
     @FXML
+    private CheckBox chkValor100;
+
+    @FXML
+    private CheckBox chkValor200;
+
+    @FXML
+    private CheckBox chkValor300;
+
+    @FXML
+    private CheckBox chkValor500;
+
+    @FXML
+    private CheckBox chkValor750;
+
+    @FXML
+    private CheckBox chkValorAcima1000;
+
+    @FXML
     private TableColumn<Cliente, String> clmCEP;
 
     @FXML
     private TableColumn<Cliente, String> clmCPF;
 
     @FXML
-    private TableColumn<Cliente, Integer> clmCodigo;
+    private TableColumn<Cliente, String> clmCodigo;
 
     @FXML
     private TableColumn<Cliente, String> clmEmail;
@@ -92,13 +111,16 @@ public class TelaListagemClientesController {
     private TableColumn<Cliente, String> clmTelefone;
 
     @FXML
+    private TitledPane filtroCompras;
+
+    @FXML
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<Cliente> tblListagem;
+    private TableView<Cliente> tblListagemCliente;
 
     @FXML
-    private TextField txtPesquisarLivro;
+    private TextField txtPesquisarCliente;
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
@@ -134,7 +156,7 @@ public class TelaListagemClientesController {
 
     @FXML
     void ActionPesquisarCliente(ActionEvent event) {
-   
+
     }
 
     @FXML
@@ -193,8 +215,38 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void PesquisarLivro(ActionEvent event) {
+    void PesquisarCliente(ActionEvent event) {
 
+    }
+
+    @FXML
+    void Valor100(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Valor200(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Valor300(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Valor500(ActionEvent event) {
+
+    }
+
+    @FXML
+    void Valor750(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ValorAcima1000(ActionEvent event) {
+    	
     }
     
     @FXML
@@ -210,8 +262,8 @@ public class TelaListagemClientesController {
 		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));		
 		
 		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
-		
-	}
+		tblListagemCliente.setItems(FXCollections.observableArrayList(l));
+
+    }
 
 }

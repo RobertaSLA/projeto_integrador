@@ -189,8 +189,12 @@ public class TelaListagemProdutoController {
     }
     
     @FXML
-    void AlterarProduto(ActionEvent event) {
-
+    void AlterarProduto(ActionEvent event) throws IOException {
+    	Livro livro = tblListagem.getSelectionModel().getSelectedItem();
+    	
+    	
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/EditarProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
@@ -254,8 +258,12 @@ public class TelaListagemProdutoController {
     }
     
     @FXML
-    void ExcluirProduto(ActionEvent event) {
-
+    void ExcluirProduto(ActionEvent event) throws SQLException {
+    	LivroBD livbd = new LivroBD();
+    	Livro livro = tblListagem.getSelectionModel().getSelectedItem();
+    	tblListagem.getItems().remove(livro);
+    	livbd.DeletarLivro(livro);
+    	
     }
 
     @FXML
@@ -327,7 +335,7 @@ public class TelaListagemProdutoController {
 		clmSKU.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTitulo.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		
-		
+		System.out.println(l.size());
 		tblListagem.setItems(FXCollections.observableArrayList(l));
 		
 	}
