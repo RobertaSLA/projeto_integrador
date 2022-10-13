@@ -129,6 +129,7 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
+                  <Button fx:id="btnConfirmarPagamento" layoutX="450.0" layoutY="82.0" mnemonicParsing="false" onAction="#ConfirmarPagamento" prefHeight="32.0" prefWidth="83.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 8;" text="Confirmar" />
                </children>
             </AnchorPane>
         </items>
