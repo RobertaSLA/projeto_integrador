@@ -32,7 +32,7 @@
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
-            <TitledPane expanded="false" layoutX="636.0" layoutY="26.0" prefHeight="90.0" prefWidth="172.0" text="Produtos">
+            <TitledPane expanded="false" layoutX="634.0" layoutY="26.0" prefHeight="90.0" prefWidth="172.0" text="Produtos">
                <content>
                   <Pane prefHeight="49.0" prefWidth="170.0">
                      <children>
@@ -42,7 +42,7 @@
                   </Pane>
                </content>
             </TitledPane>
-            <TitledPane expanded="false" layoutX="838.0" layoutY="26.0" prefHeight="56.0" prefWidth="172.0" text="Fiscal">
+            <TitledPane expanded="false" layoutX="834.0" layoutY="26.0" prefHeight="56.0" prefWidth="172.0" text="Fiscal">
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
@@ -90,6 +90,18 @@
                   <Image url="@imagens/icon%20configuracao.png" />
                </image>
             </ImageView>
+            <TitledPane expanded="false" layoutX="34.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Home">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
+                     <children>
+                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Produtos" />
+                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Processamento Venda" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </TitledPane>
          </children>
       </Pane>
       <Text layoutX="630.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Histórico de Precos">
@@ -97,18 +109,6 @@
             <Font size="40.0" />
          </font>
       </Text>
-      <TitledPane expanded="false" layoutX="47.0" layoutY="14.0" prefHeight="154.0" prefWidth="172.0" text="Home">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
-               <children>
-                  <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Cliente" />
-                  <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Preço" />
-                  <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Produtos" />
-                  <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Processamento Venda" />
-               </children>
-            </AnchorPane>
-        </content>
-      </TitledPane>
       <TableView fx:id="tblHistoricoPrecos" layoutX="199.0" layoutY="265.0" onSort="#HistoricoDePrecos" prefHeight="496.0" prefWidth="1161.0">
         <columns>
           <TableColumn fx:id="clmSKU" prefWidth="102.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
