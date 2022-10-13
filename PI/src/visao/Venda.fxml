@@ -100,8 +100,8 @@
                <content>
                   <Pane prefHeight="49.0" prefWidth="170.0">
                      <children>
-                        <Button id="btnEmissaoNF" fx:id="btnCadastroLivro" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro de Produtos" />
-                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivro" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta de Produtos" />
+                        <Button id="btnEmissaoNF" fx:id="btnCadastroLivro" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro de Produtos" />
+                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivro" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta de Produtos" />
                      </children>
                   </Pane>
                </content>
@@ -110,7 +110,7 @@
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Emissao NF" />
+                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Emissao NF" />
                      </children>
                   </Pane>
                </content>
@@ -119,10 +119,10 @@
                <content>
                   <Pane prefHeight="123.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnClienteCadastro" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
-                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Cliente" />
-                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Fornecedor" />
-                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnClienteCadastro" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Cliente" />
+                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Fornecedor" />
+                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Venda" />
                      </children>
                   </Pane>
                </content>
@@ -131,10 +131,10 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Devolução" />
-                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" fx:id="btnVendaConsulta" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Venda" />
-                        <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Emissão Relatório" />
+                        <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Devolução" />
+                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnVendaConsulta" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Venda" />
+                        <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Emissão Relatório" />
                      </children>
                   </AnchorPane>
                </content>
@@ -143,10 +143,10 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
-                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Produtos" />
-                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Processamento Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro Produtos" />
+                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Processamento Venda" />
                      </children>
                   </AnchorPane>
               </content>
@@ -168,64 +168,55 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutY="726.0" prefHeight="119.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
+      <Pane layoutY="758.0" prefHeight="82.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <Pane layoutX="759.0" layoutY="13.0" prefHeight="90.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;" />
-            <Pane layoutX="453.0" layoutY="13.0" prefHeight="90.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
-               <children>
-                  <Text layoutX="24.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
-            <Pane layoutX="180.0" layoutY="13.0" prefHeight="90.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-background-radius: 10;">
-               <children>
-                  <Text layoutX="52.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itens">
-                     <font>
-                        <Font size="18.0" />
-                     </font>
-                  </Text>
-                  <TextField fx:id="txtTotalItens" editable="false" layoutX="21.0" layoutY="26.0" onAction="#TotalItens" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
-                     <font>
-                        <Font size="25.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
-                  </TextField>
-               </children>
-            </Pane>
-            <Text layoutX="350.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desconto">
+            <TextField fx:id="txtValorTotal" alignment="CENTER" layoutX="1459.0" layoutY="24.0" onAction="#ValorTotal" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0,00">
                <font>
-                  <Font size="18.0" />
+                  <Font size="22.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <Text layoutX="1465.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
+               <font>
+                  <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtDesconto" editable="false" layoutX="338.0" layoutY="40.0" onAction="#Desconto" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+            <TextField fx:id="txtDescontos" alignment="CENTER" layoutX="1259.0" layoutY="24.0" onAction="#Descontos" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0,00">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <TextField fx:id="txtValorTotal" editable="false" layoutX="470.0" layoutY="40.0" onAction="#ValorTotal" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: ffffff; -fx-background-radius: 10;">
+            <Text layoutX="1267.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descontos">
                <font>
-                  <Font size="25.0" />
+                  <Font size="22.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtQtdItens" alignment="CENTER" layoutX="1059.0" layoutY="24.0" onAction="#QuantidadeItensVenda" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0">
+               <font>
+                  <Font size="22.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
+            <Text layoutX="1094.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itens">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Text>
          </children>
       </Pane>
-      <TableView fx:id="tblVenda" layoutX="73.0" layoutY="350.0" onSort="#TabelaVenda" prefHeight="376.0" prefWidth="1338.0" style="-fx-background-color: ffffff;">
+      <TableView fx:id="tblVenda" layoutX="73.0" layoutY="350.0" onSort="#TabelaVenda" prefHeight="408.0" prefWidth="1342.0" style="-fx-background-color: ffffff;">
         <columns>
           <TableColumn fx:id="clmItem" prefWidth="175.0" style="-fx-border-color: ffffff; -fx-background-color: dbb0ea;" text="Item" />
           <TableColumn fx:id="clmSKUVenda" prefWidth="149.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
             <TableColumn fx:id="clmTituloVenda" prefWidth="779.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
-            <TableColumn fx:id="clmPrecoVenda" prefWidth="234.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
+            <TableColumn fx:id="clmPrecoVenda" prefWidth="238.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
         </columns>
       </TableView>
       <Button fx:id="btnExcluirItem" layoutX="1431.0" layoutY="350.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
