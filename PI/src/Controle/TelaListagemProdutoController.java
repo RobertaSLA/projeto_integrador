@@ -1,6 +1,7 @@
 package Controle;
 
 import java.io.IOException;
+
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -166,8 +167,9 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void AcessoCadastroCliente(ActionEvent event) {
-
+    void AcessoCadastroCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
@@ -197,13 +199,15 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void CadastroCliente(ActionEvent event) {
-
+    void CadastroCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
-    void CadastroFornecedor(ActionEvent event) {
-
+    void CadastroFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
@@ -213,8 +217,9 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void ConsultaCliente(ActionEvent event) {
-
+    void ConsultaCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
