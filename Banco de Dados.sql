@@ -168,11 +168,13 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
   `Editora` VARCHAR(50) NULL,
   `Estoque` INT NULL,
   `Genero` VARCHAR(30) NULL,
-  `Preco` DOUBLE NULL,
-  `IdAutor` INT NOT NULL,
+  `Preco` FLOAT NULL,
+  `IdAutor` INT NULL AUTO_INCREMENT,
   UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
   PRIMARY KEY (`SKU`),
-  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC))
+  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC),
+  FOREIGN KEY (`IdAutor`)
+  REFERENCES `mydb`.`Autor` (`IdAutor`))
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
