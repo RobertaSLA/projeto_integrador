@@ -95,6 +95,35 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`Autor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Autor` (
+  `IdAutor` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(100) NULL,
+  PRIMARY KEY (`IdAutor`),
+  UNIQUE INDEX `IdAutor_UNIQUE` (`IdAutor` ASC))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Livro`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
+  `SKU` INT NOT NULL,
+  `ISBN` VARCHAR(20) NOT NULL,
+  `Nome` VARCHAR(100) NULL,
+  `Editora` VARCHAR(50) NULL,
+  `Estoque` INT NULL,
+  `Genero` VARCHAR(30) NULL,
+  `Preco` FLOAT NULL,
+  `IdAutor` INT NULL AUTO_INCREMENT,
+  UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
+  PRIMARY KEY (`SKU`),
+  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC),
+  FOREIGN KEY (`IdAutor`)
+  REFERENCES `mydb`.`Autor` (`IdAutor`))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
@@ -132,8 +161,8 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Devolucao` (
   `codDevolucao` INT NOT NULL AUTO_INCREMENT,
-  `IdProduto` INT NULL,
-  `IdVenda` INT NULL,
+  `IdProduto` INT NOT NULL,
+  `IdVenda` INT NOT NULL,
   `Motivo` VARCHAR(100) NULL,
   `Data` DATE NULL,
   `Venda_idVenda` INT NOT NULL,
@@ -148,34 +177,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Devolucao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `mydb`.`Autor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Autor` (
-  `IdAutor` INT NOT NULL AUTO_INCREMENT,
-  `Nome` VARCHAR(100) NULL,
-  PRIMARY KEY (`IdAutor`),
-  UNIQUE INDEX `IdAutor_UNIQUE` (`IdAutor` ASC))
-ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `mydb`.`Livro`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
-  `SKU` INT NOT NULL,
-  `ISBN` VARCHAR(20) NOT NULL,
-  `Nome` VARCHAR(100) NULL,
-  `Editora` VARCHAR(50) NULL,
-  `Estoque` INT NULL,
-  `Genero` VARCHAR(30) NULL,
-  `Preco` FLOAT NULL,
-  `IdAutor` INT NULL AUTO_INCREMENT,
-  UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
-  PRIMARY KEY (`SKU`),
-  UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC),
-  FOREIGN KEY (`IdAutor`)
-  REFERENCES `mydb`.`Autor` (`IdAutor`))
-ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`HistoricoDePrecos`
@@ -184,7 +186,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
   `IdHistoricoDePrecos` INT NOT NULL AUTO_INCREMENT,
   `DataAlteracao` DATE NULL,
   `Preco` DOUBLE NULL,
-  `SKULivro` VARCHAR(45) NULL,
+  `SKULivro` INT NOT NULL,
   PRIMARY KEY (`IdHistoricoDePrecos`),
   CONSTRAINT `fk_HisPrecoLivro` 
 	FOREIGN KEY (`SKULivro`) 
@@ -205,7 +207,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `Data` DATE NULL,
   PRIMARY KEY (`IdCompra`),
   UNIQUE INDEX `IdCompra_UNIQUE` (`IdCompra` ASC),
-  UNIQUE INDEX `SKULivro_UNIQUE` (`SKULivro` ASC))
+  UNIQUE INDEX `SKULivro_UNIQUE` (`SKULivro` ASC),
+  FOREIGN KEY (`SKULivro`)
+  REFERENCES `mydb`.`Livro` (`SKU`))
 ENGINE = InnoDB;
 
 
