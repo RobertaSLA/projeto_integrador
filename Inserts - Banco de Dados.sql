@@ -1,3 +1,25 @@
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (1, '61715-032', 'SP', 'Morani', 'Barby', '887 Portage Terrace', '746', 'Circle');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (2, '43857-0041', 'SC', 'Sambungjaya', 'Mitchell', '485 Buena Vista Court', '8545', 'Lane');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (3, '43538-501', 'PE', 'Tamanar', 'Cardinal', '3 Rieder Junction', '4', 'Avenue');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (4, '59735-300', 'PB', 'Erdaocha', 'Brentwood', '61641 Talisman Trail', '050', 'Point');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (5, '0603-9388', 'CE', 'Seattle', 'Westend', '95330 Toban Avenue', '554', 'Parkway');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (6, '55111-148', 'MT', 'Kasangulu', 'Cascade', '98939 Springs Lane', '1446', 'Park');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (7, '60505-1329', 'MS', 'Koroška Bela', 'Barby', '5165 8th Plaza', '90', 'Pass');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (8, '11701-047', 'RN', 'Stavanger', 'Sommers', '80766 Laurel Avenue', '4', 'Terrace');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (9, '54569-3406', 'MG', 'Xunhe', 'Anzinger', '22 Ludington Alley', '511', 'Parkway');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (10, '48951-7029', 'RS', 'Roshal', 'Dawn', '8 Mendota Circle', '603', 'Trail');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (11, '13537-247', 'TO', 'Kuhmalahti', 'Sheridan', '0 Troy Junction', '5', 'Parkway');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (12, '55648-964', 'RO', 'Gongpo', 'Badeau', '669 West Center', '98', 'Junction');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (13, '68196-915', 'RR', 'Hitiaa', 'Drewry', '53427 Oakridge Court', '7604', 'Center');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (14, '47219-203', 'AM', 'Caronoan West', 'Northland', '1 Carberry Parkway', '23', 'Place');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (15, '54569-2034', 'BA', 'Npongge', 'Roth', '6657 Crescent Oaks Pass', '9064', 'Street');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (16, '0173-0821', 'DF', 'Kansas City', 'Old Gate', '08893 Marcy Drive', '318', 'Circle');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (17, '54868-5085', 'ES', 'Kara Suu', 'Anzinger', '95583 Thackeray Terrace', '78', 'Trail');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (18, '61703-359', 'AL', 'Kourou', 'Monument', '69 Maple Junction', '323', 'Place');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (19, '52083-632', 'RJ', 'Zhenxi', 'Northport', '05 Dawn Hill', '1213', 'Hill');
+insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (20, '51079-763', 'SC', 'Bāgh-e Malek', 'Hovde', '282 Dexter Court', '6', 'Street');
+
+
 insert into Cliente (idCliente, Nome, CPF, DataNascimento, Sexo, Fone, Celular, email, IdEndereco) values (1, 'Violet Ferrario', '892.204.728-53', '15/07/2004', 'Female', '(83) 93639674', '(77) 99773369', 'vferrario0@tinypic.com', 1);
 insert into Cliente (idCliente, Nome, CPF, DataNascimento, Sexo, Fone, Celular, email, IdEndereco) values (2, 'Marita Silberschatz', '762.214.457-56', '09/01/2008', 'Female', '(55) 95271163', '(05) 93999236', 'msilberschatz1@diigo.com', 2);
 insert into Cliente (idCliente, Nome, CPF, DataNascimento, Sexo, Fone, Celular, email, IdEndereco) values (3, 'Silvano Mirams', '296.678.715-55', '29/09/2010', 'Male', '(66) 95078910', '(54) 95578027', 'smirams2@zdnet.com', 3);
@@ -29,37 +51,17 @@ insert into Cliente (idCliente, Nome, CPF, DataNascimento, Sexo, Fone, Celular, 
 insert into Cliente (idCliente, Nome, CPF, DataNascimento, Sexo, Fone, Celular, email, IdEndereco) values (29, 'Mari Keling', '102.930.716-34', '17/01/2010', 'Female', '(28) 93381689', '(82) 91591768', 'mkelings@about.com', 9);
 insert into Cliente (idCliente, Nome, CPF, DataNascimento, Sexo, Fone, Celular, email, IdEndereco) values (30, 'Roanne Whelband', '693.229.715-89', '06/08/2005', 'Female', '(13) 93017576', '(82) 96728529', 'rwhelbandt@vistaprint.com', 10);
 
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (1, '61715-032', 'SP', 'Morani', 'Barby', '887 Portage Terrace', '746', 'Circle');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (2, '43857-0041', 'SC', 'Sambungjaya', 'Mitchell', '485 Buena Vista Court', '8545', 'Lane');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (3, '43538-501', 'PE', 'Tamanar', 'Cardinal', '3 Rieder Junction', '4', 'Avenue');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (4, '59735-300', 'PB', 'Erdaocha', 'Brentwood', '61641 Talisman Trail', '050', 'Point');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (5, '0603-9388', 'CE', 'Seattle', 'Westend', '95330 Toban Avenue', '554', 'Parkway');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (6, '55111-148', 'MT', 'Kasangulu', 'Cascade', '98939 Springs Lane', '1446', 'Park');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (7, '60505-1329', 'MS', 'Koroška Bela', 'Barby', '5165 8th Plaza', '90', 'Pass');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (8, '11701-047', 'RN', 'Stavanger', 'Sommers', '80766 Laurel Avenue', '4', 'Terrace');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (9, '54569-3406', 'MG', 'Xunhe', 'Anzinger', '22 Ludington Alley', '511', 'Parkway');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (10, '48951-7029', 'RS', 'Roshal', 'Dawn', '8 Mendota Circle', '603', 'Trail');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (11, '13537-247', 'TO', 'Kuhmalahti', 'Sheridan', '0 Troy Junction', '5', 'Parkway');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (12, '55648-964', 'RO', 'Gongpo', 'Badeau', '669 West Center', '98', 'Junction');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (13, '68196-915', 'RR', 'Hitiaa', 'Drewry', '53427 Oakridge Court', '7604', 'Center');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (14, '47219-203', 'AM', 'Caronoan West', 'Northland', '1 Carberry Parkway', '23', 'Place');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (15, '54569-2034', 'BA', 'Npongge', 'Roth', '6657 Crescent Oaks Pass', '9064', 'Street');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (16, '0173-0821', 'DF', 'Kansas City', 'Old Gate', '08893 Marcy Drive', '318', 'Circle');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (17, '54868-5085', 'ES', 'Kara Suu', 'Anzinger', '95583 Thackeray Terrace', '78', 'Trail');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (18, '61703-359', 'AL', 'Kourou', 'Monument', '69 Maple Junction', '323', 'Place');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (19, '52083-632', 'RJ', 'Zhenxi', 'Northport', '05 Dawn Hill', '1213', 'Hill');
-insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (20, '51079-763', 'SC', 'Bāgh-e Malek', 'Hovde', '282 Dexter Court', '6', 'Street');
 
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (1, 'Kelcy McKibben', '724.662.134-92', '10/03/2022', 'Female', '$133.71', '(60) 99557066', '(97) 93566168', 'kmckibben0@indiatimes.com', 1);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (2, 'Baxy Pyser', '530.297.162-53', '15/10/2020', 'Male', '$132.37', '(32) 97285623', '(72) 98701474', 'bpyser1@mail.ru', 2);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (3, 'Abra Huzzay', '581.728.384-70', '26/01/2009', 'Female', '$102.92', '(41) 95741013', '(72) 98654272', 'ahuzzay2@flickr.com', 3);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (4, 'Caralie Bussen', '978.295.093-69', '17/12/2012', 'Male', '$204.03', '(59) 999943794', '(18) 8759471', 'cbussen3@boston.com', 4);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (5, 'Any Iwanicki', '712.684.730-30', '13/10/2020', 'Male', '$187.77', '(99) 96876699', '(87) 96341588', 'aiwanicki4@desdev.cn', 5);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (6, 'Ricky Sporner', '956.884.379-75', '31/05/2011', 'Female', '$295.03', '(95) 96071165', '(56) 95202560', 'rsporner5@meetup.com', 6);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (7, 'Shannah Plester', '035.203.223-35', '15/06/2003', 'Female', '$181.85', '(89) 94178345', '(85) 95490859', 'splester6@zimbio.com', 7);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (8, 'Helaina Bedbrough', '080.455.678-66', '13/12/2013', 'Female', '$289.69', '(33) 98012760', '(44) 93261714', 'hbedbrough7@msn.com', 8);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (9, 'Garner Walaron', '287.085.429-53', '26/02/2022', 'Female', '$61.21', '(59) 95299368', '(81) 99578631', 'gwalaron8@desdev.cn', 9);
-insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (10, 'Rusty Cordy', '012.731.788-30', '14/01/2007', 'Male', '$152.75', '(09) 98048020', '(21) 98857048', 'rcordy9@japanpost.jp', 10);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (1, 'Kelcy McKibben', '724.662.134-92', '10/03/2022', 'Female', 133.71, '(60) 99557066', '(97) 93566168', 'kmckibben0@indiatimes.com', 1);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (2, 'Baxy Pyser', '530.297.162-53', '15/10/2020', 'Male', 132.37, '(32) 97285623', '(72) 98701474', 'bpyser1@mail.ru', 2);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (3, 'Abra Huzzay', '581.728.384-70', '26/01/2009', 'Female', 102.92, '(41) 95741013', '(72) 98654272', 'ahuzzay2@flickr.com', 3);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (4, 'Caralie Bussen', '978.295.093-69', '17/12/2012', 'Male', 204.03, '(59) 999943794', '(18) 8759471', 'cbussen3@boston.com', 4);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (5, 'Any Iwanicki', '712.684.730-30', '13/10/2020', 'Male', 187.77, '(99) 96876699', '(87) 96341588', 'aiwanicki4@desdev.cn', 5);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (6, 'Ricky Sporner', '956.884.379-75', '31/05/2011', 'Female', 295.03, '(95) 96071165', '(56) 95202560', 'rsporner5@meetup.com', 6);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (7, 'Shannah Plester', '035.203.223-35', '15/06/2003', 'Female', 181.85, '(89) 94178345', '(85) 95490859', 'splester6@zimbio.com', 7);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (8, 'Helaina Bedbrough', '080.455.678-66', '13/12/2013', 'Female', 289.69, '(33) 98012760', '(44) 93261714', 'hbedbrough7@msn.com', 8);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (9, 'Garner Walaron', '287.085.429-53', '26/02/2022', 'Female', 61.21, '(59) 95299368', '(81) 99578631', 'gwalaron8@desdev.cn', 9);
+insert into Vendedor (idVendedor, Nome, CPF, DataNascimento, Sexo, Comissao, Fone, Celular, email, IdEndereco) values (10, 'Rusty Cordy', '012.731.788-30', '14/01/2007', 'Male', 152.75, '(09) 98048020', '(21) 98857048', 'rcordy9@japanpost.jp', 10);
 
 insert into Compra (IdCompra, SKU, Quantidade, Valor, Fornecedor, Data) values (4744, 5652, 15, '$138.90', 'Tambee', '13/06/2022');
 insert into Compra (IdCompra, SKU, Quantidade, Valor, Fornecedor, Data) values (1057, 5124, 18, '$117.64', 'Tagopia', '30/11/2021');
