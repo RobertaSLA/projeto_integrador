@@ -193,15 +193,23 @@ public class TelaListagemProdutoController {
     @FXML
     void AlterarProduto(ActionEvent event) throws IOException {
     	Livro livro = tblListagem.getSelectionModel().getSelectedItem();
+    	   
+    	   
+    	 FXMLLoader loader = new FXMLLoader(
+    	   getClass().getResource(
+    	     "/visao/EditarProdutos.fxml"
+    	   )
+    	 );  
+    	 
+    	 Node node;
+    	 node = (Node)loader.load();
+    	   
+    	 TelaEditarProdutoController controller = loader.getController();
+    	 System.out.println(controller );
+    	 controller.DefinirLivro(livro);
+
+    	 layoutListagem.getChildren().setAll(node);
     	
-    	
-    	  Node node = (Node) event.getSource();
-    	  // Step 3
-    	  Stage stage = (Stage) node.getScene().getWindow();
-    	  stage.setUserData(livro);
-    	  
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/EditarProdutos.fxml"));
-    	layoutListagem.getChildren().setAll(telaListagemPane);
     }
 
     @FXML

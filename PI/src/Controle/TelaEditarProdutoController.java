@@ -56,8 +56,8 @@ public class TelaEditarProdutoController {
 
     @FXML
     void ActionCancelarCadastro(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaListagemProdutos.fxml"));
-    	telaCadastroPane.getChildren().setAll(telaHomePane);
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/TelaListagemProdutos.fxml"));
+    	telaCadastroPane.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
@@ -109,20 +109,6 @@ public class TelaEditarProdutoController {
     void AdicionarTitulo(ActionEvent event) {
 
     }
-
-
-    
-    @FXML
-    public void initialize() {
-    	
-    	  Stage stage = (Stage) telaCadastroPane.getParent().getScene().getWindow();
-    	  // Step 2
-    	  
-    	  Livro u = (Livro) stage.getUserData();
-    	  DefinirLivro(u);
-		
-		
-	}
 
 	public void DefinirLivro(Livro livro) {
 		txtSKU.setText(String.valueOf(livro.getSku()));
