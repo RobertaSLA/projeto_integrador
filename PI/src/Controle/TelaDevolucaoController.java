@@ -11,7 +11,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
-public class TelaVendaController {
+public class TelaDevolucaoController {
 
     @FXML
     private Button btnAcessoCadastroCliente;
