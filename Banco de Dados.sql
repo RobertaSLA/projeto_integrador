@@ -18,6 +18,23 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`Endereco`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
+  `IdEndereco` INT NOT NULL AUTO_INCREMENT,
+  `CEP` CHAR(15) NULL,
+  `UF` CHAR(5) NULL,
+  `Cidade` VARCHAR(30) NULL,
+  `Bairro` VARCHAR(50) NULL,
+  `Endereco` VARCHAR(100) NULL,
+  `Numero` CHAR(10) NULL,
+  `Complemento` VARCHAR(30) NULL,
+  PRIMARY KEY (`IdEndereco`),
+  UNIQUE INDEX `IdEndereco_UNIQUE` (`IdEndereco` ASC))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `mydb`.`Cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
@@ -61,22 +78,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Vendedor` (
   UNIQUE INDEX `idVandedor_UNIQUE` (`idVendedor` ASC))
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `mydb`.`Endereco`
--- -----------------------------------------------------
 
-CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
-  `IdEndreco` INT NOT NULL AUTO_INCREMENT,
-  `CEP` CHAR(15) NULL,
-  `UF` CHAR(5) NULL,
-  `Cidade` VARCHAR(30) NULL,
-  `Bairro` VARCHAR(50) NULL,
-  `Endereco` VARCHAR(100) NULL,
-  `Numero` CHAR(10) NULL,
-  `Complemento` VARCHAR(30) NULL,
-  PRIMARY KEY (`IdEndereco`),
-  UNIQUE INDEX `IdEndereco_UNIQUE` (`IdEndereco` ASC))
-ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Usuario`
@@ -146,6 +148,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Devolucao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `mydb`.`Autor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Autor` (
+  `IdAutor` INT NOT NULL AUTO_INCREMENT,
+  `Nome` VARCHAR(100) NULL,
+  PRIMARY KEY (`IdAutor`),
+  UNIQUE INDEX `IdAutor_UNIQUE` (`IdAutor` ASC))
+ENGINE = InnoDB;
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Livro`
@@ -158,23 +169,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
   `Estoque` INT NULL,
   `Genero` VARCHAR(30) NULL,
   `Preco` DOUBLE NULL,
-  `IdAutor` INT NULL AUTO_INCREMENT,
+  `IdAutor` INT NOT NULL,
   UNIQUE INDEX `SKU_UNIQUE` (`SKU` ASC),
   PRIMARY KEY (`SKU`),
   UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC))
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Autor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Autor` (
-  `IdAutor` INT NOT NULL AUTO_INCREMENT,
-  `Nome` VARCHAR(100) NULL,
-  PRIMARY KEY (`IdAutor`),
-  UNIQUE INDEX `IdAutor_UNIQUE` (`IdAutor` ASC))
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mydb`.`HistoricoDePrecos`
