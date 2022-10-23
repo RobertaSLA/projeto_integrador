@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import Modelo.Autor;
 import Modelo.Livro;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -61,8 +62,15 @@ public class TelaEditarProdutoController {
     }
 
     @FXML
-    void ActionEditarCadastro(ActionEvent event) {
-
+    void ActionEditarCadastro(ActionEvent event) throws SQLException, IOException {
+    	Autor aut = new Autor(txtAutor.getText());
+    	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), txtISBN.getText(), txtTitulo.getText(), txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()), aut);
+    	
+    	LivroBD livbd = new LivroBD();
+    	livbd.AtualizarLivro(liv);
+    	
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	telaCadastroPane.getChildren().setAll(telaListagemPane);
     }
 
     @FXML

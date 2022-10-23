@@ -1,7 +1,16 @@
 package Controle;
 
+import java.io.IOException;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
+
+import Modelo.Cliente;
+import Modelo.Endereco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
@@ -10,10 +19,10 @@ import javafx.scene.layout.AnchorPane;
 public class TelaEditarClienteController {
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxSexo;
+    private ChoiceBox<String> ChoiceBoxSexo;
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxUF;
+    private ChoiceBox<String> ChoiceBoxUF;
 
     @FXML
     private Button btnCancelar;
@@ -129,13 +138,24 @@ public class TelaEditarClienteController {
     }
 
     @FXML
-    void CancelarCadastro(ActionEvent event) {
-
+    void CancelarCadastro(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
+    	telaCadastroPane.getChildren().setAll(telaListagemPane);
     }
 
     @FXML
     void EditarCadastro(ActionEvent event) {
-
+    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+    	LocalDate localDate = DatePickerDataNascimento.getValue();
+    	Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
+    	Date date = Date.from(instant);
+    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date.toString(), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
+    	
+    	ClienteBD clibd = new ClienteBD();
+    	clibd.
+    	
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	telaCadastroPane.getChildren().setAll(telaHomePane);
     }
 
 }

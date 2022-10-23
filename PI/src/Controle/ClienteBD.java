@@ -66,6 +66,32 @@ public class ClienteBD {
 		}
 	}
 	
+	public void AtualizarLivro(Cliente cliente) throws SQLException {
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			String sql = "update cliente set Nome = ?, CPF = ?, DataNascimento = ?, Sexo = ?, Fone = ?, Celular = ? where idCliente = ?";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			stmt.setInt(7, cliente.getIdCliente());
+			stmt.setString(1, cliente.getNome());
+			stmt.setString(2, cliente.getCpf());
+			stmt.setString(3, cliente.getDataNascimento());
+			stmt.setString(4, cliente.getSexo());
+			stmt.setString(5, cliente.getTelefone());
+			stmt.setString(6, cliente.getCelular());
+		
+			stmt.executeUpdate();
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+	}
+	
 	public ArrayList<Cliente> BuscarCliente() throws SQLException {
 		ArrayList<Cliente> Lista = new ArrayList<Cliente>();
 		try {

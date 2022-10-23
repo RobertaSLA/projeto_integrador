@@ -64,18 +64,18 @@ public class LivroBD {
 	public void AtualizarLivro(Livro livro) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "update livro set SKU = ?, ISBN = ?, Nome = ?, Editora = ?, Estoque = ?, Genero = ?, Preco = ?) where SKU = ?";
+			String sql = "update livro set ISBN = ?, Nome = ?, Editora = ?, Estoque = ?, Genero = ?, Preco = ? where SKU = ?";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setInt(1, livro.getSku());
-			stmt.setString(2, livro.getIsbn());
-			stmt.setString(3, livro.getNome());
-			stmt.setString(4, livro.getEditora());
-			stmt.setInt(5, livro.getEstoque());
-			stmt.setString(6, livro.getGenero());
-			stmt.setFloat(7, livro.getPreco());
-			
+			stmt.setInt(7, livro.getSku());
+			stmt.setString(1, livro.getIsbn());
+			stmt.setString(2, livro.getNome());
+			stmt.setString(3, livro.getEditora());
+			stmt.setInt(4, livro.getEstoque());
+			stmt.setString(5, livro.getGenero());
+			stmt.setFloat(6, livro.getPreco());
+		
 			stmt.executeUpdate();
 			
 			stmt.close(); 
@@ -117,4 +117,24 @@ public class LivroBD {
 		return Lista;
 		
 	}
+	
+	public void CriarLivro(int sku) throws SQLException {
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select ISBN, Nome, Editora, Estoque, Genero, Preco, Autor.idAutor, Autor.nome from livro inner "
+					+ "join autor where livro.idAutor = autor.idAutor and sku=" +sku;
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+			
+			stmt.close(); 
+			con.close();
+			JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso");
+			
+		} catch (SQLException e){
+			throw new SQLException(e);
+		}
+}
 }

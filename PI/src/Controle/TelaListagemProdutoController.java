@@ -350,7 +350,7 @@ public class TelaListagemProdutoController {
 		clmSKU.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTitulo.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		
-		System.out.println(l.size());
+		
 		tblListagem.setItems(FXCollections.observableArrayList(l));
 		
 	}

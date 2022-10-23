@@ -263,8 +263,7 @@ public class TelaListagemClientesController {
 		clmTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
 		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));		
 		
-		System.out.println(l.size());
-		tblListagem.setItems((ObservableList<Cliente>) l);
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 		
 
     }
