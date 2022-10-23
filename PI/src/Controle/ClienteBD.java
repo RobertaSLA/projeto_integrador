@@ -92,7 +92,7 @@ public class ClienteBD {
 			stmt.close(); 
 			con.close();
 			
-			JOptionPane.showMessageDialog(null, "Inserido com sucesso");
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
 			
 		}catch (SQLException e){
 			throw new SQLException(e);

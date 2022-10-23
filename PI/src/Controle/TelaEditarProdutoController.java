@@ -56,7 +56,7 @@ public class TelaEditarProdutoController {
 
     @FXML
     void ActionCancelarCadastro(ActionEvent event) throws IOException {
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/TelaListagemProdutos.fxml"));
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
     	telaCadastroPane.getChildren().setAll(telaListagemPane);
     }
 

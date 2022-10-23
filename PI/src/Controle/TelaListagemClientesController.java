@@ -5,7 +5,9 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Cliente;
+import Modelo.Endereco;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -93,7 +95,7 @@ public class TelaListagemClientesController {
     private CheckBox chkValorAcima1000;
 
     @FXML
-    private TableColumn<Cliente, String> clmCEP;
+    private TableColumn<Endereco, String> clmCEP;
 
     @FXML
     private TableColumn<Cliente, String> clmCPF;
@@ -261,8 +263,9 @@ public class TelaListagemClientesController {
 		clmTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
 		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));		
 		
+		System.out.println(l.size());
+		tblListagem.setItems((ObservableList<Cliente>) l);
 		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
