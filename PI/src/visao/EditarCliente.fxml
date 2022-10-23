@@ -14,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaEditarClienteController">
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaEditarClienteController">
    <children>
       <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
          <children>
@@ -65,7 +65,7 @@
 			</FXCollections>
 		</items>
 	  </ChoiceBox>
-      <DatePicker layoutX="356.0" layoutY="241.0" />
+      <DatePicker fx:id="ChoiceBoxNascimento" layoutX="356.0" layoutY="241.0" />
       <TextField fx:id="txtCEP" layoutX="20.0" layoutY="323.0" onAction="#AdicionarCEP" prefHeight="26.0" prefWidth="102.0" AnchorPane.leftAnchor="20.0" />
       <ChoiceBox fx:id="ChoiceBoxUF" layoutX="134.0" layoutY="321.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: transparent; -fx-border-color: #d3d3d3;">
 	  		<items>
