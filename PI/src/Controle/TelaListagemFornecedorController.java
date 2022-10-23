@@ -122,7 +122,7 @@ public class TelaListagemFornecedorController {
 
     @FXML
     void ActionAlterarCliente(ActionEvent event) {
-
+    	
     }
 
     @FXML

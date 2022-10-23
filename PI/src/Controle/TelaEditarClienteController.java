@@ -1,6 +1,7 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -13,10 +14,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaEditarClienteController {
+
+    @FXML
+    private DatePicker ChoiceBoxNascimento;
 
     @FXML
     private ChoiceBox<String> ChoiceBoxSexo;
@@ -144,17 +149,21 @@ public class TelaEditarClienteController {
     }
 
     @FXML
-    void EditarCadastro(ActionEvent event) {
-    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
-    	LocalDate localDate = DatePickerDataNascimento.getValue();
+    void EditarCadastro(ActionEvent event) throws SQLException, IOException {
+    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), 
+    		txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+    	
+    	LocalDate localDate = ChoiceBoxNascimento.getValue();
     	Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
     	Date date = Date.from(instant);
-    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date.toString(), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
+    	
+    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, 
+    			date.toString(), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
     	
     	ClienteBD clibd = new ClienteBD();
-    	clibd.
+    	clibd.AtualizarLivro(cli);
     	
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
     	telaCadastroPane.getChildren().setAll(telaHomePane);
     }
 

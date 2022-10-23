@@ -39,6 +39,8 @@ public class FornecedorBD {
 		}
 	}
 	
+	
+	
 	public ArrayList<Fornecedor> BuscarFornecedor() throws SQLException {
 		ArrayList<Fornecedor> Lista = new ArrayList<Fornecedor>();
 		try {
@@ -48,7 +50,7 @@ public class FornecedorBD {
 			String query = "select endereco.idEndereco, endereco.cep, endereco.uf, endereco.cidade, endereco.bairro, "
 					+ "endereco.endereco, endereco.numero, endereco.complemento, fornecedor.idFornecedor, fornecedor.nome, "
 					+ "fornecedor.cnpj, fornecedor.Inscricao_Estadual, fornecedor.Telefone, fornecedor.celular, fornecedor.email"
-					+ "from cliente inner join endereco where cliente.idEndereco=endereco.idEndereco;";
+					+ "from fornecedor inner join endereco where fornecedor.idEndereco=endereco.idEndereco;";
 			
 			
 			ResultSet rs = stmt.executeQuery(query);
@@ -62,6 +64,7 @@ public class FornecedorBD {
 				Lista.add(forn);
 			}
 			
+
 			stmt.close(); 
 			con.close();
 			
