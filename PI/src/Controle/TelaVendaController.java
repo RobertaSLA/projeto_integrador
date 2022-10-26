@@ -2,7 +2,9 @@ package Controle;
 
 import java.io.IOException;
 
+import Modelo.Livro;
 import Modelo.Venda;
+import Modelo.Vendedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -282,4 +284,8 @@ public class TelaVendaController {
     void ValorTotal(ActionEvent event) {
     	
     }
+    
+    public void DefinirVendedor(Vendedor vendedor) {
+    	txtCodVendedor.setText(String.valueOf(vendedor.getIdVendedor()));
+	}
 } 

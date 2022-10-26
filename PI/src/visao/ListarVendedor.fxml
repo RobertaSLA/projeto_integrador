@@ -47,7 +47,7 @@
             <Font size="15.0" />
          </font>
       </Button>
-      <TableView layoutX="31.0" layoutY="141.0" prefHeight="254.0" prefWidth="512.0">
+      <TableView fx:id="TableView" layoutX="31.0" layoutY="141.0" onSort="#TableView" prefHeight="254.0" prefWidth="512.0">
         <columns>
           <TableColumn fx:id="clmCodVendedor" prefWidth="114.0" text="Código Vendedor" />
           <TableColumn fx:id="clmNomeVendedor" prefWidth="205.0" text="Nome" />
@@ -55,6 +55,11 @@
         </columns>
       </TableView>
       <Button fx:id="btnCancelar" layoutX="416.0" layoutY="421.0" mnemonicParsing="false" onAction="#CancelarCadastro" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnConfirmar" layoutX="281.0" layoutY="421.0" mnemonicParsing="false" onAction="#ConfimarCadastro" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Confimar">
          <font>
             <Font size="15.0" />
          </font>

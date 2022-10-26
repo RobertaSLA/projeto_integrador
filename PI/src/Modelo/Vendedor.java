@@ -10,9 +10,13 @@ public class Vendedor {
 	private float comissao;
 	private Endereco endereco;
 	
-	
-	
-	
+	public Vendedor(int idVendedor, String nome, String cpf) {
+		super();
+		this.idVendedor = idVendedor;
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+
 	public Vendedor(String nome, String cpf, String telefone, String celular, Endereco endereco) {
 		super();
 		this.nome = nome;

@@ -2,8 +2,15 @@ package Controle;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
+
+import Modelo.Autor;
+import Modelo.Livro;
 import Modelo.Venda;
 import Modelo.Vendedor;
 
@@ -33,7 +40,7 @@ public class VendedorBD{
 		}
 	}
 	
-	public void DeletarVenda(Vendedor vendedor) throws SQLException {
+	public void DeletarVendedor(Vendedor vendedor) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
 			String sql = "delete from venda where IdVenda = ?";
@@ -52,5 +59,33 @@ public class VendedorBD{
 			throw new SQLException(e);
 		}
 }
+	public ArrayList<Vendedor> BuscarVendedor() throws SQLException {
+		ArrayList<Vendedor> Lista = new ArrayList<Vendedor>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idVendedor, nome, cpf from vendedor;";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Vendedor vend = new Vendedor(rs.getInt(1), rs.getString(2), rs.getString(3));
+				Lista.add(vend);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
 }
 
