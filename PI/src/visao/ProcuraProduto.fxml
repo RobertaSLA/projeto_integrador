@@ -150,6 +150,7 @@
                   <Image url="@imagens/icon%20configuracao.png" />
                </image>
             </ImageView>
+            <Button fx:id="IDBotaoHome" layoutX="1052.0" layoutY="8.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="53.0" prefWidth="77.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
       <TableView fx:id="tblListagem" layoutX="177.0" layoutY="321.0" prefHeight="475.0" prefWidth="1405.0">

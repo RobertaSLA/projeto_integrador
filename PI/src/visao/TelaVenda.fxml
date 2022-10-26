@@ -166,6 +166,7 @@
                   <Image url="@imagens/icon%20configuracao.png" />
                </image>
             </ImageView>
+            <Button fx:id="IDBotaoHome" layoutX="1046.0" layoutY="13.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="45.0" prefWidth="81.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
       <Pane layoutY="758.0" prefHeight="82.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">

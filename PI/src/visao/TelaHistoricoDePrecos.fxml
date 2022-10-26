@@ -102,6 +102,7 @@
                   </AnchorPane>
               </content>
             </TitledPane>
+            <Button fx:id="IDBotaoHome" layoutX="1049.0" layoutY="14.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="42.0" prefWidth="75.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
       <Text layoutX="630.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Histórico de Precos">
