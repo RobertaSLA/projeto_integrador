@@ -1,15 +1,17 @@
 package Controle;
 
 import java.io.IOException;
+
+import Modelo.Venda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-
 
 public class TelaVendaController {
 
@@ -89,7 +91,7 @@ public class TelaVendaController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblVenda;
+    private TableView<Venda> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -101,7 +103,7 @@ public class TelaVendaController {
     private TextField txtCodVendedor;
 
     @FXML
-    private TextField txtDesconto;
+    private TextField txtDescontos;
 
     @FXML
     private TextField txtDescriçãoProduto;
@@ -113,27 +115,29 @@ public class TelaVendaController {
     private TextField txtNomeVendedor;
 
     @FXML
-    private TextField txtQuantidade;
+    private TextField txtQtdItens;
 
     @FXML
-    private TextField txtTotalItens;
+    private TextField txtQuantidade;
 
     @FXML
     private TextField txtValorTotal;
 
     @FXML
-    void AcessoCadastroCliente(ActionEvent event) {
-
+    void AcessoCadastroCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void AcessoCadsatroProdutos(ActionEvent event) {
-
+    void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
     void AcessoConsultaPreco(ActionEvent event) {
-
+    	
     }
 
     @FXML
@@ -142,43 +146,50 @@ public class TelaVendaController {
     }
 
     @FXML
-    void CadastroCliente(ActionEvent event) {
-
+    void CadastroCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void CadastroFornecedor(ActionEvent event) {
-
+    void CadastroFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void CadastroLivro(ActionEvent event) {
-
+    void CadastroLivro(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void CodCliente(ActionEvent event) {
-
+    void CodCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarCliente.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void CodVendedor(ActionEvent event) {
-
+    void CodVendedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarVendedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
     void ConfirmarProduto(ActionEvent event) {
-
+    	
     }
 
     @FXML
-    void ConsultaCliente(ActionEvent event) {
-
+    void ConsultaCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void ConsultaLivro(ActionEvent event) {
-
+    void ConsultaLivro(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -197,7 +208,7 @@ public class TelaVendaController {
     }
 
     @FXML
-    void Desconto(ActionEvent event) {
+    void Descontos(ActionEvent event) {
 
     }
 
@@ -207,8 +218,9 @@ public class TelaVendaController {
     }
 
     @FXML
-    void Devolucao(ActionEvent event) {
-
+    void Devolucao(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDecolução.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -227,18 +239,18 @@ public class TelaVendaController {
     }
 
     @FXML
-    void InserirCodCliente(ActionEvent event) {
-
+    void InserirCodCliente(ActionEvent event) throws IOException {
+    	
     }
 
     @FXML
-    void InserirCodProduto(ActionEvent event) {
-
+    void InserirCodProduto(ActionEvent event) throws IOException {
+    	
     }
 
     @FXML
-    void InserirCodVendedor(ActionEvent event) {
-
+    void InserirCodVendedor(ActionEvent event) throws IOException {
+    	
     }
 
     @FXML
@@ -257,18 +269,17 @@ public class TelaVendaController {
     }
 
     @FXML
+    void QuantidadeItensVenda(ActionEvent event) {
+
+    }
+
+    @FXML
     void TabelaVenda(ActionEvent event) {
 
     }
 
     @FXML
-    void TotalItens(ActionEvent event) {
-
-    }
-
-    @FXML
     void ValorTotal(ActionEvent event) {
-
+    	
     }
-
-}
+} 

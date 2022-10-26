@@ -114,8 +114,8 @@ public class TelaHomeController {
     }
 
     @FXML
-    void ConsultaVenda(ActionEvent event) {
-
+    void ConsultaVenda(ActionEvent event) throws IOException {
+    	
     }
 
     @FXML
