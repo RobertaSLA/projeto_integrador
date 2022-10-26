@@ -14,6 +14,7 @@ import Modelo.Autor;
 import Modelo.Cliente;
 import Modelo.Endereco;
 import Modelo.Livro;
+import Modelo.Vendedor;
 
 
 public class ClienteBD {
@@ -126,5 +127,32 @@ public class ClienteBD {
 		return Lista;
 		
 	}
+	
+	public ArrayList<Cliente> BuscarCodCliente() throws SQLException {
+		ArrayList<Cliente> Lista = new ArrayList<Cliente>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idCliente, nome, cpf from cliente;";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Cliente clie = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3));
+				Lista.add(clie);
+			}
+			
+			stmt.close(); 
+			con.close();
 
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
 }

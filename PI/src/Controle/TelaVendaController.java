@@ -2,6 +2,8 @@ package Controle;
 
 import java.io.IOException;
 
+import Modelo.Cliente;
+import Modelo.Fornecedor;
 import Modelo.Livro;
 import Modelo.Venda;
 import Modelo.Vendedor;
@@ -287,5 +289,13 @@ public class TelaVendaController {
     
     public void DefinirVendedor(Vendedor vendedor) {
     	txtCodVendedor.setText(String.valueOf(vendedor.getIdVendedor()));
+    	txtNomeVendedor.setText(String.valueOf(vendedor.getNome()));
+    	
 	}
+    
+    public void DefinirCliente(Cliente cliente) {
+    	txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
+    	txtNomeCliente.setText(String.valueOf(cliente.getNome()));
+	}
+    
 } 

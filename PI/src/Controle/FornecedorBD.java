@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import Modelo.Cliente;
 import Modelo.Endereco;
 import Modelo.Fornecedor;
+import Modelo.Vendedor;
 
 public class FornecedorBD {
 	public void InserirFornecedor(Fornecedor fornecedor) throws SQLException {
@@ -69,6 +70,34 @@ public class FornecedorBD {
 			con.close();
 			
 			JOptionPane.showMessageDialog(null, "Inserido com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
+	
+	public ArrayList<Fornecedor> BuscarCodFornecedor() throws SQLException {
+		ArrayList<Fornecedor> Lista = new ArrayList<Fornecedor>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idFornecedor, nome, cnpj from fornecedor;";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Fornecedor forn = new Fornecedor(rs.getInt(1), rs.getString(2), rs.getString(3));
+				Lista.add(forn);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
 			
 		}catch (SQLException e){
 			throw new SQLException(e);

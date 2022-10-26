@@ -14,6 +14,14 @@ public class Cliente {
 	private String celular;
 	private String email;
 	
+	
+	public Cliente(int idCliente, String nome, String cpf) {
+		super();
+		this.idCliente = idCliente;
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+
 	public Cliente(int idCliente, String nome, String telefone, String cpf, Endereco endereco, String dataNascimento,
 			String sexo, String celular, String email) {
 		super();

@@ -71,7 +71,7 @@ public class TelaListarVendedorController {
  	   
    	 	FXMLLoader loader = new FXMLLoader(
    	 			getClass().getResource(
-   	 					"/visao/ListarVendedor.fxml"
+   	 					"/visao/TelaVenda.fxml"
    	 			)
    	 	);  
    	 
@@ -80,7 +80,7 @@ public class TelaListarVendedorController {
    	   
    	 	TelaVendaController controller = loader.getController();
    	 	System.out.println(controller);
-   	 	controller.DefinirVendedor(vend);;
+   	 	controller.DefinirVendedor(vend);
 
    	 	telaCadastroPane.getChildren().setAll(node);
     }
