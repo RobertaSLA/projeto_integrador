@@ -3,9 +3,7 @@ package Controle;
 import java.io.IOException;
 
 import Modelo.Cliente;
-import Modelo.Fornecedor;
 import Modelo.Livro;
-import Modelo.Venda;
 import Modelo.Vendedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,6 +40,9 @@ public class TelaVendaController {
 
     @FXML
     private Button btnCodCliente;
+
+    @FXML
+    private Button btnCodProduto;
 
     @FXML
     private Button btnCodVendedor;
@@ -95,7 +96,7 @@ public class TelaVendaController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<Venda> tblVenda;
+    private TableView<?> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -141,7 +142,7 @@ public class TelaVendaController {
 
     @FXML
     void AcessoConsultaPreco(ActionEvent event) {
-    	
+
     }
 
     @FXML
@@ -174,6 +175,12 @@ public class TelaVendaController {
     }
 
     @FXML
+    void CodProduto(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarProduto.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
+    }
+
+    @FXML
     void CodVendedor(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarVendedor.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
@@ -181,19 +188,17 @@ public class TelaVendaController {
 
     @FXML
     void ConfirmarProduto(ActionEvent event) {
-    	
+
     }
 
     @FXML
-    void ConsultaCliente(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
-    	layoutListagem.getChildren().setAll(telaHomePane);
+    void ConsultaCliente(ActionEvent event) {
+
     }
 
     @FXML
-    void ConsultaLivro(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
-    	layoutListagem.getChildren().setAll(telaHomePane);
+    void ConsultaLivro(ActionEvent event) {
+
     }
 
     @FXML
@@ -223,7 +228,7 @@ public class TelaVendaController {
 
     @FXML
     void Devolucao(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDecolução.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDevolucao.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
@@ -243,18 +248,18 @@ public class TelaVendaController {
     }
 
     @FXML
-    void InserirCodCliente(ActionEvent event) throws IOException {
-    	
+    void InserirCodCliente(ActionEvent event) {
+
     }
 
     @FXML
-    void InserirCodProduto(ActionEvent event) throws IOException {
-    	
+    void InserirCodProduto(ActionEvent event) {
+
     }
 
     @FXML
-    void InserirCodVendedor(ActionEvent event) throws IOException {
-    	
+    void InserirCodVendedor(ActionEvent event) {
+
     }
 
     @FXML
@@ -284,7 +289,7 @@ public class TelaVendaController {
 
     @FXML
     void ValorTotal(ActionEvent event) {
-    	
+
     }
     
     public void DefinirVendedor(Vendedor vendedor) {
@@ -298,4 +303,9 @@ public class TelaVendaController {
     	txtNomeCliente.setText(String.valueOf(cliente.getNome()));
 	}
     
-} 
+    public void DefinirLivro(Livro livro) {
+    	txtCodProduto.setText(String.valueOf(livro.getSku()));
+    	txtDescriçãoProduto.setText(String.valueOf(livro.getNome()));
+	}
+
+}

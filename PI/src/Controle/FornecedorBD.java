@@ -51,7 +51,7 @@ public class FornecedorBD {
 			String query = "select endereco.idEndereco, endereco.cep, endereco.uf, endereco.cidade, endereco.bairro, "
 					+ "endereco.endereco, endereco.numero, endereco.complemento, fornecedor.idFornecedor, fornecedor.nome, "
 					+ "fornecedor.cnpj, fornecedor.Inscricao_Estadual, fornecedor.Telefone, fornecedor.celular, fornecedor.email"
-					+ "from fornecedor inner join endereco where fornecedor.idEndereco=endereco.idEndereco;";
+					+ " from fornecedor inner join endereco on fornecedor.idEndereco=endereco.idEndereco;";
 			
 			
 			ResultSet rs = stmt.executeQuery(query);

@@ -1,14 +1,12 @@
 package Controle;
 
-import java.sql.Connection;
 import java.sql.*;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
 import Modelo.Autor;
+import Modelo.Cliente;
 import Modelo.Livro;
 
 public class LivroBD {
@@ -137,4 +135,31 @@ public class LivroBD {
 			throw new SQLException(e);
 		}
 }
+	public ArrayList<Livro> BuscarCodLivro() throws SQLException {
+		ArrayList<Livro> Lista = new ArrayList<Livro>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select sku, nome, isbn from livro;";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Livro livr = new Livro(rs.getInt(1), rs.getString(3), rs.getString(2));
+				Lista.add(livr);
+			}
+			
+			stmt.close(); 
+			con.close();
+
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
 }

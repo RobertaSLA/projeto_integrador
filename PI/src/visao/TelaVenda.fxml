@@ -78,6 +78,7 @@
                </font>
             </Text>
             <Button fx:id="btnConfirmar" layoutX="1027.0" layoutY="246.0" mnemonicParsing="false" onAction="#ConfirmarProduto" prefHeight="32.0" prefWidth="69.0" text="Confirmar" />
+            <Button fx:id="btnCodProduto" layoutX="169.0" layoutY="248.0" mnemonicParsing="false" onAction="#CodProduto" text="..." />
          </children>
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">

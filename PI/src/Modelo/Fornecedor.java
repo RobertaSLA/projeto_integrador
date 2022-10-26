@@ -2,7 +2,7 @@ package Modelo;
 
 public class Fornecedor {
 	
-	private int idFornecdor;
+	private int idFornecedor;
 	private String nome;
 	private String cnpj;
 	private String insEstadual;
@@ -12,17 +12,17 @@ public class Fornecedor {
 	private Endereco endereco;
 	
 	
-	public Fornecedor(int idFornecdor, String nome, String cnpj) {
+	public Fornecedor(int idFornecedor, String nome, String cnpj) {
 		super();
-		this.idFornecdor = idFornecdor;
+		this.idFornecedor = idFornecedor;
 		this.nome = nome;
 		this.cnpj = cnpj;
 	}
 
-	public Fornecedor(int idFornecdor, String nome, String cnpj, String insEstadual, String telefone, String celular,
+	public Fornecedor(int idFornecedor, String nome, String cnpj, String insEstadual, String telefone, String celular,
 			String email, Endereco endereco) {
 		super();
-		this.idFornecdor = idFornecdor;
+		this.idFornecedor = idFornecedor;
 		this.nome = nome;
 		this.cnpj = cnpj;
 		this.insEstadual = insEstadual;
@@ -44,11 +44,11 @@ public class Fornecedor {
 		this.endereco = endereco;
 	}	
 	
-	public int getIdFornecdor() {
-		return idFornecdor;
+	public int getidFornecedor() {
+		return idFornecedor;
 	}
-	public void setIdFornecdor(int idFornecdor) {
-		this.idFornecdor = idFornecdor;
+	public void setidFornecedor(int idFornecedor) {
+		this.idFornecedor = idFornecedor;
 	}
 	public String getNome() {
 		return nome;

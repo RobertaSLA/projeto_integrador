@@ -14,6 +14,13 @@ public class Livro {
 	private Autor autor;
 	
 	
+	public Livro(int sku, String isbn, String nome) {
+		super();
+		this.sku = sku;
+		this.isbn = isbn;
+		this.nome = nome;
+	}
+
 	public Livro(int sku, String isbn, String nome, String editora, int estoque, String genero, float preco,
 			Autor autor) {
 		super();
