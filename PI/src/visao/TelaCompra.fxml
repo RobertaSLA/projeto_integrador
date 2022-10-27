@@ -4,6 +4,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -17,7 +18,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaVendaController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCompraController">
    <children>
       <Pane layoutY="68.0" prefHeight="292.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;">
          <children>
@@ -69,6 +70,12 @@
             </Text>
             <TextField fx:id="txtValorCompra" layoutX="1052.0" layoutY="212.0" onAction="#Quantidade" prefHeight="32.0" prefWidth="138.0" promptText="Insira o valor do item..." />
             <Text layoutX="1052.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor de Compra" wrappingWidth="131.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <ChoiceBox fx:id="ChoiceBoxCondicao" layoutX="1033.0" layoutY="130.0" prefHeight="32.0" prefWidth="156.0" style="-fx-background-color: ffffff; -fx-border-color: a9a9a9;" />
+            <Text layoutX="1035.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Condição de Pagamento" wrappingWidth="171.9999999999999">
                <font>
                   <Font size="15.0" />
                </font>
