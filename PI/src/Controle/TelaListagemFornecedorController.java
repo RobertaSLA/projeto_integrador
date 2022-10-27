@@ -3,11 +3,14 @@ package Controle;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
+
+import Modelo.Cliente;
 import Modelo.Fornecedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -131,7 +134,23 @@ public class TelaListagemFornecedorController {
 
     @FXML
     void ActionAlterarCliente(ActionEvent event) {
-    	
+    	Fornecedor fornecedor = tblListagem.getSelectionModel().getSelectedItem();
+  	   
+  	   
+   	 	FXMLLoader loader = new FXMLLoader(
+   	 		getClass().getResource(
+   	 				"/visao/EditarFornecedor.fxml")
+   	 	);  
+   	 
+   	 	Node node;
+   	 	node = (Node)loader.load();
+   	 	
+   	   
+   	 	TelaEditarClienteController controller = loader.getController();
+   	 	System.out.println(controller);
+   	 	controller.DefinirCliente(cliente);
+
+   	 	layoutListagem.getChildren().setAll(node);
     }
 
     @FXML

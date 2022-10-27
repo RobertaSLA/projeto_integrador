@@ -153,7 +153,7 @@
                         <Button id="btnCadastroCliente" fx:id="btnCadastroCliente" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cadastro Cliente" />
                         <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="62.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Cliente" />
                         <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="31.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cadastro Fornecedor" />
-                        <Button id="btnConsultaVenda" fx:id="btnConsultaFornecedor" layoutY="93.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Fornecedor" />
+                        <Button id="btnConsultaFornecedor" fx:id="btnConsultaFornecedor" layoutY="93.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Fornecedor" />
                         <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="124.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Venda" />
                      </children>
                   </Pane>

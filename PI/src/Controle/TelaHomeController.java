@@ -1,4 +1,3 @@
-
 package Controle;
 
 import java.io.IOException;
@@ -6,14 +5,12 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class TelaHomeController {
-	
-	@FXML
+
+    @FXML
     private Button IDBotaoHome;
 
     @FXML
@@ -38,6 +35,9 @@ public class TelaHomeController {
     private Button btnConsultaCliente;
 
     @FXML
+    private Button btnConsultaFornecedor;
+
+    @FXML
     private Button btnConsultaLivros;
 
     @FXML
@@ -60,11 +60,6 @@ public class TelaHomeController {
 
     @FXML
     private AnchorPane idTelaHome;
-    
-    @FXML
-    void ActionBotaoHome(ActionEvent event) {
-
-    }
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
@@ -87,6 +82,11 @@ public class TelaHomeController {
     void AcessoProcessamentoVenda(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
     	idTelaHome.getChildren().setAll(telaHomePane);
+    }
+
+    @FXML
+    void ActionBotaoHome(ActionEvent event) {
+
     }
 
     @FXML
@@ -125,8 +125,14 @@ public class TelaHomeController {
     }
 
     @FXML
-    void ConsultaVenda(ActionEvent event) throws IOException {
-    	
+    void ConsultaVenda(ActionEvent event) {
+
+    }
+
+    @FXML
+    void ConsultarFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -136,9 +142,8 @@ public class TelaHomeController {
     }
 
     @FXML
-    void EmissaoNF(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    void EmissaoNF(ActionEvent event) {
+
     }
 
     @FXML
@@ -147,3 +152,4 @@ public class TelaHomeController {
     }
 
 }
+

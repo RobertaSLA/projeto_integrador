@@ -145,6 +145,9 @@ public class TelaVendaController {
     private Button btnAvancar;
     
     @FXML
+    private Button btnConsultaFornecedor;
+    
+    @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
@@ -169,6 +172,11 @@ public class TelaVendaController {
 
     @FXML
     void AcessoProcessamentoVenda(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ConsultarFornecedor(ActionEvent event) {
 
     }
 
