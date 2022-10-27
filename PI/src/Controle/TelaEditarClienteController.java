@@ -5,10 +5,12 @@ import java.sql.SQLException;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import Modelo.Cliente;
 import Modelo.Endereco;
+import Modelo.Livro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -163,8 +165,31 @@ public class TelaEditarClienteController {
     	ClienteBD clibd = new ClienteBD();
     	clibd.AtualizarLivro(cli);
     	
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
     	telaCadastroPane.getChildren().setAll(telaHomePane);
     }
+    
+    public void DefinirCliente(Cliente cliente) {
+    	txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
+    	txtNome.setText(cliente.getNome());
+    	txtCPF.setText(cliente.getCpf());
+    	ChoiceBoxSexo.setValue(cliente.getSexo());
+    	
+    	String data = cliente.getDataNascimento();
+    	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    	LocalDate ld = LocalDate.parse(data, formatter);
+    	
+    	ChoiceBoxNascimento.setValue(ld);
+    	txtCEP.setText(cliente.getEndereco().getCep());
+    	ChoiceBoxUF.setValue(cliente.getEndereco().getUf());
+    	txtCidade.setText(cliente.getEndereco().getCidade());
+    	txtBairro.setText(cliente.getEndereco().getBairro());
+    	txtEndereco.setText(cliente.getEndereco().getEndereco());
+    	txtNum.setText(String.valueOf(cliente.getEndereco().getNumero()));
+    	txtComplemento.setText(cliente.getEndereco().getComplemento());
+    	txtFone.setText(cliente.getTelefone());
+    	txtCelular.setText(cliente.getCelular());
+    	txtEmail.setText(cliente.getEmail());
+	}
 
 }

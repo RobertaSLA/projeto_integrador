@@ -6,11 +6,13 @@ import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Endereco;
+import Modelo.Livro;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableColumn;
@@ -155,13 +157,32 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void ActionAlterarCliente(ActionEvent event) {
+    void ActionAlterarCliente(ActionEvent event) throws IOException {
+    	Cliente cliente = tblListagemCliente.getSelectionModel().getSelectedItem();
+ 	   
+ 	   
+   	 	FXMLLoader loader = new FXMLLoader(
+   	 		getClass().getResource(
+   	 				"/visao/EditarCliente.fxml")
+   	 	);  
+   	 
+   	 	Node node;
+   	 	node = (Node)loader.load();
+   	 	
+   	   
+   	 	TelaEditarClienteController controller = loader.getController();
+   	 	System.out.println(controller);
+   	 	controller.DefinirCliente(cliente);
 
+   	 	layoutListagem.getChildren().setAll(node);
     }
 
     @FXML
-    void ActionExcluirCliente(ActionEvent event) {
-
+    void ActionExcluirCliente(ActionEvent event) throws SQLException {
+    	ClienteBD clibd = new ClienteBD();
+    	Cliente cliente = tblListagemCliente.getSelectionModel().getSelectedItem();
+    	tblListagemCliente.getItems().remove(cliente);
+    	clibd.DeletarCliente(cliente);
     }
 
     @FXML
