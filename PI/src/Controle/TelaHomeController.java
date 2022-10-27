@@ -1,3 +1,4 @@
+
 package Controle;
 
 import java.io.IOException;
@@ -5,10 +6,15 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaHomeController {
+	
+	@FXML
+    private Button IDBotaoHome;
 
     @FXML
     private Button btnAcessoCadastroProduto;
@@ -54,6 +60,11 @@ public class TelaHomeController {
 
     @FXML
     private AnchorPane idTelaHome;
+    
+    @FXML
+    void ActionBotaoHome(ActionEvent event) {
+
+    }
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {

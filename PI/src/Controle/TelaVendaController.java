@@ -8,14 +8,20 @@ import Modelo.Vendedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaVendaController {
+	
+	@FXML
+    private Button IDBotaoHome;
 
     @FXML
     private Button btnAcessoCadastroCliente;
@@ -73,6 +79,12 @@ public class TelaVendaController {
 
     @FXML
     private Button btnExcluirItem;
+    
+    @FXML
+    private Button btnEditarItem;
+    
+    @FXML
+    private Button btnInserirItem;
 
     @FXML
     private Button btnVendaConsulta;
@@ -127,6 +139,15 @@ public class TelaVendaController {
 
     @FXML
     private TextField txtValorTotal;
+    
+    @FXML
+    private Button btnAvancar;
+    
+    @FXML
+    void ActionBotaoHome(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
+    }
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
@@ -170,8 +191,12 @@ public class TelaVendaController {
 
     @FXML
     void CodCliente(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarCliente.fxml"));
-    	layoutListagem.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/visao/ListarCliente.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 574, 473);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -186,6 +211,17 @@ public class TelaVendaController {
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
+
+    @FXML
+    void ActionEditarItem(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void InserirItem(ActionEvent event) {
+
+    }
+    
     @FXML
     void ConfirmarProduto(ActionEvent event) {
 
@@ -289,6 +325,11 @@ public class TelaVendaController {
 
     @FXML
     void ValorTotal(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void AvancarVenda(ActionEvent event) {
 
     }
     

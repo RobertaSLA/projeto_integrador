@@ -27,6 +27,9 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class TelaListagemProdutoController {
+	
+	@FXML
+    private Button IDBotaoHome;
 
     @FXML
     private Button btnAcessoCadastroCliente;
@@ -162,6 +165,12 @@ public class TelaListagemProdutoController {
 
     @FXML
     private TextField txtPesquisarLivro;
+    
+    @FXML
+    void ActionBotaoHome(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
+    }
 
     @FXML
     void AcaoAventura(ActionEvent event) {
