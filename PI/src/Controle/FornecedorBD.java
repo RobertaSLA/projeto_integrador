@@ -40,6 +40,27 @@ public class FornecedorBD {
 		}
 	}
 	
+	public void DeletarFornecedor(Fornecedor fornecedor) throws SQLException {
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			String sql = "delete from fornecedor where IdFornecedor = ? ";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			stmt.setInt(1, fornecedor.getidFornecedor());
+			
+			stmt.executeUpdate();
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Fornecedor excluído com sucesso");
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+	}
+	
+	
 	
 	
 	public ArrayList<Fornecedor> BuscarFornecedor() throws SQLException {

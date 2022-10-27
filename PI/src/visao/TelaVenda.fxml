@@ -21,11 +21,11 @@
    <children>
       <Pane layoutY="68.0" prefHeight="292.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;">
          <children>
-            <TextField fx:id="txtCodVendedor" layoutX="41.0" layoutY="104.0" onAction="#InserirCodVendedor" onKeyPressed="#CodVendedorTab" prefHeight="32.0" prefWidth="158.0" promptText="Código do Vendedor" />
+            <TextField fx:id="txtCodVendedor" layoutX="41.0" layoutY="104.0" onAction="#InserirCodVendedor" prefHeight="32.0" prefWidth="158.0" promptText="Código do Vendedor" />
             <Button fx:id="btnCodVendedor" layoutX="169.0" layoutY="108.0" mnemonicParsing="false" onAction="#CodVendedor" text="..." />
-            <TextField fx:id="txtCodCliente" layoutX="41.0" layoutY="174.0" onAction="#InserirCodCliente" onKeyPressed="#CodClienteTab" prefHeight="32.0" prefWidth="158.0" promptText="Código do Cliente" />
+            <TextField fx:id="txtCodCliente" layoutX="41.0" layoutY="174.0" onAction="#InserirCodCliente" prefHeight="32.0" prefWidth="158.0" promptText="Código do Cliente" />
             <Button fx:id="btnCodCliente" layoutX="169.0" layoutY="178.0" mnemonicParsing="false" onAction="#CodCliente" text="..." />
-            <TextField fx:id="txtCodProduto" layoutX="41.0" layoutY="244.0" onAction="#InserirCodProduto" onKeyPressed="#CodClienteTab" prefHeight="32.0" prefWidth="158.0" promptText="Código do Produto" />
+            <TextField fx:id="txtCodProduto" layoutX="41.0" layoutY="244.0" onAction="#InserirCodProduto" prefHeight="32.0" prefWidth="158.0" promptText="Código do Produto" />
             <TextField fx:id="txtQuantidade" layoutX="880.0" layoutY="246.0" onAction="#Quantidade" prefHeight="32.0" prefWidth="138.0" promptText="Quantidade" />
             <DatePicker fx:id="dtDataVenda" editable="false" layoutX="880.0" layoutY="174.0" onAction="#DataVenda" prefHeight="32.0" prefWidth="138.0" promptText="Data de venda">
                <opaqueInsets>

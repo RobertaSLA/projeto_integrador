@@ -315,20 +315,6 @@ public class TelaVendaController {
 
     }
     
-    @FXML
-    void CodClienteTab(KeyEvent event) {
-    
-    }
-    
-    @FXML
-    void CodVendedorTab(KeyEvent event) {
-
-    }
-    
-    @FXML
-    void CodProdutoTab(KeyEvent event) {
-
-    }
 
     @FXML
     void NomeCliente(ActionEvent event) {

@@ -133,7 +133,7 @@ public class TelaListagemFornecedorController {
     }
 
     @FXML
-    void ActionAlterarCliente(ActionEvent event) {
+    void ActionAlterarCliente(ActionEvent event) throws IOException {
     	Fornecedor fornecedor = tblListagem.getSelectionModel().getSelectedItem();
   	   
   	   
@@ -146,16 +146,19 @@ public class TelaListagemFornecedorController {
    	 	node = (Node)loader.load();
    	 	
    	   
-   	 	TelaEditarClienteController controller = loader.getController();
+   	 	TelaEditarFornecedorController controller = loader.getController();
    	 	System.out.println(controller);
-   	 	controller.DefinirCliente(cliente);
+   	 	controller.DefinirFornecedor(fornecedor);
 
    	 	layoutListagem.getChildren().setAll(node);
     }
 
     @FXML
-    void ActionExcluirCliente(ActionEvent event) {
-
+    void ActionExcluirCliente(ActionEvent event) throws SQLException {
+    	FornecedorBD forbd = new FornecedorBD();
+    	Fornecedor fornecedor = tblListagem.getSelectionModel().getSelectedItem();
+    	tblListagem.getItems().remove(fornecedor);
+    	forbd.DeletarFornecedor(fornecedor);    
     }
 
     @FXML
