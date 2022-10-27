@@ -1,5 +1,6 @@
 package Controle;
 
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 import Modelo.Cliente;
@@ -201,14 +202,22 @@ public class TelaVendaController {
 
     @FXML
     void CodProduto(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarProduto.fxml"));
-    	layoutListagem.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/visao/ListarProduto.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 574, 473);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     void CodVendedor(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListarVendedor.fxml"));
-    	layoutListagem.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/visao/ListarVendedor.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 574, 473);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        stage.show();
     }
 
 
@@ -295,6 +304,21 @@ public class TelaVendaController {
 
     @FXML
     void InserirCodVendedor(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void CodClienteTab(KeyEvent event) {
+    
+    }
+    
+    @FXML
+    void CodVendedorTab(KeyEvent event) {
+
+    }
+    
+    @FXML
+    void CodProdutoTab(KeyEvent event) {
 
     }
 

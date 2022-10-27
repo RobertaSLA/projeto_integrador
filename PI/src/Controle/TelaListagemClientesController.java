@@ -130,8 +130,9 @@ public class TelaListagemClientesController {
     private TextField txtPesquisarCliente;
     
     @FXML
-    void ActionBotaoHome(ActionEvent event) {
-
+    void ActionBotaoHome(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
