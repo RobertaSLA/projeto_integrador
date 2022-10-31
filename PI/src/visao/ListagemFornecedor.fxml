@@ -123,7 +123,7 @@
             <TableColumn fx:id="clmTelefone" minWidth="0.0" prefWidth="123.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Telefone" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarLivro" layoutX="187.0" layoutY="208.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
+      <TextField fx:id="txtPesquisarLivro" layoutX="165.0" layoutY="209.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
       <Text layoutX="661.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Fornecedor" wrappingWidth="467.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
@@ -141,6 +141,11 @@
             <Image url="@imagens/icon%20alterar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnPesquisarCliente" layoutX="549.0" layoutY="213.0" mnemonicParsing="false" onAction="#ActionPesquisarCliente" text="Pesquisar" />
+      <Button fx:id="btnPesquisar" layoutX="530.0" layoutY="209.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="34.0" prefWidth="32.0" style="-fx-background-color: transparent;" />
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="534.0" layoutY="213.0">
+         <image>
+            <Image url="@imagens/icon%20procurar.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
