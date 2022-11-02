@@ -97,7 +97,7 @@ public class TelaVendaController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<Livro, Integer> clmItem;
+    private TableColumn<TelaVendaController, Integer> clmItem;
 
     @FXML
     private TableColumn<Livro, Integer> clmPrecoVenda;
@@ -154,6 +154,7 @@ public class TelaVendaController {
     private Button btnConsultaFornecedor;
     
     private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
+    
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -248,7 +249,6 @@ public class TelaVendaController {
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
     	listaItens.add(livro);
-    	System.out.println(listaItens.size());
     	tblVenda.refresh();
     }
     
@@ -310,7 +310,9 @@ public class TelaVendaController {
 
     @FXML
     void ExcluirItem(ActionEvent event) {
-
+    	Livro livro = tblVenda.getSelectionModel().getSelectedItem();
+    	listaItens.remove(livro);
+    	tblVenda.refresh();
     }
 
     @FXML
@@ -386,7 +388,6 @@ public class TelaVendaController {
 		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
-		clmItem.setCellValueFactory(new PropertyValueFactory<>("genero"));
 		
 		tblVenda.setItems(listaItens);
     }
