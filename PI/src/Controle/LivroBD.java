@@ -159,6 +159,35 @@ public class LivroBD {
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
+		return Lista;	
+	}
+	
+	public ArrayList<Livro> BuscarLivroAutoAjuda() throws SQLException {
+		ArrayList<Livro> Lista = new ArrayList<Livro>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select * from livro inner join autor using (idAutor) where genero like '%Auto%';";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Autor autor = new Autor(rs.getInt(3), rs.getString(4));
+				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), rs.getString(6), rs.getFloat(8), autor);
+				Lista.add(liv);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
 		return Lista;
 		
 	}

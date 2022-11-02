@@ -10,15 +10,16 @@ package Controle;
 	import javafx.scene.control.TextField;
 	import javafx.scene.layout.AnchorPane;
 
-	public class TelaCompraController implements Initializable{
+	public class TelaCompraController {
 
-	    @FXML
+	/*    @FXML
 	    private ChoiceBox<String> ChoiceBoxCondicao; 
 	    private String[] condicao = {"Boleto 60 dias", "Boleto 45 dias", "Boleto 30 dias", "Boleto 15 dias"};
 	    
 	    @Override
 	    public void initialize(URL arg0, ResourceBundle arg1) {
 	    	myChoiceBox.getItems().addAll(condicao);
+	    }*/
 
 	    @FXML
 	    private Button IDBotaoHome;
@@ -274,4 +275,3 @@ package Controle;
 	}
 
 
-}
