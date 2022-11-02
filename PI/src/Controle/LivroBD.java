@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import Modelo.Autor;
-import Modelo.Cliente;
 import Modelo.Livro;
 
 public class LivroBD {
@@ -116,16 +115,28 @@ public class LivroBD {
 		
 	}
 	
-	public void CriarLivro(int sku) throws SQLException {
+	public Livro CriarLivro(int sku) throws SQLException {
+		Livro livro = new Livro();
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select ISBN, Nome, Editora, Estoque, Genero, Preco, Autor.idAutor, Autor.nome from livro inner "
+			String query = "select ISBN, Livro.Nome, Editora, Estoque, Genero, Preco, Autor.idAutor, Autor.nome from livro inner "
 					+ "join autor where livro.idAutor = autor.idAutor and sku=" +sku;
 			
 			ResultSet rs = stmt.executeQuery(query);
 			
+			while(rs.next()){
+				Autor autor = new Autor(rs.getInt(7), rs.getString(8));
+				livro.setSku(sku);
+				livro.setIsbn(rs.getString(1));
+				livro.setNome(rs.getString(2));
+				livro.setEditora(rs.getString(3));
+				livro.setEstoque(rs.getInt(4));
+				livro.setGenero(rs.getString(5));
+				livro.setPreco(rs.getFloat(6));
+				livro.setAutor(autor);
+			}
 			
 			stmt.close(); 
 			con.close();
@@ -134,6 +145,7 @@ public class LivroBD {
 		} catch (SQLException e){
 			throw new SQLException(e);
 		}
+		return livro;
 }
 	public ArrayList<Livro> BuscarCodLivro() throws SQLException {
 		ArrayList<Livro> Lista = new ArrayList<Livro>();

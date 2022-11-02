@@ -2,10 +2,15 @@ package Controle;
 
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Livro;
 import Modelo.Vendedor;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +21,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -91,16 +97,16 @@ public class TelaVendaController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<?, ?> clmItem;
+    private TableColumn<Livro, Integer> clmItem;
 
     @FXML
-    private TableColumn<?, ?> clmPrecoVenda;
+    private TableColumn<Livro, Integer> clmPrecoVenda;
 
     @FXML
-    private TableColumn<?, ?> clmSKUVenda;
+    private TableColumn<Livro, Integer> clmSKUVenda;
 
     @FXML
-    private TableColumn<?, ?> clmTituloVenda;
+    private TableColumn<Livro, Integer> clmTituloVenda;
 
     @FXML
     private DatePicker dtDataVenda;
@@ -109,7 +115,7 @@ public class TelaVendaController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblVenda;
+    private TableView<Livro> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -146,6 +152,8 @@ public class TelaVendaController {
     
     @FXML
     private Button btnConsultaFornecedor;
+    
+    private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -235,8 +243,13 @@ public class TelaVendaController {
     }
     
     @FXML
-    void InserirItem(ActionEvent event) {
-
+    void InserirItem(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+    	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+    	
+    	listaItens.add(livro);
+    	System.out.println(listaItens.size());
+    	tblVenda.refresh();
     }
     
     @FXML
@@ -366,5 +379,16 @@ public class TelaVendaController {
     	txtCodProduto.setText(String.valueOf(livro.getSku()));
     	txtDescriçãoProduto.setText(String.valueOf(livro.getNome()));
 	}
-
+    
+    @FXML
+    public void initialize() throws SQLException {
+		
+		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
+		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
+		clmItem.setCellValueFactory(new PropertyValueFactory<>("genero"));
+		
+		tblVenda.setItems(listaItens);
+    }
+    
 }

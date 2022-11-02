@@ -1,6 +1,5 @@
 package Modelo;
 
-import java.util.ArrayList;
 
 public class Livro {
 	
@@ -13,6 +12,9 @@ public class Livro {
 	private float preco;
 	private Autor autor;
 	
+	public Livro() {
+		
+	}
 	
 	public Livro(int sku, String isbn, String nome) {
 		super();
