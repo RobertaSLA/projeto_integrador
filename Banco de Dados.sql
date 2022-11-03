@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(50) NOT NULL,
   `CPF` CHAR(14) NOT NULL,
-  `DataNascimento` CHAR(10) NULL,
+  `DataNascimento` CHAR(20) NULL,
   `Sexo` VARCHAR(30) NULL,
   `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
