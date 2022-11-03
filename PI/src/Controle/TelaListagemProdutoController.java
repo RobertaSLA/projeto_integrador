@@ -363,7 +363,7 @@ public class TelaListagemProdutoController {
 		LivroBD liv = new LivroBD();
 		List<Livro> l  = liv.BuscarLivro();
 		
-		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nomeAutor"));
 		clmEditora.setCellValueFactory(new PropertyValueFactory<>("editora"));
 		clmEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
 		clmGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));
