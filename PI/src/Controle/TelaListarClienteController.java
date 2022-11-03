@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Cliente;
+import Modelo.Livro;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -17,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaListarClienteController {
 
@@ -47,6 +49,8 @@ public class TelaListarClienteController {
     @FXML
     private TextField txtNome;
 
+	private TelaVendaController telaVendaController;
+
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
 
@@ -64,23 +68,13 @@ public class TelaListarClienteController {
 
     @FXML
     void ConfirmarCadastro(ActionEvent event) throws IOException {
-    		Cliente clie = TableView.getSelectionModel().getSelectedItem();
-   	   
-   	   
-   	 		FXMLLoader loader = new FXMLLoader(
-   	 				getClass().getResource(
-   	 						"/visao/TelaVenda.fxml"
-   	 					)
-   	 		);  
-   	 
-   	 		Node node;
-   	 		node = (Node)loader.load();
-   	   
-   	 		TelaVendaController controller = loader.getController();
-   	 		System.out.println(controller);
-   	 		controller.DefinirCliente(clie);
-
-   	 		telaCadastroPane.getChildren().setAll(node);
+    	
+    	Cliente cliente = TableView.getSelectionModel().getSelectedItem();
+    	this.telaVendaController.addCliente(cliente);
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
+    	
     }
 
     @FXML
@@ -100,6 +94,10 @@ public class TelaListarClienteController {
 		
 		TableView.setItems(FXCollections.observableArrayList(l));
 		
+	}
+
+	public void setTelaVendaController(TelaVendaController telaVendaController) {
+		this.telaVendaController=telaVendaController;
 	}
 
 }

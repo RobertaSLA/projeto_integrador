@@ -19,6 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaListarVendedorController {
 
@@ -51,6 +52,8 @@ public class TelaListarVendedorController {
 
 	private Venda venda;
 
+	private TelaVendaController telaVendaController ;
+
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
 
@@ -69,23 +72,14 @@ public class TelaListarVendedorController {
 
     @FXML
     void ConfimarCadastro(ActionEvent event) throws IOException {
-    	Vendedor vend = TableView.getSelectionModel().getSelectedItem();
- 	   
- 	   
-   	 	FXMLLoader loader = new FXMLLoader(
-   	 			getClass().getResource(
-   	 					"/visao/TelaVenda.fxml"
-   	 			)
-   	 	);  
-   	 
-   	 	Node node;
-   	 	node = (Node)loader.load();
-   	   
-   	 	TelaVendaController controller = loader.getController();
-   	 	System.out.println(controller);
-   	 	controller.DefinirVendedor(vend);
+    	
+    	Vendedor vendedor = TableView.getSelectionModel().getSelectedItem();
+    	this.telaVendaController.addVendedor(vendedor);
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
 
-   	 	telaCadastroPane.getChildren().setAll(node);
+
     }
 
     @FXML
@@ -109,6 +103,11 @@ public class TelaListarVendedorController {
 
 	public void setVenda(Venda venda) {
 		this.venda=venda;
+		
+	}
+
+	public void setTelaVendaController(TelaVendaController telaVendaController) {
+		this.telaVendaController = telaVendaController;
 		
 	}
     
