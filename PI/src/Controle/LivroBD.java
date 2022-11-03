@@ -174,7 +174,7 @@ public class LivroBD {
 		return Lista;	
 	}
 	
-	public ArrayList<Livro> BuscarFiltros(String filtro) throws SQLException {
+	public ArrayList<Livro> BuscarFiltrosGenero(String filtro) throws SQLException {
 		ArrayList<Livro> Lista = new ArrayList<Livro>();
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
@@ -185,6 +185,112 @@ public class LivroBD {
 			PreparedStatement stmt = con.prepareStatement(query);
 			
 			stmt.setString(1, filtro);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Autor autor = new Autor(rs.getInt(3), rs.getString(4));
+				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), rs.getString(6), rs.getFloat(8), autor);
+				Lista.add(liv);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
+	
+	public ArrayList<Livro> BuscarFiltrosGeneroAcaoeAventura(String filtro, String filtro2) throws SQLException {
+		ArrayList<Livro> Lista = new ArrayList<Livro>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero,"
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor using (idAutor) where genero like ? or genero like ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			System.out.println(stmt);
+			
+			stmt.setString(1, filtro);
+			stmt.setString(2, filtro2);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Autor autor = new Autor(rs.getInt(3), rs.getString(4));
+				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), rs.getString(6), rs.getFloat(8), autor);
+				Lista.add(liv);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
+	
+	public ArrayList<Livro> BuscarFiltrosPreco(int filtro, int filtro2) throws SQLException {
+		ArrayList<Livro> Lista = new ArrayList<Livro>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero,"
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor using (idAutor) where preco between ? and ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setInt(1, filtro);
+			stmt.setInt(2, filtro2);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Autor autor = new Autor(rs.getInt(3), rs.getString(4));
+				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), rs.getString(6), rs.getFloat(8), autor);
+				Lista.add(liv);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
+	
+	public ArrayList<Livro> BuscarFiltrosPrecoAcima110(int filtro) throws SQLException {
+		ArrayList<Livro> Lista = new ArrayList<Livro>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero,"
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor using (idAutor) where preco >= ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setInt(1, filtro);
 			
 			
 			ResultSet rs = stmt.executeQuery();
