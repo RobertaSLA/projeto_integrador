@@ -314,6 +314,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   `Email` VARCHAR (100) NULL,
   `Telefone` VARCHAR(15)  NULL,
   `IdEndereco` INT NOT NULL,
+  INDEX `CNPJ_Fornecedor_idx` (`CNPJ`),
   FOREIGN KEY (`IdEndereco`)
   REFERENCES `mydb`.`Endereco` (`IdEndereco`)
     ON DELETE NO ACTION
@@ -326,17 +327,19 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Compra_has_Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
-  `CNPJ_Fornecedor` CHAR(20) NOT NULL,
+  `CNPJ_Fornecedor` INT NOT NULL,
   `Id_Compra` INT NOT NULL,
   PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
+  INDEX `fk_Compra_has_FornecedorCNPJ_idx` (`CNPJ_Fornecedor`),
+  INDEX `fk_Fornecedor_has_Compra_ID_compra_idx` (`Id_Compra` ASC),
   CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
     FOREIGN KEY (`CNPJ_Fornecedor`)
-    REFERENCES `mydb`.`Fornecedor` (`CNPJ`)
+    REFERENCES `mydb`.`fornecedor` (`CNPJ`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Fornecedor_has_Compra_ID_compra`
     FOREIGN KEY (`Id_Compra`)
-    REFERENCES `mydb`.`Compra` (`IdCompra`)
+    REFERENCES `mydb`.`compra` (`IdCompra`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
