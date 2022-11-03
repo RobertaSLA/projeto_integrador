@@ -313,4 +313,37 @@ public class LivroBD {
 		return Lista;
 		
 	}
+	
+	public ArrayList<Livro> BuscarLivro(String filtro) throws SQLException {
+		ArrayList<Livro> Lista = new ArrayList<Livro>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero,"
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor using (idAutor) where livro.nome like ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setString(1, filtro);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Autor autor = new Autor(rs.getInt(3), rs.getString(4));
+				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), rs.getString(6), rs.getFloat(8), autor);
+				Lista.add(liv);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+	}
 }
