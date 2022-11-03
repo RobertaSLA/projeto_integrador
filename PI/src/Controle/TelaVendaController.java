@@ -8,12 +8,14 @@ import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Livro;
+import Modelo.Venda;
 import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -153,7 +155,13 @@ public class TelaVendaController {
     @FXML
     private Button btnConsultaFornecedor;
     
+    private Float ValorTotal;
+    
+    private Float ValorItem;
+    
     private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
+    
+    private Venda venda = new Venda();
     
     
     @FXML
@@ -215,26 +223,43 @@ public class TelaVendaController {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        
+        venda.setIdCliente(1);
     }
 
     @FXML
     void CodProduto(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/visao/ListarProduto.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 574, 473);
+    	   
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+    	   getClass().getResource(
+    			   "/visao/ListarProduto.fxml"
+    	   )
+    	 );
+        Node node;
+        Parent parent = fxmlLoader.load();
+        node = (Node) parent;
+        TelaListarProdutoController controller = fxmlLoader.getController();
+        controller.setVenda(venda);
+        controller.setTelaVendaController(this);
+        Scene scene = new Scene(parent, 574, 473);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        
     }
 
     @FXML
     void CodVendedor(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
         fxmlLoader.setLocation(getClass().getResource("/visao/ListarVendedor.fxml"));
+        TelaListarVendedorController controller = fxmlLoader.getController();
+        controller.setVenda(venda);
         Scene scene = new Scene(fxmlLoader.load(), 574, 473);
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.show();
+        
+        venda.setIdVendedor(1);
     }
 
 
@@ -249,6 +274,12 @@ public class TelaVendaController {
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
     	listaItens.add(livro);
+    	
+    	ValorItem = livro.getPreco()*Integer.valueOf(txtQuantidade.getText());
+    
+    	ValorTotal = ValorItem + Float.parseFloat(txtValorTotal.getText());
+    	System.out.println(ValorTotal);
+    	txtValorTotal.setText(String.valueOf(ValorTotal));
     	tblVenda.refresh();
     }
     
@@ -362,8 +393,9 @@ public class TelaVendaController {
     }
     
     @FXML
-    void AvancarVenda(ActionEvent event) {
-
+    void AvancarVenda(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaPagamento.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     public void DefinirVendedor(Vendedor vendedor) {
@@ -391,5 +423,12 @@ public class TelaVendaController {
 		
 		tblVenda.setItems(listaItens);
     }
+
+	public void addLivro(Livro livro) {
+		System.out.println(livro);
+		listaItens.add(livro);
+		tblVenda.refresh();
+		
+	}
     
 }

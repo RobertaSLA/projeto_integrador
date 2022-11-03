@@ -6,6 +6,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Livro;
+import Modelo.Venda;
 import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -47,6 +48,8 @@ public class TelaListarVendedorController {
 
     @FXML
     private TextField txtNome;
+
+	private Venda venda;
 
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
@@ -101,6 +104,11 @@ public class TelaListarVendedorController {
 		
 		
 		TableView.setItems(FXCollections.observableArrayList(l));
+		
+	}
+
+	public void setVenda(Venda venda) {
+		this.venda=venda;
 		
 	}
     

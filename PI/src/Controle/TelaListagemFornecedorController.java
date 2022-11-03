@@ -6,6 +6,7 @@ import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Fornecedor;
+import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +23,9 @@ public class TelaListagemFornecedorController {
 	
 	@FXML
     private Button IDBotaoHome;
+	
+	 @FXML
+	 private Button btnPesquisar;
 
     @FXML
     private Button btnAcessoCadastroCliente;
@@ -103,6 +107,7 @@ public class TelaListagemFornecedorController {
 
     @FXML
     private TextField txtPesquisarLivro;
+    
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -216,6 +221,12 @@ public class TelaListagemFornecedorController {
 
     @FXML
     void EmissaoRelatorio(ActionEvent event) {
+
+    }
+    
+    
+    @FXML
+    void Pesquisar(ActionEvent event) {
 
     }
 

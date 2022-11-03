@@ -30,7 +30,10 @@ public class TelaListagemProdutoController {
 	
 	@FXML
     private Button IDBotaoHome;
-
+	
+    @FXML
+    private Button btnPesquisar;
+    
     @FXML
     private Button btnAcessoCadastroCliente;
 
@@ -224,7 +227,7 @@ public class TelaListagemProdutoController {
     @FXML
     void Autoajuda(ActionEvent event) throws SQLException {
     	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarLivroAutoAjuda();
+		List<Livro> l  = liv.BuscarFiltros("Auto");
 		
 		tblListagem.setItems(FXCollections.observableArrayList(l));
     }
@@ -302,6 +305,12 @@ public class TelaListagemProdutoController {
     void Gastronomia(ActionEvent event) {
 
     }
+    
+    @FXML
+    void Pesquisar(ActionEvent event) {
+
+    }
+
 
     @FXML
     void PesquisarLivro(ActionEvent event) {

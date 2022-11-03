@@ -172,7 +172,7 @@
       </Pane>
       <Pane layoutY="758.0" prefHeight="82.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <TextField fx:id="txtValorTotal" alignment="CENTER" layoutX="1459.0" layoutY="24.0" onAction="#ValorTotal" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0,00">
+            <TextField fx:id="txtValorTotal" alignment="CENTER" editable="false" layoutX="1459.0" layoutY="24.0" onAction="#ValorTotal" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0.00">
                <font>
                   <Font size="22.0" />
                </font>
@@ -185,7 +185,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtDescontos" alignment="CENTER" layoutX="1259.0" layoutY="24.0" onAction="#Descontos" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0,00">
+            <TextField fx:id="txtDescontos" alignment="CENTER" layoutX="1259.0" layoutY="24.0" onAction="#Descontos" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0.00">
                <font>
                   <Font size="22.0" />
                </font>
@@ -198,7 +198,7 @@
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtQtdItens" alignment="CENTER" layoutX="1059.0" layoutY="24.0" onAction="#QuantidadeItensVenda" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0">
+            <TextField fx:id="txtQtdItens" alignment="CENTER" editable="false" layoutX="1059.0" layoutY="24.0" onAction="#QuantidadeItensVenda" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0">
                <font>
                   <Font size="22.0" />
                </font>

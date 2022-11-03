@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Livro;
+import Modelo.Venda;
 import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -17,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaListarProdutoController {
 
@@ -47,6 +49,10 @@ public class TelaListarProdutoController {
     @FXML
     private TextField txtNome;
 
+	private Venda venda;
+
+	private TelaVendaController telaVendaController;
+
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
 
@@ -65,6 +71,12 @@ public class TelaListarProdutoController {
     @FXML
     void ConfimarCadastro(ActionEvent event) throws IOException {
     	Livro livro = TableView.getSelectionModel().getSelectedItem();
+    	this.telaVendaController.addLivro(livro);
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
+    
+    	/*Livro livro = TableView.getSelectionModel().getSelectedItem();
   	   
   	   
    	 	FXMLLoader loader = new FXMLLoader(
@@ -80,7 +92,7 @@ public class TelaListarProdutoController {
    	 	System.out.println(controller);
    	 	controller.DefinirLivro(livro);
 
-   	 	telaCadastroPane.getChildren().setAll(node);
+   	 	telaCadastroPane.getChildren().setAll(node);*/
     }
 
     @FXML
@@ -99,6 +111,15 @@ public class TelaListarProdutoController {
 		
 		
 		TableView.setItems(FXCollections.observableArrayList(l));
+		
+	}
+
+	public void setVenda(Venda venda) {
+		this.venda=venda;
+	}
+
+	public void setTelaVendaController(TelaVendaController telaVendaController) {
+		this.telaVendaController=telaVendaController;
 		
 	}
     

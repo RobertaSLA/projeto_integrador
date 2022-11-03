@@ -91,7 +91,7 @@ public class LivroBD {
 			Statement stmt = con.createStatement();
 			
 			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero, "
-					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor where autor.idAutor=livro.idAutor";
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor using (idAutor)";
 			
 			
 			ResultSet rs = stmt.executeQuery(query);
@@ -174,16 +174,20 @@ public class LivroBD {
 		return Lista;	
 	}
 	
-	public ArrayList<Livro> BuscarLivroAutoAjuda() throws SQLException {
+	public ArrayList<Livro> BuscarFiltros(String filtro) throws SQLException {
 		ArrayList<Livro> Lista = new ArrayList<Livro>();
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			Statement stmt = con.createStatement();
 			
-			String query = "select * from livro inner join autor using (idAutor) where genero like '%Auto%';";
+			String query = "select livro.sku, livro.nome, autor.idAutor, autor.nome, livro.editora, livro.genero,"
+					+ "livro.isbn, livro.preco, livro.estoque from livro inner join autor using (idAutor) where genero like ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setString(1, filtro);
 			
 			
-			ResultSet rs = stmt.executeQuery(query);
+			ResultSet rs = stmt.executeQuery();
 			
 	
 			while(rs.next()){

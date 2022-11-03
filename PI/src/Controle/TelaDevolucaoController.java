@@ -12,6 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaDevolucaoController {
+	
+	@FXML
+    private Button IDBotaoHome;
 
     @FXML
     private Button btnAcessoCadastroCliente;
@@ -117,6 +120,11 @@ public class TelaDevolucaoController {
 
     @FXML
     private TextField txtValorTotal;
+    
+    @FXML
+    void ActionBotaoHome(ActionEvent event) {
+
+    }
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) {
