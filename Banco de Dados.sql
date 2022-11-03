@@ -326,7 +326,7 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Compra_has_Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
-  `CNPJ_Fornecedor` INT NOT NULL,
+  `CNPJ_Fornecedor` CHAR(20) NOT NULL,
   `Id_Compra` INT NOT NULL,
   PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
   CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
@@ -334,7 +334,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
     REFERENCES `mydb`.`Fornecedor` (`CNPJ`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Forneecdor_has_Compra_ID_compra`
+  CONSTRAINT `fk_Fornecedor_has_Compra_ID_compra`
     FOREIGN KEY (`Id_Compra`)
     REFERENCES `mydb`.`Compra` (`IdCompra`)
     ON DELETE NO ACTION
