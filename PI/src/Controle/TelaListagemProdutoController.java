@@ -227,7 +227,7 @@ public class TelaListagemProdutoController {
     @FXML
     void Autoajuda(ActionEvent event) throws SQLException {
     	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltros("Auto");
+		List<Livro> l  = liv.BuscarFiltros("%Auto%");
 		
 		tblListagem.setItems(FXCollections.observableArrayList(l));
     }

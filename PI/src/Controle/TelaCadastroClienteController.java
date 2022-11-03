@@ -12,11 +12,13 @@ import Modelo.Endereco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaCadastroClienteController {
 
@@ -128,8 +130,9 @@ public class TelaCadastroClienteController {
 
     @FXML
     void CancelarCadastro(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
-    	telaCadastroPane.getChildren().setAll(telaHomePane);
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
     }
 
     @FXML
@@ -146,8 +149,9 @@ public class TelaCadastroClienteController {
     	ClienteBD clibd = new ClienteBD();
     	clibd.InserirCliente(cli);
     	
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
-    	telaCadastroPane.getChildren().setAll(telaHomePane);
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
     }
 
 }

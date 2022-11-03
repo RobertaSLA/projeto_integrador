@@ -5,8 +5,10 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaHomeController {
 	
@@ -63,8 +65,13 @@ public class TelaHomeController {
 
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

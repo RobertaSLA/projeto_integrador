@@ -250,16 +250,21 @@ public class TelaVendaController {
 
     @FXML
     void CodVendedor(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-        fxmlLoader.setLocation(getClass().getResource("/visao/ListarVendedor.fxml"));
-        TelaListarVendedorController controller = fxmlLoader.getController();
-        controller.setVenda(venda);
-        Scene scene = new Scene(fxmlLoader.load(), 574, 473);
-        Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
-        
-        venda.setIdVendedor(1);
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+    	    	   getClass().getResource(
+    	    			   "/visao/ListarVendedor.fxml"
+    	    	   )
+    	    	 );
+    	        Node node;
+    	        Parent parent = fxmlLoader.load();
+    	        node = (Node) parent;
+    	        TelaListarProdutoController controller = fxmlLoader.getController();
+    	        controller.setVenda(venda);
+    	        controller.setTelaVendaController(this);
+    	        Scene scene = new Scene(parent, 574, 473);
+    	        Stage stage = new Stage();
+    	        stage.setScene(scene);
+    	        stage.show();
     }
 
 
@@ -409,11 +414,6 @@ public class TelaVendaController {
     	txtNomeCliente.setText(String.valueOf(cliente.getNome()));
 	}
     
-    public void DefinirLivro(Livro livro) {
-    	txtCodProduto.setText(String.valueOf(livro.getSku()));
-    	txtDescriçãoProduto.setText(String.valueOf(livro.getNome()));
-	}
-    
     @FXML
     public void initialize() throws SQLException {
 		
@@ -425,9 +425,8 @@ public class TelaVendaController {
     }
 
 	public void addLivro(Livro livro) {
-		System.out.println(livro);
-		listaItens.add(livro);
-		tblVenda.refresh();
+		txtCodProduto.setText(String.valueOf(livro.getSku()));
+		txtDescriçãoProduto.setText(livro.getNome());
 		
 	}
     
