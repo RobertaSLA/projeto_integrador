@@ -162,6 +162,10 @@ public class TelaVendaController {
     
     private Float ValorItem;
     
+    private Float ValorDesconto;
+    
+    private int Item;
+    
     private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
     
     private Venda venda = new Venda();
@@ -169,7 +173,7 @@ public class TelaVendaController {
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
@@ -293,11 +297,17 @@ public class TelaVendaController {
     	
     	listaItens.add(livro);
     	
-    	ValorItem = livro.getPreco()*Integer.valueOf(txtQuantidade.getText());
+    	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
     
     	ValorTotal = ValorItem + Float.parseFloat(txtValorTotal.getText());
     	
+    	ValorDesconto = Float.parseFloat(txtDescontos.getText()) + Float.parseFloat(txtDesconto.getText());
+    	
+    	Item = Integer.parseInt(txtQuantidade.getText()) + Integer.parseInt(txtQtdItens.getText());
+    	
     	txtValorTotal.setText(String.valueOf(ValorTotal));
+    	txtDescontos.setText(String.valueOf(ValorDesconto));
+    	txtQtdItens.setText(String.valueOf(Item));
     	tblVenda.refresh();
     	
     	txtCodProduto.setText(null);
