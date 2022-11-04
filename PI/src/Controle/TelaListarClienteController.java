@@ -1,16 +1,16 @@
 
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Cliente;
-import Modelo.Livro;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;

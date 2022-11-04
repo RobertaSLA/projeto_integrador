@@ -1,12 +1,10 @@
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
-import Modelo.Cliente;
 import Modelo.Fornecedor;
-import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -136,6 +134,9 @@ public class TelaListagemFornecedorController {
     void AcessoProcessamentoVenda(ActionEvent event) {
 
     }
+    
+
+
 
     @FXML
     void ActionAlterarCliente(ActionEvent event) throws IOException {

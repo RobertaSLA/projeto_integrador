@@ -1,10 +1,7 @@
 package Controle;
 
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-import Modelo.Cliente;
+import java.io.IOException;
 import Modelo.Fornecedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

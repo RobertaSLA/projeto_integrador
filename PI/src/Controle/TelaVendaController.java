@@ -1,10 +1,9 @@
 package Controle;
 
-import java.awt.event.KeyEvent;
+
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
+
 
 import Modelo.Cliente;
 import Modelo.Livro;
@@ -200,8 +199,9 @@ public class TelaVendaController {
     }
     
     @FXML
-    void ConsultarFornecedor(ActionEvent event) {
-
+    void ConsultarFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -320,13 +320,15 @@ public class TelaVendaController {
     }
 
     @FXML
-    void ConsultaCliente(ActionEvent event) {
-
+    void ConsultaCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void ConsultaLivro(ActionEvent event) {
-
+    void ConsultaLivro(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -379,7 +381,7 @@ public class TelaVendaController {
 
     @FXML
     void InserirCodCliente(ActionEvent event) {
-
+    	
     }
 
     @FXML

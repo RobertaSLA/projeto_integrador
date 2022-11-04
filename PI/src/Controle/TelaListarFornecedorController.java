@@ -1,10 +1,10 @@
 package Controle;
 
+
 import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Fornecedor;
-import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

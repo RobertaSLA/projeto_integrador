@@ -1,18 +1,15 @@
 package Controle;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
-
-import Modelo.Cliente;
 import Modelo.Endereco;
 import Modelo.Fornecedor;
-import Modelo.Vendedor;
 
 public class FornecedorBD {
 	public void InserirFornecedor(Fornecedor fornecedor) throws SQLException {

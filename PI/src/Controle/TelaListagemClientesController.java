@@ -1,14 +1,13 @@
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Endereco;
-import Modelo.Livro;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -26,6 +25,9 @@ public class TelaListagemClientesController {
 	
 	@FXML
     private Button IDBotaoHome;
+	
+	 @FXML
+	 private Button btnPesquisar;
 
     @FXML
     private Button btnAcessoCadastroCliente;
@@ -154,6 +156,11 @@ public class TelaListagemClientesController {
 
     @FXML
     void AcessoProcessamentoVenda(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void Pesquisar(ActionEvent event) {
 
     }
 
@@ -291,7 +298,7 @@ public class TelaListagemClientesController {
 		clmCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		clmEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 		clmTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
-		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));		
+		clmCEP.setCellValueFactory(new PropertyValueFactory<>("CEP"));		
 		
 		tblListagemCliente.setItems(FXCollections.observableArrayList(l));
 		

@@ -1,11 +1,10 @@
 package Controle;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
-
-import Modelo.Cliente;
 import Modelo.Compra;
 
 public class CompraBD {
