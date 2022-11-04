@@ -24,7 +24,7 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
   `IdEndereco` INT NOT NULL AUTO_INCREMENT,
   `CEP` CHAR(15) NULL,
-  `UF` CHAR(5) NULL,
+  `UF` CHAR(10) NULL,
   `Cidade` VARCHAR(30) NULL,
   `Bairro` VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
