@@ -77,7 +77,7 @@
                      <children>
                         <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Devolução" />
                         <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" fx:id="btnVendaConsulta" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Venda" />
+                        <Button id="btnCadastroProduto" fx:id="btnHistoricoVenda" layoutY="64.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Histórico de Venda" />
                         <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Emissão Relatório" />
                      </children>
                   </AnchorPane>

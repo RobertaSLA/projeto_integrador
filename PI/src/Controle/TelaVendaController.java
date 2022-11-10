@@ -70,9 +70,9 @@ public class TelaVendaController {
 
     @FXML
     private Button btnConsultaLivro;
-
+    
     @FXML
-    private Button btnConsultaPreco;
+    private Button btnHistoricoVenda;
 
     @FXML
     private Button btnConsultaVenda;
@@ -340,7 +340,7 @@ public class TelaVendaController {
     }
 
     @FXML
-    void ConsultaPreco(ActionEvent event) {
+    void HistoricoVenda(ActionEvent event) {
 
     }
 

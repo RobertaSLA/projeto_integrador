@@ -43,7 +43,7 @@ public class TelaHomeController {
     private Button btnConsultaLivros;
 
     @FXML
-    private Button btnConsultaPreco;
+    private Button btnHistoricoVenda;
 
     @FXML
     private Button btnConsultaVenda;
@@ -162,7 +162,7 @@ public class TelaHomeController {
     }
 
     @FXML
-    void ConsultaPreco(ActionEvent event) {
+    void HistoricoVenda(ActionEvent event) {
 
     }
 
