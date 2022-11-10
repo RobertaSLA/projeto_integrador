@@ -84,7 +84,7 @@ public class TelaListagemProdutoController {
     private Button btnExcluir;
 
     @FXML
-    private Button btnVendaConsulta;
+    private Button btnHistoricoVenda;
 
     @FXML
     private CheckBox chkAcaoAventura;
@@ -308,6 +308,11 @@ public class TelaListagemProdutoController {
 
     }
 
+    @FXML
+    void HistoricoVenda(ActionEvent event) {
+
+    }
+    
     @FXML
     void ConsultaVenda(ActionEvent event) {
 

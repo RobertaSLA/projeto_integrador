@@ -19,7 +19,7 @@ public class TelaHomeController {
     private Button btnAcessoCadastroProduto;
 
     @FXML
-    private Button btnAcessoConsultaPreco;
+    private Button btnConsultaPreco;
 
     @FXML
     private Button btnAcessoVenda;
@@ -165,12 +165,17 @@ public class TelaHomeController {
     void HistoricoVenda(ActionEvent event) {
 
     }
+    
+    @FXML
+    void ConsultaPreco(ActionEvent event) {
+
+    }
 
     @FXML
     void ConsultaVenda(ActionEvent event) {
 
     }
-
+    
     @FXML
     void ConsultarFornecedor(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();

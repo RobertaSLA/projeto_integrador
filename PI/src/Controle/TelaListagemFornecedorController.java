@@ -63,7 +63,7 @@ public class TelaListagemFornecedorController {
     private Button btnConsultaPreco;
 
     @FXML
-    private Button btnConsultaVenda;
+    private Button btnHistoricoVenda;
 
     @FXML
     private Button btnDevolucao;
@@ -244,6 +244,11 @@ public class TelaListagemFornecedorController {
 
     @FXML
     void ConsultaVenda(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void HistoricoVenda(ActionEvent event) {
 
     }
 

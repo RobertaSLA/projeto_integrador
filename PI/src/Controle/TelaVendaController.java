@@ -345,6 +345,11 @@ public class TelaVendaController {
     }
 
     @FXML
+    void ConsultaPreco(ActionEvent event) {
+
+    }
+    
+    @FXML
     void ConsultaVenda(ActionEvent event) {
 
     }
