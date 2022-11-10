@@ -2,8 +2,12 @@ package Controle;
 
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
-
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Calendar;
 
 import Modelo.Cliente;
 import Modelo.Livro;
@@ -428,24 +432,35 @@ public class TelaVendaController {
     
     @FXML
     void AvancarVenda(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader(
- 	    	   getClass().getResource(
- 	    			   "/visao/TelaPagamento.fxml"
- 	    	   )
- 	    	 );
- 	        Node node;
- 	        Parent parent = fxmlLoader.load();
- 	        node = (Node) parent;
- 	        Scene scene = new Scene(parent, 585, 545);
- 	        Stage stage = new Stage();
- 	        stage.setScene(scene);
- 	        stage.show();
+		venda.setSkuLivro(Integer.parseInt(txtCodProduto.getText()));
+		venda.setIdVendedor(Integer.parseInt(txtCodVendedor.getText()));
+		venda.setIdCliente(Integer.parseInt(txtCodCliente.getText()));
+		venda.setValor(Float.parseFloat(txtValorTotal.getText()));
+		venda.setDesconto(Float.parseFloat(txtDescontos.getText()));
+		
+		LocalDate localdate = dtDataVenda.getValue();
+		Date date = (Date) Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		venda.setData(date);
+		
+		FXMLLoader fxmlLoader = new FXMLLoader(
+		    	   getClass().getResource(
+		    			   "/visao/TelaPagamento.fxml"
+		    	   )
+		    	 );
+		        Node node;
+		        Parent parent = fxmlLoader.load();
+		        node = (Node) parent;
+		        TelaFormaPagamentoController controller = fxmlLoader.getController();
+		        controller.setVenda(this);
+		        Scene scene = new Scene(parent, 574, 473);
+		        Stage stage = new Stage();
+		        stage.setScene(scene);
+		        stage.show();
     }
     
     
     @FXML
-    public void initialize() throws SQLException {
-		
+    public void initialize() throws SQLException { 
 		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
@@ -456,20 +471,19 @@ public class TelaVendaController {
 	public void addLivro(Livro livro) {
 		txtCodProduto.setText(String.valueOf(livro.getSku()));
 		txtDescriçãoProduto.setText(livro.getNome());
-		venda.setSkuLivro(Integer.parseInt(txtCodProduto.getText()));
 		
 	}
 
 	public void addVendedor(Vendedor vendedor) {
 		txtCodVendedor.setText(String.valueOf(vendedor.getIdVendedor()));
 		txtNomeVendedor.setText(vendedor.getNome());
-		venda.setIdVendedor(Integer.parseInt(txtCodVendedor.getText()));
+
 	}
 
 	public void addCliente(Cliente cliente) {
 		txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
 		txtNomeCliente.setText(String.valueOf(cliente.getNome()));
-		venda.setIdCliente(Integer.parseInt(txtCodCliente.getText()));
+		
 	}
     
 }
