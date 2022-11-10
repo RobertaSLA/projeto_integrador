@@ -89,9 +89,7 @@ public class FornecedorBD {
 
 			stmt.close(); 
 			con.close();
-			
-			JOptionPane.showMessageDialog(null, "Inserido com sucesso");
-			
+						
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
