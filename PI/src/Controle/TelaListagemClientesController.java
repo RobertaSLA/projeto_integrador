@@ -247,7 +247,12 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void PesquisarCliente(ActionEvent event) {
+    void PesquisarCliente(ActionEvent event) throws SQLException {
+    	//System.out.println("oi");
+    	ClienteBD liv = new ClienteBD();
+		List<Cliente> l  = liv.BuscarCliente("%" + txtPesquisarCliente.getText() + "%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 

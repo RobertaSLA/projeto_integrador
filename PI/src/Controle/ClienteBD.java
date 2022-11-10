@@ -16,7 +16,6 @@ import Modelo.Endereco;
 import Modelo.Livro;
 import Modelo.Vendedor;
 
-
 public class ClienteBD {
 	
 	public void InserirCliente(Cliente cliente) throws SQLException {
@@ -154,5 +153,38 @@ public class ClienteBD {
 		}
 		return Lista;
 		
+	}
+	
+	public ArrayList<Cliente> BuscarCliente(String filtro) throws SQLException {
+		ArrayList<Cliente> Lista = new ArrayList<Cliente>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select cliente.codigo, cliente.nome, cliente.CPF, cliente.telefone, cliente.email, endereco.idEndereco, endereco.cep,"
+					+ "from cliente inner join endereco using (idEndereco) where cliente.nome like ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setString(1, filtro);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Endereco endereco = new Endereco(rs.getString(6));
+				Cliente cli = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getInt(4), rs.getString(5));
+				Lista.add(cli);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
 	}
 }
