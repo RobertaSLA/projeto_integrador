@@ -124,12 +124,27 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`FormaDePagamento`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `mydb`.`FormaDePagamento` (
+  `idFormaDePagamento` INT NOT NULL AUTO_INCREMENT,
+  `FormaDePagamento` VARCHAR(100) NOT NULL,
+  `BandeiraCartao` CHAR(30) NULL,
+  `ValorTotal` DOUBLE NULL,
+  `ValorRecebido` DOUBLE NULL,
+  `ValorTroco` DOUBLE NULL,
+  PRIMARY KEY (`IdFormaDePagamento`),
+  UNIQUE INDEX `IdFormaDePagamento_UNIQUE` (`IdFormaDePagamento` ASC))
+  ENGINE = InnoDB;
+  
+-- -----------------------------------------------------
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL AUTO_INCREMENT,
   `SKULivro` INT NULL, 
-  `FormaPagamento` VARCHAR(45) NULL,
+  `IdFormaPagamento` INT NOT NULL,
   `Data` VARCHAR(10) NULL,
   `Valor` DOUBLE NULL,
   `Cliente_idCliente` INT NOT NULL,
@@ -151,6 +166,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   CONSTRAINT `fk_VendaLivro` 
 	FOREIGN KEY (`SKULivro`) 
 	REFERENCES `Livro` (`SKU`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    CONSTRAINT `fk_Venda_FormaPagamento`
+    FOREIGN KEY (`IdFormaPagamento`)
+    REFERENCES `mydb`.`FormaDePagamento` (`IdFormaDePagamento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -343,6 +363,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

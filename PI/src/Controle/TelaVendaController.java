@@ -167,8 +167,6 @@ public class TelaVendaController {
     
     private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
     
-    private Venda venda = new Venda();
-    
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -312,6 +310,8 @@ public class TelaVendaController {
     	
     	txtCodProduto.setText(null);
     	txtDescriçãoProduto.setText(null);
+    	txtDesconto.setText(null);
+    	txtQuantidade.setText(null);
     }
     
     @FXML
@@ -427,8 +427,18 @@ public class TelaVendaController {
     
     @FXML
     void AvancarVenda(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaPagamento.fxml"));
-    	layoutListagem.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader(
+ 	    	   getClass().getResource(
+ 	    			   "/visao/TelaPagamento.fxml"
+ 	    	   )
+ 	    	 );
+ 	        Node node;
+ 	        Parent parent = fxmlLoader.load();
+ 	        node = (Node) parent;
+ 	        Scene scene = new Scene(parent, 585, 545);
+ 	        Stage stage = new Stage();
+ 	        stage.setScene(scene);
+ 	        stage.show();
     }
     
     public void DefinirVendedor(Vendedor vendedor) {

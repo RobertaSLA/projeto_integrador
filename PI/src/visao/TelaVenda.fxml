@@ -32,7 +32,7 @@
                   <Insets />
                </opaqueInsets>
             </DatePicker>
-            <Text layoutX="675.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Venda">
+            <Text layoutX="675.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Processamento Venda">
                <font>
                   <Font size="52.0" />
                </font>
