@@ -193,7 +193,7 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void ActionPesquisarCliente(ActionEvent event) {
+    void ActionPesquisarCliente(ActionEvent event) {    	
 
     }
 
@@ -260,13 +260,12 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void PesquisarCliente(ActionEvent event) throws SQLException {
-    	//System.out.println("oi");
-    	ClienteBD liv = new ClienteBD();
+    void Pesquisar(ActionEvent event) throws SQLException {
+    	ClienteBD cli = new ClienteBD();
 		List<Cliente> c  = cli.BuscarCliente("%" + txtPesquisarCliente.getText() + "%");
 		
 		tblListagemCliente.setItems(FXCollections.observableArrayList(c));
-
+    	
     }
 
     @FXML

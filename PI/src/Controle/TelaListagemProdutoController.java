@@ -322,7 +322,6 @@ public class TelaListagemProdutoController {
     
     @FXML
     void Pesquisar(ActionEvent event) throws SQLException {
-    	//System.out.println("oi");
     	LivroBD liv = new LivroBD();
 		List<Livro> l  = liv.BuscarLivro("%" + txtPesquisarLivro.getText() + "%");
 		

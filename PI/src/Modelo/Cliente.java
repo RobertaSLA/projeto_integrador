@@ -134,6 +134,10 @@ public class Cliente {
 		this.email = email;
 	}
 	
+	public String getCep() {
+		return endereco.getCep();
+	}
+	
 	
 	
 	

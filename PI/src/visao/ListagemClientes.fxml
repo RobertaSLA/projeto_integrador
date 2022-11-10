@@ -147,7 +147,7 @@
             <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarCliente" layoutX="262.0" layoutY="224.0" onAction="#PesquisarCliente" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
+      <TextField fx:id="txtPesquisarCliente" layoutX="262.0" layoutY="224.0" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
       <Text layoutX="662.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Clientes" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
@@ -165,11 +165,11 @@
             <Image url="@imagens/icon%20alterar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnPesquisar" layoutX="621.0" layoutY="208.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="34.0" prefWidth="32.0" style="-fx-background-color: transparent;" />
       <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="626.0" layoutY="230.0">
          <image>
             <Image url="@imagens/icon%20procurar.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnPesquisar" layoutX="622.0" layoutY="224.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="34.0" prefWidth="32.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

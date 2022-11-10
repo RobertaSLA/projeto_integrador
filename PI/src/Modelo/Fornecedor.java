@@ -44,6 +44,18 @@ public class Fornecedor {
 		this.endereco = endereco;
 	}	
 	
+	
+	
+	public Fornecedor(int idFornecedor, String nome, String cnpj, String insEstadual, String telefone, String email) {
+		super();
+		this.idFornecedor = idFornecedor;
+		this.nome = nome;
+		this.cnpj = cnpj;
+		this.insEstadual = insEstadual;
+		this.telefone = telefone;
+		this.email = email;
+	}
+
 	public int getidFornecedor() {
 		return idFornecedor;
 	}

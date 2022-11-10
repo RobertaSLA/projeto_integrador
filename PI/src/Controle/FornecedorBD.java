@@ -9,9 +9,11 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import Modelo.Autor;
 import Modelo.Cliente;
 import Modelo.Endereco;
 import Modelo.Fornecedor;
+import Modelo.Livro;
 import Modelo.Vendedor;
 
 public class FornecedorBD {
@@ -125,5 +127,36 @@ public class FornecedorBD {
 		}
 		return Lista;
 		
+	}
+	
+	public ArrayList<Fornecedor> BuscarFornecedor(String filtro) throws SQLException {
+		ArrayList<Fornecedor> Lista = new ArrayList<Fornecedor>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select idFornecedor, Nome, CNPJ, Inscricao_Estadual, Email, Telefone from Fornecedor where nome like ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setString(1, filtro);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Fornecedor forn = new Fornecedor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
+				Lista.add(forn);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
 	}
 }

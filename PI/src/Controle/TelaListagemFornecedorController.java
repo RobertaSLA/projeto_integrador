@@ -6,6 +6,7 @@ import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Fornecedor;
+import Modelo.Livro;
 import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -53,6 +54,9 @@ public class TelaListagemFornecedorController {
 
     @FXML
     private Button btnConsultaCliente;
+    
+    @FXML
+    private Button btnConsultaFornecedor;
 
     @FXML
     private Button btnConsultaLivro;
@@ -106,7 +110,7 @@ public class TelaListagemFornecedorController {
     private TableView<Fornecedor> tblListagem;
 
     @FXML
-    private TextField txtPesquisarLivro;
+    private TextField txtPesquisarFornecedor;
     
     
     @FXML
@@ -208,6 +212,12 @@ public class TelaListagemFornecedorController {
     void ConsultaVenda(ActionEvent event) {
 
     }
+    
+    @FXML
+    void ConsultarFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ConsultarFornecedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
+    }
 
     @FXML
     void Devolucao(ActionEvent event) {
@@ -226,12 +236,16 @@ public class TelaListagemFornecedorController {
     
     
     @FXML
-    void Pesquisar(ActionEvent event) {
+    void Pesquisar(ActionEvent event) throws SQLException {
+    	FornecedorBD forn = new FornecedorBD();
+		List<Fornecedor> l  = forn.BuscarFornecedor("%" + txtPesquisarFornecedor.getText() + "%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void PesquisarLivro(ActionEvent event) {
+    void PesquisarFornecedor(ActionEvent event) {
 
     }
 

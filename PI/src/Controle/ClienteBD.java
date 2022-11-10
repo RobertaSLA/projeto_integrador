@@ -160,8 +160,8 @@ public class ClienteBD {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
 			
-			String query = "select cliente.codigo, cliente.nome, cliente.CPF, cliente.telefone, cliente.email, endereco.cep,"
-					+ "from cliente inner join endereco using (idEndereco) where cliente.nome like ?;";
+			String query = "select cliente.idCliente, cliente.nome, cliente.CPF, cliente.fone, cliente.email, endereco.cep "
+					+ "from cliente inner join endereco on cliente.idEndereco = endereco.idEndereco where cliente.nome like ?;";
 			
 			PreparedStatement stmt = con.prepareStatement(query);
 			
@@ -172,8 +172,8 @@ public class ClienteBD {
 			
 	
 			while(rs.next()){
-				Endereco endereco = new Endereco(rs.getString(7));
-				Cliente cli = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(4), rs.getString(3), endereco, rs.getString(6));
+				Endereco endereco = new Endereco(rs.getString(6));
+				Cliente cli = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(4), rs.getString(3), endereco, rs.getString(5), query, query, query);
 				Lista.add(cli);
 			}
 			
