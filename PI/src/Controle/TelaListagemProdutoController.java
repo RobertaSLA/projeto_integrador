@@ -173,7 +173,7 @@ public class TelaListagemProdutoController {
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaHome.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1604, 1000);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -189,7 +189,7 @@ public class TelaListagemProdutoController {
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -200,7 +200,7 @@ public class TelaListagemProdutoController {
     @FXML
     void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -251,7 +251,7 @@ public class TelaListagemProdutoController {
     @FXML
     void CadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -262,7 +262,7 @@ public class TelaListagemProdutoController {
     @FXML
     void CadastroFornecedor(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroFornecedor.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -273,7 +273,7 @@ public class TelaListagemProdutoController {
     @FXML
     void CadastroLivro(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -284,7 +284,7 @@ public class TelaListagemProdutoController {
     @FXML
     void ConsultaCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1601, 837);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -295,7 +295,7 @@ public class TelaListagemProdutoController {
     @FXML
     void ConsultaLivro(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemProdutos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1601, 858);
         Stage stage = new Stage();
         stage.setResizable(false);

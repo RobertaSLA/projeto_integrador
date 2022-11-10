@@ -4,12 +4,15 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaDevolucaoController {
 	
@@ -127,13 +130,25 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void AcessoCadastroCliente(ActionEvent event) {
-
+    void AcessoCadastroCliente(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void AcessoCadsatroProdutos(ActionEvent event) {
-
+    void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -142,18 +157,36 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void AcessoProcessamentoVenda(ActionEvent event) {
-
+    void AcessoProcessamentoVenda(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaVenda.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void CadastroCliente(ActionEvent event) {
-
+    void CadastroCliente(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
-    void CadastroFornecedor(ActionEvent event) {
-
+    void CadastroFornecedor(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -182,8 +215,14 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void ConsultaLivro(ActionEvent event) {
-
+    void ConsultaLivro(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemProdutos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 858);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML

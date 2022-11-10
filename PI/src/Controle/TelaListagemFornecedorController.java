@@ -114,7 +114,7 @@ public class TelaListagemFornecedorController {
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaHome.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1604, 1000);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -125,7 +125,7 @@ public class TelaListagemFornecedorController {
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -136,7 +136,7 @@ public class TelaListagemFornecedorController {
     @FXML
     void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -191,7 +191,7 @@ public class TelaListagemFornecedorController {
     @FXML
     void CadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -202,7 +202,7 @@ public class TelaListagemFornecedorController {
     @FXML
     void CadastroFornecedor(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroFornecedor.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
@@ -213,7 +213,7 @@ public class TelaListagemFornecedorController {
     @FXML
     void CadastroLivro(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
-    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
         Stage stage = new Stage();
         stage.setResizable(false);
