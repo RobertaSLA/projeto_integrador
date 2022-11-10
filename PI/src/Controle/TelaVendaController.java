@@ -167,6 +167,7 @@ public class TelaVendaController {
     
     private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
     
+    private Venda venda = new Venda();
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -441,16 +442,6 @@ public class TelaVendaController {
  	        stage.show();
     }
     
-    public void DefinirVendedor(Vendedor vendedor) {
-    	txtCodVendedor.setText(String.valueOf(vendedor.getIdVendedor()));
-    	txtNomeVendedor.setText(String.valueOf(vendedor.getNome()));
-    	
-	}
-    
-    public void DefinirCliente(Cliente cliente) {
-    	txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
-    	txtNomeCliente.setText(String.valueOf(cliente.getNome()));
-	}
     
     @FXML
     public void initialize() throws SQLException {
@@ -465,17 +456,20 @@ public class TelaVendaController {
 	public void addLivro(Livro livro) {
 		txtCodProduto.setText(String.valueOf(livro.getSku()));
 		txtDescriçãoProduto.setText(livro.getNome());
+		venda.setSkuLivro(Integer.parseInt(txtCodProduto.getText()));
 		
 	}
 
 	public void addVendedor(Vendedor vendedor) {
 		txtCodVendedor.setText(String.valueOf(vendedor.getIdVendedor()));
 		txtNomeVendedor.setText(vendedor.getNome());
+		venda.setIdVendedor(Integer.parseInt(txtCodVendedor.getText()));
 	}
 
 	public void addCliente(Cliente cliente) {
 		txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
 		txtNomeCliente.setText(String.valueOf(cliente.getNome()));
+		venda.setIdCliente(Integer.parseInt(txtCodCliente.getText()));
 	}
     
 }

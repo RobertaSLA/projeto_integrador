@@ -147,6 +147,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `IdFormaPagamento` INT NOT NULL,
   `Data` VARCHAR(10) NULL,
   `Valor` DOUBLE NULL,
+  `Desconto` DOUBLE NULL,
   `Cliente_idCliente` INT NOT NULL,
   `Vendedor_idVendedor` INT NOT NULL,
   PRIMARY KEY (`idVenda`, `Cliente_idCliente`, `Vendedor_idVendedor`),
