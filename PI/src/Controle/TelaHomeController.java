@@ -162,8 +162,14 @@ public class TelaHomeController {
     }
 
     @FXML
-    void HistoricoVenda(ActionEvent event) {
-
+    void HistoricoVenda(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
     
     @FXML

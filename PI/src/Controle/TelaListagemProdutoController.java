@@ -214,8 +214,14 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void AcessoProcessamentoVenda(ActionEvent event) {
-
+    void AcessoProcessamentoVenda(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaVenda.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
     
     @FXML
@@ -319,8 +325,15 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void Devolucao(ActionEvent event) {
-
+    void Devolucao(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaDevolucao.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();    
+        
     }
 
     @FXML
