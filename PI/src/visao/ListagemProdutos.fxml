@@ -77,14 +77,15 @@
                   </Pane>
                </content>
             </TitledPane>
-            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Pessoa">
+            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="185.0" prefWidth="172.0" text="Pessoa">
                <content>
                   <Pane prefHeight="123.0" prefWidth="203.0">
                      <children>
                         <Button id="btnCadastroCliente" fx:id="btnClienteCadastro" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
                         <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Cliente" />
                         <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Fornecedor" />
-                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Venda" />
+                        <Button id="btnConsultaFornecedor" fx:id="btnConsultaFornecedor" layoutY="96.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Fornecedor" />
+                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="128.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Venda" />
                      </children>
                   </Pane>
                </content>
