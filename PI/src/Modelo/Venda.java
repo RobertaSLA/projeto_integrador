@@ -6,7 +6,7 @@ public class Venda {
 	
 	private int idVenda;
 	private int skuLivro;
-	private int idformaPagamento;
+	private FormaPagamento formaPagamento;
 	private Date data;
 	private float valor;
 	private float desconto;
@@ -32,11 +32,11 @@ public class Venda {
 	public void setDesconto(float desconto) {
 		this.desconto = desconto;
 	}
-	public int getIdFormaPagamento() {
-		return idformaPagamento;
+	public FormaPagamento getFormaPagamento() {
+		return formaPagamento;
 	}
-	public void setIdFormaPagamento(int idformaPagamento) {
-		this.idformaPagamento = idformaPagamento;
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
+		this.formaPagamento = formaPagamento;
 	}
 	public Date getData() {
 		return data;

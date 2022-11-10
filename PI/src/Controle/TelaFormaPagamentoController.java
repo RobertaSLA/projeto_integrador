@@ -1,5 +1,8 @@
 package Controle;
 
+import java.sql.SQLException;
+
+import Modelo.Venda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -43,8 +46,12 @@ public class TelaFormaPagamentoController {
     @FXML
     private TextField txtValorTroco;
 
+	private Venda venda;
+
     @FXML
-    void ConfirmarPagamento(ActionEvent event) {
+    void ConfirmarPagamento(ActionEvent event) throws SQLException {
+    	VendaBD vendaBD = new VendaBD();
+    	vendaBD.InserirVenda(venda);
 
     }
 
@@ -102,5 +109,10 @@ public class TelaFormaPagamentoController {
     void VisaDebito(ActionEvent event) {
 
     }
+    
+	public void setVenda(Venda venda) {
+		this.venda=venda;
+		
+	}
 
 }

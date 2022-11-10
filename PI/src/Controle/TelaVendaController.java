@@ -451,7 +451,7 @@ public class TelaVendaController {
 		        Parent parent = fxmlLoader.load();
 		        node = (Node) parent;
 		        TelaFormaPagamentoController controller = fxmlLoader.getController();
-		        controller.setVenda(this);
+		        controller.setVenda(venda);
 		        Scene scene = new Scene(parent, 574, 473);
 		        Stage stage = new Stage();
 		        stage.setScene(scene);
