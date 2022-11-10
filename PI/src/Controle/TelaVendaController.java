@@ -4,13 +4,13 @@ package Controle;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Calendar;
+import java.util.List;
 
 import Modelo.Cliente;
 import Modelo.Livro;
+import Modelo.LivroVenda;
 import Modelo.Venda;
 import Modelo.Vendedor;
 import javafx.collections.FXCollections;
@@ -123,7 +123,7 @@ public class TelaVendaController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<Livro> tblVenda;
+    private TableView<LivroVenda> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -168,8 +168,6 @@ public class TelaVendaController {
     private Float ValorDesconto;
     
     private int Item;
-    
-    private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
     
     private Venda venda = new Venda();
     
@@ -298,7 +296,11 @@ public class TelaVendaController {
     	LivroBD liv = new LivroBD();
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
-    	listaItens.add(livro);
+    	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()));
+    	
+    	venda.getListaitens().add(livenda);
+    	
+    	tblVenda.refresh();
     	
     	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
     
@@ -306,13 +308,10 @@ public class TelaVendaController {
     	
     	ValorDesconto = Float.parseFloat(txtDescontos.getText()) + Float.parseFloat(txtDesconto.getText());
     	
-    	Item = Integer.parseInt(txtQuantidade.getText()) + Integer.parseInt(txtQtdItens.getText());
     	
     	txtValorTotal.setText(String.valueOf(ValorTotal));
     	txtDescontos.setText(String.valueOf(ValorDesconto));
     	txtQtdItens.setText(String.valueOf(Item));
-    	tblVenda.refresh();
-    	
     	txtCodProduto.setText(null);
     	txtDescriçãoProduto.setText(null);
     	txtDesconto.setText(null);
@@ -379,8 +378,8 @@ public class TelaVendaController {
 
     @FXML
     void ExcluirItem(ActionEvent event) {
-    	Livro livro = tblVenda.getSelectionModel().getSelectedItem();
-    	listaItens.remove(livro);
+    	LivroVenda livro = tblVenda.getSelectionModel().getSelectedItem();
+    	venda.getListaitens().remove(livro);
     	tblVenda.refresh();
     }
 
@@ -465,7 +464,7 @@ public class TelaVendaController {
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
 		
-		tblVenda.setItems(listaItens);
+		tblVenda.setItems(FXCollections.observableArrayList(venda.getListaitens()));
     }
 
 	public void addLivro(Livro livro) {

@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Venda {
@@ -12,6 +13,7 @@ public class Venda {
 	private float desconto;
 	private int idCliente;
 	private int idVendedor;
+	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
 	
 	
 	public int getIdVenda() {
@@ -63,7 +65,12 @@ public class Venda {
 		this.idVendedor = idVendedor;
 	}
 	
-	
+	public ArrayList<LivroVenda> getListaitens() {
+		return listaitens;
+	}
+	public void setListaitens(ArrayList<LivroVenda> listaitens) {
+		this.listaitens = listaitens;
+	}
 	
 	
 	

@@ -20,6 +20,20 @@ public class FormaPagamento {
 		this.valorTroco = valorTroco;
 	}
 	
+	
+	public FormaPagamento(String formaPagamento, String bandeiraCartao, Float valorTotal, Float valorRecebido,
+			Float valorTroco) {
+		super();
+		FormaPagamento = formaPagamento;
+		this.bandeiraCartao = bandeiraCartao;
+		this.valorTotal = valorTotal;
+		this.valorRecebido = valorRecebido;
+		this.valorTroco = valorTroco;
+	}
+
+
+
+
 	public int getIdFormaPagamento() {
 		return idFormaPagamento;
 	}

@@ -10,7 +10,7 @@ import Modelo.FormaPagamento;
 
 public class FormaPagamentoBD {
 	
-	public void InserirVenda(FormaPagamento pagamento) throws SQLException {
+	public void InserirFormaPagamento(FormaPagamento pagamento) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
 			String sql = "insert into FormaDePagamento (idFormaDePagamento, FormaDePagamento, BandeiraCartao, ValorTotal, ValorRecebido, ValorTroco) values (?, ?, ?, ?, ?, ?);";

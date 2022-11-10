@@ -2,35 +2,51 @@ package Modelo;
 
 public class LivroVenda {
 	
-	private int skuLivro;
-	private int idVenda;
+	private Livro livro;
+	private Venda venda;
 	private int quantidadeItem;
 	
+	public LivroVenda(Livro livro, Venda venda, int quantidadeItem) {
+		super();
+		this.livro = livro;
+		this.venda = venda;
+		this.quantidadeItem = quantidadeItem;
+	}
 	
-
-	public int getSkuLivro() {
-		return skuLivro;
+	public Livro getLivro() {
+		return livro;
 	}
-
-	public void setSkuLivro(int skuLivro) {
-		this.skuLivro = skuLivro;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
-
-	public int getIdVenda() {
-		return idVenda;
+	public Venda getVenda() {
+		return venda;
 	}
-
-	public void setIdVenda(int idVenda) {
-		this.idVenda = idVenda;
+	public void setVenda(Venda venda) {
+		this.venda = venda;
 	}
-
 	public int getQuantidadeItem() {
 		return quantidadeItem;
 	}
-
 	public void setQuantidadeItem(int quantidadeItem) {
 		this.quantidadeItem = quantidadeItem;
 	}
+	
+	public int getSku() {
+		return livro.getSku();
+	}
+	
+	public String getNome() {
+		return livro.getNome();
+	}
+	
+	public float getPreco() {
+		return livro.getPreco();
+	}
+	
+	
+	
+
 	
 	
 }
