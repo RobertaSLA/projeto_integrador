@@ -190,8 +190,14 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void CadastroLivro(ActionEvent event) {
-
+    void CadastroLivro(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
