@@ -97,16 +97,6 @@
                   <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
-            <TitledPane expanded="false" layoutX="634.0" layoutY="17.0" prefHeight="90.0" prefWidth="172.0" text="Produtos">
-               <content>
-                  <Pane prefHeight="49.0" prefWidth="170.0">
-                     <children>
-                        <Button id="btnEmissaoNF" fx:id="btnCadastroLivro" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Cadastro de Produtos" />
-                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivro" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9; -fx-border-color: ffffff;" text="Consulta de Produtos" />
-                     </children>
-                  </Pane>
-               </content>
-            </TitledPane>
             <TitledPane expanded="false" layoutX="836.0" layoutY="17.0" prefHeight="56.0" prefWidth="172.0" text="Fiscal">
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
@@ -228,5 +218,16 @@
             <Font size="16.0" />
          </font>
       </Button>
+      <TitledPane expanded="false" layoutX="634.0" layoutY="17.0" prefHeight="120.0" prefWidth="172.0" text="Produtos">
+         <content>
+            <Pane prefHeight="49.0" prefWidth="170.0">
+               <children>
+                  <Button id="btnEmissaoNF" fx:id="btnCadastroLivro1" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro de Produtos" />
+                  <Button id="btnEmissaoNF" fx:id="btnConsultaLivro1" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta de Produtos" />
+                  <Button id="btnEmissaoNF" fx:id="btnCompraProdutos" layoutY="63.0" mnemonicParsing="false" onAction="#CompraProduto" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Compra de Produtos" />
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
    </children>
 </AnchorPane>
