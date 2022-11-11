@@ -94,6 +94,7 @@
                   <Font size="13.0" />
                </font>
             </TextArea>
+            <Button fx:id="btnCodProduto" layoutX="171.0" layoutY="248.0" mnemonicParsing="false" onAction="#CodProduto" text="..." />
          </children>
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">

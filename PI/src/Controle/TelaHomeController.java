@@ -149,8 +149,9 @@ public class TelaHomeController {
     }
 
     @FXML
-    void EmissaoNF(ActionEvent event) {
-
+    void EmissaoNF(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaCompra.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML

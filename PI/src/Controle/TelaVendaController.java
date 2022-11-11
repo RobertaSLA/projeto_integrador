@@ -105,13 +105,13 @@ public class TelaVendaController {
     private TableColumn<TelaVendaController, Integer> clmItem;
 
     @FXML
-    private TableColumn<Livro, Integer> clmPrecoVenda;
+    private TableColumn<LivroVenda, Integer> clmPrecoVenda;
 
     @FXML
-    private TableColumn<Livro, Integer> clmSKUVenda;
+    private TableColumn<LivroVenda, Integer> clmSKUVenda;
 
     @FXML
-    private TableColumn<Livro, Integer> clmTituloVenda;
+    private TableColumn<LivroVenda, Integer> clmTituloVenda;
     
     @FXML
     private TextField txtDesconto;
@@ -299,6 +299,7 @@ public class TelaVendaController {
     	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()));
     	
     	venda.getListaitens().add(livenda);
+    	System.out.print("oie");
     	
     	tblVenda.refresh();
     	

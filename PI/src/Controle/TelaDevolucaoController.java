@@ -2,6 +2,7 @@ package Controle;
 
 
 
+import Modelo.LivroVenda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -39,6 +40,9 @@ public class TelaDevolucaoController {
 
     @FXML
     private Button btnCodCliente;
+    
+    @FXML
+    private Button btnCodProduto;
 
     @FXML
     private Button btnCodVenda;
@@ -74,16 +78,16 @@ public class TelaDevolucaoController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<?, ?> clmItem;
+    private TableColumn<LivroVenda, Integer> clmItem;
 
     @FXML
-    private TableColumn<?, ?> clmPrecoVenda;
+    private TableColumn<LivroVenda, Float> clmPrecoVenda;
 
     @FXML
-    private TableColumn<?, ?> clmSKUVenda;
+    private TableColumn<LivroVenda, Integer> clmSKUVenda;
 
     @FXML
-    private TableColumn<?, ?> clmTituloVenda;
+    private TableColumn<LivroVenda, String> clmTituloVenda;
 
     @FXML
     private DatePicker dtDataDevolução;
@@ -95,7 +99,7 @@ public class TelaDevolucaoController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblVenda;
+    private TableView<LivroVenda> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -163,6 +167,11 @@ public class TelaDevolucaoController {
 
     @FXML
     void CodCliente(ActionEvent event) {
+
+    }
+
+    @FXML
+    void CodProduto(ActionEvent event) {
 
     }
 
