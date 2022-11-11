@@ -155,8 +155,8 @@ public class TelaHomeController {
     }
 
     @FXML
-    void EmissaoRelatorio(ActionEvent event) {
-
+    void EmissaoRelatorio(ActionEvent event) throws IOException {
+  
     }
 
 }

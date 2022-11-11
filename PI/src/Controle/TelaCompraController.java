@@ -1,25 +1,31 @@
 package Controle;
 
 	
+import java.net.URL;
+import java.sql.SQLException;
+
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
-	import javafx.fxml.FXML;
-	import javafx.scene.control.Button;
-	import javafx.scene.control.DatePicker;
-	import javafx.scene.control.TableColumn;
-	import javafx.scene.control.TableView;
-	import javafx.scene.control.TextField;
-	import javafx.scene.layout.AnchorPane;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 
 	public class TelaCompraController {
 
-	/*    @FXML
+	    @FXML
 	    private ChoiceBox<String> ChoiceBoxCondicao; 
 	    private String[] condicao = {"Boleto 60 dias", "Boleto 45 dias", "Boleto 30 dias", "Boleto 15 dias"};
+	   
 	    
-	    @Override
-	    public void initialize(URL arg0, ResourceBundle arg1) {
-	    	myChoiceBox.getItems().addAll(condicao);
-	    }*/
+	    public void initialize() { 
+	    	ChoiceBoxCondicao.getItems().addAll(condicao);
+	    }
 
 	    @FXML
 	    private Button IDBotaoHome;

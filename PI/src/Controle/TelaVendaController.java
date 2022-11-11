@@ -171,6 +171,8 @@ public class TelaVendaController {
     
     private Venda venda = new Venda();
     
+    private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
+    
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
@@ -299,7 +301,6 @@ public class TelaVendaController {
     	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()));
     	
     	venda.getListaitens().add(livenda);
-    	System.out.print("oie");
     	
     	tblVenda.refresh();
     	
