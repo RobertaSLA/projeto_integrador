@@ -51,6 +51,8 @@ public class TelaListarProdutoController {
 
 	private TelaCompraController telaCompraController;
 
+	private TelaDevolucaoController telaDevolucaoController;
+
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
 
@@ -101,6 +103,11 @@ public class TelaListarProdutoController {
 	
 	public void setTelaCompraController(TelaCompraController telaCompraController) {
 		this.telaCompraController=telaCompraController;
+		
+	}
+	
+	public void setTelaDevolucaoController(TelaDevolucaoController telaDevolucaoController) {
+		this.telaDevolucaoController=telaDevolucaoController;
 		
 	}
     

@@ -4,11 +4,13 @@ import java.sql.SQLException;
 
 import Modelo.FormaPagamento;
 import Modelo.Venda;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TelaFormaPagamentoController {
 
@@ -93,6 +95,11 @@ public class TelaFormaPagamentoController {
 		this.venda=venda;
 		
 	}
+	
+	 public void initialize() throws SQLException { 
+	    	txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
+	    			
+	 }
 
 }
 

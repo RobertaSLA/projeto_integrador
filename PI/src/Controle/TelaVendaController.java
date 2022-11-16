@@ -2,10 +2,10 @@ package Controle;
 
 
 import java.io.IOException;
-import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Date;
 import java.util.List;
 
 import Modelo.Cliente;
@@ -102,7 +102,7 @@ public class TelaVendaController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<TelaVendaController, Integer> clmItem;
+    private TableColumn<LivroVenda, Integer> clmItem;
 
     @FXML
     private TableColumn<LivroVenda, Integer> clmPrecoVenda;
@@ -312,7 +312,9 @@ public class TelaVendaController {
     	
     	
     	txtValorTotal.setText(String.valueOf(ValorTotal));
+    	venda.setValor(ValorTotal);
     	txtDescontos.setText(String.valueOf(ValorDesconto));
+    	venda.setDesconto(ValorDesconto);
     	txtQtdItens.setText(String.valueOf(Item));
     	txtCodProduto.setText(null);
     	txtDescriçãoProduto.setText(null);
@@ -440,7 +442,7 @@ public class TelaVendaController {
 		venda.setDesconto(Float.parseFloat(txtDescontos.getText()));
 		
 		LocalDate localdate = dtDataVenda.getValue();
-		Date date = (Date) Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		venda.setData(date);
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(
@@ -453,7 +455,7 @@ public class TelaVendaController {
 		        node = (Node) parent;
 		        TelaFormaPagamentoController controller = fxmlLoader.getController();
 		        controller.setVenda(venda);
-		        Scene scene = new Scene(parent, 574, 473);
+		        Scene scene = new Scene(parent, 585, 545);
 		        Stage stage = new Stage();
 		        stage.setScene(scene);
 		        stage.show();
@@ -462,6 +464,7 @@ public class TelaVendaController {
     
     @FXML
     public void initialize() throws SQLException { 
+    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
 		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));

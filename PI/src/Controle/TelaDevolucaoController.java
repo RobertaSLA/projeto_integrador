@@ -1,16 +1,21 @@
 package Controle;
 
-
+import java.io.IOException;
 
 import Modelo.LivroVenda;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaDevolucaoController {
 	
@@ -126,8 +131,9 @@ public class TelaDevolucaoController {
     private TextField txtValorTotal;
     
     @FXML
-    void ActionBotaoHome(ActionEvent event) {
-
+    void ActionBotaoHome(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -166,13 +172,39 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void CodCliente(ActionEvent event) {
-
+    void CodCliente(ActionEvent event) throws IOException {
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+  	    	   getClass().getResource(
+  	    			   "/visao/ListarCliente.fxml"
+  	    	   )
+  	    	 );
+  	        Node node;
+  	        Parent parent = fxmlLoader.load();
+  	        node = (Node) parent;
+  	        TelaListarClienteController controller = fxmlLoader.getController();
+  	        controller.setTelaDevolucaoController(this);
+  	        Scene scene = new Scene(parent, 574, 473);
+  	        Stage stage = new Stage();
+  	        stage.setScene(scene);
+  	        stage.show();
     }
 
     @FXML
     void CodProduto(ActionEvent event) {
-
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+    	    	   getClass().getResource(
+    	    			   "/visao/ListarProduto.fxml"
+    	    	   )
+    	    	 );
+    	        Node node;
+    	        Parent parent = fxmlLoader.load();
+    	        node = (Node) parent;
+    	        TelaListarProdutoController controller = fxmlLoader.getController();
+    	        controller.setTelaDevolucaoController(this);
+    	        Scene scene = new Scene(parent, 574, 473);
+    	        Stage stage = new Stage();
+    	        stage.setScene(scene);
+    	        stage.show();
     }
 
     @FXML

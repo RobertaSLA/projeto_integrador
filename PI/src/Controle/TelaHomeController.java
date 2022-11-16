@@ -81,8 +81,9 @@ public class TelaHomeController {
     }
 
     @FXML
-    void AcessoConsultaPreco(ActionEvent event) {
-
+    void AcessoConsultaPreco(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -93,7 +94,7 @@ public class TelaHomeController {
 
     @FXML
     void ActionBotaoHome(ActionEvent event) {
-
+    	
     }
 
     @FXML

@@ -72,6 +72,10 @@ public class Venda {
 		this.listaitens = listaitens;
 	}
 	
+	public int getItem() {
+		return 1;
+	}
+	
 	
 	
 }
