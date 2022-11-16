@@ -190,7 +190,7 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void CodProduto(ActionEvent event) {
+    void CodProduto(ActionEvent event) throws IOException {
     	 FXMLLoader fxmlLoader = new FXMLLoader(
     	    	   getClass().getResource(
     	    			   "/visao/ListarProduto.fxml"
