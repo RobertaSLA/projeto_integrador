@@ -15,7 +15,10 @@ public class Venda {
 	private Vendedor Vendedor;
 	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
 	
-	
+	public Venda() {
+		super();
+	}
+
 	public Venda(int idVenda, Date data, Cliente Cliente) {
 		super();
 		this.idVenda = idVenda;

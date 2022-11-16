@@ -97,7 +97,7 @@ public class TelaFormaPagamentoController {
 	}
 	
 	 public void initialize() throws SQLException { 
-	    	txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
+	    txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
 	    			
 	 }
 

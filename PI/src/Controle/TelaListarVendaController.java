@@ -82,7 +82,9 @@ public class TelaListarVendaController {
 		VendaBD vend = new VendaBD();
 		List<Venda> vendas = vend.BuscarVendas();
 		
-		
+		clmlID.setCellValueFactory(new PropertyValueFactory<>("idVenda"));
+		clmNomeCliente.setCellValueFactory(new PropertyValueFactory<>("nomeCliente"));
+		clmlID.setCellValueFactory(new PropertyValueFactory<>("data"));
 		
 		TableView.setItems(FXCollections.observableArrayList(vendas));
 		

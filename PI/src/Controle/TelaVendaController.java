@@ -5,8 +5,11 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import javax.swing.JOptionPane;
 
 import Modelo.Cliente;
 import Modelo.Livro;
@@ -171,8 +174,9 @@ public class TelaVendaController {
     
     private Venda venda = new Venda();
     
-    private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
-    
+    //private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
+	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
+
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
@@ -300,9 +304,12 @@ public class TelaVendaController {
     	
     	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()));
     	
-    	venda.getListaitens().add(livenda);
+    	//venda.getListaitens().add(livenda);
+    	listaitens.add(livenda);
     	
-    	tblVenda.refresh();
+    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
+
+    	//tblVenda.refresh();
     	
     	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
     
@@ -383,7 +390,10 @@ public class TelaVendaController {
     @FXML
     void ExcluirItem(ActionEvent event) {
     	LivroVenda livro = tblVenda.getSelectionModel().getSelectedItem();
-    	venda.getListaitens().remove(livro);
+    	
+    	
+    	//venda.getListaitens().remove(livro);
+    	listaitens.remove(livro);
     	tblVenda.refresh();
     }
 
@@ -435,17 +445,19 @@ public class TelaVendaController {
     
     @FXML
     void AvancarVenda(ActionEvent event) throws IOException {
-		venda.setSkuLivro(Integer.parseInt(txtCodProduto.getText()));
-		venda.setIdVendedor(Integer.parseInt(txtCodVendedor.getText()));
-		venda.setIdCliente(Integer.parseInt(txtCodCliente.getText()));
+    	
+    	venda.setSkuLivro(Integer.parseInt(txtCodProduto.getText()));
+		//	venda.setIdVendedor(Integer.parseInt(txtCodVendedor.getText()));
+		//	venda.setIdCliente(Integer.parseInt(txtCodCliente.getText()));
 		venda.setValor(Float.parseFloat(txtValorTotal.getText()));
 		venda.setDesconto(Float.parseFloat(txtDescontos.getText()));
-		
+	
 		LocalDate localdate = dtDataVenda.getValue();
 		Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
 		venda.setData(date);
-		
-		FXMLLoader fxmlLoader = new FXMLLoader(
+	
+
+			FXMLLoader fxmlLoader = new FXMLLoader(
 		    	   getClass().getResource(
 		    			   "/visao/TelaPagamento.fxml"
 		    	   )
@@ -459,6 +471,13 @@ public class TelaVendaController {
 		        Stage stage = new Stage();
 		        stage.setScene(scene);
 		        stage.show();
+		        
+    	try {
+    		
+    	
+		} catch (Exception ex) {
+				JOptionPane.showMessageDialog(null, "Venda não está completa.");
+		}
     }
     
     
@@ -469,7 +488,8 @@ public class TelaVendaController {
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
 		
-		tblVenda.setItems(FXCollections.observableArrayList(venda.getListaitens()));
+		//tblVenda.setItems(FXCollections.observableArrayList(venda.getListaitens()));
+		tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     }
 
 	public void addLivro(Livro livro) {
