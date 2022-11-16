@@ -144,7 +144,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`FormaDePagamento` (
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL AUTO_INCREMENT,
   `SKULivro` INT NULL, 
-  `IdFormaPagamento` INT NOT NULL,
+  `idFormaPagamento` INT NOT NULL,
+  `bandeiraCartao` VARCHAR,
   `Data` VARCHAR(10) NULL,
   `Valor` DOUBLE NULL,
   `Desconto` DOUBLE NULL,
