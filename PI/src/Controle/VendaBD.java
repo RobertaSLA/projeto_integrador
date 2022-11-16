@@ -1,8 +1,12 @@
 package Controle;
 
 import java.sql.*;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
+import Modelo.Autor;
+import Modelo.Cliente;
 import Modelo.Livro;
 import Modelo.Venda;
 
@@ -18,8 +22,8 @@ public class VendaBD {
 			stmt.setInt(2, venda.getFormaPagamento().getIdFormaPagamento());
 			stmt.setDate(3, new java.sql.Date(venda.getData().getTime()));
 			stmt.setFloat(4, venda.getValor());
-			stmt.setInt(5, venda.getIdCliente());
-			stmt.setInt(6, venda.getIdVendedor());
+			stmt.setInt(5, venda.getCliente().getIdCliente());
+			stmt.setInt(6, venda.getVendedor().getIdVendedor());
 			
 			stmt.execute();
 			stmt.close(); 
@@ -50,4 +54,33 @@ public class VendaBD {
 				throw new SQLException(e);
 			}
 }
+		
+		public ArrayList<Venda> BuscarVendas() throws SQLException {
+			ArrayList<Venda> venda = new ArrayList<Venda>();
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				Statement stmt = con.createStatement();
+				
+				String query = "select idVenda, Cliente.idCliente, Cliente.nome, Data from venda inner join Cliente on (Cliente_idCliente = idCliente);";
+				
+				
+				ResultSet rs = stmt.executeQuery(query);
+				
+		
+				while(rs.next()){
+					Cliente cliente = new Cliente(rs.getInt(2), rs.getString(3));
+					Venda vend = new Venda(rs.getInt(1), rs.getDate(4), cliente);
+					
+					venda.add(vend);
+				}
+				
+				stmt.close(); 
+				con.close();
+				
+			}catch (SQLException e){
+				throw new SQLException(e);
+			}
+			return venda;
+			
+		}
 }

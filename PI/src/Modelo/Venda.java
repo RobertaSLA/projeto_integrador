@@ -11,10 +11,17 @@ public class Venda {
 	private Date data;
 	private float valor;
 	private float desconto;
-	private int idCliente;
-	private int idVendedor;
+	private Cliente Cliente;
+	private Vendedor Vendedor;
 	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
 	
+	
+	public Venda(int idVenda, Date data, Cliente Cliente) {
+		super();
+		this.idVenda = idVenda;
+		this.data = data;
+		this.Cliente = Cliente;
+	}
 	
 	public int getIdVenda() {
 		return idVenda;
@@ -52,17 +59,17 @@ public class Venda {
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
-	public int getIdCliente() {
-		return idCliente;
+	public Cliente getCliente() {
+		return Cliente;
 	}
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(Cliente Cliente) {
+		this.Cliente = Cliente;
 	}
-	public int getIdVendedor() {
-		return idVendedor;
+	public Vendedor getVendedor() {
+		return Vendedor;
 	}
-	public void setIdVendedor(int idVendedor) {
-		this.idVendedor = idVendedor;
+	public void setIdVendedor(Vendedor Vendedor) {
+		this.Vendedor = Vendedor;
 	}
 	
 	public ArrayList<LivroVenda> getListaitens() {
@@ -74,6 +81,10 @@ public class Venda {
 	
 	public int getItem() {
 		return 1;
+	}
+	
+	public String getNomeCliente() {
+		return Cliente.getNome();
 	}
 	
 	

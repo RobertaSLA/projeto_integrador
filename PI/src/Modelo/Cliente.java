@@ -14,6 +14,13 @@ public class Cliente {
 	private String email;
 	
 	
+	
+	public Cliente(int idCliente, String nome) {
+		super();
+		this.idCliente = idCliente;
+		this.nome = nome;
+	}
+
 	public Cliente(int idCliente, String nome, String cpf) {
 		super();
 		this.idCliente = idCliente;
