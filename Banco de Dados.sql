@@ -24,7 +24,7 @@ USE `mydb` ;
 CREATE TABLE IF NOT EXISTS `mydb` . `Endereco` (
   `IdEndereco` INT NOT NULL AUTO_INCREMENT,
   `CEP` CHAR(15) NULL,
-  `UF` CHAR(5) NULL,
+  `UF` CHAR(10) NULL,
   `Cidade` VARCHAR(30) NULL,
   `Bairro` VARCHAR(50) NULL,
   `Endereco` VARCHAR(100) NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `Nome` VARCHAR(50) NOT NULL,
   `CPF` CHAR(14) NOT NULL,
-  `DataNascimento` CHAR(10) NULL,
+  `DataNascimento` CHAR(20) NULL,
   `Sexo` VARCHAR(30) NULL,
   `Fone` CHAR(15) NULL,
   `Celular` CHAR(15) NOT NULL,
@@ -124,14 +124,30 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`FormaDePagamento`
+-- -----------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `mydb`.`FormaDePagamento` (
+  `idFormaDePagamento` INT NOT NULL AUTO_INCREMENT,
+  `FormaDePagamento` VARCHAR(100) NOT NULL,
+  `BandeiraCartao` CHAR(30) NULL,
+  `ValorTotal` DOUBLE NULL,
+  `ValorRecebido` DOUBLE NULL,
+  `ValorTroco` DOUBLE NULL,
+  PRIMARY KEY (`IdFormaDePagamento`),
+  UNIQUE INDEX `IdFormaDePagamento_UNIQUE` (`IdFormaDePagamento` ASC))
+  ENGINE = InnoDB;
+  
+-- -----------------------------------------------------
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL AUTO_INCREMENT,
   `SKULivro` INT NULL, 
-  `FormaPagamento` VARCHAR(45) NULL,
+  `idFormaPagamento` INT NOT NULL,
   `Data` VARCHAR(10) NULL,
   `Valor` DOUBLE NULL,
+  `Desconto` DOUBLE NULL,
   `Cliente_idCliente` INT NOT NULL,
   `Vendedor_idVendedor` INT NOT NULL,
   PRIMARY KEY (`idVenda`, `Cliente_idCliente`, `Vendedor_idVendedor`),
@@ -151,6 +167,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   CONSTRAINT `fk_VendaLivro` 
 	FOREIGN KEY (`SKULivro`) 
 	REFERENCES `Livro` (`SKU`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+    CONSTRAINT `fk_Venda_FormaPagamento`
+    FOREIGN KEY (`IdFormaPagamento`)
+    REFERENCES `mydb`.`FormaDePagamento` (`IdFormaDePagamento`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
@@ -264,6 +285,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Compra` (
   `Livro_SKU` INT NOT NULL,
   `Compra_IdCompra` INT NOT NULL,
   `Quantidade` INT NOT NULL,
+  `ValorItem` FLOAT NOT NULL,
   PRIMARY KEY (`Livro_SKU`, `Compra_IdCompra`),
   INDEX `fk_Livro_has_Compra_Compra1_idx` (`Compra_IdCompra` ASC),
   INDEX `fk_Livro_has_Compra_Livro1_idx` (`Livro_SKU` ASC),
@@ -286,7 +308,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Venda` (
   `Livro_SKU` INT NOT NULL,
   `Venda_idVenda` INT NOT NULL,
-  `Quantidade` VARCHAR(45) NOT NULL,
+  `QuantidadeItem` INT NOT NULL,
+  `DescontoItem` FLOAT NOT NULL,
+  `ValorItens` FLOAT NOT NULL,
   PRIMARY KEY (`Livro_SKU`, `Venda_idVenda`),
   INDEX `fk_Livro_has_Venda_Venda1_idx` (`Venda_idVenda` ASC),
   INDEX `fk_Livro_has_Venda_Livro1_idx` (`Livro_SKU` ASC),
@@ -327,14 +351,14 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Compra_has_Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
-  `CNPJ_Fornecedor` INT NOT NULL,
+  `idFornecedor` CHAR(20) NOT NULL,
   `Id_Compra` INT NOT NULL,
   PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
   INDEX `fk_Compra_has_FornecedorCNPJ_idx` (`CNPJ_Fornecedor`),
   INDEX `fk_Fornecedor_has_Compra_ID_compra_idx` (`Id_Compra` ASC),
   CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
-    FOREIGN KEY (`CNPJ_Fornecedor`)
-    REFERENCES `mydb`.`fornecedor` (`CNPJ`)
+    FOREIGN KEY (`idFornecedor`)
+    REFERENCES `mydb`.`fornecedor` (`idFornecedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Fornecedor_has_Compra_ID_compra`
@@ -343,6 +367,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
