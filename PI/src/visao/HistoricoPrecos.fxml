@@ -4,6 +4,7 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,54 +13,121 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="473.0" prefWidth="574.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHistoricoPrecosController">
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHistoricoPrecosController">
    <children>
-      <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="574.0" style="-fx-background-color: dbb0ea;">
+      <TextField fx:id="txtPesquisarLivro" layoutX="346.0" layoutY="196.0" onAction="#PesquisarLivro" prefHeight="37.0" prefWidth="311.0" promptText="Digite o SKU do Livro..." AnchorPane.leftAnchor="346.0" AnchorPane.topAnchor="196.0" />
+      <Button fx:id="btnPesquisarLivro" layoutX="666.0" layoutY="199.0" mnemonicParsing="false" onAction="#PesquisarLivro" prefHeight="32.0" prefWidth="87.0" style="-fx-background-color: dbb0ea;" text="Pesquisar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tblHistoricodePrecos" layoutX="346.0" layoutY="241.0" onSort="#HistoricodePrecos" prefHeight="512.0" prefWidth="1032.0">
+        <columns>
+          <TableColumn fx:id="clmSku" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
+          <TableColumn fx:id="clmPrecoAntigo" prefWidth="174.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço Anterior" />
+            <TableColumn fx:id="clmPrecoAtual" prefWidth="171.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço Atual" />
+            <TableColumn fx:id="clmUltimaAlteracao" prefWidth="178.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Última Alteração" />
+            <TableColumn fx:id="clmUsuarioAlterou" minWidth="9.0" prefWidth="373.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Alterado Por" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnCancelarBusca" layoutX="1248.0" layoutY="771.0" mnemonicParsing="false" onAction="#CancelarBusca" prefHeight="32.0" prefWidth="130.0" style="-fx-background-color: dbb0ea;" text="Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Text layoutX="675.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Histórico de Preços" wrappingWidth="374.7161865234375">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <Text fill="WHITE" layoutX="341.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
+            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Pessoa">
+               <content>
+                  <Pane prefHeight="123.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnCadastroCliente" fx:id="btnClienteCadastro" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Cliente" />
+                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Fornecedor" />
+                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="96.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Venda" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <Text fill="WHITE" layoutX="1258.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="228.47265625">
                <font>
-                  <Font name="System Bold Italic" size="17.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font>
                <effect>
                   <Glow />
                </effect>
             </Text>
-            <Text fill="WHITE" layoutX="301.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
+            <Text fill="WHITE" layoutX="1307.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER">
                <font>
-                  <Font name="System Bold Italic" size="17.0" />
+                  <Font name="System Bold Italic" size="14.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="7.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Histórico de Preços " wrappingWidth="273.8645782470703">
-               <font>
-                  <Font name="System Bold" size="28.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="55.0" fitWidth="107.0" layoutX="467.0" layoutY="8.0">
+            <TitledPane expanded="false" layoutX="636.0" layoutY="26.0" prefHeight="120.0" prefWidth="172.0" text="Produtos">
+               <content>
+                  <Pane prefHeight="49.0" prefWidth="170.0">
+                     <children>
+                        <Button id="btnEmissaoNF" fx:id="btnCadastroLivro1" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro de Produtos" />
+                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivro1" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta de Produtos" />
+                        <Button id="btnEmissaoNF" fx:id="btnCompraProdutos" layoutY="63.0" mnemonicParsing="false" onAction="#CompraProduto" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Compra de Produtos" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <TitledPane expanded="false" layoutX="838.0" layoutY="26.0" prefHeight="56.0" prefWidth="172.0" text="Fiscal">
+               <content>
+                  <Pane prefHeight="31.0" prefWidth="203.0">
+                     <children>
+                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissao NF" />
+                     </children>
+                  </Pane>
+               </content>
+            </TitledPane>
+            <TitledPane expanded="false" layoutX="234.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Venda">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
+                     <children>
+                        <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Devolução" />
+                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Preço" />
+                        <Button id="btnHistoricoVenda" fx:id="btnHistoricoVenda" layoutY="64.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Histórico de Venda" />
+                        <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissão Relatório" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <TitledPane expanded="false" layoutX="29.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Home">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
+                     <children>
+                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Produtos" />
+                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Processamento Venda" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </TitledPane>
+            <ImageView fitHeight="68.0" fitWidth="156.0" layoutX="1445.0" layoutY="1.0">
                <image>
                   <Image url="@imagens/ilustracao%20livro.png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1070.0" layoutY="18.0">
+               <image>
+                  <Image url="@imagens/icon%20user.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="34.0" fitWidth="40.0" layoutX="1205.0" layoutY="17.0">
+               <image>
+                  <Image url="@imagens/icon%20configuracao.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="IDBotaoHome" layoutX="1057.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="40.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
-      <TextField fx:id="txtPesquisarLivro" layoutX="24.0" layoutY="93.0" onAction="#PesquisarLivro" prefHeight="26.0" prefWidth="403.0" promptText="Digite o SKU do Livro..." AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="93.0" />
-      <Button fx:id="btnPesquisarLivro" layoutX="453.0" layoutY="90.0" mnemonicParsing="false" onAction="#PesquisarLivro" prefHeight="32.0" prefWidth="87.0" style="-fx-background-color: dbb0ea;" text="Pesquisar">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <TableView fx:id="tblHistoricodePrecos" layoutX="22.0" layoutY="141.0" onSort="#HistoricodePrecos" prefHeight="254.0" prefWidth="531.0">
-        <columns>
-          <TableColumn fx:id="clmSku" prefWidth="82.0" text="Sku" />
-          <TableColumn fx:id="clmPrecoAntigo" prefWidth="125.0" text="Preço Anterior" />
-            <TableColumn fx:id="clmPrecoAtual" prefWidth="107.0" text="Preço Atual" />
-            <TableColumn fx:id="clmUltimaAlteracao" prefWidth="106.0" text="Última Alteração" />
-            <TableColumn fx:id="clmUsuarioAlterou" prefWidth="110.0" text="Alterado Por" />
-        </columns>
-      </TableView>
-      <Button fx:id="btnCancelarBusca" layoutX="416.0" layoutY="421.0" mnemonicParsing="false" onAction="#CancelarBusca" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Cancelar">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
    </children>
 </AnchorPane>

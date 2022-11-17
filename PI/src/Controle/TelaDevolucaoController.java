@@ -41,6 +41,9 @@ public class TelaDevolucaoController {
     private Button btnCadastroLivro;
 
     @FXML
+    private Button btnCompraProdutos;
+    
+    @FXML
     private Button btnClienteCadastro;
 
     @FXML
@@ -161,6 +164,12 @@ public class TelaDevolucaoController {
     @FXML
     void AcessoConsultaPreco(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void CompraProduto(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaCompra.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -303,13 +312,15 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void Devolucao(ActionEvent event) {
-
+    void Devolucao(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDevolucao.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void EmissaoNF(ActionEvent event) {
-
+    void EmissaoNF(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaCompra.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
