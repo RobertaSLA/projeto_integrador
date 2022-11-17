@@ -39,7 +39,7 @@
                   </ImageView>
                   <Accordion layoutY="114.0" prefHeight="264.0" prefWidth="172.0">
                      <panes>
-                        <TitledPane fx:id="filtroCompras" animated="false" prefHeight="282.0" prefWidth="172.0" style="-fx-background-color: #dbb0ea;" text="Compras">
+                        <TitledPane fx:id="filtroVendas" animated="false" prefHeight="282.0" prefWidth="172.0" style="-fx-background-color: #dbb0ea;" text="Vendas">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="170.0">
                                  <children>

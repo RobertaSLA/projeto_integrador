@@ -285,6 +285,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Compra` (
   `Livro_SKU` INT NOT NULL,
   `Compra_IdCompra` INT NOT NULL,
   `Quantidade` INT NOT NULL,
+  `ValorItem` FLOAT NOT NULL,
   PRIMARY KEY (`Livro_SKU`, `Compra_IdCompra`),
   INDEX `fk_Livro_has_Compra_Compra1_idx` (`Compra_IdCompra` ASC),
   INDEX `fk_Livro_has_Compra_Livro1_idx` (`Livro_SKU` ASC),
@@ -307,9 +308,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Venda` (
   `Livro_SKU` INT NOT NULL,
   `Venda_idVenda` INT NOT NULL,
-  `QuantidadeItem` int NOT NULL,
-  `DescontoItem` float NOT NULL,
-  `ValorItens` float NOT NULL,
+  `QuantidadeItem` INT NOT NULL,
+  `DescontoItem` FLOAT NOT NULL,
+  `ValorItens` FLOAT NOT NULL,
   PRIMARY KEY (`Livro_SKU`, `Venda_idVenda`),
   INDEX `fk_Livro_has_Venda_Venda1_idx` (`Venda_idVenda` ASC),
   INDEX `fk_Livro_has_Venda_Livro1_idx` (`Livro_SKU` ASC),
@@ -350,14 +351,14 @@ ENGINE = InnoDB;
 -- Table `mydb`.`Compra_has_Fornecedor`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
-  `CNPJ_Fornecedor` CHAR(20) NOT NULL,
+  `idFornecedor` CHAR(20) NOT NULL,
   `Id_Compra` INT NOT NULL,
   PRIMARY KEY (`CNPJ_Fornecedor`, `Id_Compra`),
   INDEX `fk_Compra_has_FornecedorCNPJ_idx` (`CNPJ_Fornecedor`),
   INDEX `fk_Fornecedor_has_Compra_ID_compra_idx` (`Id_Compra` ASC),
   CONSTRAINT `fk_Compra_has_FornecedorCNPJ`
-    FOREIGN KEY (`CNPJ_Fornecedor`)
-    REFERENCES `mydb`.`fornecedor` (`CNPJ`)
+    FOREIGN KEY (`idFornecedor`)
+    REFERENCES `mydb`.`fornecedor` (`idFornecedor`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Fornecedor_has_Compra_ID_compra`

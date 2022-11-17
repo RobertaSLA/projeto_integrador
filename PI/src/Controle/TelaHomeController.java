@@ -19,7 +19,7 @@ public class TelaHomeController {
     private Button btnAcessoCadastroProduto;
 
     @FXML
-    private Button btnAcessoConsultaPreco;
+    private Button btnConsultaPreco;
 
     @FXML
     private Button btnAcessoVenda;
@@ -43,7 +43,7 @@ public class TelaHomeController {
     private Button btnConsultaLivros;
 
     @FXML
-    private Button btnConsultaPreco;
+    private Button btnHistoricoVenda;
 
     @FXML
     private Button btnConsultaVenda;
@@ -76,8 +76,13 @@ public class TelaHomeController {
 
     @FXML
     void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -88,8 +93,13 @@ public class TelaHomeController {
 
     @FXML
     void AcessoProcessamentoVenda(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaVenda.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
@@ -99,34 +109,70 @@ public class TelaHomeController {
 
     @FXML
     void CadastroCliente(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroClientes.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     void CadastroFornecedor(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroFornecedor.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroFornecedor.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     void CadastroLivros(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/CadastroProdutos.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     void ConsultaCliente(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemClientes.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 837);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     void ConsultaLivro(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemProdutos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 858);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
+    @FXML
+    void HistoricoVenda(ActionEvent event) throws IOException {
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+    }
+    
     @FXML
     void ConsultaPreco(ActionEvent event) {
 
@@ -136,17 +182,28 @@ public class TelaHomeController {
     void ConsultaVenda(ActionEvent event) {
 
     }
-
+    
     @FXML
     void ConsultarFornecedor(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemFornecedor.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 858);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
     }
 
     @FXML
     void Devolucao(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDevolucao.fxml"));
-    	idTelaHome.getChildren().setAll(telaHomePane);
+    	FXMLLoader fxmlLoader = new FXMLLoader();
+    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaDevolucao.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
+        Stage stage = new Stage();
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();    
+        
     }
 
     @FXML

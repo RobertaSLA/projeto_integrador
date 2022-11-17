@@ -15,11 +15,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
+<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
    <children>
       <Pane layoutX="-1.0" layoutY="68.0" prefHeight="934.0" prefWidth="299.0" style="-fx-background-color: e8d6ef;">
          <children>
-            <SplitPane dividerPositions="0.25316455696202533" layoutX="19.0" layoutY="89.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
+            <SplitPane disable="true" dividerPositions="0.25316455696202533" layoutX="19.0" layoutY="89.0" orientation="VERTICAL" prefHeight="154.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="101.0" prefWidth="259.0">
                      <children>
@@ -51,7 +51,7 @@
                   <Cursor fx:constant="DISAPPEAR" />
                </cursor>
             </SplitPane>
-            <SplitPane dividerPositions="0.3028571428571429" layoutX="19.0" layoutY="269.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
+            <SplitPane disable="true" dividerPositions="0.33714285714285713" layoutX="19.0" layoutY="269.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
                <items>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="280.0" style="-fx-border-radius: 32;">
                      <children>
@@ -80,7 +80,7 @@
                   </AnchorPane>
                </items>
             </SplitPane>
-            <SplitPane dividerPositions="0.3028571428571429" layoutX="19.0" layoutY="467.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
+            <SplitPane disable="true" dividerPositions="0.36" layoutX="19.0" layoutY="467.0" orientation="VERTICAL" prefHeight="177.0" prefWidth="261.0" style="-fx-background-color: dbb0ea;">
                <items>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="98.0" prefWidth="280.0" style="-fx-border-radius: 32;">
                      <children>
@@ -119,23 +119,13 @@
                      <children>
                         <Button id="btnDevolucao" fx:id="btnDevolucao" layoutY="64.0" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Devolução" />
                         <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Preço" />
-                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Venda" />
+                        <Button id="btnConsultaVenda" fx:id="btnHistoricoVenda" layoutY="32.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Histórico de Venda" />
                         <Button id="btnVenda" fx:id="btnVenda" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissão Relatório" />
                      </children>
                   </Pane>
                </content>
             </TitledPane>
             <BottomNavigationButton id="btnConfiguracoes" layoutX="1057.0" layoutY="12.0" prefHeight="44.0" prefWidth="59.0" style="-fx-background-color: dbb0ea;" />
-            <TitledPane expanded="false" layoutX="638.0" layoutY="26.0" prefHeight="88.0" prefWidth="170.0" text="Produtos">
-               <content>
-                  <Pane prefHeight="31.0" prefWidth="203.0">
-                     <children>
-                        <Button id="btnEmissaoNF" fx:id="btnCadastroLivros" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivros" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro de Livros" />
-                        <Button id="btnEmissaoNF" fx:id="btnConsultaLivros" layoutX="-1.0" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta de Livros" />
-                     </children>
-                  </Pane>
-               </content>
-            </TitledPane>
             <ImageView fitHeight="35.0" fitWidth="50.0" layoutX="1120.0" layoutY="17.0">
                <image>
                   <Image url="@imagens/userbranco.png" />
@@ -150,11 +140,11 @@
                <content>
                   <Pane prefHeight="160.0" prefWidth="170.0">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnCadastroCliente" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cadastro Cliente" />
-                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="62.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Cliente" />
-                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="31.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cadastro Fornecedor" />
-                        <Button id="btnConsultaFornecedor" fx:id="btnConsultaFornecedor" layoutY="93.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Fornecedor" />
-                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="124.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Consulta Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnCadastroCliente" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="62.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Cliente" />
+                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="31.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Fornecedor" />
+                        <Button id="btnConsultaFornecedor" fx:id="btnConsultaFornecedor" layoutY="93.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Fornecedor" />
+                        <Button id="btnConsultaVenda" fx:id="btnConsultaVenda" layoutY="124.0" mnemonicParsing="false" onAction="#ConsultaVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Venda" />
                      </children>
                   </Pane>
                </content>
@@ -222,5 +212,21 @@
          </image>
       </ImageView>
       <Button fx:id="IDBotaoHome" layoutX="1060.0" layoutY="12.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="44.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
+      <TitledPane expanded="false" layoutX="638.0" layoutY="26.0" prefHeight="120.0" prefWidth="172.0" text="Produtos">
+         <content>
+            <Pane prefHeight="49.0" prefWidth="170.0">
+               <children>
+                  <Button id="btnEmissaoNF" fx:id="btnCadastroLivro1" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro de Produtos" />
+                  <Button id="btnEmissaoNF" fx:id="btnConsultaLivro1" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta de Produtos" />
+                  <Button id="btnEmissaoNF" fx:id="btnCompraProdutos" layoutY="63.0" mnemonicParsing="false" onAction="#CompraProduto" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Compra de Produtos" />
+               </children>
+            </Pane>
+         </content>
+      </TitledPane>
+      <ImageView fitHeight="473.0" fitWidth="517.0" layoutX="724.0" layoutY="217.0" AnchorPane.bottomAnchor="310.0" AnchorPane.topAnchor="220.0">
+         <image>
+            <Image url="@imagens/logo%20sem%20fundo.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
