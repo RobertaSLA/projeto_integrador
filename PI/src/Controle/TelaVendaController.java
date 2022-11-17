@@ -310,7 +310,8 @@ public class TelaVendaController {
     void InserirItem(ActionEvent event) throws SQLException {
     	LivroBD liv = new LivroBD();
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
-    	Valor = Integer.parseInt(txtQuantidade.getText()) * Float.parseFloat(txtDesconto.getText());
+    	
+    	Valor = (livro.getPreco() - Float.parseFloat(txtDesconto.getText())) * Integer.parseInt(txtQuantidade.getText());
     	
     	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()),
     			Float.parseFloat(txtDesconto.getText()), Valor);
@@ -395,11 +396,9 @@ public class TelaVendaController {
     @FXML
     void ExcluirItem(ActionEvent event) {
     	LivroVenda livro = tblVenda.getSelectionModel().getSelectedItem();
-    	
-    	
-    	//venda.getListaitens().remove(livro);
+
     	listaitens.remove(livro);
-    	tblVenda.refresh();
+    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     }
 
     @FXML

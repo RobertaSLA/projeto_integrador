@@ -92,8 +92,7 @@ public class TelaFormaPagamentoController {
     }
     
 	public void setVenda(Venda venda) {
-		this.venda=venda;
-		
+		this.venda = venda;
 	}
 	
 	 public void initialize() throws SQLException { 
