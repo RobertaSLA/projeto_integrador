@@ -32,15 +32,21 @@ public class TelaHomeController {
 
     @FXML
     private Button btnCadastroLivros;
+    
+    @FXML
+    private Button btnCadastroLivro1;
+    
+    @FXML
+    private Button btnConsultaLivro1;
 
     @FXML
     private Button btnConsultaCliente;
 
     @FXML
     private Button btnConsultaFornecedor;
-
+    
     @FXML
-    private Button btnConsultaLivros;
+    private Button btnCompraProdutos;
 
     @FXML
     private Button btnHistoricoVenda;
@@ -130,7 +136,7 @@ public class TelaHomeController {
     }
 
     @FXML
-    void CadastroLivros(ActionEvent event) throws IOException {
+    void CadastroLivro(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
     	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 650);
@@ -160,6 +166,12 @@ public class TelaHomeController {
         stage.setResizable(false);
         stage.setScene(scene);
         stage.show();
+    }
+    
+    @FXML
+    void CompraProduto(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaCompra.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
     @FXML

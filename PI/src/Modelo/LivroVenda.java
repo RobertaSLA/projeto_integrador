@@ -9,7 +9,6 @@ public class LivroVenda {
 	private float valor;
 	
 	
-	
 	public LivroVenda(Livro livro, Venda venda, int quantidade, float desconto, float valor) {
 		super();
 		this.livro = livro;

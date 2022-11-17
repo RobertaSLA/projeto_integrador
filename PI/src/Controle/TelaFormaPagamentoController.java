@@ -93,10 +93,11 @@ public class TelaFormaPagamentoController {
     
 	public void setVenda(Venda venda) {
 		this.venda = venda;
+		txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
+
 	}
 	
 	 public void initialize() throws SQLException { 
-	    txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
 	    			
 	 }
 

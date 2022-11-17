@@ -43,6 +43,9 @@ public class TelaVendaController {
 
     @FXML
     private Button btnAcessoCadastroProduto;
+    
+    @FXML
+    private Button btnCompraProdutos;
 
     @FXML
     private Button btnAcessoConsultaPreco;
@@ -226,6 +229,11 @@ public class TelaVendaController {
 
     @FXML
     void AcessoProcessamentoVenda(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void CompraProduto(ActionEvent event) {
 
     }
     
@@ -494,13 +502,34 @@ public class TelaVendaController {
     
     @FXML
     void AvancarVenda(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaPagamento.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 585, 545);
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+    	Vendedor vend = new Vendedor(Integer.parseInt(txtCodVendedor.getText()));
+    	Cliente cli = new Cliente(Integer.parseInt(txtCodCliente.getText()));
+    	
+		venda.setVendedor(vend);
+		venda.setCliente(cli);
+		venda.setValor(Float.parseFloat(txtValorTotal.getText()));
+		venda.setDesconto(Float.parseFloat(txtDescontos.getText()));
+		venda.setListaitens(listaitens);
+	
+		LocalDate localdate = dtDataVenda.getValue();
+		Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		venda.setData(date);
+	
+
+			FXMLLoader fxmlLoader = new FXMLLoader(
+		    	   getClass().getResource(
+		    			   "/visao/TelaPagamento.fxml"
+		    	   )
+		    	 );
+		        Node node;
+		        Parent parent = fxmlLoader.load();
+		        node = (Node) parent;
+		        TelaFormaPagamentoController controller = fxmlLoader.getController();
+		        controller.setVenda(venda);
+		        Scene scene = new Scene(parent, 585, 545);
+		        Stage stage = new Stage();
+		        stage.setScene(scene);
+		        stage.show();
     }
     
     

@@ -22,6 +22,7 @@ import javafx.scene.control.TitledPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaListagemProdutoController {
 	
@@ -78,6 +79,9 @@ public class TelaListagemProdutoController {
     
     @FXML
     private Button btnExcluir;
+    
+    @FXML
+    private Button btnCompraProdutos;
 
     @FXML
     private Button btnHistoricoVenda;
@@ -183,6 +187,12 @@ public class TelaListagemProdutoController {
 
     }
 
+    @FXML
+    void CompraProduto(ActionEvent event) {
+
+    }
+
+    
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
