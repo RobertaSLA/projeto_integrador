@@ -52,8 +52,8 @@ public class TelaFormaPagamentoController {
     void ConfirmarPagamento(ActionEvent event) throws SQLException {
     	FormaPagamento pagamento = new FormaPagamento(choiceBoxFormaPgmt.getValue(), bandeiraCartao, Float.parseFloat(txtValorTotalPagamento.getText()), Float.parseFloat(txtValorRecebido.getText()), Float.parseFloat(txtValorTroco.getText()));
     	FormaPagamentoBD fpBD = new FormaPagamentoBD();
-    	fpBD.InserirFormaPagamento(pagamento);;
-    	venda.getFormaPagamento();
+    	fpBD.InserirFormaPagamento(pagamento);
+    	venda.setFormaPagamento(pagamento);
     	VendaBD vendaBD = new VendaBD();
     	vendaBD.InserirVenda(venda);
 
@@ -91,7 +91,7 @@ public class TelaFormaPagamentoController {
     
     @FXML
     void ValorRecebidoTab(KeyEvent event) {
-    	ValorTroco = Float.parseFloat(txtValorTotalPagamento.getText()) - Float.parseFloat(txtValorRecebido.getText());
+    	ValorTroco = Float.parseFloat(txtValorRecebido.getText()) - Float.parseFloat(txtValorTotalPagamento.getText()) ;
     	txtValorTroco.setText(String.valueOf(ValorTroco));
     }
 
@@ -105,10 +105,6 @@ public class TelaFormaPagamentoController {
 		txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
 
 	}
-	
-	 public void initialize() throws SQLException { 
-	    			
-	 }
 
 }
 

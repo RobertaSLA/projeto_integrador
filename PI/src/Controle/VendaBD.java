@@ -14,13 +14,14 @@ public class VendaBD {
 	public void InserirVenda(Venda venda) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "insert into venda (SKULivro, IdFormaPagamento, Data, Valor, idCliente, idVendedor) values (?, ?, ?, ?, ?, ?);";
+			String sql = "insert into venda (IdFormaPagamento, Data, Valor, Desconto, Cliente_idCliente, Vendedor_idVendedor) values (?, ?, ?, ?, ?, ?);";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setInt(2, venda.getFormaPagamento().getIdFormaPagamento());
-			stmt.setDate(3, new java.sql.Date(venda.getData().getTime()));
-			stmt.setFloat(4, venda.getValor());
+			stmt.setInt(1, venda.getFormaPagamento().getIdFormaPagamento());
+			stmt.setDate(2, new java.sql.Date(venda.getData().getTime()));
+			stmt.setFloat(3, venda.getValor());
+			stmt.setFloat(4, venda.getDesconto());
 			stmt.setInt(5, venda.getCliente().getIdCliente());
 			stmt.setInt(6, venda.getVendedor().getIdVendedor());
 			

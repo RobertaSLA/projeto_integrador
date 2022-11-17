@@ -1,9 +1,0 @@
---module-path
-"C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib"
---add-modules
-javafx.controls,javafx.fxml
--Dfile.encoding=UTF-8
--classpath
-"C:\\Users\\Aluno\\Documents\\projeto_integrador\\PI\\bin;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.base.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.controls.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.fxml.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.graphics.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.media.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.swing.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx.web.jar;C:\\Users\\Aluno\\Downloads\\openjfx-19_windows-x64_bin-sdk\\javafx-sdk-19\\lib\\javafx-swt.jar;C:\\Users\\Aluno\\Downloads\\mysql-connector-java-8.0.29.jar;C:\\Users\\Aluno\\Downloads\\charm-glisten-4.4.1.jar"
--XX:+ShowCodeDetailsInExceptionMessages
-visao.Main

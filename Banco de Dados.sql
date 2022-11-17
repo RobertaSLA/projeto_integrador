@@ -131,9 +131,9 @@ CREATE TABLE IF NOT EXISTS `mydb`.`FormaDePagamento` (
   `idFormaDePagamento` INT NOT NULL AUTO_INCREMENT,
   `FormaDePagamento` VARCHAR(100) NOT NULL,
   `BandeiraCartao` CHAR(30) NULL,
-  `ValorTotal` DOUBLE NULL,
-  `ValorRecebido` DOUBLE NULL,
-  `ValorTroco` DOUBLE NULL,
+  `ValorTotal` Float NULL,
+  `ValorRecebido` Float NULL,
+  `ValorTroco` Float NULL,
   PRIMARY KEY (`IdFormaDePagamento`),
   UNIQUE INDEX `IdFormaDePagamento_UNIQUE` (`IdFormaDePagamento` ASC))
   ENGINE = InnoDB;
@@ -142,12 +142,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`FormaDePagamento` (
 -- Table `mydb`.`Venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
-  `idVenda` INT NOT NULL AUTO_INCREMENT,
-  `SKULivro` INT NULL, 
+  `idVenda` INT NOT NULL AUTO_INCREMENT, 
   `idFormaPagamento` INT NOT NULL,
-  `Data` VARCHAR(10) NULL,
-  `Valor` DOUBLE NULL,
-  `Desconto` DOUBLE NULL,
+  `Data` Date NULL,
+  `Valor` Float NULL,
+  `Desconto` Float NULL,
   `Cliente_idCliente` INT NOT NULL,
   `Vendedor_idVendedor` INT NOT NULL,
   PRIMARY KEY (`idVenda`, `Cliente_idCliente`, `Vendedor_idVendedor`),
@@ -162,11 +161,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   CONSTRAINT `fk_Venda_Vendedor1`
     FOREIGN KEY (`Vendedor_idVendedor`)
     REFERENCES `mydb`.`Vendedor` (`idVendedor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_VendaLivro` 
-	FOREIGN KEY (`SKULivro`) 
-	REFERENCES `Livro` (`SKU`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
     CONSTRAINT `fk_Venda_FormaPagamento`
