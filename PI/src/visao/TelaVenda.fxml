@@ -25,13 +25,14 @@
             <Button fx:id="btnCodVendedor" layoutX="169.0" layoutY="108.0" mnemonicParsing="false" onAction="#CodVendedor" text="..." />
             <TextField fx:id="txtCodCliente" layoutX="41.0" layoutY="174.0" onAction="#InserirCodCliente" prefHeight="32.0" prefWidth="158.0" promptText="Código do Cliente" />
             <Button fx:id="btnCodCliente" layoutX="169.0" layoutY="178.0" mnemonicParsing="false" onAction="#CodCliente" text="..." />
-            <TextField fx:id="txtCodProduto" layoutX="41.0" layoutY="244.0" onAction="#InserirCodProduto" prefHeight="32.0" prefWidth="158.0" promptText="Código do Produto" />
-            <TextField fx:id="txtQuantidade" layoutX="880.0" layoutY="246.0" onAction="#Quantidade" prefHeight="32.0" prefWidth="138.0" promptText="Quantidade" />
             <DatePicker fx:id="dtDataVenda" editable="false" layoutX="880.0" layoutY="174.0" onAction="#DataVenda" prefHeight="32.0" prefWidth="138.0" promptText="Data de venda">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
             </DatePicker>
+            <TextField fx:id="txtCodProduto" layoutX="41.0" layoutY="244.0" onAction="#InserirCodProduto" prefHeight="32.0" prefWidth="158.0" promptText="Código do Produto" />
+            <Button fx:id="btnCodProduto" layoutX="169.0" layoutY="248.0" mnemonicParsing="false" onAction="#CodProduto" text="..." />
+            <TextField fx:id="txtQuantidade" layoutX="880.0" layoutY="246.0" onAction="#Quantidade" prefHeight="32.0" prefWidth="138.0" promptText="Quantidade" />
             <Text layoutX="675.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Processamento Venda">
                <font>
                   <Font size="52.0" />
@@ -52,39 +53,38 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="txtNomeCliente" editable="false" layoutX="215.0" layoutY="174.0" onAction="#NomeCliente" prefHeight="32.0" prefWidth="654.0">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </TextField>
-            <TextField fx:id="txtNomeVendedor" editable="false" layoutX="215.0" layoutY="104.0" onAction="#NomeVendedor" prefHeight="32.0" prefWidth="654.0">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </TextField>
             <Text layoutX="880.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" wrappingWidth="81.130859375">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="txtDescriçãoProduto" editable="false" layoutX="215.0" layoutY="244.0" onAction="#DescriçãoProduto" prefHeight="32.0" prefWidth="654.0">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </TextField>
             <Text layoutX="880.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" wrappingWidth="81.130859375">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="btnInserirItem" layoutX="1195.0" layoutY="244.0" mnemonicParsing="false" onAction="#InserirItem" prefHeight="32.0" prefWidth="81.0" text="Inserir Item" />
-            <Button fx:id="btnCodProduto" layoutX="169.0" layoutY="248.0" mnemonicParsing="false" onAction="#CodProduto" text="..." />
             <TextField fx:id="txtDesconto" layoutX="1036.0" layoutY="246.0" onAction="#Desconto" prefHeight="32.0" prefWidth="138.0" promptText="Desconto" text="0.00" />
             <Text layoutX="1032.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Desconto" wrappingWidth="81.130859375">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
+            <Button fx:id="btnInserirItem" layoutX="1195.0" layoutY="244.0" mnemonicParsing="false" onAction="#InserirItem" prefHeight="32.0" prefWidth="81.0" text="Inserir Item" />
+            <TextField fx:id="txtNomeVendedor" editable="false" layoutX="215.0" layoutY="104.0" onAction="#NomeVendedor" prefHeight="32.0" prefWidth="654.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="txtNomeCliente" editable="false" layoutX="215.0" layoutY="174.0" onAction="#NomeCliente" prefHeight="32.0" prefWidth="654.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="txtDescriçãoProduto" editable="false" layoutX="215.0" layoutY="244.0" onAction="#DescriçãoProduto" prefHeight="32.0" prefWidth="654.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
          </children>
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
@@ -221,9 +221,9 @@
       </Pane>
       <TableView fx:id="tblVenda" layoutX="73.0" layoutY="361.0" onSort="#TabelaVenda" prefHeight="397.0" prefWidth="1342.0" style="-fx-background-color: ffffff;">
         <columns>
-          <TableColumn fx:id="clmItem" prefWidth="175.0" style="-fx-border-color: ffffff; -fx-background-color: dbb0ea;" text="Item" />
-          <TableColumn fx:id="clmSKUVenda" prefWidth="149.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
-            <TableColumn fx:id="clmTituloVenda" prefWidth="322.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
+          <TableColumn fx:id="clmItem" prefWidth="98.0" style="-fx-border-color: ffffff; -fx-background-color: dbb0ea;" text="Item" />
+          <TableColumn fx:id="clmSKUVenda" prefWidth="103.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
+            <TableColumn fx:id="clmTituloVenda" prefWidth="445.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
             <TableColumn fx:id="clmPrecoVenda" prefWidth="166.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
             <TableColumn fx:id="clmQuantidadeItem" prefWidth="184.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
             <TableColumn fx:id="clmDesconto" prefWidth="181.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Desconto" />
