@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 
 public class TelaFormaPagamentoController {
 
@@ -44,6 +45,8 @@ public class TelaFormaPagamentoController {
 	private Venda venda;
 	
 	private String bandeiraCartao;
+	
+	private Float ValorTroco;
 
     @FXML
     void ConfirmarPagamento(ActionEvent event) throws SQLException {
@@ -84,6 +87,12 @@ public class TelaFormaPagamentoController {
     @FXML
     void ValorTroco(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void ValorRecebidoTab(KeyEvent event) {
+    	ValorTroco = Float.parseFloat(txtValorTotalPagamento.getText()) - Float.parseFloat(txtValorRecebido.getText());
+    	txtValorTroco.setText(String.valueOf(ValorTroco));
     }
 
     @FXML

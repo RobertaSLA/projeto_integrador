@@ -110,7 +110,7 @@
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <TextField fx:id="txtValorRecebido" layoutX="161.0" layoutY="76.0" onAction="#ValorRecebido" prefHeight="44.0" prefWidth="88.0" />
+                  <TextField fx:id="txtValorRecebido" layoutX="161.0" layoutY="76.0" onAction="#ValorRecebido" onKeyReleased="#ValorRecebidoTab" prefHeight="44.0" prefWidth="88.0" />
                   <Text layoutX="160.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor recebido">
                      <font>
                         <Font size="14.0" />
