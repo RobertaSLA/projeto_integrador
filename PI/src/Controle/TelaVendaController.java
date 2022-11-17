@@ -117,6 +117,15 @@ public class TelaVendaController {
     private TableColumn<LivroVenda, Integer> clmTituloVenda;
     
     @FXML
+    private TableColumn<LivroVenda, Float> clmDesconto;
+    
+    @FXML
+    private TableColumn<LivroVenda, Integer> clmQuantidadeItem;
+    
+    @FXML
+    private TableColumn<LivroVenda, Float> clmValorFinal;
+    
+    @FXML
     private TextField txtDesconto;
 
     @FXML
@@ -170,7 +179,7 @@ public class TelaVendaController {
     
     private Float ValorDesconto;
     
-    private int Item;
+    private Float Valor;
     
     private Venda venda = new Venda();
     
@@ -301,15 +310,14 @@ public class TelaVendaController {
     void InserirItem(ActionEvent event) throws SQLException {
     	LivroBD liv = new LivroBD();
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+    	Valor = Integer.parseInt(txtQuantidade.getText()) * Float.parseFloat(txtDesconto.getText());
     	
-    	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()));
+    	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()),
+    			Float.parseFloat(txtDesconto.getText()), Valor);
     	
-    	//venda.getListaitens().add(livenda);
     	listaitens.add(livenda);
     	
     	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
-
-    	//tblVenda.refresh();
     	
     	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
     
@@ -319,10 +327,7 @@ public class TelaVendaController {
     	
     	
     	txtValorTotal.setText(String.valueOf(ValorTotal));
-    	venda.setValor(ValorTotal);
     	txtDescontos.setText(String.valueOf(ValorDesconto));
-    	venda.setDesconto(ValorDesconto);
-    	txtQtdItens.setText(String.valueOf(Item));
     	txtCodProduto.setText(null);
     	txtDescriçãoProduto.setText(null);
     	txtDesconto.setText(null);
@@ -445,12 +450,14 @@ public class TelaVendaController {
     
     @FXML
     void AvancarVenda(ActionEvent event) throws IOException {
+    	Vendedor vend = new Vendedor(Integer.parseInt(txtCodVendedor.getText()));
+    	Cliente cli = new Cliente(Integer.parseInt(txtCodCliente.getText()));
     	
-    	venda.setSkuLivro(Integer.parseInt(txtCodProduto.getText()));
-		//	venda.setIdVendedor(Integer.parseInt(txtCodVendedor.getText()));
-		//	venda.setIdCliente(Integer.parseInt(txtCodCliente.getText()));
+		venda.setVendedor(vend);
+		venda.setCliente(cli);
 		venda.setValor(Float.parseFloat(txtValorTotal.getText()));
 		venda.setDesconto(Float.parseFloat(txtDescontos.getText()));
+		venda.setListaitens(listaitens);
 	
 		LocalDate localdate = dtDataVenda.getValue();
 		Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
@@ -487,8 +494,10 @@ public class TelaVendaController {
 		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
+		clmDesconto.setCellValueFactory(new PropertyValueFactory<>("desconto"));
+		clmQuantidadeItem.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+		clmValorFinal.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		
-		//tblVenda.setItems(FXCollections.observableArrayList(venda.getListaitens()));
 		tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     }
 

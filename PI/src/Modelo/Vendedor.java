@@ -10,6 +10,11 @@ public class Vendedor {
 	private float comissao;
 	private Endereco endereco;
 	
+	public Vendedor(int idVendedor) {
+		super();
+		this.idVendedor = idVendedor;
+	}
+
 	public Vendedor(int idVendedor, String nome, String cpf) {
 		super();
 		this.idVendedor = idVendedor;

@@ -6,7 +6,6 @@ import java.util.Date;
 public class Venda {
 	
 	private int idVenda;
-	private int skuLivro;
 	private FormaPagamento formaPagamento;
 	private Date data;
 	private float valor;
@@ -31,12 +30,6 @@ public class Venda {
 	}
 	public void setIdVenda(int idVenda) {
 		this.idVenda = idVenda;
-	}
-	public int getSkuLivro() {
-		return skuLivro;
-	}
-	public void setSkuLivro(int skuLivro) {
-		this.skuLivro = skuLivro;
 	}
 	public float getDesconto() {
 		return desconto;
@@ -71,7 +64,7 @@ public class Venda {
 	public Vendedor getVendedor() {
 		return Vendedor;
 	}
-	public void setIdVendedor(Vendedor Vendedor) {
+	public void setVendedor(Vendedor Vendedor) {
 		this.Vendedor = Vendedor;
 	}
 	

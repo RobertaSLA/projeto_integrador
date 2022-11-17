@@ -15,6 +15,11 @@ public class Cliente {
 	
 	
 	
+	public Cliente(int idCliente) {
+		super();
+		this.idCliente = idCliente;
+	}
+
 	public Cliente(int idCliente, String nome) {
 		super();
 		this.idCliente = idCliente;

@@ -4,13 +4,19 @@ public class LivroVenda {
 	
 	private Livro livro;
 	private Venda venda;
-	private int quantidadeItem;
+	private int quantidade;
+	private float desconto;
+	private float valor;
 	
-	public LivroVenda(Livro livro, Venda venda, int quantidadeItem) {
+	
+	
+	public LivroVenda(Livro livro, Venda venda, int quantidade, float desconto, float valor) {
 		super();
 		this.livro = livro;
 		this.venda = venda;
-		this.quantidadeItem = quantidadeItem;
+		this.quantidade = quantidade;
+		this.desconto = desconto;
+		this.valor = valor;
 	}
 	
 	public Livro getLivro() {
@@ -25,13 +31,7 @@ public class LivroVenda {
 	public void setVenda(Venda venda) {
 		this.venda = venda;
 	}
-	public int getQuantidadeItem() {
-		return quantidadeItem;
-	}
-	public void setQuantidadeItem(int quantidadeItem) {
-		this.quantidadeItem = quantidadeItem;
-	}
-	
+
 	public int getSku() {
 		return livro.getSku();
 	}
@@ -43,9 +43,30 @@ public class LivroVenda {
 	public float getPreco() {
 		return livro.getPreco();
 	}
-	
-	
-	
+
+	public int getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}
+
+	public float getDesconto() {
+		return desconto;
+	}
+
+	public void setDesconto(float desconto) {
+		this.desconto = desconto;
+	}
+
+	public float getValor() {
+		return valor;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
 
 	
 	
