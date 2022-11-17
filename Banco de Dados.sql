@@ -145,7 +145,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Venda` (
   `idVenda` INT NOT NULL AUTO_INCREMENT,
   `SKULivro` INT NULL, 
   `idFormaPagamento` INT NOT NULL,
-  `bandeiraCartao` VARCHAR,
   `Data` VARCHAR(10) NULL,
   `Valor` DOUBLE NULL,
   `Desconto` DOUBLE NULL,
@@ -308,7 +307,9 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Venda` (
   `Livro_SKU` INT NOT NULL,
   `Venda_idVenda` INT NOT NULL,
-  `Quantidade` VARCHAR(45) NOT NULL,
+  `QuantidadeItem` int NOT NULL,
+  `DescontoItem` float NOT NULL,
+  `ValorItens` float NOT NULL,
   PRIMARY KEY (`Livro_SKU`, `Venda_idVenda`),
   INDEX `fk_Livro_has_Venda_Venda1_idx` (`Venda_idVenda` ASC),
   INDEX `fk_Livro_has_Venda_Livro1_idx` (`Livro_SKU` ASC),
