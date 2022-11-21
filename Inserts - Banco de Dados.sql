@@ -210,39 +210,22 @@ insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (358, 
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (384, '24/04/2022');
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (565, '09/09/2021');
 
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (4744, 5652, 15, 138.90, 'Tambee', '13/06/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (1057, 5124, 18, 117.64, 'Tagopia', '30/11/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (1203, 5540, 4, 266.06, 'Edgeify', '23/09/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (2442, 7186, 20, 153.48, 'Demivee', '13/05/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (2918, 548, 28, 499.36, 'Demimbu', '20/10/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (1236, 2819, 22, 329.63, 'Meemm', '31/03/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (778, 1161, 21, 375.52, 'Zazio', '07/04/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (3441, 2637, 26, 253.99, 'Jatri', '21/01/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (1356, 5437, 20, 497.41, 'Fivebridge', '10/08/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (4928, 3654, 2, 204.56, 'Flipopia', '28/09/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (1369, 6389, 21, 212.84, 'Tagfeed', '08/02/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (4017, 675, 9, 398.18, 'Gabtune', '27/11/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (688, 2306, 12, 146.62, 'Oodoo', '03/02/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (4237, 9263, 24, 185.33, 'Photofeed', '13/05/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (835, 4501, 25, 414.88, 'Shuffledrive', '12/08/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4744, 5652, 15, 138.90, 'Tambee', '13/06/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1057, 5124, 18, 117.64, 'Tagopia', '30/11/2021');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1203, 5540, 4, 266.06, 'Edgeify', '23/09/2021');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (2442, 7186, 20, 153.48, 'Demivee', '13/05/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (2918, 548, 28, 499.36, 'Demimbu', '20/10/2021');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1236, 2819, 22, 329.63, 'Meemm', '31/03/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (778, 1161, 21, 375.52, 'Zazio', '07/04/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (3441, 2637, 26, 253.99, 'Jatri', '21/01/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1356, 5437, 20, 497.41, 'Fivebridge', '10/08/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4928, 3654, 2, 204.56, 'Flipopia', '28/09/2021');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1369, 6389, 21, 212.84, 'Tagfeed', '08/02/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4017, 675, 9, 398.18, 'Gabtune', '27/11/2021');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (688, 2306, 12, 146.62, 'Oodoo', '03/02/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4237, 9263, 24, 185.33, 'Photofeed', '13/05/2022');
+insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (835, 4501, 25, 414.88, 'Shuffledrive', '12/08/2022');
 
-/* 
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (5652, 1);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (5124, 2);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (5540, 3);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (7186, 4);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (548, 5);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (2819, 6);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (1161, 7);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (2637, 8);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (5437, 9);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (3654, 10);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (6389, 11);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (675, 12);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (2306, 13);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (9263, 14);
-insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (4501, 15);
-*/
 
 
 insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 1, 138.90);

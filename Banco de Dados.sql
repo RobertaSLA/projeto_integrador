@@ -211,11 +211,14 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `Quantidade` INT NOT NULL,
   `Valor` DOUBLE NULL,
   `Data` VARCHAR(10) NULL,
+  `IdFornecedor` INT NOT NULL,
   PRIMARY KEY (`IdCompra`),
   UNIQUE INDEX `IdCompra_UNIQUE` (`IdCompra` ASC),
   UNIQUE INDEX `SKULivro_UNIQUE` (`SKULivro` ASC),
   FOREIGN KEY (`SKULivro`)
-  REFERENCES `mydb`.`Livro` (`SKU`))
+  REFERENCES `mydb`.`Livro` (`SKU`),
+  FOREIGN KEY (`IdFornecedor`)
+  REFERENCES `mydb`.`Fornecedor` (`IdFornecedor`))
 ENGINE = InnoDB;
 
 
@@ -356,26 +359,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
   UNIQUE INDEX `idFornecedor_UNIQUE` (`IdFornecedor` ASC))
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `mydb`.`Compra_has_Fornecedor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Compra_has_Fornecedor` (
-  `idFornecedor` INT NOT NULL,
-  `Id_Compra` INT NOT NULL,
-  PRIMARY KEY (`idFornecedor`, `Id_Compra`),
-  INDEX `fk_fornecedor_idFornecedor_idx` (`idFornecedor`),
-  INDEX `fk_Fornecedor_has_Compra_ID_compra_idx` (`Id_Compra` ASC),
-  CONSTRAINT `fk_Compra_has_Fornecedor_idFornecedor`
-    FOREIGN KEY (`idFornecedor`)
-    REFERENCES `mydb`.`fornecedor` (`idFornecedor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Fornecedor_has_Compra_ID_compra`
-    FOREIGN KEY (`Id_Compra`)
-    REFERENCES `mydb`.`compra` (`IdCompra`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
 
 
 
