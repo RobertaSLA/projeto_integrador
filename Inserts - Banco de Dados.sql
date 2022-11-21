@@ -204,11 +204,11 @@ insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Mot
 insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (4, 4, 4, 'Curabitur at ipsum ac tellus semper interdum.', '08/02/2022');
 insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (5, 5, 5, 'Morbi non lectus.', '02/09/2021');
 
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (586, '23/07/2022', 20.26);
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (380, '20/03/2022', 30.30);
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (358, '11/05/2022', 27.33);
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (384, '24/04/2022', 22.44);
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (565, '09/09/2021', 13.57);
+insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (586, '23/07/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (380, '20/03/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (358, '11/05/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (384, '24/04/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (565, '09/09/2021');
 
 insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (4744, 5652, 15, 138.90, 'Tambee', '13/06/2022');
 insert into Compra (IdCompra, SKULivro, Quantidade, Valor, Fornecedor, Data) values (1057, 5124, 18, 117.64, 'Tagopia', '30/11/2021');
@@ -244,23 +244,23 @@ insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (9263, 14);
 insert into Livro_has_Autor (Livro_SKU, Autor_IdAutor) values (4501, 15);
 */
 
-/*
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (5652, 1);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (5124, 2);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (5540, 3);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (7186, 4);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (548, 5);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (2819, 6);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (1161, 7);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (2637, 8);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (5437, 9);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (3654, 10);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (6389, 11);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (675, 12);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (2306, 13);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (9263, 14);
-insert into Livro_has_HistoricoDePrecos (Livro_SKU, HistoricoDePrecos_IdHistoricoDePrecos) values (4501, 15);
-*/
+
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 1, 138.90);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 2, 123.56);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 3, 125.65);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 4, 123.89);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 5, 45.96);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 6, 45.89);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 7, 74.89);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 8, 156.99);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 9, 125.99);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 10, 125.96);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 11, 125.69);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 12, 125.98);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (565, 13, 45.89);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (565, 14, 145.90);
+insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (586, 15, 458.93);
+
 
 insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5652, 1, 15, 138.90);
 insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5124, 2, 18, 117.64);
