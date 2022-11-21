@@ -198,14 +198,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
   `IdHistoricoDePrecos` INT NOT NULL AUTO_INCREMENT,
   `DataAlteracao` VARCHAR(10) NULL,
-  `Preco` DOUBLE NULL,
-  `SKULivro` INT NOT NULL,
-  PRIMARY KEY (`IdHistoricoDePrecos`),
-  CONSTRAINT `fk_HisPrecoLivro` 
-	FOREIGN KEY (`SKULivro`) 
-	REFERENCES `Livro` (`SKU`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`IdHistoricoDePrecos`))
 ENGINE = InnoDB;
 
 
@@ -254,6 +247,7 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_HistoricoDePrecos` (
   `Livro_SKU` INT NOT NULL,
   `HistoricoDePrecos_IdHistoricoDePrecos` INT NOT NULL,
+  `Preco` DOUBLE NULL,
   PRIMARY KEY (`Livro_SKU`, `HistoricoDePrecos_IdHistoricoDePrecos`),
   INDEX `fk_Livro_has_HistoricoDePrecos_HistoricoDePrecos1_idx` (`HistoricoDePrecos_IdHistoricoDePrecos` ASC),
   INDEX `fk_Livro_has_HistoricoDePrecos_Livro1_idx` (`Livro_SKU` ASC),
