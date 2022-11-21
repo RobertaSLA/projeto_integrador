@@ -207,16 +207,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
   `IdCompra` INT NOT NULL AUTO_INCREMENT,
-  `SKULivro` INT NOT NULL,
   `Quantidade` INT NOT NULL,
   `Valor` DOUBLE NULL,
   `Data` VARCHAR(10) NULL,
   `IdFornecedor` INT NOT NULL,
   PRIMARY KEY (`IdCompra`),
   UNIQUE INDEX `IdCompra_UNIQUE` (`IdCompra` ASC),
-  UNIQUE INDEX `SKULivro_UNIQUE` (`SKULivro` ASC),
-  FOREIGN KEY (`SKULivro`)
-  REFERENCES `mydb`.`Livro` (`SKU`),
   FOREIGN KEY (`IdFornecedor`)
   REFERENCES `mydb`.`Fornecedor` (`IdFornecedor`))
 ENGINE = InnoDB;

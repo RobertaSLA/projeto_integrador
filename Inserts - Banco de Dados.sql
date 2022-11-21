@@ -1,4 +1,4 @@
-USE MYDB
+USE MYDB;
 insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (1, '61715-032', 'SP', 'Morani', 'Barby', '887 Portage Terrace', '746', 'Circle');
 insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (2, '43857-0041', 'SC', 'Sambungjaya', 'Mitchell', '485 Buena Vista Court', '8545', 'Lane');
 insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (3, '43538-501', 'PE', 'Tamanar', 'Cardinal', '3 Rieder Junction', '4', 'Avenue');
@@ -210,21 +210,21 @@ insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (358, 
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (384, '24/04/2022');
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (565, '09/09/2021');
 
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4744, 5652, 15, 138.90, 'Tambee', '13/06/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1057, 5124, 18, 117.64, 'Tagopia', '30/11/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1203, 5540, 4, 266.06, 'Edgeify', '23/09/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (2442, 7186, 20, 153.48, 'Demivee', '13/05/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (2918, 548, 28, 499.36, 'Demimbu', '20/10/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1236, 2819, 22, 329.63, 'Meemm', '31/03/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (778, 1161, 21, 375.52, 'Zazio', '07/04/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (3441, 2637, 26, 253.99, 'Jatri', '21/01/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1356, 5437, 20, 497.41, 'Fivebridge', '10/08/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4928, 3654, 2, 204.56, 'Flipopia', '28/09/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (1369, 6389, 21, 212.84, 'Tagfeed', '08/02/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4017, 675, 9, 398.18, 'Gabtune', '27/11/2021');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (688, 2306, 12, 146.62, 'Oodoo', '03/02/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (4237, 9263, 24, 185.33, 'Photofeed', '13/05/2022');
-insert into Compra (IdCompra, SKULivro, Quantidade, Valor, IdFornecedor, Data) values (835, 4501, 25, 414.88, 'Shuffledrive', '12/08/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (1, 15, 138.90, 1, '13/06/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (2, 18, 117.64, 2, '30/11/2021');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (3, 4, 266.06, 3, '23/09/2021');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (4, 20, 153.48, 4, '13/05/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (5, 28, 499.36, 5, '20/10/2021');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (6, 22, 329.63, 6, '31/03/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (7, 21, 375.52, 7, '07/04/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (8, 26, 253.99, 8, '21/01/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (9, 20, 497.41, 9, '10/08/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (10, 2, 204.56, 10, '28/09/2021');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (11, 21, 212.84, 11, '08/02/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (12, 9, 398.18, 12, '27/11/2021');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (13, 12, 146.62, 13, '03/02/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (14, 24, 185.33, 14, '13/05/2022');
+insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (15, 25, 414.88, 15, '12/08/2022');
 
 
 
@@ -245,37 +245,37 @@ insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, 
 insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (586, 15, 458.93);
 
 
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5652, 1, 15, 138.90);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5124, 2, 18, 117.64);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5540, 3, 4, 266.06);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (7186, 4, 20, 153.48);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (548, 5, 28, 499.36);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (2819, 6, 22, 329.63);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (1161, 7, 21, 375.52);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (2637, 8, 26, 253.99);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5437, 9, 20, 497.41);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (3654, 10, 2, 204.56);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (6389, 11, 21, 212.84);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (675, 12, 9, 398.18);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (2306, 13, 12, 146.62);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (9263, 14, 24, 185.33);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (4501, 15, 25, 414.88);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (1, 1, 15, 138.90);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (2, 2, 18, 117.64);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (3, 3, 4, 266.06);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (4, 4, 20, 153.48);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5, 5, 28, 499.36);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (6, 6, 22, 329.63);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (7, 7, 21, 375.52);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (8, 8, 26, 253.99);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (9, 9, 20, 497.41);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (10, 10, 2, 204.56);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (11, 11, 21, 212.84);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (12, 12, 9, 398.18);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (13, 13, 12, 146.62);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (14, 14, 24, 185.33);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (15, 15, 25, 414.88);
 
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (5652, 1, 15, 20.00, 138.90);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (5124, 2, 18, 27.00, 117.64);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (5540, 3, 4, 13.50, 266.06);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (7186, 4, 20, 18.75, 153.48);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (548, 5, 28, 24.95, 499.36);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (2819, 6, 22, 25.99, 329.63);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (1161, 7, 21, 65.22, 375.52);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (2637, 8, 26, 10.99, 253.99);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (5437, 9, 20, 44.52, 497.41);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (3654, 10, 2, 20.65, 204.56);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (6389, 11, 21, 19.99, 212.84);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (675, 12, 9, 18.90, 398.18);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (2306, 13, 12, 15.20, 146.62);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (9263, 14, 24, 11.11, 185.33);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (4501, 15, 25, 10.90, 414.88);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (1, 1, 15, 20.00, 138.90);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (2, 2, 18, 27.00, 117.64);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (3, 3, 4, 13.50, 266.06);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (4, 4, 20, 18.75, 153.48);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (5, 5, 28, 24.95, 499.36);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (6, 6, 22, 25.99, 329.63);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (7, 7, 21, 65.22, 375.52);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (8, 8, 26, 10.99, 253.99);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (9, 9, 20, 44.52, 497.41);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (10, 10, 2, 20.65, 204.56);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (11, 11, 21, 19.99, 212.84);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (12, 12, 9, 18.90, 398.18);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (13, 13, 12, 15.20, 146.62);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (14, 14, 24, 11.11, 185.33);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (15, 15, 25, 10.90, 414.88);
 
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (1, 'Edgepulse', '20.242.152/0001-25', '0074-4317', '(629) 2499523', 'dsmyth0@kickstarter.com', '(233) 4942374', 1);
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (2, 'Vitz', '54.896.374/0001-22', '59676-570', '(787) 7881043', 'rmacconnel1@unesco.org', '(866) 2017675', 2);
@@ -292,21 +292,3 @@ insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, e
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (13, 'Youbridge', '54.687.952/0001-47', '62670-3756', '(144) 7204994', 'mfritschmannc@jalbum.net', '(978) 1908990', 13);
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (14, 'Wordware', '11.475.856/0001-24', '0078-0404', '(806) 7078767', 'kgorlingd@tamu.edu', '(499) 6405154', 14);
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (15, 'Jabbersphere', '22.456.826/0001-55', '62211-267', '(116) 7278917', 'oblaxalle@earthlink.net', '(631) 5306629', 15);
-
-/*
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (1, 1);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (2, 2);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (3, 3);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (4, 4);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (5, 5);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (6, 6);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (7, 7);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (8, 8);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (9, 9);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (10, 10);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (11, 11);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (12, 12);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (13, 13);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (14, 14);
-insert into Compra_has_Fornecedor (idFornecedor, Id_Compra) values (15, 15);
-*/
