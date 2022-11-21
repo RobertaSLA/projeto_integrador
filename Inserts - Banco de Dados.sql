@@ -198,11 +198,11 @@ insert into Venda (idVenda, SKULivro, idFormaPagamento, Data, Valor, Cliente_IdC
 insert into Venda (idVenda, SKULivro, idFormaPagamento, Data, Valor, Cliente_IdCliente, Vendedor_IdVendedor) values (29, 29, 29, '26/08/2022', 202.82, 29, 9);
 insert into Venda (idVenda, SKULivro, idFormaPagamento, Data, Valor, Cliente_IdCliente, Vendedor_IdVendedor) values (30, 30, 30, '07/06/2011', 686.08, 30, 10);
 
-insert into Devolucao (codDevolucao, idProduto, idVenda, Motivo, Data) values (5357, 5604, 8877, 'Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.', '24/08/2022');
-insert into Devolucao (codDevolucao, idProduto, idVenda, Motivo, Data) values (389, 2974, 5825, 'Nulla nisl. Nunc nisl.', '05/07/2022');
-insert into Devolucao (codDevolucao, idProduto, idVenda, Motivo, Data) values (573, 2935, 8435, 'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien.', '17/10/2021');
-insert into Devolucao (codDevolucao, idProduto, idVenda, Motivo, Data) values (1520, 3344, 5881, 'Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus. Curabitur at ipsum ac tellus semper interdum.', '08/02/2022');
-insert into Devolucao (codDevolucao, idProduto, idVenda, Motivo, Data) values (7520, 2664, 4910, 'Morbi non lectus.', '02/09/2021');
+insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (1, 1, 1, 'Nullam sit amet turpis elementum ligula vehicula consequat.', '24/08/2022');
+insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (2, 2, 2, 'Nulla nisl. Nunc nisl.', '05/07/2022');
+insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (3, 3, 3, 'Vivamus vestibulum sagittis sapien.', '17/10/2021');
+insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (4, 4, 4, 'Curabitur at ipsum ac tellus semper interdum.', '08/02/2022');
+insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (5, 5, 5, 'Morbi non lectus.', '02/09/2021');
 
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (586, '23/07/2022', 20.26);
 insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao, Preco) values (380, '20/03/2022', 30.30);
