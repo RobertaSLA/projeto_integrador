@@ -176,8 +176,6 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Devolucao` (
   `codDevolucao` INT NOT NULL AUTO_INCREMENT,
-  `IdProduto` INT NOT NULL,
-  `IdVenda` INT NOT NULL,
   `Motivo` VARCHAR(100) NULL,
   `Data` VARCHAR(10) NULL,
   `Venda_idVenda` INT NOT NULL,
@@ -291,6 +289,29 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Compra` (
   CONSTRAINT `fk_Livro_has_Compra_Compra1`
     FOREIGN KEY (`Compra_IdCompra`)
     REFERENCES `mydb`.`Compra` (`IdCompra`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
+-- Table `mydb`.`Livro_has_Devolucao`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Devolucao` (
+  `LivroSKU` INT NOT NULL,
+  `Devolucao_IdDevolucao` INT NOT NULL,
+  `Quantidade` INT NOT NULL,
+  `ValorItem` FLOAT NOT NULL,
+  PRIMARY KEY (`LivroSKU`, `Devolucao_IdDevolucao`),
+  INDEX `fk_Livro_has_Devolucao_Devolucao1_idx` (`Devolucao_IdDevolucao` ASC),
+  INDEX `fk_Livro_has_Devolucao_Livro1_idx` (`LivroSKU` ASC),
+  CONSTRAINT `fk_Livro_has_Devolucao_Livro1`
+    FOREIGN KEY (`LivroSKU`)
+    REFERENCES `mydb`.`Livro` (`SKU`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Livro_has_Devolucao_Devolucao1`
+    FOREIGN KEY (`Devolucao_IdDevolucao`)
+    REFERENCES `mydb`.`Devolucao` (`codDevolucao`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
