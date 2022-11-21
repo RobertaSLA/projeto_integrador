@@ -42,7 +42,7 @@ public class TelaFormaPagamentoController {
     @FXML
     private TextField txtValorTroco;
 
-	private Venda venda;
+	private Venda<FormaPagamento> venda;
 	
 	private String bandeiraCartao;
 	
