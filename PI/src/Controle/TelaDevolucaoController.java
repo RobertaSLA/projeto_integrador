@@ -1,8 +1,18 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
+import Modelo.Cliente;
+import Modelo.Devolucao;
+import Modelo.Compra;
+import Modelo.Livro;
+import Modelo.LivroCompra;
+import Modelo.LivroDevolucao;
 import Modelo.LivroVenda;
+import Modelo.Venda;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +24,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -56,7 +67,7 @@ public class TelaDevolucaoController {
     private Button btnCodVenda;
 
     @FXML
-    private Button btnConfirmar;
+    private Button btnInserirItem;
 
     @FXML
     private Button btnConsultaCliente;
@@ -72,6 +83,9 @@ public class TelaDevolucaoController {
 
     @FXML
     private Button btnDevolucao;
+    
+    @FXML
+    private Button btnConfirmar;
 
     @FXML
     private Button btnEmissaoNF;
@@ -86,16 +100,16 @@ public class TelaDevolucaoController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<LivroVenda, Integer> clmItem;
+    private TableColumn<LivroDevolucao, Integer> clmItem;
 
     @FXML
-    private TableColumn<LivroVenda, Float> clmPrecoVenda;
+    private TableColumn<LivroDevolucao, Float> clmPrecoVenda;
 
     @FXML
-    private TableColumn<LivroVenda, Integer> clmSKUVenda;
+    private TableColumn<LivroDevolucao, Integer> clmSKUVenda;
 
     @FXML
-    private TableColumn<LivroVenda, String> clmTituloVenda;
+    private TableColumn<LivroDevolucao, String> clmTituloVenda;
 
     @FXML
     private DatePicker dtDataDevolução;
@@ -107,7 +121,7 @@ public class TelaDevolucaoController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<LivroVenda> tblVenda;
+    private TableView<LivroDevolucao> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -132,6 +146,10 @@ public class TelaDevolucaoController {
 
     @FXML
     private TextField txtValorTotal;
+    
+    private Devolucao devolucao = new Devolucao();
+    
+    private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -271,7 +289,7 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void ConfirmarProduto(ActionEvent event) {
+    void InserirItem(ActionEvent event) {
 
     }
 
@@ -372,5 +390,36 @@ public class TelaDevolucaoController {
     void ValorTotal(ActionEvent event) {
 
     }
+    
+    @FXML
+    void Confirmar(ActionEvent event) {
+
+    }
+    
+    @FXML
+    public void initialize() throws SQLException { 
+    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
+		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
+		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("valor"));
+		
+		
+		tblVenda.setItems(FXCollections.observableArrayList(listaitens));
+    }
+
+    
+	public void addVenda(Venda venda) {
+		txtCodVenda.setText(String.valueOf(venda.getIdVenda()));
+	}
+
+	public void addLivro(Livro livro) {
+		txtCodProduto.setText(String.valueOf(livro.getSku()));
+		txtDescriçãoProduto.setText(livro.getNome());
+	}
+
+	public void addCliente(Cliente cliente) {
+		txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
+		txtNomeCliente.setText(cliente.getNome());
+	}
 
 }

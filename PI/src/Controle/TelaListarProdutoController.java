@@ -77,6 +77,9 @@ public class TelaListarProdutoController {
     	if(this.telaCompraController != null) {
     		this.telaCompraController.addLivro(livro);
     	}
+    	if(this.telaDevolucaoController != null) {
+    		this.telaDevolucaoController.addLivro(livro);
+    	}
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
     	stage.close();

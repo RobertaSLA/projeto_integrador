@@ -4,18 +4,26 @@ import java.util.ArrayList;
 
 public class LivroDevolucao {
 	
-	private int idDevolucao;
+	private Devolucao devolucao;
 	private Livro livro;
 	private int quantidade;
 	private float valorItem;
 	private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
 	
 	
-	public int getIdDevolucao() {
-		return idDevolucao;
+	public LivroDevolucao(Devolucao devolucao, Livro livro, int quantidade, float valorItem) {
+		super();
+		this.devolucao = devolucao;
+		this.livro = livro;
+		this.quantidade = quantidade;
+		this.valorItem = valorItem;
 	}
-	public void setIdDevolucao(int idDevolucao) {
-		this.idDevolucao = idDevolucao;
+	
+	public Devolucao getDevolucao() {
+		return devolucao;
+	}
+	public void setDevolucao(Devolucao devolucao) {
+		this.devolucao = devolucao;
 	}
 	public Livro getLivro() {
 		return livro;
@@ -41,6 +49,13 @@ public class LivroDevolucao {
 	public void setListaitens(ArrayList<LivroDevolucao> listaitens) {
 		this.listaitens = listaitens;
 	}
-	
-	
+	public int getSku() {
+		return livro.getSku();
+	}
+	public String getTitulo() {
+		return livro.getNome();
+	}
+	public float getValor() {
+		return livro.getPreco();
+	}
 }

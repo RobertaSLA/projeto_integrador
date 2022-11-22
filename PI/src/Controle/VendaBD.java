@@ -87,4 +87,33 @@ public class VendaBD {
 			
 		}
 		
+		public ArrayList<Venda> ListarVendas() throws SQLException {
+			ArrayList<Venda> venda = new ArrayList<Venda>();
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				Statement stmt = con.createStatement();
+				
+				String query = "select idVenda, Cliente.idCliente, Cliente.nome, Valor from venda inner join Cliente on (Cliente_idCliente = idCliente);";
+				
+				
+				ResultSet rs = stmt.executeQuery(query);
+				
+		
+				while(rs.next()){
+					Cliente cliente = new Cliente(rs.getInt(2), rs.getString(3));
+					Venda vend = new Venda(rs.getInt(1), rs.getFloat(4), cliente);
+					
+					venda.add(vend);
+				}
+				
+				stmt.close(); 
+				con.close();
+				
+			}catch (SQLException e){
+				throw new SQLException(e);
+			}
+			return venda;
+			
+		}
+		
 }

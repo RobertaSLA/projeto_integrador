@@ -73,7 +73,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <Button fx:id="btnConfirmar" layoutX="1029.0" layoutY="244.0" mnemonicParsing="false" onAction="#ConfirmarProduto" prefHeight="32.0" prefWidth="69.0" text="Confirmar" />
+            <Button fx:id="btnInserirItem" layoutX="1029.0" layoutY="244.0" mnemonicParsing="false" onAction="#InserirItem" prefHeight="32.0" prefWidth="69.0" text="Inserir" />
             <Text layoutX="229.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Venda" wrappingWidth="105.14453124999955">
                <font>
                   <Font size="15.0" />
@@ -219,6 +219,7 @@
             <TableColumn fx:id="clmPrecoVenda" prefWidth="254.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
         </columns>
       </TableView>
-      <Button fx:id="btnExcluirItem" alignment="CENTER" layoutX="1444.0" layoutY="435.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="44.0" prefWidth="94.0" text="Excluir" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="btnExcluirItem" alignment="CENTER" layoutX="1444.0" layoutY="376.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="34.0" prefWidth="105.0" text=" Excluir Item" textAlignment="CENTER" wrapText="true" />
+      <Button fx:id="btnConfirmar" alignment="CENTER" layoutX="1444.0" layoutY="685.0" mnemonicParsing="false" onAction="#Confirmar" prefHeight="50.0" prefWidth="138.0" text="Confirmar Devolucao" textAlignment="CENTER" wrapText="true" />
    </children>
 </AnchorPane>

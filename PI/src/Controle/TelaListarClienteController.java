@@ -72,7 +72,14 @@ public class TelaListarClienteController {
     void ConfirmarCadastro(ActionEvent event) throws IOException {
     	
     	Cliente cliente = TableView.getSelectionModel().getSelectedItem();
-    	this.telaVendaController.addCliente(cliente);
+    	
+    	if(this.telaVendaController != null) {
+    		this.telaVendaController.addCliente(cliente);
+    	}
+    	if(this.telaDevolucaoController != null) {
+    		this.telaDevolucaoController.addCliente(cliente);
+    	}
+    	
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
     	stage.close();

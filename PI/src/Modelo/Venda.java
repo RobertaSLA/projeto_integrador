@@ -19,6 +19,14 @@ public class Venda {
 	}
 	
 
+	public Venda(int idVenda, float valor, Modelo.Cliente cliente) {
+		super();
+		this.idVenda = idVenda;
+		this.valor = valor;
+		Cliente = cliente;
+	}
+
+
 	public Venda(int idVenda, float valor, float desconto, Modelo.Cliente cliente,
 			Modelo.Vendedor vendedor) {
 		super();
