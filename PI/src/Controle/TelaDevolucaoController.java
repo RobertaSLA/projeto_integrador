@@ -290,7 +290,17 @@ public class TelaDevolucaoController {
 
     @FXML
     void InserirItem(ActionEvent event) {
-
+    	LivroBD liv = new LivroBD();
+    	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+    	
+    	LivroDevolucao livdev = new LivroDevolucao(livro, compra, Integer.parseInt(txtQuantidade.getText()),
+    			Float.parseFloat(txtValorCompra.getText()), valor);
+    	
+    	listaitens.add(livdev);
+    	
+    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
+    	
+    	
     }
 
     @FXML
