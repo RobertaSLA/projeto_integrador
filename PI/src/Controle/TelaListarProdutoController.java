@@ -71,7 +71,12 @@ public class TelaListarProdutoController {
     @FXML
     void ConfimarCadastro(ActionEvent event) throws IOException {
     	Livro livro = TableView.getSelectionModel().getSelectedItem();
-    	this.telaVendaController.addLivro(livro);
+    	if(this.telaVendaController != null) {
+    		this.telaVendaController.addLivro(livro);
+    	}
+    	if(this.telaCompraController != null) {
+    		this.telaCompraController.addLivro(livro);
+    	}
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
     	stage.close();

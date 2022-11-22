@@ -44,7 +44,7 @@ public class Fornecedor {
 		this.endereco = endereco;
 	}	
 	
-	public int getidFornecedor() {
+	public int getIdFornecedor() {
 		return idFornecedor;
 	}
 	public void setidFornecedor(int idFornecedor) {

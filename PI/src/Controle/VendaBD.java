@@ -19,7 +19,7 @@ public class VendaBD {
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setInt(1, venda.getFormaPagamento().);
+			stmt.setInt(1, venda.getFormaPagamento().getIdFormaPagamento());
 			stmt.setDate(2, new java.sql.Date(venda.getData().getTime()));
 			stmt.setFloat(3, venda.getValor());
 			stmt.setFloat(4, venda.getDesconto());

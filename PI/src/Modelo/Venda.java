@@ -3,7 +3,7 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Venda<FormaPagamento> {
+public class Venda {
 	
 	private int idVenda;
 	private FormaPagamento formaPagamento;

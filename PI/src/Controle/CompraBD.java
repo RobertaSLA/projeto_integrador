@@ -12,15 +12,14 @@ public class CompraBD {
 	public void InserirCompra(Compra compra) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "insert into compra (SKULivro, Quantidade, Valor, IdFornecedor, Data) values (?, ?, ?, ?, ?);";
+			String sql = "insert into compra (Quantidade, Valor, IdFornecedor, Data) values (?, ?, ?, ?, ?);";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setInt(1, compra.getSkuLivro());
-			stmt.setInt(2, compra.getQuantidade());
-			stmt.setFloat(3, compra.getValor());
-			stmt.setInt(4, compra.getIdFornecedor());
-			stmt.setDate(3, new java.sql.Date(compra.getData().getTime()));
+			stmt.setInt(1, compra.getQuantidade());
+			stmt.setFloat(2, compra.getValor());
+			stmt.setInt(3, compra.getIdFornecedor());
+			stmt.setDate(4, new java.sql.Date(compra.getData().getTime()));
 			
 			stmt.execute();
 			stmt.close(); 

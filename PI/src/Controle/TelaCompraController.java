@@ -5,10 +5,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 
+import Modelo.Fornecedor;
+import Modelo.Livro;
+import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
@@ -17,6 +23,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 	public class TelaCompraController {
 
@@ -141,13 +148,25 @@ import javafx.scene.layout.AnchorPane;
 	    private TextField txtValorTotal;
 
 	    @FXML
-	    void AcessoCadastroCliente(ActionEvent event) {
-
+	    void AcessoCadastroCliente(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader();
+	    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
+	        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+	        Stage stage = new Stage();
+	        stage.setResizable(false);
+	        stage.setScene(scene);
+	        stage.show();
 	    }
 
 	    @FXML
-	    void AcessoCadsatroProdutos(ActionEvent event) {
-
+	    void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader();
+	    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
+	        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+	        Stage stage = new Stage();
+	        stage.setResizable(false);
+	        stage.setScene(scene);
+	        stage.show();
 	    }
 
 	    @FXML
@@ -182,13 +201,40 @@ import javafx.scene.layout.AnchorPane;
 	    }
 
 	    @FXML
-	    void CodFornecedor(ActionEvent event) {
-
+	    void CodFornecedor(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(
+	    	    	   getClass().getResource(
+	    	    			   "/visao/ListarFornecedor.fxml"
+	    	    	   )
+	    	    	 );
+	    	        Node node;
+	    	        Parent parent = fxmlLoader.load();
+	    	        node = (Node) parent;
+	    	        TelaListarFornecedorController controller = fxmlLoader.getController();
+	    	        controller.setTelaCompraController(this);
+	    	        Scene scene = new Scene(parent, 574, 473);
+	    	        Stage stage = new Stage();
+	    	        stage.setScene(scene);
+	    	        stage.show();
 	    }
 
 	    @FXML
-	    void CodProduto(ActionEvent event) {
-
+	    void CodProduto(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(
+	    	    	   getClass().getResource(
+	    	    			   "/visao/ListarProduto.fxml"
+	    	    	   )
+	    	    	 );
+	    	        Node node;
+	    	        Parent parent = fxmlLoader.load();
+	    	        node = (Node) parent;
+	    	        TelaListarProdutoController controller = fxmlLoader.getController();
+	    	        controller.setTelaCompraController(this);
+	    	        Scene scene = new Scene(parent, 574, 473);
+	    	        Stage stage = new Stage();
+	    	        stage.setScene(scene);
+	    	        stage.show();
+	    	        
 	    }
 
 	    @FXML
@@ -280,7 +326,16 @@ import javafx.scene.layout.AnchorPane;
 	    void ValorTotal(ActionEvent event) {
 
 	    }
-
+	    
+	    public void addLivro(Livro livro) {
+			txtCodProduto.setText(String.valueOf(livro.getSku()));
+			txtDescriçãoProduto.setText(livro.getNome());
+		}
+	    
+	    public void addFornecedor(Fornecedor fornecedor) {
+			txtCodFornecedor.setText(String.valueOf(fornecedor.getIdFornecedor()));
+			txtNomeFornecedor.setText(fornecedor.getNome());
+		}
 	}
 
 

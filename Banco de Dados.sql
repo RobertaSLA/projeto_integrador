@@ -219,28 +219,6 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Livro_has_Autor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Autor` (
-  `Livro_SKU` INT NOT NULL,
-  `Autor_IdAutor` INT NOT NULL,
-  PRIMARY KEY (`Livro_SKU`, `Autor_IdAutor`),
-  INDEX `fk_Livro_has_Autor_Autor1_idx` (`Autor_IdAutor` ASC),
-  INDEX `fk_Livro_has_Autor_Livro_idx` (`Livro_SKU` ASC),
-  CONSTRAINT `fk_Livro_has_Autor_Livro`
-    FOREIGN KEY (`Livro_SKU`)
-    REFERENCES `mydb`.`Livro` (`SKU`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Livro_has_Autor_Autor1`
-    FOREIGN KEY (`Autor_IdAutor`)
-    REFERENCES `mydb`.`Autor` (`IdAutor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
 -- Table `mydb`.`Livro_has_HistoricoDePrecos`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_HistoricoDePrecos` (

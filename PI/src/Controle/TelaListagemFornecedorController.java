@@ -65,6 +65,9 @@ public class TelaListagemFornecedorController {
 
     @FXML
     private Button btnDevolucao;
+    
+    @FXML
+    private Button btnCompraProdutos;
 
     @FXML
     private Button btnEmissaoNF;
@@ -195,6 +198,7 @@ public class TelaListagemFornecedorController {
 
     }
 
+
     @FXML
     void CadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
@@ -232,6 +236,12 @@ public class TelaListagemFornecedorController {
     void ConsultaCliente(ActionEvent event) {
 
     }
+    
+    @FXML
+    void CompraProduto(ActionEvent event) {
+
+    }
+
 
     @FXML
     void ConsultaLivro(ActionEvent event) throws IOException {
