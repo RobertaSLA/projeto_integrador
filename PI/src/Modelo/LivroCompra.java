@@ -8,6 +8,15 @@ public class LivroCompra {
 	private float valor;
 	private float valorTotal;
 	
+	
+	public LivroCompra(Livro livro, Modelo.Compra compra, int quantidade, float valor, float valorTotal) {
+		super();
+		this.livro = livro;
+		Compra = compra;
+		this.quantidade = quantidade;
+		this.valor = valor;
+		this.valorTotal = valorTotal;
+	}
 	public Livro getLivro() {
 		return livro;
 	}

@@ -212,5 +212,10 @@
         </columns>
       </TableView>
       <Button fx:id="btnExcluirItem" layoutX="1432.0" layoutY="361.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
+      <Button fx:id="btnConfirmarCompra" layoutX="1429.0" layoutY="682.0" mnemonicParsing="false" onAction="#ConfimarCompra" prefHeight="56.0" prefWidth="158.0" text="Confirmar Compra">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

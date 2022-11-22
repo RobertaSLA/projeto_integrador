@@ -6,6 +6,7 @@ import java.net.URL;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import Modelo.Compra;
 import Modelo.Fornecedor;
 import Modelo.Livro;
 import Modelo.LivroCompra;
@@ -96,6 +97,9 @@ import javafx.stage.Stage;
 
 	    @FXML
 	    private Button btnVendaConsulta;
+	    
+	    @FXML
+	    private Button btnConfirmarCompra;
 
 	    @FXML
 	    private TableColumn<LivroCompra, Integer> clmItem;
@@ -147,6 +151,12 @@ import javafx.stage.Stage;
 
 	    @FXML
 	    private TextField txtValorTotal;
+	    
+	    private Float valor;
+	    
+	    private Float valorTotal;
+	    
+	    private Compra compra;
 	    
 	    private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
 
@@ -202,6 +212,12 @@ import javafx.stage.Stage;
 	    void CadastroLivro(ActionEvent event) {
 
 	    }
+	    
+	    @FXML
+	    void ConfimarCompra(ActionEvent event) {
+
+	    }
+
 
 	    @FXML
 	    void CodFornecedor(ActionEvent event) throws IOException {
@@ -287,7 +303,10 @@ import javafx.stage.Stage;
 
 	    @FXML
 	    void ExcluirItem(ActionEvent event) {
+	    	LivroCompra livro = tblCompra.getSelectionModel().getSelectedItem();
 
+	    	listaitens.remove(livro);
+	    	tblCompra.setItems(FXCollections.observableArrayList(listaitens));
 	    }
 
 	    @FXML
@@ -301,8 +320,27 @@ import javafx.stage.Stage;
 	    }
 
 	    @FXML
-	    void InserirItem(ActionEvent event) {
-
+	    void InserirItem(ActionEvent event) throws NumberFormatException, SQLException {
+	    	LivroBD liv = new LivroBD();
+	    	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+	    	
+	    	valor = (Float.parseFloat(txtValorCompra.getText())* Integer.parseInt(txtQuantidade.getText()));
+	    	
+	    	LivroCompra livcomp = new LivroCompra(livro, compra, Integer.parseInt(txtQuantidade.getText()),
+	    			Float.parseFloat(txtValorCompra.getText()), valor);
+	    	
+	    	listaitens.add(livcomp);
+	    	
+	    	tblCompra.setItems(FXCollections.observableArrayList(listaitens));
+	    	
+	    	valorTotal += valor;
+	    	
+	    	txtValorTotal.setText(String.valueOf(valorTotal));
+	    	
+	    	txtCodProduto.setText(null);
+	    	txtDescriçãoProduto.setText(null);
+	    	txtQuantidade.setText(null);
+	    	txtValorCompra.setText(null);
 	    }
 
 	    @FXML
