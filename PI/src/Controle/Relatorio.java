@@ -37,7 +37,7 @@ public class Relatorio {
 			String imgSrc = "imagenspdf\\logo sem fundo.png";
 			ImageData data = ImageDataFactory.create(imgSrc);
 			Image logoFundo = new Image(data);
-			logoFundo.setRelativePosition(20, 150, 150, 20);
+			logoFundo.setFixedPosition(30, 250);
 			logoFundo.setHeight(450);
 			logoFundo.setWidth(500);
 			
@@ -58,12 +58,12 @@ public class Relatorio {
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
 			Text titulo = new Text("Relatório de Vendas").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
-			para1.setRelativePosition(175, 50, 175, 800);
+			para1.setFixedPosition(225, 750, null);
 			
 			
 			
 			Table table = new Table(7);
-			table.setRelativePosition(5, 0, 5, 0);
+			table.setFixedPosition(35, 200, 525);
 			
 			table.addHeaderCell("CEP");
 			table.addHeaderCell("UF");
