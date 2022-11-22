@@ -245,21 +245,21 @@ insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, 
 insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (586, 15, 458.93);
 
 
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (1, 1, 15, 138.90);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (2, 2, 18, 117.64);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (3, 3, 4, 266.06);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (4, 4, 20, 153.48);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (5, 5, 28, 499.36);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (6, 6, 22, 329.63);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (7, 7, 21, 375.52);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (8, 8, 26, 253.99);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (9, 9, 20, 497.41);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (10, 10, 2, 204.56);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (11, 11, 21, 212.84);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (12, 12, 9, 398.18);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (13, 13, 12, 146.62);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (14, 14, 24, 185.33);
-insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem) values (15, 15, 25, 414.88);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (1, 1, 15, 138.90, 2083.50);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (2, 2, 18, 117.64, 2117.52);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (3, 3, 4, 266.06, 1064.24);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (4, 4, 20, 153.48, 3069.60);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (5, 5, 28, 499.36, 13982.08);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (6, 6, 22, 329.63, 7251.86);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (7, 7, 21, 375.52, 7885.92);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (8, 8, 26, 253.99, 6603.74);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (9, 9, 20, 497.41, 9948.2);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (10, 10, 2, 204.56, 409.12);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (11, 11, 21, 212.84, 4469.64);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (12, 12, 9, 398.18, 3583.62);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (13, 13, 12, 146.62, 1759.44);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (14, 14, 24, 185.33, 4447.92);
+insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (15, 15, 25, 414.88, 10372);
 
 insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (1, 1, 15, 20.00, 138.90);
 insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (2, 2, 18, 27.00, 117.64);

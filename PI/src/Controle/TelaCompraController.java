@@ -4,9 +4,12 @@ package Controle;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import Modelo.Fornecedor;
 import Modelo.Livro;
+import Modelo.LivroCompra;
+import Modelo.LivroVenda;
 import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -32,9 +35,7 @@ import javafx.stage.Stage;
 	    private String[] condicao = {"Boleto 60 dias", "Boleto 45 dias", "Boleto 30 dias", "Boleto 15 dias", "À vista"};
 	   
 	    
-	    public void initialize() { 
-	    	ChoiceBoxCondicao.getItems().addAll(condicao);
-	    }
+	    	
 
 	    @FXML
 	    private Button IDBotaoHome;
@@ -97,22 +98,22 @@ import javafx.stage.Stage;
 	    private Button btnVendaConsulta;
 
 	    @FXML
-	    private TableColumn<?, ?> clmItem;
+	    private TableColumn<LivroCompra, Integer> clmItem;
 
 	    @FXML
-	    private TableColumn<?, ?> clmQuantidadeItem;
+	    private TableColumn<LivroCompra, Integer> clmQuantidadeItem;
 
 	    @FXML
-	    private TableColumn<?, ?> clmSKUCompra;
+	    private TableColumn<LivroCompra, Integer> clmSKUCompra;
 
 	    @FXML
-	    private TableColumn<?, ?> clmTituloCompra;
+	    private TableColumn<LivroCompra, String> clmTituloCompra;
 
 	    @FXML
-	    private TableColumn<?, ?> clmValorTotalItem;
+	    private TableColumn<LivroCompra, Float> clmValorTotalItem;
 
 	    @FXML
-	    private TableColumn<?, ?> clmValorUnitario;
+	    private TableColumn<LivroCompra, Float> clmValorUnitario;
 
 	    @FXML
 	    private DatePicker dtDataCompra;
@@ -121,7 +122,7 @@ import javafx.stage.Stage;
 	    private AnchorPane layoutListagem;
 
 	    @FXML
-	    private TableView<?> tblCompra;
+	    private TableView<LivroCompra> tblCompra;
 
 	    @FXML
 	    private TextField txtCodFornecedor;
@@ -146,6 +147,8 @@ import javafx.stage.Stage;
 
 	    @FXML
 	    private TextField txtValorTotal;
+	    
+	    private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
 
 	    @FXML
 	    void AcessoCadastroCliente(ActionEvent event) throws IOException {
@@ -326,6 +329,20 @@ import javafx.stage.Stage;
 	    void ValorTotal(ActionEvent event) {
 
 	    }
+	    
+	    @FXML
+	    public void initialize() throws SQLException { 
+	    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
+			clmSKUCompra.setCellValueFactory(new PropertyValueFactory<>("sku"));
+			clmTituloCompra.setCellValueFactory(new PropertyValueFactory<>("nome"));
+			clmValorUnitario.setCellValueFactory(new PropertyValueFactory<>("preco"));
+			clmValorTotalItem.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
+			clmQuantidadeItem.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+			
+			tblCompra.setItems(FXCollections.observableArrayList(listaitens));
+			ChoiceBoxCondicao.getItems().addAll(condicao);
+	    }
+
 	    
 	    public void addLivro(Livro livro) {
 			txtCodProduto.setText(String.valueOf(livro.getSku()));

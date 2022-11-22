@@ -249,6 +249,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Compra` (
   `Compra_IdCompra` INT NOT NULL,
   `Quantidade` INT NOT NULL,
   `ValorItem` FLOAT NOT NULL,
+  `ValorTotal` FLOAT NOT NULL,
   PRIMARY KEY (`Livro_SKU`, `Compra_IdCompra`),
   INDEX `fk_Livro_has_Compra_Compra1_idx` (`Compra_IdCompra` ASC),
   INDEX `fk_Livro_has_Compra_Livro1_idx` (`Livro_SKU` ASC),

@@ -2,16 +2,17 @@ package Modelo;
 
 public class LivroCompra {
 	
-	private Livro Livro;
+	private Livro livro;
 	private Compra Compra;
 	private int quantidade;
 	private float valor;
+	private float valorTotal;
 	
 	public Livro getLivro() {
-		return Livro;
+		return livro;
 	}
 	public void setLivro(Livro Livro) {
-		this.Livro = Livro;
+		this.livro = Livro;
 	}
 	public Compra getCompra() {
 		return Compra;
@@ -30,6 +31,22 @@ public class LivroCompra {
 	}
 	public void setValor(float valor) {
 		this.valor = valor;
+	}
+	
+	public int getSku() {
+		return livro.getSku();
+	}
+	public String getTitulo() {
+		return livro.getNome();
+	}
+	public float getValorTotal() {
+		return valorTotal;
+	}
+	public void setValorTotal(float valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+	public void setCompra(Compra compra) {
+		Compra = compra;
 	}
 	
 }

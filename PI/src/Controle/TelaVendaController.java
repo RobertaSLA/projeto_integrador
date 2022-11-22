@@ -186,7 +186,6 @@ public class TelaVendaController {
     
     private Venda venda = new Venda();
     
-    //private ObservableList<Livro> listaItens = FXCollections.observableArrayList();
 	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
 
     @FXML
@@ -536,7 +535,7 @@ public class TelaVendaController {
     @FXML
     public void initialize() throws SQLException { 
     	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
-		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
+		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("idCompra"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));
 		clmDesconto.setCellValueFactory(new PropertyValueFactory<>("desconto"));
