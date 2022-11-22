@@ -334,8 +334,8 @@ import javafx.stage.Stage;
 	    public void initialize() throws SQLException { 
 	    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
 			clmSKUCompra.setCellValueFactory(new PropertyValueFactory<>("sku"));
-			clmTituloCompra.setCellValueFactory(new PropertyValueFactory<>("nome"));
-			clmValorUnitario.setCellValueFactory(new PropertyValueFactory<>("preco"));
+			clmTituloCompra.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+			clmValorUnitario.setCellValueFactory(new PropertyValueFactory<>("valor"));
 			clmValorTotalItem.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
 			clmQuantidadeItem.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
 			
