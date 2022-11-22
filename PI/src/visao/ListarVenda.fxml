@@ -51,7 +51,7 @@
         <columns>
           <TableColumn fx:id="clmlID" prefWidth="74.0" text="ID" />
           <TableColumn fx:id="clmNomeCliente" prefWidth="313.0" text="Cliente" />
-            <TableColumn fx:id="clmlData" prefWidth="124.0" text="Data" />
+            <TableColumn fx:id="clmValor" prefWidth="124.0" text="Valor" />
         </columns>
       </TableView>
       <Button fx:id="btnCancelar" layoutX="416.0" layoutY="421.0" mnemonicParsing="false" onAction="#CancelarCadastro" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Cancelar">

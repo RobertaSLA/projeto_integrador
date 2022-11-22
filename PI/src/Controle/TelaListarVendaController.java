@@ -89,5 +89,6 @@ public class TelaListarVendaController {
 		TableView.setItems(FXCollections.observableArrayList(vendas));
 		
 	}
+	
 
 }

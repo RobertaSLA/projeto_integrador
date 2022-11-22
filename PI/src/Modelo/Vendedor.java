@@ -14,6 +14,16 @@ public class Vendedor {
 		super();
 		this.idVendedor = idVendedor;
 	}
+	
+	
+
+	public Vendedor(int idVendedor, String nome) {
+		super();
+		this.idVendedor = idVendedor;
+		this.nome = nome;
+	}
+
+
 
 	public Vendedor(int idVendedor, String nome, String cpf) {
 		super();

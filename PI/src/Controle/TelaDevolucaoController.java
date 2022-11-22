@@ -256,13 +256,13 @@ public class TelaDevolucaoController {
     void CodVenda(ActionEvent event) throws IOException {
     	 FXMLLoader fxmlLoader = new FXMLLoader(
   	    	   getClass().getResource(
-  	    			   "/visao/ListarProduto.fxml"
+  	    			   "/visao/ListarVenda.fxml"
   	    	   )
   	    	 );
   	        Node node;
   	        Parent parent = fxmlLoader.load();
   	        node = (Node) parent;
-  	        TelaListarProdutoController controller = fxmlLoader.getController();
+  	        TelaListarVendaController controller = fxmlLoader.getController();
   	        controller.setTelaDevolucaoController(this);
   	        Scene scene = new Scene(parent, 574, 473);
   	        Stage stage = new Stage();

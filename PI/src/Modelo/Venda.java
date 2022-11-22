@@ -17,6 +17,20 @@ public class Venda {
 	public Venda() {
 		super();
 	}
+	
+
+	public Venda(int idVenda, float valor, float desconto, Modelo.Cliente cliente,
+			Modelo.Vendedor vendedor) {
+		super();
+		this.idVenda = idVenda;
+		this.valor = valor;
+		this.desconto = desconto;
+		Cliente = cliente;
+		Vendedor = vendedor;
+	}
+
+
+
 
 	public Venda(int idVenda, Date data, Cliente Cliente) {
 		super();
@@ -82,7 +96,9 @@ public class Venda {
 	public String getNomeCliente() {
 		return Cliente.getNome();
 	}
-	
-	
+	public String getNomeVendedor() {
+		return Vendedor.getNome();
+	}
+
 	
 }

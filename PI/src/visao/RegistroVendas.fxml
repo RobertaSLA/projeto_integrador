@@ -146,17 +146,17 @@
             <Button fx:id="IDBotaoHome" layoutX="1057.0" layoutY="11.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="47.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
-      <TableView fx:id="tblRegistroVendas" layoutX="177.0" layoutY="321.0" prefHeight="475.0" prefWidth="1405.0">
+      <TableView fx:id="tblRegistroVendas" layoutX="281.0" layoutY="335.0" prefHeight="475.0" prefWidth="1115.0">
         <columns>
-          <TableColumn fx:id="clmCodVenda" prefWidth="118.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cod. de Venda" />
-          <TableColumn fx:id="clmTituloLivro" minWidth="8.0" prefWidth="449.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Livro" />
-            <TableColumn fx:id="clmCliente" minWidth="8.0" prefWidth="381.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cliente" />
-            <TableColumn fx:id="clmQuantidade" minWidth="0.0" prefWidth="135.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
-            <TableColumn fx:id="clmData" minWidth="0.0" prefWidth="159.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Data" />
-            <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="162.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
+          <TableColumn fx:id="clmCodVenda" prefWidth="154.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cod. de Venda" />
+            <TableColumn fx:id="clmCliente" minWidth="8.0" prefWidth="205.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cliente" />
+            <TableColumn fx:id="clmQuantidade" minWidth="0.0" prefWidth="119.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
+            <TableColumn fx:id="clmDesconto" minWidth="0.0" prefWidth="133.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Desconto" />
+            <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="126.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
+            <TableColumn fx:id="clmVendador" minWidth="0.0" prefWidth="377.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Vendedor" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarVenda" layoutX="177.0" layoutY="275.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />
+      <TextField fx:id="txtPesquisarVenda" layoutX="281.0" layoutY="279.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />
       <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Vendas" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
@@ -174,5 +174,11 @@
             <Image url="@imagens/icon%20alterar.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="32.0" layoutX="646.0" layoutY="277.0">
+         <image>
+            <Image url="@imagens/icon%20procurar.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnPesquisar" layoutX="645.0" layoutY="277.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="34.0" prefWidth="40.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

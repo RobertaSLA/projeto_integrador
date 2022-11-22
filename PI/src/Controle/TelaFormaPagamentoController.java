@@ -56,7 +56,6 @@ public class TelaFormaPagamentoController {
     	venda.setFormaPagamento(pagamento);
     	VendaBD vendaBD = new VendaBD();
     	vendaBD.InserirVenda(venda);
-
     }
 
     @FXML

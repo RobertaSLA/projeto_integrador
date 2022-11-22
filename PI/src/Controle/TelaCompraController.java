@@ -4,8 +4,12 @@ package Controle;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 
+import Modelo.Cliente;
 import Modelo.Compra;
 import Modelo.Fornecedor;
 import Modelo.Livro;
@@ -156,7 +160,7 @@ import javafx.stage.Stage;
 	    
 	    private Float valorTotal;
 	    
-	    private Compra compra;
+	    private Compra compra = new Compra();
 	    
 	    private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
 
@@ -214,8 +218,24 @@ import javafx.stage.Stage;
 	    }
 	    
 	    @FXML
-	    void ConfimarCompra(ActionEvent event) {
-
+	    void ConfimarCompra(ActionEvent event) throws SQLException, IOException {
+	    	Fornecedor forne = new Fornecedor(Integer.parseInt(txtCodFornecedor.getText()));
+	    	
+			compra.setFornecedor(forne);
+			compra.setQuantidade(Integer.parseInt(txtQtdItens.getText()));
+			compra.setValor(Float.parseFloat(txtValorTotal.getText()));
+			compra.setListaitens(listaitens);
+		
+			LocalDate localdate = dtDataCompra.getValue();
+			Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			compra.setData(date);
+			
+			CompraBD comp = new CompraBD();
+			comp.InserirCompra(compra);
+			
+			AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+	    	layoutListagem.getChildren().setAll(telaHomePane);
+		
 	    }
 
 
@@ -333,7 +353,8 @@ import javafx.stage.Stage;
 	    	
 	    	tblCompra.setItems(FXCollections.observableArrayList(listaitens));
 	    	
-	    	valorTotal += valor;
+	    	valorTotal = Float.parseFloat(txtValorTotal.getText()) + valor;
+	    	System.out.println(valorTotal);
 	    	
 	    	txtValorTotal.setText(String.valueOf(valorTotal));
 	    	

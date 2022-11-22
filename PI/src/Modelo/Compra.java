@@ -6,7 +6,7 @@ import java.util.Date;
 public class Compra {
 	 
 	private int idCompra;
-	private int idFornecedor;
+	private Fornecedor fornecedor;
 	private int quantidade;
 	private float valor;
 	private Date data;
@@ -19,11 +19,11 @@ public class Compra {
 	public void setIdCompra(int idCompra) {
 		this.idCompra = idCompra;
 	}
-	public int getIdFornecedor() {
-		return idFornecedor;
+	public Fornecedor getFornecedor() {
+		return fornecedor;
 	}
-	public void setIdFornecedor(int idFornecedor) {
-		this.idFornecedor = idFornecedor;
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 	public int getQuantidade() {
 		return quantidade;

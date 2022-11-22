@@ -10,6 +10,7 @@ import Modelo.Autor;
 import Modelo.Cliente;
 import Modelo.Livro;
 import Modelo.Venda;
+import Modelo.Vendedor;
 
 public class VendaBD {
 	public void InserirVenda(Venda venda) throws SQLException {
@@ -62,7 +63,7 @@ public class VendaBD {
 				Connection con = ConexaoBD.Conexao_BD();
 				Statement stmt = con.createStatement();
 				
-				String query = "select idVenda, Cliente.idCliente, Cliente.nome, Data from venda inner join Cliente on (Cliente_idCliente = idCliente);";
+				String query = "select idVenda, Cliente.idCliente, Cliente.nome, Desconto, Valor, Vendedor.idVendedor, Vendedor.nome from venda inner join Cliente on (Cliente_idCliente = idCliente) inner join Vendedor on (Vendedor_idVendedor = idVendedor);";
 				
 				
 				ResultSet rs = stmt.executeQuery(query);
@@ -70,7 +71,8 @@ public class VendaBD {
 		
 				while(rs.next()){
 					Cliente cliente = new Cliente(rs.getInt(2), rs.getString(3));
-					Venda vend = new Venda(rs.getInt(1), rs.getDate(4), cliente);
+					Vendedor vendedor = new Vendedor(rs.getInt(6), rs.getString(7));
+					Venda vend = new Venda(rs.getInt(1), rs.getFloat(5), rs.getFloat(4), cliente, vendedor);
 					
 					venda.add(vend);
 				}
@@ -84,4 +86,5 @@ public class VendaBD {
 			return venda;
 			
 		}
+		
 }
