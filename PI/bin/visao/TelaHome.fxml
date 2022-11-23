@@ -136,7 +136,7 @@
                   <Image url="@imagens/icon%20config%20brabnco.jpg" />
                </image>
             </ImageView>
-            <TitledPane layoutX="434.0" layoutY="27.0" prefHeight="147.0" prefWidth="172.0" text="Pessoa">
+            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="147.0" prefWidth="172.0" text="Pessoa">
                <content>
                   <Pane prefHeight="154.0" prefWidth="170.0">
                      <children>
