@@ -389,13 +389,14 @@ public class TelaVendaController {
 
     @FXML
     void HistoricoVenda(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/HistoricoPrecos.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroVendas.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void ConsultaPreco(ActionEvent event) {
-
+    void ConsultaPreco(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     @FXML
