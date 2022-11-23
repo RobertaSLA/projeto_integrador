@@ -24,13 +24,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.layout.property.UnitValue;
 
 import Modelo.Conexao;
 
 
 
-public class RelatorioProdutos {
+public class RelatorioProdutosTerror {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
@@ -64,7 +63,7 @@ public class RelatorioProdutos {
 			
 			
 			
-			Table table = new Table(6).useAllAvailableWidth();
+			Table table = new Table(6);
 			table.setRelativePosition(25, 100, 20, 50);
 			
 			table.addHeaderCell("Título");
@@ -85,8 +84,8 @@ public class RelatorioProdutos {
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
-			    table.addCell(rs.getString("livro.nome")).setWidth(UnitValue.createPercentValue(80));
-			    table.addCell(rs.getString("ISBN")).setWidth(UnitValue.createPercentValue(90));
+			    table.addCell(rs.getString("livro.nome"));
+			    table.addCell(rs.getString("ISBN"));
 			    table.addCell(rs.getString("autor.nome"));
 			    table.addCell(rs.getString("Genero"));
 			    table.addCell(rs.getString("Preco"));
