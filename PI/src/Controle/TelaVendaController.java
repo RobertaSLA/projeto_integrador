@@ -345,28 +345,34 @@ public class TelaVendaController {
     	LivroBD liv = new LivroBD();
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
-    	Valor = (livro.getPreco() - Float.parseFloat(txtDesconto.getText())) * Integer.parseInt(txtQuantidade.getText());
+    	if (livro.getEstoque() > Integer.parseInt(txtQuantidade.getText())) {
+    		Valor = (livro.getPreco() - Float.parseFloat(txtDesconto.getText())) * Integer.parseInt(txtQuantidade.getText());
+        	
+        	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()),
+        			Float.parseFloat(txtDesconto.getText()), Valor);
+        	
+        	listaitens.add(livenda);
+        	
+        	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
+        	
+        	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
+        
+        	ValorTotal = ValorItem + Float.parseFloat(txtValorTotal.getText());
+        	
+        	ValorDesconto = Float.parseFloat(txtDescontos.getText()) + Float.parseFloat(txtDesconto.getText());
+        	
+        	
+        	txtValorTotal.setText(String.valueOf(ValorTotal));
+        	txtDescontos.setText(String.valueOf(ValorDesconto));
+        	txtCodProduto.setText(null);
+        	txtDescriçãoProduto.setText(null);
+        	txtDesconto.setText(null);
+        	txtQuantidade.setText(null);
+    	} else {
+    		JOptionPane.showMessageDialog(null, "Quantidade insuficiente em estoque");
+    	}
     	
-    	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()),
-    			Float.parseFloat(txtDesconto.getText()), Valor);
     	
-    	listaitens.add(livenda);
-    	
-    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
-    	
-    	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
-    
-    	ValorTotal = ValorItem + Float.parseFloat(txtValorTotal.getText());
-    	
-    	ValorDesconto = Float.parseFloat(txtDescontos.getText()) + Float.parseFloat(txtDesconto.getText());
-    	
-    	
-    	txtValorTotal.setText(String.valueOf(ValorTotal));
-    	txtDescontos.setText(String.valueOf(ValorDesconto));
-    	txtCodProduto.setText(null);
-    	txtDescriçãoProduto.setText(null);
-    	txtDesconto.setText(null);
-    	txtQuantidade.setText(null);
     }
     
     @FXML

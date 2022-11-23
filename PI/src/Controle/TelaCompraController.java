@@ -158,6 +158,8 @@ import javafx.stage.Stage;
 	    
 	    private Float valorTotal;
 	    
+	    private int estoque;
+	    
 	    private Compra compra = new Compra();
 	    
 	    private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
@@ -230,6 +232,11 @@ import javafx.stage.Stage;
 			
 			CompraBD comp = new CompraBD();
 			comp.InserirCompra(compra);
+			
+			for (LivroCompra lv: compra.getListaitens()) {
+				LivroBD livbd = new LivroBD();
+				livbd.AtualizarEstoque(lv.getLivro().getSku(), lv.getLivro().getEstoque());
+			}
 			
 			AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
 	    	layoutListagem.getChildren().setAll(telaHomePane);
@@ -322,6 +329,9 @@ import javafx.stage.Stage;
 	    @FXML
 	    void ExcluirItem(ActionEvent event) {
 	    	LivroCompra livro = tblCompra.getSelectionModel().getSelectedItem();
+	    	
+	    	estoque = livro.getLivro().getEstoque() - livro.getQuantidade();
+	    	livro.getLivro().setEstoque(estoque);
 
 	    	listaitens.remove(livro);
 	    	tblCompra.setItems(FXCollections.observableArrayList(listaitens));
@@ -341,6 +351,9 @@ import javafx.stage.Stage;
 	    void InserirItem(ActionEvent event) throws NumberFormatException, SQLException {
 	    	LivroBD liv = new LivroBD();
 	    	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+	    	
+	    	estoque = livro.getEstoque() + Integer.parseInt(txtQuantidade.getText());
+    		livro.setEstoque(estoque);
 	    	
 	    	valor = (Float.parseFloat(txtValorCompra.getText())* Integer.parseInt(txtQuantidade.getText()));
 	    	

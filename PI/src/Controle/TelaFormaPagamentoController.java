@@ -3,6 +3,7 @@ package Controle;
 import java.sql.SQLException;
 
 import Modelo.FormaPagamento;
+import Modelo.LivroVenda;
 import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -58,6 +59,11 @@ public class TelaFormaPagamentoController {
     	venda.setFormaPagamento(pagamento);
     	VendaBD vendaBD = new VendaBD();
     	vendaBD.InserirVenda(venda);
+    	
+    	for (LivroVenda lv: venda.getListaitens()) {
+			LivroBD livbd = new LivroBD();
+			livbd.AtualizarEstoque(lv.getLivro().getSku(), lv.getLivro().getEstoque());
+		}
     	
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();

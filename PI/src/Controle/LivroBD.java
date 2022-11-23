@@ -141,7 +141,6 @@ public class LivroBD {
 			
 			stmt.close(); 
 			con.close();
-			JOptionPane.showMessageDialog(null, "Livro cadastrado com sucesso");
 			
 		} catch (SQLException e){
 			throw new SQLException(e);
@@ -205,6 +204,28 @@ public class LivroBD {
 			throw new SQLException(e);
 		}
 		return Lista;
+		
+	}
+
+	public void AtualizarEstoque(int sku, int estoque) throws SQLException {
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			String sql = "update livro set Estoque = ? where SKU = ?";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			stmt.setInt(1, estoque);
+			stmt.setInt(2, sku);
+		
+			stmt.executeUpdate();
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
 		
 	}
 }
