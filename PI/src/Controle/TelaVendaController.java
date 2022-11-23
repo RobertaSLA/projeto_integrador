@@ -217,8 +217,9 @@ public class TelaVendaController {
     }
 
     @FXML
-    void AcessoConsultaPreco(ActionEvent event) {
-
+    void AcessoConsultaPreco(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
