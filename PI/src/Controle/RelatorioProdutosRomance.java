@@ -44,7 +44,7 @@ public class RelatorioProdutosRomance {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioTodosProdutos.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioRomance.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -57,9 +57,9 @@ public class RelatorioProdutosRomance {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório Produtos (Todos)").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório Produtos (Romance)").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
-			para1.setFixedPosition(225, 750, null);
+			para1.setFixedPosition(190, 750, null);
 			
 			
 			
@@ -77,7 +77,9 @@ public class RelatorioProdutosRomance {
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select livro.nome, ISBN, autor.nome, genero, preco, estoque from livro inner join autor using (idAutor) order by livro.nome;";
+			String query = "select livro.nome, ISBN, autor.nome, genero, preco,"
+					+ "estoque from livro inner join autor using (idAutor) where "
+					+ "genero like '%Romance%' order by livro.nome;";
 			
 			ConexaoBD  connect = new ConexaoBD();
 			PreparedStatement ps = null;
@@ -102,7 +104,7 @@ public class RelatorioProdutosRomance {
 		
 			document.close();
 						
-			System.out.println("Finalizado");
+			System.out.println("Romance");
 			}
 		
 		catch (Exception e) {

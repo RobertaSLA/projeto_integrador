@@ -24,13 +24,12 @@ import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Text;
 import com.itextpdf.layout.property.TextAlignment;
-import com.itextpdf.layout.property.UnitValue;
 
 import Modelo.Conexao;
 
 
 
-public class RelatorioProdutos {
+public class RelatorioVendas {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
@@ -45,7 +44,7 @@ public class RelatorioProdutos {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioTodosProdutos.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioClientes.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -58,39 +57,36 @@ public class RelatorioProdutos {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório Produtos (Todos)").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório de Clientes").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
 			
 			
-			Table table = new Table(6);
+			
+			Table table = new Table(4);
+			table.setWidth(500);
 			table.setRelativePosition(25, 100, 20, 50);
 			
-			table.addHeaderCell("Título");
-			table.addHeaderCell("ISBN");
-			table.addHeaderCell("Autor");
-			table.addHeaderCell("Genero");
-			table.addHeaderCell("Preco");
-			table.addHeaderCell("Un");
+			table.addHeaderCell("Nome");
+			table.addHeaderCell("CPF");
+			table.addHeaderCell("Telefone");
+			table.addHeaderCell("CEP");			
 			
 			
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select livro.nome, ISBN, autor.nome, genero, preco, estoque from livro inner join autor using (idAutor) order by livro.nome;";
+			String query = "select nome, CPF, fone, cep from cliente inner join endereco using (IdEndereco) order by nome;";
 			
 			ConexaoBD  connect = new ConexaoBD();
 			PreparedStatement ps = null;
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
-			    table.addCell(rs.getString("livro.nome")).setWidth(UnitValue.createPercentValue(80));
-			    table.addCell(rs.getString("ISBN")).setWidth(UnitValue.createPercentValue(90));
-			    table.addCell(rs.getString("autor.nome"));
-			    table.addCell(rs.getString("Genero"));
-			    table.addCell(rs.getString("Preco"));
-			    table.addCell(rs.getString("Estoque"));
-			    
+			    table.addCell(rs.getString("Nome"));
+			    table.addCell(rs.getString("CPF"));
+			    table.addCell(rs.getString("Fone"));
+			    table.addCell(rs.getString("CEP"));
 			}
 			
 			
