@@ -105,7 +105,7 @@ public class TelaRegistroVendaController {
     private TableColumn<Venda, Integer> clmCodVenda;
 
     @FXML
-    private TableColumn<Venda, Integer> clmData;
+    private TableColumn<Venda, Date> clmData;
 
     @FXML
     private TableColumn<Venda, Float> clmPreço;
@@ -115,9 +115,6 @@ public class TelaRegistroVendaController {
     
     @FXML
     private TableColumn<Venda, String> clmVendedor;
-    
-    @FXML
-    private TableColumn<Venda, Float> clmDesconto;
 
 
     @FXML
@@ -273,9 +270,8 @@ public class TelaRegistroVendaController {
 		
 		clmCodVenda.setCellValueFactory(new PropertyValueFactory<>("idVenda"));
 		clmCliente.setCellValueFactory(new PropertyValueFactory<>("nomeCliente"));
-		clmData.setCellValueFactory(new PropertyValueFactory<>("idCliente"));
+		clmData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		clmPreço.setCellValueFactory(new PropertyValueFactory<>("valor"));
-		clmDesconto.setCellValueFactory(new PropertyValueFactory<>("desconto"));
 		clmVendedor.setCellValueFactory(new PropertyValueFactory<>("nomeVendedor"));		
 		
 		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));

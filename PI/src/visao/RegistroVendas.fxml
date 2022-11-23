@@ -150,10 +150,9 @@
         <columns>
           <TableColumn fx:id="clmCodVenda" prefWidth="154.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cod. de Venda" />
             <TableColumn fx:id="clmCliente" minWidth="8.0" prefWidth="205.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cliente" />
-            <TableColumn fx:id="clmQuantidade" minWidth="0.0" prefWidth="119.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
-            <TableColumn fx:id="clmDesconto" minWidth="0.0" prefWidth="133.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Desconto" />
-            <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="126.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
-            <TableColumn fx:id="clmVendador" minWidth="0.0" prefWidth="377.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Vendedor" />
+            <TableColumn fx:id="clmData" minWidth="0.0" prefWidth="179.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Data" />
+            <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="203.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
+            <TableColumn fx:id="clmVendedor" minWidth="0.0" prefWidth="373.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Vendedor" />
         </columns>
       </TableView>
       <TextField fx:id="txtPesquisarVenda" layoutX="281.0" layoutY="279.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />

@@ -114,6 +114,5 @@ public class Venda {
 	public String getNomeVendedor() {
 		return Vendedor.getNome();
 	}
-
 	
 }

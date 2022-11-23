@@ -28,11 +28,14 @@ public class DevolucaoBD {
 			stmt.setInt(3, devolucao.getVenda().getIdVenda());
 			stmt.setInt(4, devolucao.getVenda().getCliente().getIdCliente());
 			
+			stmt.execute();
+			
 			int idDevolucao = 0;
 			ResultSet rs = stmt.getGeneratedKeys();
 			
 			if (rs.next()){
 				idDevolucao=rs.getInt(1);
+				System.out.println("oia "+ String.valueOf(idDevolucao));
 			}
 			
 			sql = "Insert into Livro_has_Devolucao (LivroSKU, Devolucao_IdDevolucao, Quantidade, "
@@ -45,6 +48,7 @@ public class DevolucaoBD {
 				stmtLC.setInt(3, ld.getQuantidade());
 				stmtLC.setFloat(4, ld.getValorItem());
 				stmtLC.setFloat(5, ld.getValor());
+				System.out.println(stmtLC);
 				stmtLC.execute();
 			}
 			
