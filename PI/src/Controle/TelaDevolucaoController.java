@@ -149,6 +149,8 @@ public class TelaDevolucaoController {
     
     private Devolucao devolucao = new Devolucao();
     
+    private float valorItens;
+    
     private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
     
     @FXML
@@ -289,17 +291,18 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void InserirItem(ActionEvent event) {
+    void InserirItem(ActionEvent event) throws NumberFormatException, SQLException {
     	LivroBD liv = new LivroBD();
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
-    	LivroDevolucao livdev = new LivroDevolucao(livro, compra, Integer.parseInt(txtQuantidade.getText()),
-    			Float.parseFloat(txtValorCompra.getText()), valor);
+    	valorItens = livro.getPreco() * Integer.parseInt(txtQuantidade.getText());
+    	
+    	LivroDevolucao livdev = new LivroDevolucao(devolucao, livro, Integer.parseInt(txtQuantidade.getText()),
+    			valorItens);
     	
     	listaitens.add(livdev);
     	
     	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
-    	
     	
     }
 
@@ -358,7 +361,10 @@ public class TelaDevolucaoController {
 
     @FXML
     void ExcluirItem(ActionEvent event) {
+    	LivroDevolucao livro = tblVenda.getSelectionModel().getSelectedItem();
 
+    	listaitens.remove(livro);
+    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     }
 
     @FXML

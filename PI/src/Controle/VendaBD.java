@@ -9,33 +9,54 @@ import javax.swing.JOptionPane;
 import Modelo.Autor;
 import Modelo.Cliente;
 import Modelo.Livro;
+import Modelo.LivroVenda;
 import Modelo.Venda;
 import Modelo.Vendedor;
 
 public class VendaBD {
+	
 	public void InserirVenda(Venda venda) throws SQLException {
 		try {
-			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "insert into venda (IdFormaPagamento, Data, Valor, Desconto, Cliente_idCliente, Vendedor_idVendedor) values (?, ?, ?, ?, ?, ?);";
-			
-			PreparedStatement stmt = con.prepareStatement(sql);
-			
-			stmt.setInt(1, venda.getFormaPagamento().getIdFormaPagamento());
-			stmt.setDate(2, new java.sql.Date(venda.getData().getTime()));
-			stmt.setFloat(3, venda.getValor());
-			stmt.setFloat(4, venda.getDesconto());
-			stmt.setInt(5, venda.getCliente().getIdCliente());
-			stmt.setInt(6, venda.getVendedor().getIdVendedor());
-			
-			stmt.execute();
-			stmt.close(); 
-			con.close();
-			JOptionPane.showMessageDialog(null, "Venda cadastrada com sucesso");
-			
-		} catch (SQLException e){
-			throw new SQLException(e);
+		Connection con = ConexaoBD.Conexao_BD();
+		String sql = "insert into venda (IdFormaPagamento, Data, Valor, Desconto, Cliente_idCliente, Vendedor_idVendedor) values (?, ?, ?, ?, ?, ?);";
+
+		PreparedStatement stmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+
+		stmt.setInt(1, venda.getFormaPagamento().getIdFormaPagamento());
+		stmt.setDate(2, new java.sql.Date(venda.getData().getTime()));
+		stmt.setFloat(3, venda.getValor());
+		stmt.setFloat(4, venda.getDesconto());
+		stmt.setInt(5, venda.getCliente().getIdCliente());
+		stmt.setInt(6, venda.getVendedor().getIdVendedor());
+
+		stmt.execute();
+
+		int idVenda = 0;
+		ResultSet rs = stmt.getGeneratedKeys();
+		
+		if (rs.next()){
+			idVenda=rs.getInt(1);
 		}
-	}
+		
+		sql = "Insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, "
+				+ "DescontoItem, ValorItens) values (?, ?, ?, ?, ?) ";
+		PreparedStatement stmtLV = con.prepareStatement(sql);
+		for (LivroVenda lv: venda.getListaitens()) {
+			stmtLV.setInt(2, idVenda);
+			stmtLV.setInt(1, lv.getLivro().getSku());
+			stmtLV.setInt(3, lv.getQuantidade());
+			stmtLV.setFloat(4, lv.getDesconto());
+			stmtLV.setFloat(5, lv.getValor());
+			stmtLV.execute();
+		}
+		stmt.close();
+		con.close();
+		JOptionPane.showMessageDialog(null, "Venda cadastrada com sucesso");
+
+		} catch (SQLException e){
+		throw new SQLException(e);
+		}
+		}
 		
 		public void DeletarVenda(Venda venda) throws SQLException {
 			try {

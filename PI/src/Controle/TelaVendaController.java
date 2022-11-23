@@ -522,6 +522,10 @@ public class TelaVendaController {
 		        Stage stage = new Stage();
 		        stage.setScene(scene);
 		        stage.show();
+		
+		        AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+		    	layoutListagem.getChildren().setAll(telaHomePane);      
+		
     }
     
     

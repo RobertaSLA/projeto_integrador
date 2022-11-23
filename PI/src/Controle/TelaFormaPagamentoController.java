@@ -7,11 +7,13 @@ import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 
 public class TelaFormaPagamentoController {
 
@@ -44,7 +46,7 @@ public class TelaFormaPagamentoController {
 
 	private Venda venda;
 	
-	private String bandeiraCartao;
+	private String bandeiraCartao = " ";
 	
 	private Float ValorTroco;
 
@@ -56,6 +58,10 @@ public class TelaFormaPagamentoController {
     	venda.setFormaPagamento(pagamento);
     	VendaBD vendaBD = new VendaBD();
     	vendaBD.InserirVenda(venda);
+    	
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
     }
 
     @FXML
