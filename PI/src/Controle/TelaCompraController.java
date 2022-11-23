@@ -39,8 +39,6 @@ import javafx.stage.Stage;
 	    private ChoiceBox<String> ChoiceBoxCondicao; 
 	    private String[] condicao = {"Boleto 60 dias", "Boleto 45 dias", "Boleto 30 dias", "Boleto 15 dias", "À vista"};
 	   
-	    
-	    	
 
 	    @FXML
 	    private Button IDBotaoHome;

@@ -204,7 +204,7 @@
                   <Font size="20.0" />
                </font>
             </TextField>
-            <TextField fx:id="txtValorTotal" alignment="CENTER" editable="false" layoutX="1465.0" layoutY="23.0" onAction="#ValorTotal" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-width: 3; -fx-border-radius: 15;" text="0,00">
+            <TextField fx:id="txtValorTotal" alignment="CENTER" editable="false" layoutX="1465.0" layoutY="23.0" onAction="#ValorTotal" prefHeight="44.0" prefWidth="105.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-width: 3; -fx-border-radius: 15;" text="0.00">
                <font>
                   <Font size="20.0" />
                </font>

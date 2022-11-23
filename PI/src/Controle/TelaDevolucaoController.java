@@ -151,6 +151,8 @@ public class TelaDevolucaoController {
     
     private float valorItens;
     
+    private float valorTotal;
+    
     private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
     
     @FXML
@@ -302,8 +304,14 @@ public class TelaDevolucaoController {
     	
     	listaitens.add(livdev);
     	
+    	valorTotal = Float.parseFloat(txtValorTotal.getText()) + valorItens;
+    	txtValorTotal.setText(String.valueOf(valorTotal));
+    	
     	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     	
+    	txtCodProduto.setText(null);
+    	txtDescriçãoProduto.setText(null);
+    	txtQuantidade.setText(null);
     }
 
     @FXML
