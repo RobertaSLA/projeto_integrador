@@ -1,7 +1,10 @@
 package Controle;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -112,8 +115,9 @@ public class TelaHistoricoDePrecosController {
     }
 
     @FXML
-    void ActionBotaoHome(ActionEvent event) {
-
+    void ActionBotaoHome(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML

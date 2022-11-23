@@ -1,16 +1,13 @@
 package Controle;
 
+
 import java.io.IOException;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
 import Modelo.Autor;
 import Modelo.Livro;
 import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -82,6 +79,9 @@ public class TelaListagemProdutoController {
     
     @FXML
     private Button btnExcluir;
+    
+    @FXML
+    private Button btnCompraProdutos;
 
     @FXML
     private Button btnHistoricoVenda;
@@ -170,6 +170,7 @@ public class TelaListagemProdutoController {
     @FXML
     private TextField txtPesquisarLivro;
     
+    
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
@@ -186,6 +187,12 @@ public class TelaListagemProdutoController {
 
     }
 
+    @FXML
+    void CompraProduto(ActionEvent event) {
+
+    }
+
+    
     @FXML
     void AcessoCadastroCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
@@ -421,7 +428,7 @@ public class TelaListagemProdutoController {
 		LivroBD liv = new LivroBD();
 		List<Livro> l  = liv.BuscarLivro();
 		
-		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmAutor.setCellValueFactory(new PropertyValueFactory<>("nomeAutor"));
 		clmEditora.setCellValueFactory(new PropertyValueFactory<>("editora"));
 		clmEstoque.setCellValueFactory(new PropertyValueFactory<>("estoque"));
 		clmGenero.setCellValueFactory(new PropertyValueFactory<>("genero"));

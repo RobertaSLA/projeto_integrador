@@ -1,12 +1,10 @@
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
-
-import Modelo.Cliente;
 import Modelo.Fornecedor;
-import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -67,6 +65,9 @@ public class TelaListagemFornecedorController {
 
     @FXML
     private Button btnDevolucao;
+    
+    @FXML
+    private Button btnCompraProdutos;
 
     @FXML
     private Button btnEmissaoNF;
@@ -159,6 +160,9 @@ public class TelaListagemFornecedorController {
         stage.setScene(scene);
         stage.show();
     }
+    
+
+
 
     @FXML
     void ActionAlterarCliente(ActionEvent event) throws IOException {
@@ -193,6 +197,7 @@ public class TelaListagemFornecedorController {
     void ActionPesquisarCliente(ActionEvent event) {
 
     }
+
 
     @FXML
     void CadastroCliente(ActionEvent event) throws IOException {
@@ -231,6 +236,12 @@ public class TelaListagemFornecedorController {
     void ConsultaCliente(ActionEvent event) {
 
     }
+    
+    @FXML
+    void CompraProduto(ActionEvent event) {
+
+    }
+
 
     @FXML
     void ConsultaLivro(ActionEvent event) throws IOException {

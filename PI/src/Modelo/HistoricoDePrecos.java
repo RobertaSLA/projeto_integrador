@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class HistoricoDePrecos {
@@ -7,8 +8,7 @@ public class HistoricoDePrecos {
 	private int idHistoricoDePrecos;
 	private int skuLivro;
 	private Date dataAlteracao;
-	private float preco;
-	
+	private ArrayList<LivroHistoricodePrecos> listaitens = new ArrayList<LivroHistoricodePrecos>();
 	
 	
 	public int getIdHistoricoDePrecos() {
@@ -29,11 +29,11 @@ public class HistoricoDePrecos {
 	public void setDataAlteracao(Date dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
 	}
-	public float getPreco() {
-		return preco;
+	public ArrayList<LivroHistoricodePrecos> getListaitens() {
+		return listaitens;
 	}
-	public void setPreco(float preco) {
-		this.preco = preco;
+	public void setListaitens(ArrayList<LivroHistoricodePrecos> listaitens) {
+		this.listaitens = listaitens;
 	}
 	
 	

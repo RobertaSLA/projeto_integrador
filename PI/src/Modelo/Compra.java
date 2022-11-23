@@ -1,15 +1,16 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Compra {
 	 
 	private int idCompra;
-	private int skuLivro;
-	private int idFornecedor;
+	private Fornecedor fornecedor;
 	private int quantidade;
 	private float valor;
 	private Date data;
+	private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
 	
 	
 	public int getIdCompra() {
@@ -18,17 +19,11 @@ public class Compra {
 	public void setIdCompra(int idCompra) {
 		this.idCompra = idCompra;
 	}
-	public int getSkuLivro() {
-		return skuLivro;
+	public Fornecedor getFornecedor() {
+		return fornecedor;
 	}
-	public void setSkuLivro(int skuLivro) {
-		this.skuLivro = skuLivro;
-	}
-	public int getIdFornecedor() {
-		return idFornecedor;
-	}
-	public void setIdFornecedor(int idFornecedor) {
-		this.idFornecedor = idFornecedor;
+	public void setFornecedor(Fornecedor fornecedor) {
+		this.fornecedor = fornecedor;
 	}
 	public int getQuantidade() {
 		return quantidade;
@@ -47,6 +42,12 @@ public class Compra {
 	}
 	public void setData(Date data) {
 		this.data = data;
+	}
+	public ArrayList<LivroCompra> getListaitens() {
+		return listaitens;
+	}
+	public void setListaitens(ArrayList<LivroCompra> listaitens) {
+		this.listaitens = listaitens;
 	}
 	
 	

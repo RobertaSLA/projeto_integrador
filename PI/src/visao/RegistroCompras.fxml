@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaRegistroVendaController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="838.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaRegistroComprasController">
    <children>
       <Pane layoutY="68.0" prefHeight="940.0" prefWidth="172.0">
          <children>
@@ -39,7 +39,7 @@
                   </ImageView>
                   <Accordion layoutY="114.0" prefHeight="264.0" prefWidth="172.0">
                      <panes>
-                        <TitledPane fx:id="filtroVendas" animated="false" prefHeight="282.0" prefWidth="172.0" style="-fx-background-color: #dbb0ea;" text="Vendas">
+                        <TitledPane fx:id="filtroVendas" animated="false" prefHeight="282.0" prefWidth="172.0" style="-fx-background-color: #dbb0ea;" text="Compras">
                            <content>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="170.0">
                                  <children>
@@ -146,39 +146,38 @@
             <Button fx:id="IDBotaoHome" layoutX="1057.0" layoutY="11.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="47.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
-      <TableView fx:id="tblRegistroVendas" layoutX="281.0" layoutY="335.0" prefHeight="475.0" prefWidth="1115.0">
+      <TableView fx:id="tblRegistroVendas" layoutX="405.0" layoutY="329.0" prefHeight="475.0" prefWidth="942.0">
         <columns>
-          <TableColumn fx:id="clmCodVenda" prefWidth="154.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cod. de Venda" />
-            <TableColumn fx:id="clmCliente" minWidth="8.0" prefWidth="205.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cliente" />
-            <TableColumn fx:id="clmQuantidade" minWidth="0.0" prefWidth="119.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
-            <TableColumn fx:id="clmDesconto" minWidth="0.0" prefWidth="133.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Desconto" />
-            <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="126.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
-            <TableColumn fx:id="clmVendador" minWidth="0.0" prefWidth="377.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Vendedor" />
+          <TableColumn fx:id="clmCodCompra" prefWidth="214.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Cod. de Compra" />
+            <TableColumn fx:id="clmQuantidade" minWidth="0.0" prefWidth="149.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
+            <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="161.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
+            <TableColumn fx:id="clmData" minWidth="0.0" prefWidth="190.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Data" />
+            <TableColumn fx:id="clmIDForn" minWidth="8.0" prefWidth="227.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ID Fornecedor" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarVenda" layoutX="281.0" layoutY="279.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />
-      <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Vendas" wrappingWidth="428.7161865234375">
+      <TextField fx:id="txtPesquisarVenda" layoutX="405.0" layoutY="280.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />
+      <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Compras" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Button fx:id="btnAlterar" layoutX="1265.0" layoutY="280.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="1415.0" layoutY="280.0" mnemonicParsing="false" onAction="#ExcluirProduto" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
-      <ImageView fx:id="imgExcluir" fitHeight="20.0" fitWidth="23.0" layoutX="1510.0" layoutY="286.0">
+      <Button fx:id="btnAlterar" layoutX="1403.0" layoutY="329.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="1403.0" layoutY="387.0" mnemonicParsing="false" onAction="#ExcluirProduto" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
+      <ImageView fx:id="imgExcluir" fitHeight="20.0" fitWidth="23.0" layoutX="1498.0" layoutY="393.0">
          <image>
             <Image url="@imagens/icon%20deletar.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgAlterar" fitHeight="32.0" fitWidth="32.0" layoutX="1351.0" layoutY="281.0">
+      <ImageView fx:id="imgAlterar" fitHeight="32.0" fitWidth="32.0" layoutX="1489.0" layoutY="330.0">
          <image>
             <Image url="@imagens/icon%20alterar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="34.0" fitWidth="32.0" layoutX="646.0" layoutY="277.0">
+      <ImageView fitHeight="34.0" fitWidth="32.0" layoutX="769.0" layoutY="279.0">
          <image>
             <Image url="@imagens/icon%20procurar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnPesquisar" layoutX="645.0" layoutY="277.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="34.0" prefWidth="40.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="btnPesquisar" layoutX="769.0" layoutY="278.0" mnemonicParsing="false" onAction="#Pesquisar" prefHeight="34.0" prefWidth="40.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

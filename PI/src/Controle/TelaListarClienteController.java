@@ -1,15 +1,16 @@
 
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Cliente;
+
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -17,6 +18,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaListarClienteController {
 
@@ -47,6 +49,10 @@ public class TelaListarClienteController {
     @FXML
     private TextField txtNome;
 
+	private TelaVendaController telaVendaController;
+
+	private TelaDevolucaoController telaDevolucaoController;
+
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
 
@@ -64,23 +70,20 @@ public class TelaListarClienteController {
 
     @FXML
     void ConfirmarCadastro(ActionEvent event) throws IOException {
-    		Cliente clie = TableView.getSelectionModel().getSelectedItem();
-   	   
-   	   
-   	 		FXMLLoader loader = new FXMLLoader(
-   	 				getClass().getResource(
-   	 						"/visao/TelaVenda.fxml"
-   	 					)
-   	 		);  
-   	 
-   	 		Node node;
-   	 		node = (Node)loader.load();
-   	   
-   	 		TelaVendaController controller = loader.getController();
-   	 		System.out.println(controller);
-   	 		controller.DefinirCliente(clie);
-
-   	 		telaCadastroPane.getChildren().setAll(node);
+    	
+    	Cliente cliente = TableView.getSelectionModel().getSelectedItem();
+    	
+    	if(this.telaVendaController != null) {
+    		this.telaVendaController.addCliente(cliente);
+    	}
+    	if(this.telaDevolucaoController != null) {
+    		this.telaDevolucaoController.addCliente(cliente);
+    	}
+    	
+    	Node source = (Node) event.getSource();
+    	Stage stage = (Stage) source.getScene().getWindow();
+    	stage.close();
+    	
     }
 
     @FXML
@@ -102,5 +105,12 @@ public class TelaListarClienteController {
 		
 	}
 
+	public void setTelaVendaController(TelaVendaController telaVendaController) {
+		this.telaVendaController=telaVendaController;
+	}
+
+	public void setTelaDevolucaoController(TelaDevolucaoController telaDevolucaoController) {
+		this.telaDevolucaoController=telaDevolucaoController;
+	}
 }
 

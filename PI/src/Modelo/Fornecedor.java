@@ -12,6 +12,11 @@ public class Fornecedor {
 	private Endereco endereco;
 	
 	
+	public Fornecedor(int idFornecedor) {
+		super();
+		this.idFornecedor = idFornecedor;
+	}
+
 	public Fornecedor(int idFornecedor, String nome, String cnpj) {
 		super();
 		this.idFornecedor = idFornecedor;
@@ -44,7 +49,7 @@ public class Fornecedor {
 		this.endereco = endereco;
 	}	
 	
-	public int getidFornecedor() {
+	public int getIdFornecedor() {
 		return idFornecedor;
 	}
 	public void setidFornecedor(int idFornecedor) {

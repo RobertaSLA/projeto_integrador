@@ -1,16 +1,30 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 
+import Modelo.Cliente;
+import Modelo.Devolucao;
+import Modelo.Compra;
+import Modelo.Livro;
+import Modelo.LivroCompra;
+import Modelo.LivroDevolucao;
+import Modelo.LivroVenda;
+import Modelo.Venda;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -38,16 +52,22 @@ public class TelaDevolucaoController {
     private Button btnCadastroLivro;
 
     @FXML
+    private Button btnCompraProdutos;
+    
+    @FXML
     private Button btnClienteCadastro;
 
     @FXML
     private Button btnCodCliente;
+    
+    @FXML
+    private Button btnCodProduto;
 
     @FXML
     private Button btnCodVenda;
 
     @FXML
-    private Button btnConfirmar;
+    private Button btnInserirItem;
 
     @FXML
     private Button btnConsultaCliente;
@@ -63,6 +83,9 @@ public class TelaDevolucaoController {
 
     @FXML
     private Button btnDevolucao;
+    
+    @FXML
+    private Button btnConfirmar;
 
     @FXML
     private Button btnEmissaoNF;
@@ -77,16 +100,16 @@ public class TelaDevolucaoController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<?, ?> clmItem;
+    private TableColumn<LivroDevolucao, Integer> clmItem;
 
     @FXML
-    private TableColumn<?, ?> clmPrecoVenda;
+    private TableColumn<LivroDevolucao, Float> clmPrecoVenda;
 
     @FXML
-    private TableColumn<?, ?> clmSKUVenda;
+    private TableColumn<LivroDevolucao, Integer> clmSKUVenda;
 
     @FXML
-    private TableColumn<?, ?> clmTituloVenda;
+    private TableColumn<LivroDevolucao, String> clmTituloVenda;
 
     @FXML
     private DatePicker dtDataDevolução;
@@ -98,7 +121,7 @@ public class TelaDevolucaoController {
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblVenda;
+    private TableView<LivroDevolucao> tblVenda;
 
     @FXML
     private TextField txtCodCliente;
@@ -124,9 +147,18 @@ public class TelaDevolucaoController {
     @FXML
     private TextField txtValorTotal;
     
+    private Devolucao devolucao = new Devolucao();
+    
+    private float valorItens;
+    
+    private float valorTotal;
+    
+    private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
+    
     @FXML
-    void ActionBotaoHome(ActionEvent event) {
-
+    void ActionBotaoHome(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -154,6 +186,12 @@ public class TelaDevolucaoController {
     @FXML
     void AcessoConsultaPreco(ActionEvent event) {
 
+    }
+    
+    @FXML
+    void CompraProduto(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaCompra.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -201,18 +239,79 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void CodCliente(ActionEvent event) {
-
+    void CodCliente(ActionEvent event) throws IOException {
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+  	    	   getClass().getResource(
+  	    			   "/visao/ListarCliente.fxml"
+  	    	   )
+  	    	 );
+  	        Node node;
+  	        Parent parent = fxmlLoader.load();
+  	        node = (Node) parent;
+  	        TelaListarClienteController controller = fxmlLoader.getController();
+  	        controller.setTelaDevolucaoController(this);
+  	        Scene scene = new Scene(parent, 574, 473);
+  	        Stage stage = new Stage();
+  	        stage.setScene(scene);
+  	        stage.show();
     }
 
     @FXML
-    void CodVenda(ActionEvent event) {
-
+    void CodProduto(ActionEvent event) throws IOException {
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+    	    	   getClass().getResource(
+    	    			   "/visao/ListarProduto.fxml"
+    	    	   )
+    	    	 );
+    	        Node node;
+    	        Parent parent = fxmlLoader.load();
+    	        node = (Node) parent;
+    	        TelaListarProdutoController controller = fxmlLoader.getController();
+    	        controller.setTelaDevolucaoController(this);
+    	        Scene scene = new Scene(parent, 574, 473);
+    	        Stage stage = new Stage();
+    	        stage.setScene(scene);
+    	        stage.show();
     }
 
     @FXML
-    void ConfirmarProduto(ActionEvent event) {
+    void CodVenda(ActionEvent event) throws IOException {
+    	 FXMLLoader fxmlLoader = new FXMLLoader(
+  	    	   getClass().getResource(
+  	    			   "/visao/ListarVenda.fxml"
+  	    	   )
+  	    	 );
+  	        Node node;
+  	        Parent parent = fxmlLoader.load();
+  	        node = (Node) parent;
+  	        TelaListarVendaController controller = fxmlLoader.getController();
+  	        controller.setTelaDevolucaoController(this);
+  	        Scene scene = new Scene(parent, 574, 473);
+  	        Stage stage = new Stage();
+  	        stage.setScene(scene);
+  	        stage.show();
+    }
 
+    @FXML
+    void InserirItem(ActionEvent event) throws NumberFormatException, SQLException {
+    	LivroBD liv = new LivroBD();
+    	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+    	
+    	valorItens = livro.getPreco() * Integer.parseInt(txtQuantidade.getText());
+    	
+    	LivroDevolucao livdev = new LivroDevolucao(devolucao, livro, Integer.parseInt(txtQuantidade.getText()),
+    			valorItens);
+    	
+    	listaitens.add(livdev);
+    	
+    	valorTotal = Float.parseFloat(txtValorTotal.getText()) + valorItens;
+    	txtValorTotal.setText(String.valueOf(valorTotal));
+    	
+    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
+    	
+    	txtCodProduto.setText(null);
+    	txtDescriçãoProduto.setText(null);
+    	txtQuantidade.setText(null);
     }
 
     @FXML
@@ -252,13 +351,15 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void Devolucao(ActionEvent event) {
-
+    void Devolucao(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDevolucao.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void EmissaoNF(ActionEvent event) {
-
+    void EmissaoNF(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaCompra.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -268,7 +369,10 @@ public class TelaDevolucaoController {
 
     @FXML
     void ExcluirItem(ActionEvent event) {
+    	LivroDevolucao livro = tblVenda.getSelectionModel().getSelectedItem();
 
+    	listaitens.remove(livro);
+    	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     }
 
     @FXML
@@ -310,5 +414,36 @@ public class TelaDevolucaoController {
     void ValorTotal(ActionEvent event) {
 
     }
+    
+    @FXML
+    void Confirmar(ActionEvent event) {
+
+    }
+    
+    @FXML
+    public void initialize() throws SQLException { 
+    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
+		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
+		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("valor"));
+		
+		
+		tblVenda.setItems(FXCollections.observableArrayList(listaitens));
+    }
+
+    
+	public void addVenda(Venda venda) {
+		txtCodVenda.setText(String.valueOf(venda.getIdVenda()));
+	}
+
+	public void addLivro(Livro livro) {
+		txtCodProduto.setText(String.valueOf(livro.getSku()));
+		txtDescriçãoProduto.setText(livro.getNome());
+	}
+
+	public void addCliente(Cliente cliente) {
+		txtCodCliente.setText(String.valueOf(cliente.getIdCliente()));
+		txtNomeCliente.setText(cliente.getNome());
+	}
 
 }

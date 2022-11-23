@@ -1,25 +1,44 @@
 package Controle;
 
-	import javafx.event.ActionEvent;
-	import javafx.fxml.FXML;
-	import javafx.scene.control.Button;
-	import javafx.scene.control.ChoiceBox;
-	import javafx.scene.control.DatePicker;
-	import javafx.scene.control.TableColumn;
-	import javafx.scene.control.TableView;
-	import javafx.scene.control.TextField;
-	import javafx.scene.layout.AnchorPane;
+	
+import java.io.IOException;
+import java.net.URL;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.ArrayList;
+import java.util.Date;
+
+import Modelo.Cliente;
+import Modelo.Compra;
+import Modelo.Fornecedor;
+import Modelo.Livro;
+import Modelo.LivroCompra;
+import Modelo.LivroVenda;
+import Modelo.Vendedor;
+import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 	public class TelaCompraController {
 
-	/*    @FXML
+	    @FXML
 	    private ChoiceBox<String> ChoiceBoxCondicao; 
-	    private String[] condicao = {"Boleto 60 dias", "Boleto 45 dias", "Boleto 30 dias", "Boleto 15 dias"};
-	    
-	    @Override
-	    public void initialize(URL arg0, ResourceBundle arg1) {
-	    	myChoiceBox.getItems().addAll(condicao);
-	    }*/
+	    private String[] condicao = {"Boleto 60 dias", "Boleto 45 dias", "Boleto 30 dias", "Boleto 15 dias", "À vista"};
+	   
 
 	    @FXML
 	    private Button IDBotaoHome;
@@ -80,24 +99,27 @@ package Controle;
 
 	    @FXML
 	    private Button btnVendaConsulta;
+	    
+	    @FXML
+	    private Button btnConfirmarCompra;
 
 	    @FXML
-	    private TableColumn<?, ?> clmItem;
+	    private TableColumn<LivroCompra, Integer> clmItem;
 
 	    @FXML
-	    private TableColumn<?, ?> clmQuantidadeItem;
+	    private TableColumn<LivroCompra, Integer> clmQuantidadeItem;
 
 	    @FXML
-	    private TableColumn<?, ?> clmSKUCompra;
+	    private TableColumn<LivroCompra, Integer> clmSKUCompra;
 
 	    @FXML
-	    private TableColumn<?, ?> clmTituloCompra;
+	    private TableColumn<LivroCompra, String> clmTituloCompra;
 
 	    @FXML
-	    private TableColumn<?, ?> clmValorTotalItem;
+	    private TableColumn<LivroCompra, Float> clmValorTotalItem;
 
 	    @FXML
-	    private TableColumn<?, ?> clmValorUnitario;
+	    private TableColumn<LivroCompra, Float> clmValorUnitario;
 
 	    @FXML
 	    private DatePicker dtDataCompra;
@@ -106,7 +128,7 @@ package Controle;
 	    private AnchorPane layoutListagem;
 
 	    @FXML
-	    private TableView<?> tblCompra;
+	    private TableView<LivroCompra> tblCompra;
 
 	    @FXML
 	    private TextField txtCodFornecedor;
@@ -131,15 +153,35 @@ package Controle;
 
 	    @FXML
 	    private TextField txtValorTotal;
+	    
+	    private Float valor;
+	    
+	    private Float valorTotal;
+	    
+	    private Compra compra = new Compra();
+	    
+	    private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
 
 	    @FXML
-	    void AcessoCadastroCliente(ActionEvent event) {
-
+	    void AcessoCadastroCliente(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader();
+	    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroClientes.fxml"));
+	        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+	        Stage stage = new Stage();
+	        stage.setResizable(false);
+	        stage.setScene(scene);
+	        stage.show();
 	    }
 
 	    @FXML
-	    void AcessoCadsatroProdutos(ActionEvent event) {
-
+	    void AcessoCadsatroProdutos(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader();
+	    	fxmlLoader.setLocation(getClass().getResource("/visao/CadastroProdutos.fxml"));
+	        Scene scene = new Scene(fxmlLoader.load(), 800, 650);
+	        Stage stage = new Stage();
+	        stage.setResizable(false);
+	        stage.setScene(scene);
+	        stage.show();
 	    }
 
 	    @FXML
@@ -153,8 +195,9 @@ package Controle;
 	    }
 
 	    @FXML
-	    void ActionBotaoHome(ActionEvent event) {
-
+	    void ActionBotaoHome(ActionEvent event) throws IOException {
+	    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+	    	layoutListagem.getChildren().setAll(telaHomePane);
 	    }
 
 	    @FXML
@@ -171,15 +214,64 @@ package Controle;
 	    void CadastroLivro(ActionEvent event) {
 
 	    }
+	    
+	    @FXML
+	    void ConfimarCompra(ActionEvent event) throws SQLException, IOException {
+	    	Fornecedor forne = new Fornecedor(Integer.parseInt(txtCodFornecedor.getText()));
+	    	
+			compra.setFornecedor(forne);
+			compra.setQuantidade(Integer.parseInt(txtQtdItens.getText()));
+			compra.setValor(Float.parseFloat(txtValorTotal.getText()));
+			compra.setListaitens(listaitens);
+		
+			LocalDate localdate = dtDataCompra.getValue();
+			Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			compra.setData(date);
+			
+			CompraBD comp = new CompraBD();
+			comp.InserirCompra(compra);
+			
+			AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+	    	layoutListagem.getChildren().setAll(telaHomePane);
+		
+	    }
+
 
 	    @FXML
-	    void CodFornecedor(ActionEvent event) {
-
+	    void CodFornecedor(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(
+	    	    	   getClass().getResource(
+	    	    			   "/visao/ListarFornecedor.fxml"
+	    	    	   )
+	    	    	 );
+	    	        Node node;
+	    	        Parent parent = fxmlLoader.load();
+	    	        node = (Node) parent;
+	    	        TelaListarFornecedorController controller = fxmlLoader.getController();
+	    	        controller.setTelaCompraController(this);
+	    	        Scene scene = new Scene(parent, 574, 473);
+	    	        Stage stage = new Stage();
+	    	        stage.setScene(scene);
+	    	        stage.show();
 	    }
 
 	    @FXML
-	    void CodProduto(ActionEvent event) {
-
+	    void CodProduto(ActionEvent event) throws IOException {
+	    	FXMLLoader fxmlLoader = new FXMLLoader(
+	    	    	   getClass().getResource(
+	    	    			   "/visao/ListarProduto.fxml"
+	    	    	   )
+	    	    	 );
+	    	        Node node;
+	    	        Parent parent = fxmlLoader.load();
+	    	        node = (Node) parent;
+	    	        TelaListarProdutoController controller = fxmlLoader.getController();
+	    	        controller.setTelaCompraController(this);
+	    	        Scene scene = new Scene(parent, 574, 473);
+	    	        Stage stage = new Stage();
+	    	        stage.setScene(scene);
+	    	        stage.show();
+	    	        
 	    }
 
 	    @FXML
@@ -229,7 +321,10 @@ package Controle;
 
 	    @FXML
 	    void ExcluirItem(ActionEvent event) {
+	    	LivroCompra livro = tblCompra.getSelectionModel().getSelectedItem();
 
+	    	listaitens.remove(livro);
+	    	tblCompra.setItems(FXCollections.observableArrayList(listaitens));
 	    }
 
 	    @FXML
@@ -243,8 +338,28 @@ package Controle;
 	    }
 
 	    @FXML
-	    void InserirItem(ActionEvent event) {
-
+	    void InserirItem(ActionEvent event) throws NumberFormatException, SQLException {
+	    	LivroBD liv = new LivroBD();
+	    	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
+	    	
+	    	valor = (Float.parseFloat(txtValorCompra.getText())* Integer.parseInt(txtQuantidade.getText()));
+	    	
+	    	LivroCompra livcomp = new LivroCompra(livro, compra, Integer.parseInt(txtQuantidade.getText()),
+	    			Float.parseFloat(txtValorCompra.getText()), valor);
+	    	
+	    	listaitens.add(livcomp);
+	    	
+	    	tblCompra.setItems(FXCollections.observableArrayList(listaitens));
+	    	
+	    	valorTotal = Float.parseFloat(txtValorTotal.getText()) + valor;
+	    	System.out.println(valorTotal);
+	    	
+	    	txtValorTotal.setText(String.valueOf(valorTotal));
+	    	
+	    	txtCodProduto.setText(null);
+	    	txtDescriçãoProduto.setText(null);
+	    	txtQuantidade.setText(null);
+	    	txtValorCompra.setText(null);
 	    }
 
 	    @FXML
@@ -271,7 +386,30 @@ package Controle;
 	    void ValorTotal(ActionEvent event) {
 
 	    }
+	    
+	    @FXML
+	    public void initialize() throws SQLException { 
+	    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
+			clmSKUCompra.setCellValueFactory(new PropertyValueFactory<>("sku"));
+			clmTituloCompra.setCellValueFactory(new PropertyValueFactory<>("titulo"));
+			clmValorUnitario.setCellValueFactory(new PropertyValueFactory<>("valor"));
+			clmValorTotalItem.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
+			clmQuantidadeItem.setCellValueFactory(new PropertyValueFactory<>("quantidade"));
+			
+			tblCompra.setItems(FXCollections.observableArrayList(listaitens));
+			ChoiceBoxCondicao.getItems().addAll(condicao);
+	    }
 
+	    
+	    public void addLivro(Livro livro) {
+			txtCodProduto.setText(String.valueOf(livro.getSku()));
+			txtDescriçãoProduto.setText(livro.getNome());
+		}
+	    
+	    public void addFornecedor(Fornecedor fornecedor) {
+			txtCodFornecedor.setText(String.valueOf(fornecedor.getIdFornecedor()));
+			txtNomeFornecedor.setText(fornecedor.getNome());
+		}
 	}
 
 

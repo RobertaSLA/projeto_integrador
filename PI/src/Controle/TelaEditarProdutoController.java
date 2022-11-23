@@ -1,21 +1,19 @@
 
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.List;
 
 import Modelo.Autor;
 import Modelo.Livro;
-import javafx.collections.FXCollections;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class TelaEditarProdutoController {
 

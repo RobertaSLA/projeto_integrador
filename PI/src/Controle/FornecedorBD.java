@@ -1,18 +1,15 @@
 package Controle;
 
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
-
-import Modelo.Cliente;
 import Modelo.Endereco;
 import Modelo.Fornecedor;
-import Modelo.Vendedor;
 
 public class FornecedorBD {
 	public void InserirFornecedor(Fornecedor fornecedor) throws SQLException {
@@ -47,7 +44,7 @@ public class FornecedorBD {
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
-			stmt.setInt(1, fornecedor.getidFornecedor());
+			stmt.setInt(1, fornecedor.getIdFornecedor());
 			
 			stmt.executeUpdate();
 			
@@ -83,10 +80,10 @@ public class FornecedorBD {
 						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7), rs.getString(8));
 				Fornecedor forn = new Fornecedor(rs.getInt(9), rs.getString(10), rs.getString(11), rs.getString(12), 
 						 rs.getString(13), rs.getString(14), rs.getString(15), end);
+				
 				Lista.add(forn);
 			}
 			
-
 			stmt.close(); 
 			con.close();
 						

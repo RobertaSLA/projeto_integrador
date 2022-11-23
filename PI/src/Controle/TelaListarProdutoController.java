@@ -1,16 +1,14 @@
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Livro;
-import Modelo.Venda;
-import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -49,9 +47,11 @@ public class TelaListarProdutoController {
     @FXML
     private TextField txtNome;
 
-	private Venda venda;
-
 	private TelaVendaController telaVendaController;
+
+	private TelaCompraController telaCompraController;
+
+	private TelaDevolucaoController telaDevolucaoController;
 
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
@@ -71,28 +71,18 @@ public class TelaListarProdutoController {
     @FXML
     void ConfimarCadastro(ActionEvent event) throws IOException {
     	Livro livro = TableView.getSelectionModel().getSelectedItem();
-    	this.telaVendaController.addLivro(livro);
+    	if(this.telaVendaController != null) {
+    		this.telaVendaController.addLivro(livro);
+    	}
+    	if(this.telaCompraController != null) {
+    		this.telaCompraController.addLivro(livro);
+    	}
+    	if(this.telaDevolucaoController != null) {
+    		this.telaDevolucaoController.addLivro(livro);
+    	}
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
     	stage.close();
-    
-    	/*Livro livro = TableView.getSelectionModel().getSelectedItem();
-  	   
-  	   
-   	 	FXMLLoader loader = new FXMLLoader(
-   	 			getClass().getResource(
-   	 					"/visao/TelaVenda.fxml"
-   	 			)
-   	 	);  
-   	 
-   	 	Node node;
-   	 	node = (Node)loader.load();
-   	   
-   	 	TelaVendaController controller = loader.getController();
-   	 	System.out.println(controller);
-   	 	controller.DefinirLivro(livro);
-
-   	 	telaCadastroPane.getChildren().setAll(node);*/
     }
 
     @FXML
@@ -114,14 +104,22 @@ public class TelaListarProdutoController {
 		
 	}
 
-	public void setVenda(Venda venda) {
-		this.venda=venda;
-	}
-
 	public void setTelaVendaController(TelaVendaController telaVendaController) {
 		this.telaVendaController=telaVendaController;
 		
 	}
+	
+	public void setTelaCompraController(TelaCompraController telaCompraController) {
+		this.telaCompraController=telaCompraController;
+		
+	}
+	
+	public void setTelaDevolucaoController(TelaDevolucaoController telaDevolucaoController) {
+		this.telaDevolucaoController=telaDevolucaoController;
+		
+	}
+	
+	
     
 
 }

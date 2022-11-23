@@ -1,10 +1,7 @@
 package Controle;
 
-import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 
-import Modelo.Cliente;
+import java.io.IOException;
 import Modelo.Fornecedor;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -152,7 +149,7 @@ public class TelaEditarFornecedorController {
     }
     
     public void DefinirFornecedor(Fornecedor fornecedor) {
-    	txtCodFornecedor.setText(String.valueOf(fornecedor.getidFornecedor()));
+    	txtCodFornecedor.setText(String.valueOf(fornecedor.getIdFornecedor()));
     	txtNomeFant.setText(fornecedor.getNome());
     	txtCNPJ.setText(fornecedor.getCnpj());
     	txtInscEstd.setText(fornecedor.getInsEstadual());

@@ -1,11 +1,11 @@
 package Controle;
 
-
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.List;
 
-import Modelo.Fornecedor;
 import Modelo.Livro;
+import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,10 +18,10 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-public class TelaListarFornecedorController {
+public class TelaListarVendaController {
 
     @FXML
-    private TableView<Fornecedor> TableView;
+    private TableView<Venda> TableView;
 
     @FXML
     private Button btnCancelar;
@@ -33,13 +33,13 @@ public class TelaListarFornecedorController {
     private Button btnPesquisar;
 
     @FXML
-    private TableColumn<Fornecedor, String> clmCNPJFornecedor;
+    private TableColumn<Venda, String> clmNomeCliente;
 
     @FXML
-    private TableColumn<Fornecedor, String> clmCodFornecedor;
+    private TableColumn<Venda, Float> clmValor;
 
     @FXML
-    private TableColumn<Fornecedor, String> clmNomeFornecedor;
+    private TableColumn<Venda, Integer> clmlID;
 
     @FXML
     private AnchorPane telaCadastroPane;
@@ -47,7 +47,7 @@ public class TelaListarFornecedorController {
     @FXML
     private TextField txtNome;
 
-	private TelaCompraController telaCompraController;
+	private TelaDevolucaoController telaDevolucaoController;
 
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
@@ -61,13 +61,13 @@ public class TelaListarFornecedorController {
 
     @FXML
     void CancelarCadastro(ActionEvent event) {
-
+    	
     }
 
     @FXML
     void ConfimarCadastro(ActionEvent event) {
-    	Fornecedor fornecedor = TableView.getSelectionModel().getSelectedItem();
-    	this.telaCompraController.addFornecedor(fornecedor);
+    	Venda venda = TableView.getSelectionModel().getSelectedItem();
+    	this.telaDevolucaoController.addVenda(venda);
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
     	stage.close();
@@ -78,23 +78,23 @@ public class TelaListarFornecedorController {
 
     }
     
-    @FXML
+	public void setTelaDevolucaoController(TelaDevolucaoController telaDevolucaoController) {
+		this.telaDevolucaoController=telaDevolucaoController;
+		
+	}
+	
+	@FXML
     public void initialize() throws SQLException {
-		FornecedorBD forn = new FornecedorBD();
-		List<Fornecedor> l  = forn.BuscarCodFornecedor();
+		VendaBD vend = new VendaBD();
+		List<Venda> vendas = vend.BuscarVendas();
 		
-		clmCodFornecedor.setCellValueFactory(new PropertyValueFactory<>("idFornecedor"));
-		clmCNPJFornecedor.setCellValueFactory(new PropertyValueFactory<>("cnpj"));
-		clmNomeFornecedor.setCellValueFactory(new PropertyValueFactory<>("nome"));
+		clmlID.setCellValueFactory(new PropertyValueFactory<>("idVenda"));
+		clmNomeCliente.setCellValueFactory(new PropertyValueFactory<>("nomeCliente"));
+		clmValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
 		
-		
-		TableView.setItems(FXCollections.observableArrayList(l));
+		TableView.setItems(FXCollections.observableArrayList(vendas));
 		
 	}
-    
-    public void setTelaCompraController(TelaCompraController telaCompraController) {
-		this.telaCompraController=telaCompraController;	
-	}
+	
 
 }
-

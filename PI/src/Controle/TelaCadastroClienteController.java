@@ -1,17 +1,13 @@
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
 
 import Modelo.Cliente;
 import Modelo.Endereco;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -137,11 +133,12 @@ public class TelaCadastroClienteController {
 
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException, IOException {
-    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
-    	LocalDate localDate = DatePickerDataNascimento.getValue();
-    	Instant instant = Instant.from(localDate.atStartOfDay(ZoneId.systemDefault()));
-    	Date date = Date.from(instant);
-    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), end, date.toString(), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
+    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), 
+    			txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+    	
+    	
+    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), 
+    			end, String.valueOf(DatePickerDataNascimento.getValue()), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
     	
     	EnderecoBD endbd = new EnderecoBD();
     	endbd.InserirEndereco(end);

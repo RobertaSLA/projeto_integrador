@@ -1,6 +1,5 @@
 package Modelo;
 
-import java.util.Date;
 
 public class Cliente {
 	
@@ -15,6 +14,18 @@ public class Cliente {
 	private String email;
 	
 	
+	
+	public Cliente(int idCliente) {
+		super();
+		this.idCliente = idCliente;
+	}
+
+	public Cliente(int idCliente, String nome) {
+		super();
+		this.idCliente = idCliente;
+		this.nome = nome;
+	}
+
 	public Cliente(int idCliente, String nome, String cpf) {
 		super();
 		this.idCliente = idCliente;
@@ -121,6 +132,12 @@ public class Cliente {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getCEP() {
+		return endereco.getCep();
+	}
+
+	
 	
 	
 	

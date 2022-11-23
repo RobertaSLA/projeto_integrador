@@ -99,7 +99,9 @@ public class LivroBD {
 	
 			while(rs.next()){
 				Autor autor = new Autor(rs.getInt(3), rs.getString(4));
-				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), rs.getString(6), rs.getFloat(8), autor);
+				Livro liv = new Livro(rs.getInt(1), rs.getString(7), rs.getString(2), rs.getString(5), rs.getInt(9), 
+						rs.getString(6), rs.getFloat(8), autor);
+				
 				Lista.add(liv);
 			}
 			

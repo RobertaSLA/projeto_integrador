@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Devolucao {
@@ -9,6 +10,7 @@ public class Devolucao {
 	private int idVenda;
 	private String motivo;
 	private Date data;
+	private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
 	
 	
 	public int getCodDevolucao() {
@@ -41,7 +43,12 @@ public class Devolucao {
 	public void setData(Date data) {
 		this.data = data;
 	}
-	
+	public ArrayList<LivroDevolucao> getListaitens() {
+		return listaitens;
+	}
+	public void setListaitens(ArrayList<LivroDevolucao> listaitens) {
+		this.listaitens = listaitens;
+	}
 	
 	
 }
