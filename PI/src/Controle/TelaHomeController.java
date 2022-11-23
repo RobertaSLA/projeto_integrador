@@ -161,7 +161,7 @@ public class TelaHomeController {
 
     @FXML
     void HistoricoVenda(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroVendas.fxml"));
     	idTelaHome.getChildren().setAll(telaHomePane);
     }
     
