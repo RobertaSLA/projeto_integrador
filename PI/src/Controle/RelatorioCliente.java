@@ -23,12 +23,13 @@ import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.element.Text;
+import com.itextpdf.layout.property.TextAlignment;
 
 import Modelo.Conexao;
 
 
 
-public class Relatorio {
+public class RelatorioCliente {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
@@ -37,13 +38,13 @@ public class Relatorio {
 			String imgSrc = "imagenspdf\\logo sem fundo.png";
 			ImageData data = ImageDataFactory.create(imgSrc);
 			Image logoFundo = new Image(data);
-			logoFundo.setFixedPosition(30, 250);
-			logoFundo.setHeight(450);
-			logoFundo.setWidth(500);
+			logoFundo.setFixedPosition(445, 700);
+			logoFundo.setHeight(120);
+			logoFundo.setWidth(130);
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioVenda.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioClientes.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -56,42 +57,36 @@ public class Relatorio {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório de Vendas").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório de Clientes").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
 			
 			
 			
-			Table table = new Table(7);
-			table.setFixedPosition(35, 200, 525);
+			Table table = new Table(4);
+			table.setWidth(500);
+			table.setRelativePosition(25, 100, 20, 50);
 			
-			table.addHeaderCell("CEP");
-			table.addHeaderCell("UF");
-			table.addHeaderCell("Cidade");
-			table.addHeaderCell("Bairro");
-			table.addHeaderCell("Endereco");
-			table.addHeaderCell("Numero");
-			table.addHeaderCell("Complemento");	
-			
+			table.addHeaderCell("Nome");
+			table.addHeaderCell("CPF");
+			table.addHeaderCell("Telefone");
+			table.addHeaderCell("CEP");			
 			
 			
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select cep, uf, cidade, bairro, endereco, numero, complemento from endereco";
+			String query = "select nome, CPF, fone, cep from cliente inner join endereco using (IdEndereco) order by nome;";
 			
 			ConexaoBD  connect = new ConexaoBD();
 			PreparedStatement ps = null;
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while (rs.next()) {
+			    table.addCell(rs.getString("Nome"));
+			    table.addCell(rs.getString("CPF"));
+			    table.addCell(rs.getString("Fone"));
 			    table.addCell(rs.getString("CEP"));
-			    table.addCell(rs.getString("UF"));
-			    table.addCell(rs.getString("Cidade"));
-			    table.addCell(rs.getString("Bairro"));
-			    table.addCell(rs.getString("Endereco"));
-			    table.addCell(rs.getString("Numero"));
-			    table.addCell(rs.getString("Complemento"));
 			}
 			
 			

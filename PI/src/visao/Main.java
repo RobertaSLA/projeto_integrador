@@ -3,7 +3,7 @@ package visao;
 
 import java.io.IOException;
 
-import Controle.Relatorio;
+import Controle.RelatorioCliente;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -17,7 +17,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		
 		try {
-			Relatorio relatorio = new Relatorio();
+			RelatorioCliente relatorio = new RelatorioCliente();
 			relatorio.Relatorio();
 			Parent rootContainer = FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
             Scene scene = new Scene(rootContainer);
