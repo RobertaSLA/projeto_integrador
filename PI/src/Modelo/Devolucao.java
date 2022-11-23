@@ -6,8 +6,8 @@ import java.util.Date;
 public class Devolucao {
 	
 	private int codDevolucao;
-	private int idLivro;
-	private int idVenda;
+	private Livro livro;
+	private Venda venda;
 	private String motivo;
 	private Date data;
 	private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
@@ -19,17 +19,18 @@ public class Devolucao {
 	public void setCodDevolucao(int codDevolucao) {
 		this.codDevolucao = codDevolucao;
 	}
-	public int getIdLivro() {
-		return idLivro;
+	
+	public Livro getLivro() {
+		return livro;
 	}
-	public void setIdLivro(int idLivro) {
-		this.idLivro = idLivro;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
-	public int getIdVenda() {
-		return idVenda;
+	public Venda getVenda() {
+		return venda;
 	}
-	public void setIdVenda(int idVenda) {
-		this.idVenda = idVenda;
+	public void setVenda(Venda venda) {
+		this.venda = venda;
 	}
 	public String getMotivo() {
 		return motivo;

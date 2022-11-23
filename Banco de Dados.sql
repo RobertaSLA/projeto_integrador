@@ -273,6 +273,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Devolucao` (
   `Devolucao_IdDevolucao` INT NOT NULL,
   `Quantidade` INT NOT NULL,
   `ValorItem` FLOAT NOT NULL,
+  `ValorTotal` FLOAT NOT NULL,
   PRIMARY KEY (`LivroSKU`, `Devolucao_IdDevolucao`),
   INDEX `fk_Livro_has_Devolucao_Devolucao1_idx` (`Devolucao_IdDevolucao` ASC),
   INDEX `fk_Livro_has_Devolucao_Livro1_idx` (`LivroSKU` ASC),

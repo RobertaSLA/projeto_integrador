@@ -2,10 +2,16 @@ package Controle;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
+
+import com.gluonhq.charm.glisten.control.TextArea;
 
 import Modelo.Cliente;
 import Modelo.Devolucao;
+import Modelo.Fornecedor;
 import Modelo.Compra;
 import Modelo.Livro;
 import Modelo.LivroCompra;
@@ -133,7 +139,7 @@ public class TelaDevolucaoController {
     private TextField txtCodVenda;
 
     @FXML
-    private TextField txtDescriçãoProduto;
+    private TextField txtDescricaoProduto;
 
     @FXML
     private TextField txtNomeCliente;
@@ -146,6 +152,9 @@ public class TelaDevolucaoController {
 
     @FXML
     private TextField txtValorTotal;
+    
+    @FXML
+    private TextField txtMotivo;
     
     private Devolucao devolucao = new Devolucao();
     
@@ -310,7 +319,7 @@ public class TelaDevolucaoController {
     	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
     	
     	txtCodProduto.setText(null);
-    	txtDescriçãoProduto.setText(null);
+    	txtDescricaoProduto.setText(null);
     	txtQuantidade.setText(null);
     }
 
@@ -334,6 +343,11 @@ public class TelaDevolucaoController {
     void ConsultaPreco(ActionEvent event) {
 
     }
+    
+    @FXML
+    void Motivo(ActionEvent event) {
+
+    }
 
     @FXML
     void HistoricoVenda(ActionEvent event) {
@@ -346,7 +360,7 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void DescriçãoProduto(ActionEvent event) {
+    void DescricaoProduto(ActionEvent event) {
 
     }
 
@@ -416,8 +430,19 @@ public class TelaDevolucaoController {
     }
     
     @FXML
-    void Confirmar(ActionEvent event) {
-
+    void Confirmar(ActionEvent event) throws SQLException, IOException {
+    	LocalDate localdate = dtDataDevolução.getValue();
+		Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+		devolucao.setData(date);
+		
+		devolucao.setMotivo(txtMotivo.getText());
+		devolucao.setListaitens(listaitens);
+		
+		DevolucaoBD dev = new DevolucaoBD();
+		dev.InserirDevolucao(devolucao);
+		
+		AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     @FXML
@@ -438,7 +463,7 @@ public class TelaDevolucaoController {
 
 	public void addLivro(Livro livro) {
 		txtCodProduto.setText(String.valueOf(livro.getSku()));
-		txtDescriçãoProduto.setText(livro.getNome());
+		txtDescricaoProduto.setText(livro.getNome());
 	}
 
 	public void addCliente(Cliente cliente) {

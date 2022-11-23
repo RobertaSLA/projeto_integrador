@@ -7,7 +7,6 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.effect.Glow?>
@@ -63,11 +62,6 @@
                   <Font size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="txtDescriçãoProduto" editable="false" layoutX="217.0" layoutY="244.0" onAction="#DescriçãoProduto" prefHeight="32.0" prefWidth="654.0">
-               <cursor>
-                  <Cursor fx:constant="DEFAULT" />
-               </cursor>
-            </TextField>
             <Text layoutX="894.0" layoutY="237.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" wrappingWidth="81.130859375">
                <font>
                   <Font size="15.0" />
@@ -89,12 +83,17 @@
                   <Font size="18.0" />
                </font>
             </Text>
-            <TextArea layoutX="1268.0" layoutY="90.0" prefHeight="146.0" prefWidth="282.0" promptText="Insira aqui o motivo da devolução...." style="-fx-border-color: dbb0ea; -fx-border-width: 2;" wrapText="true">
-               <font>
-                  <Font size="13.0" />
-               </font>
-            </TextArea>
             <Button fx:id="btnCodProduto" layoutX="171.0" layoutY="248.0" mnemonicParsing="false" onAction="#CodProduto" text="..." />
+            <TextField fx:id="txtDescricaoProduto" editable="false" layoutX="217.0" layoutY="244.0" onAction="#DescricaoProduto" prefHeight="32.0" prefWidth="654.0">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </TextField>
+            <TextField fx:id="txtQuantidade1" layoutX="1222.0" layoutY="94.0" onAction="#Quantidade" prefHeight="146.0" prefWidth="282.0" promptText="Insira o motivo aqui">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
          </children>
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
