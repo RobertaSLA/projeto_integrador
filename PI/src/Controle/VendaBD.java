@@ -137,4 +137,30 @@ public class VendaBD {
 			
 		}
 		
+		public Venda CriarVenda(int cod) throws SQLException {
+			Venda venda = new Venda();
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				Statement stmt = con.createStatement();
+				
+				String query = "select Cliente_idCliente from venda inner "
+						+ "join cliente on Cliente_idCliente = idCliente where idVenda=" +cod + ";";
+				
+				ResultSet rs = stmt.executeQuery(query);
+				
+				while(rs.next()){
+					Cliente cli = new Cliente(rs.getInt(1));
+					venda.setIdVenda(cod);
+					venda.setCliente(cli);
+				}
+				
+				stmt.close(); 
+				con.close();
+				
+			} catch (SQLException e){
+				throw new SQLException(e);
+			}
+			return venda;
+	}
+		
 }

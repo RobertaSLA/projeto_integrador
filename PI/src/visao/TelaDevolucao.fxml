@@ -89,7 +89,7 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <TextField fx:id="txtQuantidade1" layoutX="1222.0" layoutY="94.0" onAction="#Quantidade" prefHeight="146.0" prefWidth="282.0" promptText="Insira o motivo aqui">
+            <TextField fx:id="txtMotivo" layoutX="1222.0" layoutY="94.0" onAction="#Motivo" prefHeight="146.0" prefWidth="282.0" promptText="Insira o motivo aqui">
                <font>
                   <Font size="15.0" />
                </font>

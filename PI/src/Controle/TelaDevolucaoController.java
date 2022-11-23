@@ -437,6 +437,9 @@ public class TelaDevolucaoController {
 		
 		devolucao.setMotivo(txtMotivo.getText());
 		devolucao.setListaitens(listaitens);
+
+		VendaBD vendbd = new VendaBD();
+		devolucao.setVenda(vendbd.CriarVenda(Integer.parseInt(txtCodVenda.getText())));
 		
 		DevolucaoBD dev = new DevolucaoBD();
 		dev.InserirDevolucao(devolucao);
