@@ -29,7 +29,7 @@ import Modelo.Conexao;
 
 
 
-public class RelatorioVendas {
+public class RelatorioDetalheVenda {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
@@ -44,7 +44,7 @@ public class RelatorioVendas {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioClientes.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioDetalheVenda.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -57,9 +57,28 @@ public class RelatorioVendas {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório de Clientes").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório de Vendas Detalhado").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
+			
+			
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			ConexaoBD  connect = new ConexaoBD();
+			PreparedStatement ps = null;
+			
+			
+//			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join " 
+//							+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor) " 
+//							+ "where idVenda = 1;";
+			
+			String query1 = "select idVenda from venda";
+			ResultSet rs = stmt.executeQuery(query1);
+			
+			while (rs.next()){
+				String idVenda = (rs.getString("idVenda"));
+			}
+			
 			
 			
 			
@@ -73,26 +92,24 @@ public class RelatorioVendas {
 			table.addHeaderCell("CEP");			
 			
 			
-			Connection con = ConexaoBD.Conexao_BD();
-			Statement stmt = con.createStatement();
+			
 			
 			String query = "select nome, CPF, fone, cep from cliente inner join endereco using (IdEndereco) order by nome;";
+			ResultSet rs1 = stmt.executeQuery(query);
 			
-			ConexaoBD  connect = new ConexaoBD();
-			PreparedStatement ps = null;
-			ResultSet rs = stmt.executeQuery(query);
 			
-			while (rs.next()) {
-			    table.addCell(rs.getString("Nome"));
-			    table.addCell(rs.getString("CPF"));
-			    table.addCell(rs.getString("Fone"));
-			    table.addCell(rs.getString("CEP"));
+			while (rs1.next()) {
+			    table.addCell(rs1.getString("Nome"));
+			    table.addCell(rs1.getString("CPF"));
+			    table.addCell(rs1.getString("Fone"));
+			    table.addCell(rs1.getString("CEP"));
 			}
 			
 			
 			
 			document.add(logoFundo);
 			document.add(para1);
+			document.add(para2);
 			document.add(table);
 			
 		

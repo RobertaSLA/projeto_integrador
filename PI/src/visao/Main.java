@@ -4,6 +4,7 @@ package visao;
 import java.io.IOException;
 
 import Controle.RelatorioCliente;
+import Controle.RelatorioDetalheVenda;
 import Controle.RelatorioProdutos;
 import Controle.RelatorioProdutosAventura;
 import Controle.RelatorioProdutosGastronomia;
@@ -38,10 +39,14 @@ public class Main extends Application {
 //			RelatorioProdutosRomance relatorioRoma = new RelatorioProdutosRomance();
 //			relatorioRoma.Relatorio();
 			
-//			RelatorioProdutosTerror relatorioTer = new RelatorioProdutosTerror();
-//			relatorioTer.Relatorio();
+			//RelatorioProdutosTerror relatorioTer = new RelatorioProdutosTerror();
+			//relatorioTer.Relatorio();
 			
+			//RelatorioVendas relatorioVendass = new RelatorioVendas();
+			//relatorioVendass.Relatorio();
 			
+			RelatorioDetalheVenda relatorioDetalhe = new RelatorioDetalheVenda();
+			relatorioDetalhe.Relatorio();
 			
 			Parent rootContainer = FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
             Scene scene = new Scene(rootContainer);
