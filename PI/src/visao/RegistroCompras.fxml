@@ -161,14 +161,8 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Button fx:id="btnAlterar" layoutX="1403.0" layoutY="329.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="1403.0" layoutY="387.0" mnemonicParsing="false" onAction="#ExcluirProduto" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
-      <ImageView fx:id="imgExcluir" fitHeight="20.0" fitWidth="23.0" layoutX="1498.0" layoutY="393.0">
-         <image>
-            <Image url="@imagens/icon%20deletar.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="imgAlterar" fitHeight="32.0" fitWidth="32.0" layoutX="1489.0" layoutY="330.0">
+      <Button fx:id="btnAlterar" layoutX="1216.0" layoutY="281.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="32.0" prefWidth="131.0" text="Relatório" />
+      <ImageView fx:id="imgAlterar" fitHeight="32.0" fitWidth="32.0" layoutX="1307.0" layoutY="281.0">
          <image>
             <Image url="@imagens/icon%20alterar.png" />
          </image>
