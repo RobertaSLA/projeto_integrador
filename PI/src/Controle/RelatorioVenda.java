@@ -29,9 +29,9 @@ import Modelo.Conexao;
 
 
 
-public class RelatorioDetalheVenda {
+public class RelatorioVenda {
 
-	public void Relatorio(int codVenda) throws FileNotFoundException, SQLException, MalformedURLException {
+	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
 		try {
 			
@@ -44,7 +44,7 @@ public class RelatorioDetalheVenda {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioDetalheVenda.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioVendas.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -57,38 +57,20 @@ public class RelatorioDetalheVenda {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório de Venda").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório de Vendas").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
 			
 			
 			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			ConexaoBD  connect = new ConexaoBD();
+			PreparedStatement ps = null;
+			
 			
 			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join " 
-							+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor) " 
-							+ "where idVenda = ?;";
-			
-			PreparedStatement stmt = con.prepareStatement(query1);
-			stmt.setInt(1, codVenda);
+							+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor);";
 			ResultSet rs = stmt.executeQuery(query1);
-			
-			
-			
-			while (rs.next()) {
-				Text id = new Text("Código de Venda: " + rs.getString("idVenda")+ "\n");
-				Text valor = new Text("Valor: R$ " + rs.getString("valor")+ "\n");
-				Text cliente = new Text("Cliente: " + rs.getString("cliente.nome")+ "\n");
-				Text vendedor = new Text("Vendedor: " + rs.getString("vendedor.nome")+ "\n");
-				
-				Paragraph para2 = new Paragraph().add(id);
-				para2.add(valor);
-				para2.add(cliente);
-				para2.add(vendedor);
-				
-				para2.setFixedPosition(50, 630, 200);
-				
-				document.add(para2);
-			}
 			
 			
 			Table table = new Table(5);

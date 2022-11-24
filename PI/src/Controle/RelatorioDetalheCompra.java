@@ -31,7 +31,7 @@ import Modelo.Conexao;
 
 public class RelatorioDetalheCompra {
 
-	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
+	public void Relatorio(int codCompra) throws FileNotFoundException, SQLException, MalformedURLException {
 		
 		try {
 			
@@ -44,7 +44,7 @@ public class RelatorioDetalheCompra {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioDetalheVenda.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioDetalheCompra.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -57,33 +57,33 @@ public class RelatorioDetalheCompra {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório de Venda").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório de Compra").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
 			
 			
 			Connection con = ConexaoBD.Conexao_BD();
-			Statement stmt = con.createStatement();
-			ConexaoBD  connect = new ConexaoBD();
-			PreparedStatement ps = null;
 			
 			
-			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join " 
-							+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor) " 
-							+ "where idVenda = 2;";
+			
+			String query1 = "select idCompra, valortotal, fornecedor.nome from fornecedor inner join \r\n"
+					+ "compra on (compra.IdFornecedor=fornecedor.idfornecedor) inner join livro_has_compra on \r\n"
+					+ "(compra_idCompra=idCompra) where idCompra = ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query1);
+			stmt.setInt(1, codCompra);
 			ResultSet rs = stmt.executeQuery(query1);
 			
 			
 			while (rs.next()) {
-				Text id = new Text("Código de Venda: " + rs.getString("idVenda")+ "\n");
-				Text valor = new Text("Valor: R$ " + rs.getString("valor")+ "\n");
-				Text cliente = new Text("Cliente: " + rs.getString("cliente.nome")+ "\n");
-				Text vendedor = new Text("Vendedor: " + rs.getString("vendedor.nome")+ "\n");
+				Text id = new Text("Código de Compra: " + rs.getString("idCompra")+ "\n");
+				Text valor = new Text("Valor: R$ " + rs.getString("valortotal")+ "\n");
+				Text fornecedor = new Text("Fornecedor : " + rs.getString("fornecedor.nome")+ "\n");
 				
 				Paragraph para2 = new Paragraph().add(id);
 				para2.add(valor);
-				para2.add(cliente);
-				para2.add(vendedor);
+				para2.add(fornecedor);
+
 				
 				para2.setFixedPosition(50, 630, 200);
 				
@@ -95,26 +95,27 @@ public class RelatorioDetalheCompra {
 			table.setWidth(500);
 			table.setRelativePosition(25, 200, 20, 50);
 			
+			table.addHeaderCell("SKU");
 			table.addHeaderCell("Livro");
-			table.addHeaderCell("Preço");
 			table.addHeaderCell("Qtd");
-			table.addHeaderCell("Desconto");
 			table.addHeaderCell("Valor");
+			table.addHeaderCell("Data");
 			
 			
 			
 			
-			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from\r\n"
-					+ "livro inner join livro_has_venda on (sku=Livro_SKU) where Venda_idVenda = 2;";
+			String query = "select livro_SKU, livro.nome, livro_has_compra.quantidade, ValorItem, data  from\r\n"
+					+ "livro inner join livro_has_compra on (sku=Livro_SKU) inner join compra on (idcompra=compra_idcompra)"  
+					+ "where idCompra = 2;";
 			ResultSet rs1 = stmt.executeQuery(query);
 			
 			
 			while (rs1.next()) {
+			    table.addCell(rs1.getString("livro_sku"));
 			    table.addCell(rs1.getString("livro.nome"));
-			    table.addCell(rs1.getString("preco"));
-			    table.addCell(rs1.getString("quantidadeItem"));
-			    table.addCell(rs1.getString("DescontoItem"));
-			    table.addCell(rs1.getString("ValorItens"));
+			    table.addCell(rs1.getString("livro_has_compra.quantidade"));
+			    table.addCell(rs1.getString("ValorItem"));
+			    table.addCell(rs1.getString("Data"));
 			}
 			
 			
