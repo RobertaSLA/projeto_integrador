@@ -44,7 +44,7 @@ public class RelatorioDetalheCompra {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioDetalheCompra.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\RelatorioDetalheCompra.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -72,7 +72,7 @@ public class RelatorioDetalheCompra {
 			
 			PreparedStatement stmt = con.prepareStatement(query1);
 			stmt.setInt(1, codCompra);
-			ResultSet rs = stmt.executeQuery(query1);
+			ResultSet rs = stmt.executeQuery();
 			
 			
 			while (rs.next()) {
@@ -104,14 +104,17 @@ public class RelatorioDetalheCompra {
 			
 			
 			
-			String query = "select livro_SKU, livro.nome, livro_has_compra.quantidade, ValorItem, data  from\r\n"
+			String query = "select SKU, livro.nome, livro_has_compra.quantidade, ValorItem, data  from\r\n"
 					+ "livro inner join livro_has_compra on (sku=Livro_SKU) inner join compra on (idcompra=compra_idcompra)"  
-					+ "where idCompra = 2;";
-			ResultSet rs1 = stmt.executeQuery(query);
+					+ "where idCompra = ?;";
 			
+			PreparedStatement stmt1 = con.prepareStatement(query);
+			stmt1.setInt(1, codCompra);
+			ResultSet rs1 = stmt.executeQuery();
+
 			
 			while (rs1.next()) {
-			    table.addCell(rs1.getString("livro_sku"));
+			    table.addCell(rs1.getString("SKU"));
 			    table.addCell(rs1.getString("livro.nome"));
 			    table.addCell(rs1.getString("livro_has_compra.quantidade"));
 			    table.addCell(rs1.getString("ValorItem"));

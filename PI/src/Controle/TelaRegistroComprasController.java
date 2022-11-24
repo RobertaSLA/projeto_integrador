@@ -1,6 +1,8 @@
 package Controle;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -180,8 +182,10 @@ public class TelaRegistroComprasController {
     }
 
     @FXML
-    void AlterarProduto(ActionEvent event) {
-
+    void AlterarProduto(ActionEvent event) throws FileNotFoundException, MalformedURLException, SQLException {
+    	Compra compra = tblRegistroVendas.getSelectionModel().getSelectedItem();
+    	RelatorioDetalheCompra rel = new RelatorioDetalheCompra();
+    	rel.Relatorio(compra.getIdCompra());
     }
 
     @FXML
@@ -316,7 +320,7 @@ public class TelaRegistroComprasController {
 		CompraBD comprabd = new CompraBD();
 		List<Compra> l  = comprabd.BuscarCompras();
 
-		//clmCodCompra.setCellValueFactory(new PropertyValueFactory<>("idCompra"));
+		clmCodCompra.setCellValueFactory(new PropertyValueFactory<>("idCompra"));
 		clmData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		clmIDForn.setCellValueFactory(new PropertyValueFactory<>("nomeFornecedor"));
 		clmPreço.setCellValueFactory(new PropertyValueFactory<>("valor"));

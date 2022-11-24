@@ -1,7 +1,9 @@
 package Controle;
 
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.sql.SQLException;
 import java.util.List;
 import Modelo.Fornecedor;
@@ -303,8 +305,9 @@ public class TelaListagemFornecedorController {
     }
     
     @FXML
-    void CriarRelatorio(ActionEvent event) {
-
+    void CriarRelatorio(ActionEvent event) throws FileNotFoundException, MalformedURLException, SQLException {
+    	RelatorioFornecedor rel = new RelatorioFornecedor();
+    	rel.Relatorio();
     }
 
     @FXML

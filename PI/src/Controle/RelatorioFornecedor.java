@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -44,7 +46,7 @@ public class RelatorioFornecedor {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioFornecedor.pdf";
+			String path = "C:\\\\Users\\\\Aluno\\\\Desktop\\RelatorioFornecedor.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -98,7 +100,7 @@ public class RelatorioFornecedor {
 		
 			document.close();
 						
-			System.out.println("Finalizado");
+			JOptionPane.showMessageDialog(null, "Relatorio exportado com sucesso");
 			}
 		
 		catch (Exception e) {

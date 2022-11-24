@@ -1,10 +1,14 @@
 package Controle;
 
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
-
+import java.net.MalformedURLException;
 import java.sql.SQLException;
 import java.util.List;
+
+import javax.swing.JOptionPane;
+
 import Modelo.Autor;
 import Modelo.Livro;
 import javafx.collections.FXCollections;
@@ -375,8 +379,9 @@ public class TelaListagemProdutoController {
     }
     
     @FXML
-    void CriarRelatorio(ActionEvent event) {
-
+    void CriarRelatorio(ActionEvent event) throws FileNotFoundException, MalformedURLException, SQLException {
+    	RelatorioProdutos rel = new RelatorioProdutos();
+    	rel.Relatorio();
     }	
     
     @FXML

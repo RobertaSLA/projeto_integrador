@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -44,7 +46,7 @@ public class RelatorioDetalheVenda {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioDetalheVenda.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\RelatorioDetalheVenda.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -64,13 +66,15 @@ public class RelatorioDetalheVenda {
 			
 			Connection con = ConexaoBD.Conexao_BD();
 			
-			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join " 
-							+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor) " 
-							+ "where idVenda = ?;";
+			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor)  where idVenda = ? ";
+	
+
 			
 			PreparedStatement stmt = con.prepareStatement(query1);
+
 			stmt.setInt(1, codVenda);
-			ResultSet rs = stmt.executeQuery(query1);
+			System.out.println(stmt);
+			ResultSet rs = stmt.executeQuery();
 			
 			
 			
@@ -105,8 +109,12 @@ public class RelatorioDetalheVenda {
 			
 			
 			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from\r\n"
-					+ "livro inner join livro_has_venda on (sku=Livro_SKU) where Venda_idVenda = 2;";
-			ResultSet rs1 = stmt.executeQuery(query);
+					+ "livro inner join livro_has_venda on (sku=Livro_SKU) where Venda_idVenda = ?;";
+			
+			PreparedStatement stmt2 = con.prepareStatement(query);
+			stmt2.setInt(1, codVenda);
+			System.out.println(stmt2);
+			ResultSet rs1 = stmt2.executeQuery();
 			
 			
 			while (rs1.next()) {
@@ -126,10 +134,11 @@ public class RelatorioDetalheVenda {
 		
 			document.close();
 						
-			System.out.println("Finalizado");
+			JOptionPane.showMessageDialog(null, "Relatorio exportado com sucesso");
 			}
 		
 		catch (Exception e) {
+			e.printStackTrace();
 			System.err.println(e);
 		}
 	}
