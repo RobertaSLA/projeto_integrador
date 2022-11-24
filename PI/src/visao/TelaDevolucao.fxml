@@ -17,7 +17,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaDevolucaoController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="839.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaDevolucaoController">
    <children>
       <Pane layoutY="68.0" prefHeight="292.0" prefWidth="1601.0" style="-fx-background-color: e3e3e3;">
          <children>
@@ -68,16 +68,6 @@
                </font>
             </Text>
             <Button fx:id="btnInserirItem" layoutX="1029.0" layoutY="244.0" mnemonicParsing="false" onAction="#InserirItem" prefHeight="32.0" prefWidth="69.0" text="Inserir" />
-            <Text layoutX="229.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Venda" wrappingWidth="105.14453124999955">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Text>
-            <DatePicker fx:id="dtDataVenda" editable="false" layoutX="217.0" layoutY="104.0" onAction="#DataVenda" prefHeight="32.0" prefWidth="138.0" promptText="Data de venda">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-            </DatePicker>
             <Text layoutX="1278.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Motivo da Devolução">
                <font>
                   <Font size="18.0" />
