@@ -184,11 +184,6 @@ public class TelaListagemClientesController {
     }
     
     @FXML
-    void Pesquisar(ActionEvent event) {
-
-    }
-    
-    @FXML
     void CriarRelatorio(ActionEvent event) {
     	
     }

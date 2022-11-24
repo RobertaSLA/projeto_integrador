@@ -60,6 +60,18 @@ public class RelatorioVenda {
 			Text titulo = new Text("Relatório de Vendas").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
+		
+			
+			Table table = new Table(6);
+			table.setWidth(500);
+			table.setRelativePosition(25, 100, 20, 50);
+			
+			table.addHeaderCell("ID").setFont(fonte);
+			table.addHeaderCell("Cliente").setFont(fonte);
+			table.addHeaderCell("Vendedor").setFont(fonte);
+			table.addHeaderCell("Valor").setFont(fonte);
+			table.addHeaderCell("Método").setFont(fonte);
+			table.addHeaderCell("Data").setFont(fonte);
 			
 			
 			Connection con = ConexaoBD.Conexao_BD();
@@ -67,36 +79,19 @@ public class RelatorioVenda {
 			ConexaoBD  connect = new ConexaoBD();
 			PreparedStatement ps = null;
 			
-			
-			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join " 
-							+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor);";
-			ResultSet rs = stmt.executeQuery(query1);
-			
-			
-			Table table = new Table(5);
-			table.setWidth(500);
-			table.setRelativePosition(25, 200, 20, 50);
-			
-			table.addHeaderCell("Livro");
-			table.addHeaderCell("Preço");
-			table.addHeaderCell("Qtd");
-			table.addHeaderCell("Desconto");
-			table.addHeaderCell("Valor");
-			
-			
-			
-			
-			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from\r\n"
-					+ "livro inner join livro_has_venda on (sku=Livro_SKU) where Venda_idVenda = 2;";
+			String query = "select idVenda, cliente.nome, vendedor.nome, valor, formadepagamento, data from venda inner join " 
+					+ "cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor) "
+					+ "inner join formadepagamento on (idformapagamento) group by idvenda ;";
 			ResultSet rs1 = stmt.executeQuery(query);
 			
 			
 			while (rs1.next()) {
-			    table.addCell(rs1.getString("livro.nome"));
-			    table.addCell(rs1.getString("preco"));
-			    table.addCell(rs1.getString("quantidadeItem"));
-			    table.addCell(rs1.getString("DescontoItem"));
-			    table.addCell(rs1.getString("ValorItens"));
+			    table.addCell(rs1.getString("idvenda"));
+			    table.addCell(rs1.getString("cliente.nome"));
+			    table.addCell(rs1.getString("vendedor.nome"));
+			    table.addCell(rs1.getString("valor"));
+			    table.addCell(rs1.getString("formadepagamento"));
+			    table.addCell(rs1.getString("data"));
 			}
 			
 			
