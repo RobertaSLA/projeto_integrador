@@ -149,5 +149,15 @@ public class TelaCadastroFornecedorController {
     	forbd.InserirFornecedor(forn);
     	
     }
+    
+    @FXML
+    public void initialize() throws SQLException {
+		MascarasFX.mascaraCEP(txtCEP);
+		MascarasFX.mascaraCNPJ(txtCNPJ);
+		MascarasFX.mascaraEmail(txtEmail);
+		MascarasFX.mascaraTelefone(txtFone);
+		MascarasFX.mascaraTelefone(txtCelular);
+
+    }
 
 }
