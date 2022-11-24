@@ -51,6 +51,9 @@ public class TelaListagemClientesController {
 
     @FXML
     private Button btnCadastroLivro;
+    
+    @FXML
+    private Button btnExcluirFiltro;
 
     @FXML
     private Button btnClienteCadastro;
@@ -59,11 +62,14 @@ public class TelaListagemClientesController {
     private Button btnConsultaCliente;
 
     @FXML
-    private Button btnConsultaLivro;
+    private Button btnConsultaLivro;  
 
     @FXML
+    private Button btnRelatorio;
+    
+    @FXML
     private Button btnConsultaPreco;
-
+    
     @FXML
     private Button btnConsultaVenda;
 
@@ -175,6 +181,12 @@ public class TelaListagemClientesController {
     void Pesquisar(ActionEvent event) {
 
     }
+    
+    @FXML
+    void CriarRelatorio(ActionEvent event) {
+    	
+    }
+    
 
     @FXML
     void ActionAlterarCliente(ActionEvent event) throws IOException {
@@ -207,7 +219,7 @@ public class TelaListagemClientesController {
 
     @FXML
     void ActionPesquisarCliente(ActionEvent event) {
-
+    	
     }
 
     @FXML
@@ -277,6 +289,11 @@ public class TelaListagemClientesController {
 
     @FXML
     void Devolucao(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ExcluirFiltro(ActionEvent event) {
 
     }
 

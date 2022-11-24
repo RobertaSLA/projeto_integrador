@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaEditarClienteController">
+   <children>
+      <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
+         <children>
+            <Text fill="WHITE" layoutX="520.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="480.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="24.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cliente" wrappingWidth="102.40087890625">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="68.0" fitWidth="161.0" layoutX="639.0" layoutY="3.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Text layoutX="21.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dados Cadastrais" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCodCliente" layoutX="17.0" layoutY="128.0" onAction="#AdicionarCodCliente" prefHeight="26.0" prefWidth="135.0" AnchorPane.leftAnchor="17.0" />
+      <Button fx:id="btnPesquisarCod" layoutX="161.0" layoutY="126.0" mnemonicParsing="false" onAction="#ActionPesquisarCodigoCliente" prefHeight="31.0" prefWidth="87.0" style="-fx-background-color: dbb0ea;" text="Pesquisar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="txtNome" layoutX="16.0" layoutY="181.0" onAction="#AdicionarNome" prefHeight="26.0" prefWidth="515.0" AnchorPane.leftAnchor="16.0" AnchorPane.topAnchor="181.0" />
+      <TextField fx:id="txtCPF" layoutX="18.0" layoutY="240.0" onAction="#AdicionarCPF" prefHeight="26.0" prefWidth="186.0" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="240.0" />
+      <ChoiceBox fx:id="ChoiceBoxSexo" layoutX="220.0" layoutY="240.0" prefHeight="27.0" prefWidth="124.0" style="-fx-background-color: transparent; -fx-border-color: #d3d3d3;">
+		<items>
+			<FXCollections fx:factory="observableArrayList">
+				<String fx:value="masculino" />
+				<String fx:value="feminino" />
+				<String fx:value="não definido" />
+			</FXCollections>
+		</items>
+	  </ChoiceBox>
+      <DatePicker fx:id="ChoiceBoxNascimento" layoutX="356.0" layoutY="241.0" />
+      <TextField fx:id="txtCEP" layoutX="20.0" layoutY="323.0" onAction="#AdicionarCEP" prefHeight="26.0" prefWidth="102.0" AnchorPane.leftAnchor="20.0" />
+      <ChoiceBox fx:id="ChoiceBoxUF" layoutX="134.0" layoutY="321.0" prefHeight="25.0" prefWidth="87.0" style="-fx-background-color: transparent; -fx-border-color: #d3d3d3;">
+	  		<items>
+			<FXCollections fx:factory="observableArrayList">
+				<String fx:value="AC" />
+				<String fx:value="AL" />
+				<String fx:value="AP" />
+				<String fx:value="AM" />
+				<String fx:value="BA" />
+				<String fx:value="CE" />
+				<String fx:value="DF" />
+				<String fx:value="ES" />
+				<String fx:value="GO" />
+				<String fx:value="MA" />
+				<String fx:value="MT" />
+				<String fx:value="MS" />
+				<String fx:value="MG" />
+				<String fx:value="PA" />
+				<String fx:value="PB" />
+				<String fx:value="PR" />
+				<String fx:value="PE" />
+				<String fx:value="PI" />
+				<String fx:value="RJ" />
+				<String fx:value="RN" />
+				<String fx:value="RS" />
+				<String fx:value="RO" />
+				<String fx:value="RR" />
+				<String fx:value="SC" />
+				<String fx:value="SP" />
+				<String fx:value="SE" />
+				<String fx:value="TO" />
+			</FXCollections>
+		</items>
+	  </ChoiceBox>
+      <TextField fx:id="txtCidade" layoutX="230.0" layoutY="322.0" onAction="#AdicionarCidade" prefHeight="26.0" prefWidth="236.0" />
+      <TextField fx:id="txtBairro" layoutX="485.0" layoutY="321.0" onAction="#AdicionarBairro" prefHeight="26.0" prefWidth="280.0" />
+      <TextField fx:id="txtEndereco" layoutX="20.0" layoutY="383.0" onAction="#AdicionarEndereco" prefHeight="26.0" prefWidth="315.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtNum" layoutX="359.0" layoutY="383.0" onAction="#AdicionarNum" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtComplemento" layoutX="504.0" layoutY="383.0" onAction="#AdicionarComplemento" prefHeight="26.0" prefWidth="261.0" />
+      <TextField fx:id="txtFone" layoutX="20.0" layoutY="474.0" onAction="#AdicionarFone" prefHeight="26.0" prefWidth="186.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtCelular" layoutX="216.0" layoutY="473.0" onAction="#AdicionarCelular" prefHeight="26.0" prefWidth="196.0" />
+      <TextField fx:id="txtEmail" layoutX="425.0" layoutY="473.0" onAction="#AdicionarEmail" prefHeight="26.0" prefWidth="339.0" />
+      <Text layoutX="219.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexo">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="18.0" layoutY="234.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CPF" AnchorPane.leftAnchor="18.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="25.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="24.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CEP" AnchorPane.leftAnchor="24.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="138.0" layoutY="313.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UF">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="25.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contato" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="230.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cidade" wrappingWidth="55.06201171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="17.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" AnchorPane.leftAnchor="17.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="490.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bairro" wrappingWidth="55.06201171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Endereço" wrappingWidth="65.06201171875" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="359.0" layoutY="373.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Número">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="504.0" layoutY="372.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Complemento" wrappingWidth="102.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="21.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Fone" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="215.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Celular">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="425.0" layoutY="467.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-Mail" wrappingWidth="65.06201171875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="355.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data de Nascimento">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text layoutX="18.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cód. Cliente" AnchorPane.leftAnchor="18.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Button fx:id="btnEditar" layoutX="498.0" layoutY="588.0" mnemonicParsing="false" onAction="#EditarCadastro" prefHeight="32.0" prefWidth="135.0" style="-fx-background-color: dbb0ea;" text="Editar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnCancelar" layoutX="649.0" layoutY="588.0" mnemonicParsing="false" onAction="#CancelarCadastro" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

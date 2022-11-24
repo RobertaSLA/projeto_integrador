@@ -58,13 +58,16 @@ public class TelaListagemProdutoController {
 
     @FXML
     private Button btnConsultaCliente;
+    
+    @FXML
+    private Button btnExcluirFiltro;
 
     @FXML
     private Button btnConsultaLivro;
 
     @FXML
     private Button btnConsultaPreco;
-
+    
     @FXML
     private Button btnConsultaVenda;
 
@@ -350,7 +353,22 @@ public class TelaListagemProdutoController {
     void Ficcao(ActionEvent event) {
 
     }
+    
+    
+    
+    @FXML
+    void ExcluirFiltro(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarLivro();
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
+    }
+    
+    @FXML
+    void CriarRelatorio(ActionEvent event) {
 
+    }	
+    
     @FXML
     void Gastronomia(ActionEvent event) {
 

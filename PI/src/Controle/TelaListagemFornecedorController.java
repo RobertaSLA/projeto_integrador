@@ -64,6 +64,9 @@ public class TelaListagemFornecedorController {
     private Button btnHistoricoVenda;
 
     @FXML
+    private Button btnRelatorio;
+
+    @FXML
     private Button btnDevolucao;
     
     @FXML
@@ -162,13 +165,13 @@ public class TelaListagemFornecedorController {
    	 		getClass().getResource(
    	 				"/visao/EditarFornecedor.fxml")
    	 	);  
+   	 	
    	 
    	 	Node node;
    	 	node = (Node)loader.load();
    	 	
    	   
    	 	TelaEditarFornecedorController controller = loader.getController();
-   	 	System.out.println(controller);
    	 	controller.DefinirFornecedor(fornecedor);
 
    	 	layoutListagem.getChildren().setAll(node);
@@ -281,6 +284,11 @@ public class TelaListagemFornecedorController {
     
     @FXML
     void Pesquisar(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void CriarRelatorio(ActionEvent event) {
 
     }
 

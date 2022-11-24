@@ -168,6 +168,7 @@ public class TelaHomeController {
     	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
+
     @FXML
     void HistoricoVenda(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroVendas.fxml"));
@@ -188,7 +189,7 @@ public class TelaHomeController {
     
     @FXML
     void ConsultaCompra(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroCompra.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroCompras.fxml"));
     	idTelaHome.getChildren().setAll(telaHomePane);
     }
     

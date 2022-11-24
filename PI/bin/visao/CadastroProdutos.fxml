@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="telaCadastroPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaCadastroLivroController">
+   <children>
+      <Pane layoutY="-5.0" prefHeight="68.0" prefWidth="800.0" style="-fx-background-color: dbb0ea;">
+         <children>
+            <Text fill="WHITE" layoutX="530.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ROSADA " textAlignment="CENTER" textOrigin="BOTTOM" wrappingWidth="92.35546875">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+               <effect>
+                  <Glow />
+               </effect>
+            </Text>
+            <Text fill="WHITE" layoutX="490.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="VIRTUAL MANAGER" wrappingWidth="173.8645782470703">
+               <font>
+                  <Font name="System Bold Italic" size="17.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="22.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produto">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="60.0" fitWidth="158.0" layoutX="642.0" layoutY="3.0">
+               <image>
+                  <Image url="@imagens/ilustracao%20livro.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TextField fx:id="txtTitulo" layoutX="22.0" layoutY="110.0" onAction="#AdicionarTitulo" prefHeight="26.0" prefWidth="722.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtSKU" layoutX="23.0" layoutY="211.0" onAction="#AdicionarCodigoSKU" prefHeight="26.0" prefWidth="124.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtISBN" layoutX="170.0" layoutY="211.0" onAction="#AdicionarISBN" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtPrecoVenda" layoutX="316.0" layoutY="211.0" onAction="#AdicionarPrecoVenda" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtAutor" layoutX="20.0" layoutY="317.0" onAction="#AdicionarAutor" prefHeight="26.0" prefWidth="280.0" AnchorPane.leftAnchor="20.0" />
+      <TextField fx:id="txtGenero" layoutX="319.0" layoutY="317.0" onAction="#AdicionarGenero" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtEditora" layoutX="462.0" layoutY="317.0" onAction="#AdicionarEditora" prefHeight="26.0" prefWidth="124.0" />
+      <TextField fx:id="txtQuantidade" layoutX="20.0" layoutY="421.0" onAction="#AdicionarQuantidade" prefHeight="26.0" prefWidth="124.0" AnchorPane.leftAnchor="20.0" />
+      <Button fx:id="btnSalvar" layoutX="498.0" layoutY="588.0" mnemonicParsing="false" onAction="#SalvarCadastro" prefHeight="32.0" prefWidth="135.0" style="-fx-background-color: dbb0ea;" text="Salvar">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Button fx:id="btnCancelar" layoutX="649.0" layoutY="588.0" mnemonicParsing="false" onAction="#CancelarCadastro" prefHeight="32.0" prefWidth="124.0" style="-fx-background-color: dbb0ea;" text="Cancelar">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Text layoutX="24.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Título" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="29.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Descrição Geral" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="29.0" layoutY="206.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Código (SKU)" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="170.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ISBN">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="316.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Preço Venda">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="22.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Características" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="24.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Autor" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="322.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gênero">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="21.0" layoutY="389.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Estoque" AnchorPane.leftAnchor="25.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text layoutX="23.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantidade" AnchorPane.leftAnchor="21.0">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <Text layoutX="462.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editora">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

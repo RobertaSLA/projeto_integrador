@@ -34,6 +34,9 @@ public class TelaRegistroComprasController {
 
     @FXML
     private Button btnAcessoVenda;
+    
+    @FXML
+    private Button btnExcluirFiltro;
 
     @FXML
     private Button btnAlterar;
@@ -215,6 +218,12 @@ public class TelaRegistroComprasController {
     void ExcluirProduto(ActionEvent event) {
 
     }
+    
+    @FXML
+    void ExcluirFiltro(ActionEvent event) {
+
+    }
+
 
     @FXML
     void Pesquisar(ActionEvent event) {
@@ -261,7 +270,7 @@ public class TelaRegistroComprasController {
 		CompraBD comprabd = new CompraBD();
 		List<Compra> l  = comprabd.BuscarCompras();
 
-		clmCodCompra.setCellValueFactory(new PropertyValueFactory<>("idCompra"));
+		//clmCodCompra.setCellValueFactory(new PropertyValueFactory<>("idCompra"));
 		clmData.setCellValueFactory(new PropertyValueFactory<>("data"));
 		clmIDForn.setCellValueFactory(new PropertyValueFactory<>("nomeFornecedor"));
 		clmPreço.setCellValueFactory(new PropertyValueFactory<>("valor"));
