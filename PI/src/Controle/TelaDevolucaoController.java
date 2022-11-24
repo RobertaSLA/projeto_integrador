@@ -444,6 +444,11 @@ public class TelaDevolucaoController {
 		DevolucaoBD dev = new DevolucaoBD();
 		dev.InserirDevolucao(devolucao);
 		
+		for (LivroDevolucao lv: devolucao.getListaitens()) {
+			LivroBD livbd = new LivroBD();
+			livbd.AtualizarEstoque(lv.getLivro().getSku(), lv.getLivro().getEstoque());
+		}
+		
 		AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }

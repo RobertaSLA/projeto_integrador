@@ -10,12 +10,16 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 public class TelaHistoricoDePrecosController {
 
@@ -162,8 +166,10 @@ public class TelaHistoricoDePrecosController {
     }
 
     @FXML
-    void ConsutlarHistorico(ActionEvent event) {
-
+    void ConsultarHistorico(ActionEvent event) throws NumberFormatException, SQLException {
+    	HistoricoDePrecosBD hist = new HistoricoDePrecosBD();
+    	List<HistoricoDePrecos> l  = hist.BuscarHistoricoSKU(Integer.parseInt(txtSKULivro.getText()));
+    	tblHistoricoPrecos.setItems(FXCollections.observableArrayList(l));
     }
 
     @FXML
@@ -185,16 +191,33 @@ public class TelaHistoricoDePrecosController {
     void HistoricoDePrecos(ActionEvent event) {
 
     }
-
-    @FXML
-    void PesquisarSKU(ActionEvent event) {
-
-    }
-
+    
     @FXML
     void SKULivro(ActionEvent event) {
-
+    	System.out.println("oie");
     }
+    
+    @FXML
+    void PesquisarSKU(ActionEvent event) throws IOException {
+    	
+    	FXMLLoader fxmlLoader = new FXMLLoader(
+ 	    	   getClass().getResource(
+ 	    			   "/visao/ListarProduto.fxml"
+ 	    	   )
+ 	    	 );
+ 	        Node node;
+ 	        Parent parent = fxmlLoader.load();
+ 	        node = (Node) parent;
+ 	        TelaListarProdutoController controller = fxmlLoader.getController();
+ 	        controller.setTelaHistoricoDePrecosController(this);
+ 	        Scene scene = new Scene(parent, 574, 473);
+ 	        Stage stage = new Stage();
+ 	        stage.setScene(scene);
+ 	        stage.show();
+ 	        
+    }
+
+
     
     @FXML
     public void initialize() throws SQLException {
@@ -209,6 +232,10 @@ public class TelaHistoricoDePrecosController {
 		
 		tblHistoricoPrecos.setItems(FXCollections.observableArrayList(l));
 		
+	}
+
+	public void addLivro(Livro livro) {
+		txtSKULivro.setText(String.valueOf(livro.getSku()));
 	}
 	
 

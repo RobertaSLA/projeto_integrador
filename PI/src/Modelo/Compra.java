@@ -9,10 +9,23 @@ public class Compra {
 	private Fornecedor fornecedor;
 	private int quantidade;
 	private float valor;
-	private Date data;
+	private String data;
 	private ArrayList<LivroCompra> listaitens = new ArrayList<LivroCompra>();
 	
 	
+	
+	public Compra() {
+		super();
+	}
+	
+	public Compra(int idCompra, String data, float valor, int quantidade, Fornecedor fornecedor) {
+		super();
+		this.idCompra = idCompra;
+		this.fornecedor = fornecedor;
+		this.quantidade = quantidade;
+		this.valor = valor;
+		this.data = data;
+	}
 	public int getIdCompra() {
 		return idCompra;
 	}
@@ -37,10 +50,10 @@ public class Compra {
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public ArrayList<LivroCompra> getListaitens() {
@@ -50,6 +63,8 @@ public class Compra {
 		this.listaitens = listaitens;
 	}
 	
-	
+	public String getNomeFornecedor() {
+		return fornecedor.getNome();
+	}
 	 
 }

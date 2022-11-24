@@ -17,6 +17,14 @@ public class Fornecedor {
 		this.idFornecedor = idFornecedor;
 	}
 
+	
+	public Fornecedor(int idFornecedor, String nome) {
+		super();
+		this.idFornecedor = idFornecedor;
+		this.nome = nome;
+	}
+
+
 	public Fornecedor(int idFornecedor, String nome, String cnpj) {
 		super();
 		this.idFornecedor = idFornecedor;

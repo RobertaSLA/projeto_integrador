@@ -4,8 +4,12 @@ package Controle;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import Modelo.Autor;
+import Modelo.HistoricoDePrecos;
 import Modelo.Livro;
 
 import javafx.event.ActionEvent;
@@ -52,6 +56,8 @@ public class TelaEditarProdutoController {
 
     @FXML
     private TextField txtTitulo;
+    
+    private Livro livro1;
 
     @FXML
     void ActionCancelarCadastro(ActionEvent event) throws IOException {
@@ -62,7 +68,19 @@ public class TelaEditarProdutoController {
     @FXML
     void ActionEditarCadastro(ActionEvent event) throws SQLException, IOException {
     	Autor aut = new Autor(txtAutor.getText());
-    	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), txtISBN.getText(), txtTitulo.getText(), txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()), aut);
+    	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), txtISBN.getText(), txtTitulo.getText(), 
+    			txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()), aut);
+    	
+    	if (livro1.getPreco() != Float.parseFloat(txtPrecoVenda.getText())) {
+    		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        	Date date = new Date();
+        	
+    		HistoricoDePrecos hist = new HistoricoDePrecos(Integer.parseInt(txtSKU.getText()), txtTitulo.getText(),
+    				txtISBN.getText(), livro1.getPreco(), Float.parseFloat(txtPrecoVenda.getText()), dateFormat.format(date));
+    		
+    		HistoricoDePrecosBD his = new HistoricoDePrecosBD();
+    		his.InserirHistorico(hist);
+    	}
     	
     	LivroBD livbd = new LivroBD();
     	livbd.AtualizarLivro(liv);
@@ -117,6 +135,7 @@ public class TelaEditarProdutoController {
     }
 
 	public void DefinirLivro(Livro livro) {
+		livro1 = livro;
 		txtSKU.setText(String.valueOf(livro.getSku()));
     	txtISBN.setText(livro.getIsbn());
     	txtTitulo.setText(livro.getNome());

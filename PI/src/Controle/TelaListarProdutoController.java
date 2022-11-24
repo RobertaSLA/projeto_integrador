@@ -53,6 +53,8 @@ public class TelaListarProdutoController {
 
 	private TelaDevolucaoController telaDevolucaoController;
 
+	private TelaHistoricoDePrecosController telaHistoricoDePrecosController;
+
     @FXML
     void ActionPesquisarCodigoVendedor(ActionEvent event) {
 
@@ -79,6 +81,9 @@ public class TelaListarProdutoController {
     	}
     	if(this.telaDevolucaoController != null) {
     		this.telaDevolucaoController.addLivro(livro);
+    	}
+    	if(this.telaHistoricoDePrecosController != null) {
+    		this.telaHistoricoDePrecosController.addLivro(livro);
     	}
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
@@ -116,6 +121,11 @@ public class TelaListarProdutoController {
 	
 	public void setTelaDevolucaoController(TelaDevolucaoController telaDevolucaoController) {
 		this.telaDevolucaoController=telaDevolucaoController;
+		
+	}
+
+	public void setTelaHistoricoDePrecosController(TelaHistoricoDePrecosController telaHistoricoDePrecosController) {
+		this.telaHistoricoDePrecosController=telaHistoricoDePrecosController;
 		
 	}
 	

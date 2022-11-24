@@ -5,10 +5,18 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
+
+import Modelo.Cliente;
 import Modelo.Compra;
+import Modelo.Fornecedor;
 import Modelo.LivroCompra;
 import Modelo.LivroVenda;
+import Modelo.Venda;
+import Modelo.Vendedor;
 
 public class CompraBD {
 	
@@ -22,7 +30,7 @@ public class CompraBD {
 			stmt.setInt(1, compra.getQuantidade());
 			stmt.setFloat(2, compra.getValor());
 			stmt.setInt(3, compra.getFornecedor().getIdFornecedor());
-			stmt.setDate(4, new java.sql.Date(compra.getData().getTime()));
+			stmt.setString(4, compra.getData());
 			
 			int idCompra = 0;
 			ResultSet rs = stmt.getGeneratedKeys();
@@ -71,6 +79,36 @@ public class CompraBD {
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
+	}
+	
+	public ArrayList<Compra> BuscarCompras() throws SQLException {
+		ArrayList<Compra> compra = new ArrayList<Compra>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idCompra, Data, Valor, Quantidade, Fornecedor.IdFornecedor, Fornecedor.nome"
+					+ " from compra inner join fornecedor using (idFornecedor);";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Fornecedor forne = new Fornecedor(rs.getInt(5), rs.getString(6));
+				Compra comp = new Compra(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getInt(4), forne);
+				
+				compra.add(comp);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return compra;
+		
 	}
 	
 }

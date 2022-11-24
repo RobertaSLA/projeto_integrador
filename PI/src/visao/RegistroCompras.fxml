@@ -152,7 +152,7 @@
             <TableColumn fx:id="clmQuantidade" minWidth="0.0" prefWidth="149.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
             <TableColumn fx:id="clmPreço" minWidth="0.0" prefWidth="161.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
             <TableColumn fx:id="clmData" minWidth="0.0" prefWidth="190.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Data" />
-            <TableColumn fx:id="clmIDForn" minWidth="8.0" prefWidth="227.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ID Fornecedor" />
+            <TableColumn fx:id="clmIDForn" minWidth="8.0" prefWidth="227.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Fornecedor" />
         </columns>
       </TableView>
       <TextField fx:id="txtPesquisarVenda" layoutX="405.0" layoutY="280.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />

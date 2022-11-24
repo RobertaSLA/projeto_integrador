@@ -226,9 +226,9 @@ import javafx.stage.Stage;
 			compra.setValor(Float.parseFloat(txtValorTotal.getText()));
 			compra.setListaitens(listaitens);
 		
-			LocalDate localdate = dtDataCompra.getValue();
-			Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-			compra.setData(date);
+			//LocalDate localdate = dtDataCompra.getValue();
+			//Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
+			compra.setData(String.valueOf(dtDataCompra.getValue()));
 			
 			CompraBD comp = new CompraBD();
 			comp.InserirCompra(compra);
