@@ -1,7 +1,12 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
+
 import Modelo.HistoricoDePrecos;
+import Modelo.Livro;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +14,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaHistoricoDePrecosController {
@@ -83,13 +89,13 @@ public class TelaHistoricoDePrecosController {
     private TableColumn<HistoricoDePrecos, String> clmTituloLivro;
 
     @FXML
-    private TableColumn<?, ?> clmUltimaAlteracao;
+    private TableColumn<HistoricoDePrecos, String> clmUltimaAlteracao;
 
     @FXML
     private AnchorPane layoutListagem;
 
     @FXML
-    private TableView<?> tblHistoricoPrecos;
+    private TableView<HistoricoDePrecos> tblHistoricoPrecos;
 
     @FXML
     private TextField txtSKULivro;
@@ -189,5 +195,21 @@ public class TelaHistoricoDePrecosController {
     void SKULivro(ActionEvent event) {
 
     }
+    
+    @FXML
+    public void initialize() throws SQLException {
+    	HistoricoDePrecosBD hist = new HistoricoDePrecosBD();
+		List<HistoricoDePrecos> l  = hist.BuscarHistorico();
+		
+		clmSKU.setCellValueFactory(new PropertyValueFactory<>("skuLivro"));
+		clmTituloLivro.setCellValueFactory(new PropertyValueFactory<>("livro"));
+		clmPrecoAnterior.setCellValueFactory(new PropertyValueFactory<>("precoAnterior"));
+		clmPrecoAtual.setCellValueFactory(new PropertyValueFactory<>("precoAtual"));
+		clmUltimaAlteracao.setCellValueFactory(new PropertyValueFactory<>("dataAlteracao"));
+		
+		tblHistoricoPrecos.setItems(FXCollections.observableArrayList(l));
+		
+	}
+	
 
 }
