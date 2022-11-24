@@ -42,6 +42,9 @@ public class TelaRegistroVendaController {
 
     @FXML
     private Button btnAlterar;
+    
+    @FXML
+    private Button btnExcluirFiltro;
 
     @FXML
     private Button btnCadastroFornecedor;
@@ -190,6 +193,11 @@ public class TelaRegistroVendaController {
     
     @FXML
     void Pesquisar(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void ExcluirFiltro(ActionEvent event) {
 
     }
 
