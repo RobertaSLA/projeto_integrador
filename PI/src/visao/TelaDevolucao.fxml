@@ -116,7 +116,7 @@
                <content>
                   <Pane prefHeight="31.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Emissao NF" />
+                        <Button id="btnEmissaoNF" fx:id="btnEmissaoNF" layoutY="-2.0" mnemonicParsing="false" onAction="#EmissaoNF" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissao NF" />
                      </children>
                   </Pane>
                </content>
@@ -125,10 +125,10 @@
                <content>
                   <Pane prefHeight="123.0" prefWidth="203.0">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnClienteCadastro" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
-                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="64.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Cliente" />
-                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="32.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Fornecedor" />
-                        <Button id="btnHistoricoVenda" fx:id="btnHistoricoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnClienteCadastro" layoutY="-8.0" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="55.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="44.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Cliente" />
+                        <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="29.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="35.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Fornecedor" />
+                        <Button id="btnHistoricoVenda" fx:id="btnHistoricoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Venda" />
                      </children>
                   </Pane>
                </content>
@@ -137,10 +137,10 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Devolução" />
-                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" fx:id="btnHistoricoVenda" layoutY="64.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Histórico de Venda" />
-                        <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Emissão Relatório" />
+                        <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Devolução" />
+                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnHistoricoVenda" layoutY="64.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Histórico de Venda" />
+                        <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissão Relatório" />
                      </children>
                   </AnchorPane>
                </content>
@@ -149,10 +149,10 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
                      <children>
-                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Cliente" />
-                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta Preço" />
-                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro Produtos" />
-                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Processamento Venda" />
+                        <Button id="btnCadastroCliente" fx:id="btnAcessoCadastroCliente" mnemonicParsing="false" onAction="#AcessoCadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Cliente" />
+                        <Button id="btnConsultaPreco" fx:id="btnAcessoConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#AcessoConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Preço" />
+                        <Button id="btnCadastroProduto" fx:id="btnAcessoCadastroProduto" layoutY="64.0" mnemonicParsing="false" onAction="#AcessoCadsatroProdutos" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Produtos" />
+                        <Button id="btnVenda" fx:id="btnAcessoVenda" layoutY="96.0" mnemonicParsing="false" onAction="#AcessoProcessamentoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Processamento Venda" />
                      </children>
                   </AnchorPane>
               </content>
@@ -177,9 +177,9 @@
                <content>
                   <Pane prefHeight="49.0" prefWidth="170.0">
                      <children>
-                        <Button id="btnCadastroLivro" fx:id="btnCadastroLivro1" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Cadastro de Produtos" />
-                        <Button id="btnConsultaLivro" fx:id="btnConsultaLivro1" layoutY="30.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Consulta de Produtos" />
-                        <Button id="btnCompraProdutos" fx:id="btnCompraProdutos" layoutY="63.0" mnemonicParsing="false" onAction="#CompraProduto" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dec1e9;" text="Compra de Produtos" />
+                        <Button id="btnCadastroLivro" fx:id="btnCadastroLivro1" layoutY="-2.0" mnemonicParsing="false" onAction="#CadastroLivro" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro de Produtos" />
+                        <Button id="btnConsultaLivro" fx:id="btnConsultaLivro1" layoutX="-2.0" layoutY="27.0" mnemonicParsing="false" onAction="#ConsultaLivro" prefHeight="44.0" prefWidth="172.0" style="-fx-background-color: dbb0ea;" text="Consulta de Produtos" />
+                        <Button id="btnCompraProdutos" fx:id="btnCompraProdutos" layoutY="63.0" mnemonicParsing="false" onAction="#CompraProduto" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Compra de Produtos" />
                      </children>
                   </Pane>
                </content>

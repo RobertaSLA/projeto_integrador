@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemProdutoController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="858.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemProdutoController">
    <children>
       <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Produtos" wrappingWidth="428.7161865234375">
          <font>
@@ -67,6 +67,12 @@
             <ImageView fx:id="imgFiltro" fitHeight="34.0" fitWidth="40.0" layoutX="6.0" layoutY="47.0">
                <image>
                   <Image url="@imagens/icon%20filtro.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnExcluirFiltro" layoutX="17.0" layoutY="695.0" mnemonicParsing="false" onAction="#ExcluirFiltro" prefHeight="32.0" prefWidth="139.0" text="Excluir Filtros" />
+            <ImageView fx:id="imgExcluir1" fitHeight="20.0" fitWidth="23.0" layoutX="127.0" layoutY="701.0">
+               <image>
+                  <Image url="@imagens/icon%20deletar.png" />
                </image>
             </ImageView>
          </children></Pane>
@@ -153,8 +159,8 @@
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="127.0" prefWidth="202.0" style="-fx-background-color: dec1e9;">
                      <children>
                         <Button id="btnCadastroCliente" fx:id="btnDevolucao" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Devolução" />
-                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Preço" />
-                        <Button id="btnHistoricoVenda" fx:id="btnHistoricoVenda" layoutY="64.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Histórico de Venda" />
+                        <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" layoutY="32.0" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Histórico de Preços" />
+                        <Button id="btnHistoricoVenda" fx:id="btnHistoricoVenda" layoutY="64.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Venda" />
                         <Button id="btnVenda" fx:id="btnEmissaoRelatorio" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissão Relatório" />
                      </children>
                   </AnchorPane>
@@ -190,5 +196,6 @@
             <Button fx:id="IDBotaoHome" layoutX="1057.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="40.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
+      <Button fx:id="btnRelatorio" layoutX="1461.0" layoutY="804.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="122.0" text="Relatórios" />
    </children>
 </AnchorPane>

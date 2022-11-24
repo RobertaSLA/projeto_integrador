@@ -225,8 +225,9 @@ public class TelaVendaController {
     }
 
     @FXML
-    void AcessoProcessamentoVenda(ActionEvent event) {
-
+    void AcessoProcessamentoVenda(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     @FXML
@@ -399,13 +400,14 @@ public class TelaVendaController {
 
     @FXML
     void HistoricoVenda(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/HistoricoPrecos.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroVendas.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void ConsultaPreco(ActionEvent event) {
-
+    void ConsultaPreco(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     @FXML
@@ -431,13 +433,8 @@ public class TelaVendaController {
 
     @FXML
     void Devolucao(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaDevolucao.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaDevolucao.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML

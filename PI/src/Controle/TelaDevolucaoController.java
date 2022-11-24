@@ -197,8 +197,9 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void AcessoConsultaPreco(ActionEvent event) {
-
+    void AcessoConsultaPreco(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     @FXML
@@ -209,13 +210,8 @@ public class TelaDevolucaoController {
 
     @FXML
     void AcessoProcessamentoVenda(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaVenda.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1601, 839);
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaVenda.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
@@ -331,24 +327,21 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void ConsultaCliente(ActionEvent event) {
-
+    void ConsultaCliente(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
     void ConsultaLivro(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-    	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemProdutos.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1601, 858);
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemProdutos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML
-    void ConsultaPreco(ActionEvent event) {
-
+    void ConsultaPreco(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
     
     @FXML
@@ -357,8 +350,9 @@ public class TelaDevolucaoController {
     }
 
     @FXML
-    void HistoricoVenda(ActionEvent event) {
-
+    void HistoricoVenda(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/HistoricoPrecos.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML

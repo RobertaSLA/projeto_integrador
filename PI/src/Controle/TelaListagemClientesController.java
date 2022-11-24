@@ -135,13 +135,8 @@ public class TelaListagemClientesController {
     
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
-    	FXMLLoader fxmlLoader = new FXMLLoader();
-    	fxmlLoader.setLocation(getClass().getResource("/visao/TelaHome.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1604, 1000);
-        Stage stage = new Stage();
-        stage.setResizable(false);
-        stage.setScene(scene);
-        stage.show();
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
     }
 
     @FXML

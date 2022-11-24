@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemClientesController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemClientesController">
    <children>
       <Pane layoutY="68.0" prefHeight="769.0" prefWidth="249.0" style="-fx-background-color: e3e3e3;">
          <children>
@@ -47,6 +47,12 @@
                   </TitledPane>
                </panes>
             </Accordion>
+            <Button fx:id="btnExcluirFiltro" layoutX="55.0" layoutY="683.0" mnemonicParsing="false" onAction="#ExcluirFiltro" prefHeight="32.0" prefWidth="139.0" text="Excluir Filtros" />
+            <ImageView fx:id="imgExcluir1" fitHeight="20.0" fitWidth="23.0" layoutX="165.0" layoutY="689.0">
+               <image>
+                  <Image url="@imagens/icon%20deletar.png" />
+               </image>
+            </ImageView>
          </children></Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
@@ -170,5 +176,6 @@
             <Image url="@imagens/icon%20procurar.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnRelatorio" layoutX="1376.0" layoutY="791.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="115.0" text="Relatórios" />
    </children>
 </AnchorPane>
