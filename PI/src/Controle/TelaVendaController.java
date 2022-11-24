@@ -412,7 +412,7 @@ public class TelaVendaController {
     
     @FXML
     void ConsultaVenda(ActionEvent event) throws IOException {
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroVenda.fxml"));
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroVendas.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
 

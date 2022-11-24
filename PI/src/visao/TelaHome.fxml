@@ -57,14 +57,14 @@
                   <Image url="@imagens/icon%20config%20brabnco.jpg" />
                </image>
             </ImageView>
-            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="147.0" prefWidth="172.0" text="Pessoa">
+            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Pessoa">
                <content>
                   <Pane prefHeight="154.0" prefWidth="170.0">
                      <children>
                         <Button id="btnCadastroCliente" fx:id="btnCadastroCliente" mnemonicParsing="false" onAction="#CadastroCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Cliente" />
                         <Button id="btnConsultaCliente" fx:id="btnConsultaCliente" layoutY="62.0" mnemonicParsing="false" onAction="#ConsultaCliente" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Cliente" />
                         <Button id="btnCadastroFornecedor" fx:id="btnCadastroFornecedor" layoutY="31.0" mnemonicParsing="false" onAction="#CadastroFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Cadastro Fornecedor" />
-                        <Button id="btnConsultaFornecedor" fx:id="btnConsultaFornecedor" layoutY="93.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Fornecedor" />
+                        <Button id="btnConsultaFornecedor" fx:id="btnConsultaFornecedor" layoutY="93.0" mnemonicParsing="false" onAction="#ConsultarFornecedor" prefHeight="35.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Fornecedor" />
                      </children>
                   </Pane>
                </content>

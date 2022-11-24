@@ -39,7 +39,7 @@
                   <content>
                     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="235.0">
                            <children>
-                              <CheckBox fx:id="chkAcaoAventura" mnemonicParsing="false" onAction="#AcaoAventura" prefHeight="41.0" prefWidth="172.0" text="Aventura/Acção" />
+                              <CheckBox fx:id="chkAcaoAventura" layoutY="1.0" mnemonicParsing="false" onAction="#AcaoAventura" prefHeight="41.0" prefWidth="172.0" text="Aventura_Acção" />
                               <CheckBox fx:id="chkAutoajuda" layoutY="41.0" mnemonicParsing="false" onAction="#Autoajuda" prefHeight="41.0" prefWidth="172.0" text="Autoajuda" />
                               <CheckBox fx:id="chkFiccao" layoutY="82.0" mnemonicParsing="false" onAction="#Ficcao" prefHeight="41.0" prefWidth="172.0" text="Ficção Científica" />
                               <CheckBox fx:id="chkTerror" layoutY="205.0" mnemonicParsing="false" onAction="#Terror" prefHeight="41.0" prefWidth="172.0" text="Terror" />
@@ -79,24 +79,24 @@
       <TableView fx:id="tblListagem" layoutX="177.0" layoutY="321.0" prefHeight="475.0" prefWidth="1405.0">
         <columns>
           <TableColumn fx:id="clmSKU" prefWidth="84.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
-          <TableColumn fx:id="clmTitulo" minWidth="8.0" prefWidth="273.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Titulo" />
-            <TableColumn fx:id="clmAutor" minWidth="8.0" prefWidth="300.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Autor" />
-            <TableColumn fx:id="clmEditora" minWidth="8.0" prefWidth="249.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Editora" />
-            <TableColumn fx:id="clmGenero" minWidth="8.0" prefWidth="163.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Gênero" />
-            <TableColumn fx:id="clmISBN" minWidth="0.0" prefWidth="158.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ISBN" />
-            <TableColumn fx:id="clmPreco" minWidth="0.0" prefWidth="92.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preco" />
-            <TableColumn fx:id="clmEstoque" minWidth="0.0" prefWidth="85.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Estoque" />
+          <TableColumn fx:id="clmTitulo" minWidth="8.0" prefWidth="263.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Titulo" />
+            <TableColumn fx:id="clmAutor" minWidth="8.0" prefWidth="279.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Autor" />
+            <TableColumn fx:id="clmEditora" minWidth="8.0" prefWidth="247.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Editora" />
+            <TableColumn fx:id="clmGenero" minWidth="8.0" prefWidth="164.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Gênero" />
+            <TableColumn fx:id="clmISBN" minWidth="0.0" prefWidth="160.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="ISBN" />
+            <TableColumn fx:id="clmPreco" minWidth="0.0" prefWidth="115.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preco" />
+            <TableColumn fx:id="clmEstoque" minWidth="0.0" prefWidth="92.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Estoque" />
         </columns>
       </TableView>
       <TextField fx:id="txtPesquisarLivro" layoutX="177.0" layoutY="275.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
-      <Button fx:id="btnAlterar" layoutX="1265.0" layoutY="280.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="1415.0" layoutY="280.0" mnemonicParsing="false" onAction="#ExcluirProduto" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
-      <ImageView fx:id="imgExcluir" fitHeight="20.0" fitWidth="23.0" layoutX="1510.0" layoutY="286.0">
+      <Button fx:id="btnAlterar" layoutX="1301.0" layoutY="276.0" mnemonicParsing="false" onAction="#AlterarProduto" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="1451.0" layoutY="276.0" mnemonicParsing="false" onAction="#ExcluirProduto" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
+      <ImageView fx:id="imgExcluir" fitHeight="20.0" fitWidth="23.0" layoutX="1546.0" layoutY="282.0">
          <image>
             <Image url="@imagens/icon%20deletar.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="imgAlterar" fitHeight="32.0" fitWidth="32.0" layoutX="1351.0" layoutY="281.0">
+      <ImageView fx:id="imgAlterar" fitHeight="32.0" fitWidth="32.0" layoutX="1387.0" layoutY="277.0">
          <image>
             <Image url="@imagens/icon%20alterar.png" />
          </image>
@@ -196,6 +196,6 @@
             <Button fx:id="IDBotaoHome" layoutX="1057.0" layoutY="15.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="40.0" prefWidth="66.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
-      <Button fx:id="btnRelatorio" layoutX="1461.0" layoutY="804.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="122.0" text="Relatórios" />
+      <Button fx:id="btnRelatorio" layoutX="1158.0" layoutY="276.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="131.0" text="Relatórios" />
    </children>
 </AnchorPane>
