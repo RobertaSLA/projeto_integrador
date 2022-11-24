@@ -35,6 +35,13 @@ public class Endereco {
 		this.complemento = complemento;
 	}
 	
+
+
+	public Endereco(String cep) {
+		super();
+		this.cep = cep;
+	}
+
 	public int getIdEndereco() {
 		return idEndereco;
 	}

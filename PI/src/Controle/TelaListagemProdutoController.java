@@ -181,7 +181,13 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void AcaoAventura(ActionEvent event) {
+    void AcaoAventura(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosGeneroAcaoeAventura("%Aca%", "%Avent%");
+		
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
@@ -251,7 +257,7 @@ public class TelaListagemProdutoController {
     @FXML
     void Autoajuda(ActionEvent event) throws SQLException {
     	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltros("%Auto%");
+		List<Livro> l  = liv.BuscarFiltrosGenero("%Auto%");
 		
 		tblListagem.setItems(FXCollections.observableArrayList(l));
     }
@@ -350,7 +356,11 @@ public class TelaListagemProdutoController {
     }
 
     @FXML
-    void Ficcao(ActionEvent event) {
+    void Ficcao(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosGenero("%Fic%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
     
@@ -370,58 +380,103 @@ public class TelaListagemProdutoController {
     }	
     
     @FXML
-    void Gastronomia(ActionEvent event) {
+    void Gastronomia(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosGenero("%Gastro%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
     
     @FXML
-    void Pesquisar(ActionEvent event) {
+    void Pesquisar(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarLivro("%" + txtPesquisarLivro.getText() + "%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
 
     @FXML
     void PesquisarLivro(ActionEvent event) {
+    }
+
+    @FXML
+    void Romance(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosGenero("%Roman%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Romance(ActionEvent event) {
+    void Terror(ActionEvent event) throws SQLException {
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosGenero("%Terr%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Terror(ActionEvent event) {
+    void Valor1030(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosPreco(10, 30);
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Valor1030(ActionEvent event) {
+    void Valor3050(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosPreco(30, 50);
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Valor3050(ActionEvent event) {
+    void Valor5070(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosPreco(50, 70);
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Valor5070(ActionEvent event) {
+    void Valor7090(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosPreco(70, 90);
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Valor7090(ActionEvent event) {
+    void Valor90110(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosPreco(90, 110);
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
 
     @FXML
-    void Valor90110(ActionEvent event) {
-
-    }
-
-    @FXML
-    void ValorAcima110(ActionEvent event) {
+    void ValorAcima110(ActionEvent event) throws SQLException {
+    	
+    	LivroBD liv = new LivroBD();
+		List<Livro> l  = liv.BuscarFiltrosPrecoAcima110(110);
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
     

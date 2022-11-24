@@ -2,7 +2,10 @@ package Controle;
 
 
 import java.io.IOException;
+
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import Modelo.Cliente;
@@ -72,6 +75,9 @@ public class TelaListagemClientesController {
     
     @FXML
     private Button btnConsultaVenda;
+    
+    @FXML
+    private Button btnConsultarFornecedor;
 
     @FXML
     private Button btnDevolucao;
@@ -286,6 +292,13 @@ public class TelaListagemClientesController {
     void ConsultaVenda(ActionEvent event) {
 
     }
+    
+    @FXML
+    void ConsultarFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaHomePane);
+
+    }
 
     @FXML
     void Devolucao(ActionEvent event) {
@@ -308,8 +321,12 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void PesquisarCliente(ActionEvent event) {
-
+    void Pesquisar(ActionEvent event) throws SQLException {
+    	ClienteBD cli = new ClienteBD();
+		List<Cliente> c  = cli.BuscarCliente("%" + txtPesquisarCliente.getText() + "%");
+		
+		tblListagemCliente.setItems(FXCollections.observableArrayList(c));
+    	
     }
 
     @FXML

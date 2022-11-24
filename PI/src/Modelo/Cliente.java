@@ -33,6 +33,18 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
+	public Cliente(int idCliente, String nome, String telefone, String cpf, Endereco endereco, String email) {
+		super();
+		this.idCliente = idCliente;
+		this.nome = nome;
+		this.telefone = telefone;
+		this.cpf = cpf;
+		this.endereco = endereco;
+		this.email = email;
+	}
+
+
+
 	public Cliente(int idCliente, String nome, String telefone, String cpf, Endereco endereco, String dataNascimento,
 			String sexo, String celular, String email) {
 		super();

@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import Modelo.Fornecedor;
+import Modelo.Livro;
+import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,6 +55,9 @@ public class TelaListagemFornecedorController {
 
     @FXML
     private Button btnConsultaCliente;
+    
+    @FXML
+    private Button btnConsultaFornecedor;
 
     @FXML
     private Button btnConsultaLivro;
@@ -112,7 +117,7 @@ public class TelaListagemFornecedorController {
     private TableView<Fornecedor> tblListagem;
 
     @FXML
-    private TextField txtPesquisarLivro;
+    private TextField txtPesquisarFornecedor;
     
     
     @FXML
@@ -253,6 +258,12 @@ public class TelaListagemFornecedorController {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
     	layoutListagem.getChildren().setAll(telaHomePane);
     }
+    
+    @FXML
+    void ConsultarFornecedor(ActionEvent event) throws IOException {
+    	AnchorPane telaListagemPane = FXMLLoader.load(getClass().getResource("/visao/ConsultarFornecedor.fxml"));
+    	layoutListagem.getChildren().setAll(telaListagemPane);
+    }
 
     @FXML
     void ConsultaVenda(ActionEvent event) throws IOException {
@@ -283,7 +294,11 @@ public class TelaListagemFornecedorController {
     
     
     @FXML
-    void Pesquisar(ActionEvent event) {
+    void Pesquisar(ActionEvent event) throws SQLException {
+    	FornecedorBD forn = new FornecedorBD();
+		List<Fornecedor> l  = forn.BuscarFornecedor("%" + txtPesquisarFornecedor.getText() + "%");
+		
+		tblListagem.setItems(FXCollections.observableArrayList(l));
 
     }
     
@@ -293,7 +308,7 @@ public class TelaListagemFornecedorController {
     }
 
     @FXML
-    void PesquisarLivro(ActionEvent event) {
+    void PesquisarFornecedor(ActionEvent event) {
 
     }
 
