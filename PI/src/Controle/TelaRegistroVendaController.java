@@ -84,6 +84,10 @@ public class TelaRegistroVendaController {
     
     @FXML
     private Button btnCadastroCliente;
+    
+    @FXML
+    private Button btnRelatorio;
+    
     @FXML
     private Button btnVendaConsulta;
 
@@ -188,6 +192,11 @@ public class TelaRegistroVendaController {
 
     @FXML
     void AlterarProduto(ActionEvent event) {
+
+    }
+    
+    @FXML
+    void CriarRelatorio(ActionEvent event) {
 
     }
     
