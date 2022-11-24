@@ -29,7 +29,7 @@ import Modelo.Conexao;
 
 
 
-public class RelatorioDetalheVenda {
+public class RelatorioDetalheCompra {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		

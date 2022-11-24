@@ -29,7 +29,7 @@ import Modelo.Conexao;
 
 
 
-public class RelatorioCliente {
+public class RelatorioFornecedor {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
@@ -44,7 +44,7 @@ public class RelatorioCliente {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioClientes.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\pi\\projeto_integrador\\Relatorios\\RelatorioFornecedor.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -57,7 +57,7 @@ public class RelatorioCliente {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório de Clientes").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório de Fornecedores").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(225, 750, null);
 			
@@ -68,7 +68,7 @@ public class RelatorioCliente {
 			table.setRelativePosition(25, 100, 20, 50);
 			
 			table.addHeaderCell("Nome");
-			table.addHeaderCell("CPF");
+			table.addHeaderCell("CNPJ");
 			table.addHeaderCell("Telefone");
 			table.addHeaderCell("CEP");			
 			
@@ -76,7 +76,7 @@ public class RelatorioCliente {
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select nome, CPF, fone, cep from cliente inner join endereco using (IdEndereco) order by nome;";
+			String query = "select nome, CNPJ, telefone, cep from fornecedor inner join endereco using (IdEndereco) order by nome;";
 			
 			ConexaoBD  connect = new ConexaoBD();
 			PreparedStatement ps = null;
@@ -84,8 +84,8 @@ public class RelatorioCliente {
 			
 			while (rs.next()) {
 			    table.addCell(rs.getString("Nome"));
-			    table.addCell(rs.getString("CPF"));
-			    table.addCell(rs.getString("Fone"));
+			    table.addCell(rs.getString("CNPJ"));
+			    table.addCell(rs.getString("telefone"));
 			    table.addCell(rs.getString("CEP"));
 			}
 			

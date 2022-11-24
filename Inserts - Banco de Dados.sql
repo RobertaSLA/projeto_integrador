@@ -247,3 +247,19 @@ insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, e
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (28, 'Jaxbean', '02-0438804', '0268-0866', '(639) 5557317', 'jsorsbyr@cbc.ca', '(989) 5725416', 8);
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (29, 'Twinder', '99-4828388', '43269-851', '(605) 1616834', 'gphilpottss@census.gov', '(201) 6528447', 9);
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (30, 'Dabfeed', '89-9148912', '60681-1256', '(703) 5890815', 'tambrosit@mayoclinic.com', '(430) 7971788', 10);
+
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (1, 1, 15, 20.00, 138.90);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (2, 2, 18, 27.00, 117.64);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (3, 3, 4, 13.50, 266.06);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (4, 4, 20, 18.75, 153.48);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (5, 5, 28, 24.95, 499.36);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (6, 6, 22, 25.99, 329.63);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (7, 7, 21, 65.22, 375.52);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (8, 8, 26, 10.99, 253.99);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (9, 9, 20, 44.52, 497.41);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (10, 10, 2, 20.65, 204.56);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (11, 11, 21, 19.99, 212.84);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (12, 12, 9, 18.90, 398.18);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (13, 13, 12, 15.20, 146.62);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (14, 14, 24, 11.11, 185.33);
+insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, Quantidade, DescontoItem, ValorItens) values (15, 15, 25, 10.90, 414.88);

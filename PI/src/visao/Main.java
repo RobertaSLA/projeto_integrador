@@ -5,6 +5,7 @@ import java.io.IOException;
 
 import Controle.RelatorioCliente;
 import Controle.RelatorioDetalheVenda;
+import Controle.RelatorioFornecedor;
 import Controle.RelatorioProdutos;
 import Controle.RelatorioProdutosAventura;
 import Controle.RelatorioProdutosGastronomia;
@@ -45,8 +46,11 @@ public class Main extends Application {
 			//RelatorioVendas relatorioVendass = new RelatorioVendas();
 			//relatorioVendass.Relatorio();
 			
-			RelatorioDetalheVenda relatorioDetalhe = new RelatorioDetalheVenda();
-			relatorioDetalhe.Relatorio();
+			//RelatorioDetalheVenda relatorioDetalhe = new RelatorioDetalheVenda();
+			//relatorioDetalhe.Relatorio();
+			
+			RelatorioFornecedor relatorioForn = new RelatorioFornecedor();
+			relatorioForn.Relatorio();
 			
 			Parent rootContainer = FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
             Scene scene = new Scene(rootContainer);
