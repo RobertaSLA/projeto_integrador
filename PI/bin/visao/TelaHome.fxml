@@ -15,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
+<AnchorPane fx:id="idTelaHome" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1604.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaHomeController">
    <children>
       <Pane layoutX="-1.0" layoutY="68.0" prefHeight="934.0" prefWidth="299.0" style="-fx-background-color: e8d6ef;">
          <children>
@@ -113,14 +113,14 @@
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1604.0" style="-fx-background-color: dbb0ea;">
          <children>
-            <TitledPane cache="true" expanded="false" layoutX="232.0" layoutY="27.0" mnemonicParsing="true" prefHeight="154.0" prefWidth="172.0" text="Venda">
+            <TitledPane cache="true" layoutX="232.0" layoutY="27.0" mnemonicParsing="true" prefHeight="154.0" prefWidth="172.0" text="Venda">
                <content>
                   <Pane prefHeight="170.0" prefWidth="203.0">
                      <children>
                         <Button id="btnDevolucao" fx:id="btnDevolucao" layoutY="64.0" mnemonicParsing="false" onAction="#Devolucao" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Devolução" />
                         <Button id="btnConsultaPreco" fx:id="btnConsultaPreco" mnemonicParsing="false" onAction="#ConsultaPreco" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Histórico de Preços" />
                         <Button id="btnConsultaVenda" fx:id="btnHistoricoVenda" layoutY="32.0" mnemonicParsing="false" onAction="#HistoricoVenda" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Venda" />
-                        <Button id="btnVenda" fx:id="btnVenda" layoutY="96.0" mnemonicParsing="false" onAction="#EmissaoRelatorio" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Emissão Relatório" />
+                        <Button id="btnVenda" fx:id="btnConsultaCompra" layoutY="96.0" mnemonicParsing="false" onAction="#ConsultaCompra" prefHeight="32.0" prefWidth="170.0" style="-fx-background-color: dbb0ea;" text="Consulta Compra" />
                      </children>
                   </Pane>
                </content>
