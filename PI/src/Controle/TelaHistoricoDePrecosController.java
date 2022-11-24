@@ -1,7 +1,7 @@
 package Controle;
 
 import java.io.IOException;
-
+import Modelo.HistoricoDePrecos;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -68,19 +68,19 @@ public class TelaHistoricoDePrecosController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<?, ?> clmNomeUsuario;
+    private TableColumn<HistoricoDePrecos, String> clmNomeUsuario;
 
     @FXML
-    private TableColumn<?, ?> clmPrecoAnterior;
+    private TableColumn<HistoricoDePrecos, Float> clmPrecoAnterior;
 
     @FXML
-    private TableColumn<?, ?> clmPrecoAtual;
+    private TableColumn<HistoricoDePrecos, Float> clmPrecoAtual;
 
     @FXML
-    private TableColumn<?, ?> clmSKU;
+    private TableColumn<HistoricoDePrecos, Integer> clmSKU;
 
     @FXML
-    private TableColumn<?, ?> clmTituloLivro;
+    private TableColumn<HistoricoDePrecos, String> clmTituloLivro;
 
     @FXML
     private TableColumn<?, ?> clmUltimaAlteracao;

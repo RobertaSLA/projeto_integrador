@@ -7,9 +7,23 @@ public class HistoricoDePrecos {
 	
 	private int idHistoricoDePrecos;
 	private int skuLivro;
-	private Date dataAlteracao;
-	private ArrayList<LivroHistoricodePrecos> listaitens = new ArrayList<LivroHistoricodePrecos>();
+	private String livro;
+	private String isbn;
+	private float precoAnterior;
+	private float precoAtual;
+	private String dataAlteracao;
 	
+	
+	public HistoricoDePrecos(int skuLivro, String livro, String isbn, float precoAnterior, float precoAtual,
+			String dataAlteracao) {
+		super();
+		this.skuLivro = skuLivro;
+		this.livro = livro;
+		this.isbn = isbn;
+		this.precoAnterior = precoAnterior;
+		this.precoAtual = precoAtual;
+		this.dataAlteracao = dataAlteracao;
+	}
 	
 	public int getIdHistoricoDePrecos() {
 		return idHistoricoDePrecos;
@@ -23,18 +37,36 @@ public class HistoricoDePrecos {
 	public void setSkuLivro(int skuLivro) {
 		this.skuLivro = skuLivro;
 	}
-	public Date getDataAlteracao() {
+	public String getLivro() {
+		return livro;
+	}
+	public void setLivro(String livro) {
+		this.livro = livro;
+	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
+	public float getPrecoAnterior() {
+		return precoAnterior;
+	}
+	public void setPrecoAnterior(float precoAnterior) {
+		this.precoAnterior = precoAnterior;
+	}
+	public float getPrecoAtual() {
+		return precoAtual;
+	}
+	public void setPrecoAtual(float precoAtual) {
+		this.precoAtual = precoAtual;
+	}
+	public String getDataAlteracao() {
 		return dataAlteracao;
 	}
-	public void setDataAlteracao(Date dataAlteracao) {
+	public void setDataAlteracao(String dataAlteracao) {
 		this.dataAlteracao = dataAlteracao;
-	}
-	public ArrayList<LivroHistoricodePrecos> getListaitens() {
-		return listaitens;
-	}
-	public void setListaitens(ArrayList<LivroHistoricodePrecos> listaitens) {
-		this.listaitens = listaitens;
-	}
+	}	
 	
 	
 }

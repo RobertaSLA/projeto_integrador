@@ -176,17 +176,19 @@ public class TelaVendaController {
     @FXML
     private Button btnConsultaFornecedor;
     
-    private Float ValorTotal;
+    private Float valorTotal;
     
-    private Float ValorItem;
+    private Float valorItem;
     
-    private Float ValorDesconto;
+    private Float valorDesconto;
     
-    private Float Valor;
+    private Float valor;
     
     private Venda venda = new Venda();
     
 	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
+
+	private int estoque;
 
     @FXML
     void ActionBotaoHome(ActionEvent event) throws IOException {
@@ -346,24 +348,27 @@ public class TelaVendaController {
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
     	if (livro.getEstoque() > Integer.parseInt(txtQuantidade.getText())) {
-    		Valor = (livro.getPreco() - Float.parseFloat(txtDesconto.getText())) * Integer.parseInt(txtQuantidade.getText());
+    		estoque = livro.getEstoque() - Integer.parseInt(txtQuantidade.getText());
+    		livro.setEstoque(estoque);
+    		
+    		valor = (livro.getPreco() - Float.parseFloat(txtDesconto.getText())) * Integer.parseInt(txtQuantidade.getText());
         	
         	LivroVenda livenda = new LivroVenda(livro, venda, Integer.parseInt(txtQuantidade.getText()),
-        			Float.parseFloat(txtDesconto.getText()), Valor);
+        			Float.parseFloat(txtDesconto.getText()), valor);
         	
         	listaitens.add(livenda);
         	
         	tblVenda.setItems(FXCollections.observableArrayList(listaitens));
         	
-        	ValorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
+        	valorItem = (livro.getPreco()- Float.parseFloat(txtDesconto.getText()))*Integer.valueOf(txtQuantidade.getText());
         
-        	ValorTotal = ValorItem + Float.parseFloat(txtValorTotal.getText());
+        	valorTotal = valorItem + Float.parseFloat(txtValorTotal.getText());
         	
-        	ValorDesconto = Float.parseFloat(txtDescontos.getText()) + Float.parseFloat(txtDesconto.getText());
+        	valorDesconto = Float.parseFloat(txtDescontos.getText()) + Float.parseFloat(txtDesconto.getText());
         	
         	
-        	txtValorTotal.setText(String.valueOf(ValorTotal));
-        	txtDescontos.setText(String.valueOf(ValorDesconto));
+        	txtValorTotal.setText(String.valueOf(valorTotal));
+        	txtDescontos.setText(String.valueOf(valorDesconto));
         	txtCodProduto.setText(null);
         	txtDescriçãoProduto.setText(null);
         	txtDesconto.setText(null);
