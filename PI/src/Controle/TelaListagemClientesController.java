@@ -252,7 +252,7 @@ public class TelaListagemClientesController {
     void ConsultaCliente(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
     	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemClientes.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1601, 837);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 837);
         Stage stage = new Stage();
         stage.setResizable(false);
         stage.setScene(scene);
@@ -263,7 +263,7 @@ public class TelaListagemClientesController {
     void ConsultaLivro(ActionEvent event) throws IOException {
     	FXMLLoader fxmlLoader = new FXMLLoader();
     	fxmlLoader.setLocation(getClass().getResource("/visao/ListagemProdutos.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 1601, 858);
+        Scene scene = new Scene(fxmlLoader.load(), 800, 858);
         Stage stage = new Stage();
         stage.setResizable(false);
         stage.setScene(scene);

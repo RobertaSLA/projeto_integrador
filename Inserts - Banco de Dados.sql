@@ -227,24 +227,6 @@ insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (14,
 insert into Compra (IdCompra, Quantidade, Valor, IdFornecedor, Data) values (15, 25, 414.88, 15, '12/08/2022');
 
 
-
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 1, 138.90);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 2, 123.56);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 3, 125.65);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (358, 4, 123.89);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 5, 45.96);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 6, 45.89);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 7, 74.89);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (380, 8, 156.99);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 9, 125.99);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 10, 125.96);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 11, 125.69);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (384, 12, 125.98);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (565, 13, 45.89);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (565, 14, 145.90);
-insert into Livro_has_HistoricoDePrecos (HistoricoDePrecos_IdHistoricoDePrecos, Livro_SKU, Preco) values (586, 15, 458.93);
-
-
 insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (1, 1, 15, 138.90, 2083.50);
 insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (2, 2, 18, 117.64, 2117.52);
 insert into Livro_has_Compra (Livro_SKU, Compra_IdCompra, Quantidade, ValorItem, ValorTotal) values (3, 3, 4, 266.06, 1064.24);

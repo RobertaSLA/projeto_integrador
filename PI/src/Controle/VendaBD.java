@@ -163,4 +163,24 @@ public class VendaBD {
 			return venda;
 	}
 		
+		public void AtualizarVenda(float valor, int sku) throws SQLException {
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				String sql = "update venda set Valor = ? where idVenda = ?";
+				
+				PreparedStatement stmt = con.prepareStatement(sql);
+				
+				stmt.setInt(2, sku);
+				stmt.setFloat(1, valor);
+			
+				stmt.executeUpdate();
+				
+				stmt.close(); 
+				con.close();
+				
+			}catch (SQLException e){
+				throw new SQLException(e);
+			}
+		}
+		
 }

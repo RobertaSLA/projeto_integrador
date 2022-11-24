@@ -32,7 +32,6 @@ public class HistoricoDePrecosBD {
 			stmt.execute();
 			stmt.close(); 
 			con.close();
-			JOptionPane.showMessageDialog(null, "Historico cadastrado com sucesso");
 			
 		} catch (SQLException e){
 			throw new SQLException(e);

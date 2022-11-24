@@ -220,8 +220,7 @@
             <TableColumn fx:id="clmValorFinal" prefWidth="164.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor Final " />
         </columns>
       </TableView>
-      <Button fx:id="btnExcluirItem" layoutX="1433.0" layoutY="404.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
-      <Button fx:id="btnEditarItem" layoutX="1432.0" layoutY="360.0" mnemonicParsing="false" onAction="#ActionEditarItem" prefHeight="32.0" prefWidth="131.0" text="Editar Item" />
+      <Button fx:id="btnExcluirItem" layoutX="1432.0" layoutY="361.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
       <Button fx:id="btnAvancar" layoutX="1432.0" layoutY="670.0" mnemonicParsing="false" onAction="#AvancarVenda" prefHeight="68.0" prefWidth="158.0" text="Avançar Pagamento" textAlignment="CENTER" wrapText="true">
          <font>
             <Font size="16.0" />

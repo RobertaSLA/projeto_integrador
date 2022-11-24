@@ -162,6 +162,10 @@ public class TelaDevolucaoController {
     
     private float valorTotal;
     
+    private int estoque;
+    
+    private float valorVenda;
+    
     private ArrayList<LivroDevolucao> listaitens = new ArrayList<LivroDevolucao>();
     
     @FXML
@@ -306,6 +310,9 @@ public class TelaDevolucaoController {
     	LivroBD liv = new LivroBD();
     	Livro livro = liv.CriarLivro(Integer.valueOf(txtCodProduto.getText()));
     	
+    	estoque = livro.getEstoque() + Integer.parseInt(txtQuantidade.getText());
+		livro.setEstoque(estoque);
+    	
     	valorItens = livro.getPreco() * Integer.parseInt(txtQuantidade.getText());
     	
     	LivroDevolucao livdev = new LivroDevolucao(devolucao, livro, Integer.parseInt(txtQuantidade.getText()),
@@ -440,6 +447,10 @@ public class TelaDevolucaoController {
 
 		VendaBD vendbd = new VendaBD();
 		devolucao.setVenda(vendbd.CriarVenda(Integer.parseInt(txtCodVenda.getText())));
+		
+		valorVenda = devolucao.getVenda().getValor() - Float.parseFloat(txtValorTotal.getText());
+		
+		vendbd.AtualizarVenda(valorVenda, devolucao.getVenda().getIdVenda());
 		
 		DevolucaoBD dev = new DevolucaoBD();
 		dev.InserirDevolucao(devolucao);

@@ -4,7 +4,7 @@ public class Conexao {
 	
 	private static String caminho = "jdbc:mysql://localhost/mydb";
 	private static String usuario = "root";
-	private static String senha = "Cezar16232426";
+	private static String senha = "aluno";
 	
 	public static String getCaminho() {
 		return caminho;

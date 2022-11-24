@@ -78,9 +78,7 @@ public class VendedorBD{
 			
 			stmt.close(); 
 			con.close();
-			
-			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
-			
+						
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
