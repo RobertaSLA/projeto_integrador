@@ -76,7 +76,7 @@ public class TelaCadastroClienteController {
 
     @FXML
     void AdicionarCEP(ActionEvent event) {
-
+    	
     }
 
     @FXML
@@ -149,6 +149,16 @@ public class TelaCadastroClienteController {
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();
     	stage.close();
+    }
+    
+    @FXML
+    public void initialize() throws SQLException {
+		MascarasFX.mascaraCEP(txtCEP);
+		MascarasFX.mascaraCPF(txtCPF);
+		MascarasFX.mascaraEmail(txtEmail);
+		MascarasFX.mascaraTelefone(txtFone);
+		MascarasFX.mascaraTelefone(txtCelular);
+
     }
 
 }

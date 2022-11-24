@@ -1,13 +1,11 @@
-import javafx.beans.value.ObservableValue;
-import javafx.scene.control.DatePicker;
+package Controle;
+
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyEvent;
 
 public class MascarasFX {
 
     public static void mascaraCEP(TextField textField){
-
-        String val = "";
 
         textField.setOnKeyTyped((KeyEvent event) -> {
             if("0123456789".contains(event.getCharacter())==false){

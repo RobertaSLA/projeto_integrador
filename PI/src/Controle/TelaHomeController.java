@@ -1,12 +1,17 @@
 package Controle;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.List;
 
+import Modelo.Cliente;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -20,6 +25,9 @@ public class TelaHomeController {
 
     @FXML
     private Button btnConsultaPreco;
+    
+    @FXML
+    private Button btnConsultaCompra;
 
     @FXML
     private Button btnAcessoVenda;
@@ -179,6 +187,12 @@ public class TelaHomeController {
     }
     
     @FXML
+    void ConsultaCompra(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/RegistroCompra.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
+    }
+    
+    @FXML
     void ConsultarFornecedor(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemFornecedor.fxml"));
     	idTelaHome.getChildren().setAll(telaHomePane);
@@ -200,6 +214,7 @@ public class TelaHomeController {
     void EmissaoRelatorio(ActionEvent event) throws IOException {
   
     }
+    
 
 }
 
