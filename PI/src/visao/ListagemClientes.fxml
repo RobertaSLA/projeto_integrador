@@ -159,14 +159,14 @@
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Button fx:id="btnAlterar" layoutX="1208.0" layoutY="209.0" mnemonicParsing="false" onAction="#ActionAlterarCliente" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="1359.0" layoutY="209.0" mnemonicParsing="false" onAction="#ActionExcluirCliente" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
-      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="1364.0" layoutY="215.0">
+      <Button fx:id="btnAlterar" layoutX="1213.0" layoutY="214.0" mnemonicParsing="false" onAction="#ActionAlterarCliente" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="1359.0" layoutY="214.0" mnemonicParsing="false" onAction="#ActionExcluirCliente" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
+      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="1452.0" layoutY="220.0">
          <image>
             <Image url="@imagens/icon%20deletar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1208.0" layoutY="209.0">
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1304.0" layoutY="214.0">
          <image>
             <Image url="@imagens/icon%20alterar.png" />
          </image>
@@ -176,6 +176,6 @@
             <Image url="@imagens/icon%20procurar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnRelatorio" layoutX="1376.0" layoutY="791.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="115.0" text="Relatórios" />
+      <Button fx:id="btnRelatorio" layoutX="1066.0" layoutY="214.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="131.0" text="Relatórios" />
    </children>
 </AnchorPane>
