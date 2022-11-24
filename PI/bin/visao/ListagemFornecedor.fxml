@@ -41,7 +41,7 @@
                   </Pane>
                </content>
             </TitledPane>
-            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="185.0" prefWidth="172.0" text="Pessoa">
+            <TitledPane expanded="false" layoutX="434.0" layoutY="27.0" prefHeight="154.0" prefWidth="172.0" text="Pessoa">
                <content>
                   <Pane prefHeight="123.0" prefWidth="203.0">
                      <children>
