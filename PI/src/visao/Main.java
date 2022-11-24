@@ -12,6 +12,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import Controle.RelatorioDetalheCompra;
 
 
 
@@ -20,6 +21,10 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		
 		try {
+			
+			RelatorioDetalheCompra relatorioCompra = new RelatorioDetalheCompra();
+			relatorioCompra.Relatorio(0);
+			
 			
 			Parent rootContainer = FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
             Scene scene = new Scene(rootContainer);

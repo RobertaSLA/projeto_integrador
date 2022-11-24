@@ -66,12 +66,12 @@ public class RelatorioVenda {
 			table.setWidth(500);
 			table.setRelativePosition(25, 100, 20, 50);
 			
-			table.addHeaderCell("ID").setFont(fonte);
-			table.addHeaderCell("Cliente").setFont(fonte);
-			table.addHeaderCell("Vendedor").setFont(fonte);
-			table.addHeaderCell("Valor").setFont(fonte);
-			table.addHeaderCell("Método").setFont(fonte);
-			table.addHeaderCell("Data").setFont(fonte);
+			table.addHeaderCell("ID");
+			table.addHeaderCell("Cliente");
+			table.addHeaderCell("Vendedor");
+			table.addHeaderCell("Valor");
+			table.addHeaderCell("Método");
+			table.addHeaderCell("Data");
 			
 			
 			Connection con = ConexaoBD.Conexao_BD();
