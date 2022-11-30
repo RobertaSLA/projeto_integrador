@@ -4,6 +4,8 @@ package Controle;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import Modelo.Cliente;
 import Modelo.Endereco;
 import javafx.event.ActionEvent;
@@ -133,22 +135,28 @@ public class TelaCadastroClienteController {
 
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException, IOException {
-    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), 
-    			txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
     	
+    	if (Validacao.ValidaCPF(txtCPF.getText()) == true) {
+    		Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), 
+        			txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+        	
+        	
+        	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), 
+        			end, String.valueOf(DatePickerDataNascimento.getValue()), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
+        	
+        	EnderecoBD endbd = new EnderecoBD();
+        	endbd.InserirEndereco(end);
+        	
+        	ClienteBD clibd = new ClienteBD();
+        	clibd.InserirCliente(cli);
+        	
+        	Node source = (Node) event.getSource();
+        	Stage stage = (Stage) source.getScene().getWindow();
+        	stage.close();
+    	} else {
+    		JOptionPane.showMessageDialog(null, "O CPF informado é inválido");
+    	}
     	
-    	Cliente cli = new Cliente(txtNome.getText(), txtFone.getText(), txtCPF.getText(), 
-    			end, String.valueOf(DatePickerDataNascimento.getValue()), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
-    	
-    	EnderecoBD endbd = new EnderecoBD();
-    	endbd.InserirEndereco(end);
-    	
-    	ClienteBD clibd = new ClienteBD();
-    	clibd.InserirCliente(cli);
-    	
-    	Node source = (Node) event.getSource();
-    	Stage stage = (Stage) source.getScene().getWindow();
-    	stage.close();
     }
     
     @FXML
