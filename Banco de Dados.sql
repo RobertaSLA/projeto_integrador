@@ -207,6 +207,27 @@ CREATE TABLE IF NOT EXISTS `mydb`.`HistoricoDePrecos` (
 ENGINE = InnoDB;
 
 -- -----------------------------------------------------
+-- Table `mydb`.`Fornecedor`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
+  `idFornecedor` INT AUTO_INCREMENT,
+  `Nome` VARCHAR(50) NULL,
+  `CNPJ` CHAR(20) NOT NULL,
+  `Inscricao_Estadual` CHAR(15) NOT NULL,
+  `Celular` CHAR(15) NULL,
+  `Email` VARCHAR (100) NULL,
+  `Telefone` VARCHAR(15)  NULL,
+  `IdEndereco` INT NOT NULL,
+  INDEX `fk_fornecedor_idFornecedor_idx` (`idFornecedor`),
+  FOREIGN KEY (`IdEndereco`)
+  REFERENCES `mydb`.`Endereco` (`IdEndereco`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  PRIMARY KEY (`idFornecedor`),
+  UNIQUE INDEX `idFornecedor_UNIQUE` (`IdFornecedor` ASC))
+ENGINE = InnoDB;
+
+-- -----------------------------------------------------
 -- Table `mydb`.`Compra`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Compra` (
@@ -295,26 +316,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Livro_has_Venda` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Table `mydb`.`Fornecedor`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Fornecedor` (
-  `idFornecedor` INT AUTO_INCREMENT,
-  `Nome` VARCHAR(50) NULL,
-  `CNPJ` CHAR(20) NOT NULL,
-  `Inscricao_Estadual` CHAR(15) NOT NULL,
-  `Celular` CHAR(15) NULL,
-  `Email` VARCHAR (100) NULL,
-  `Telefone` VARCHAR(15)  NULL,
-  `IdEndereco` INT NOT NULL,
-  INDEX `fk_fornecedor_idFornecedor_idx` (`idFornecedor`),
-  FOREIGN KEY (`IdEndereco`)
-  REFERENCES `mydb`.`Endereco` (`IdEndereco`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  PRIMARY KEY (`idFornecedor`),
-  UNIQUE INDEX `idFornecedor_UNIQUE` (`IdFornecedor` ASC))
-ENGINE = InnoDB;
+
 
 
 
