@@ -80,6 +80,7 @@
                   <Font size="15.0" />
                </font>
             </Text>
+            <Button fx:id="btnExcluirItem" layoutX="1377.0" layoutY="273.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
          </children>
       </Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
@@ -171,7 +172,7 @@
             <Button fx:id="IDBotaoHome" layoutX="1046.0" layoutY="13.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="45.0" prefWidth="81.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
-      <Pane layoutY="758.0" prefHeight="82.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
+      <Pane layoutY="757.0" prefHeight="83.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
             <TextField fx:id="txtValorTotal" alignment="CENTER" layoutX="1459.0" layoutY="24.0" onAction="#ValorTotal" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0.00">
                <font>
@@ -181,12 +182,12 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <Text layoutX="1465.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
+            <Text layoutX="1465.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor Total">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
-            <TextField fx:id="txtQtdItens" alignment="CENTER" layoutX="1296.0" layoutY="24.0" onAction="#QuantidadeItensVenda" prefHeight="47.0" prefWidth="117.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0">
+            <TextField fx:id="txtQtdItens" alignment="CENTER" layoutX="1302.0" layoutY="24.0" onAction="#QuantidadeItensVenda" prefHeight="45.0" prefWidth="105.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff; -fx-border-radius: 15; -fx-border-width: 3;" text="0">
                <font>
                   <Font size="22.0" />
                </font>
@@ -194,25 +195,23 @@
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
             </TextField>
-            <Text layoutX="1331.0" layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itens">
+            <Text layoutX="1331.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Itens">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
          </children>
       </Pane>
-      <TableView fx:id="tblCompra" layoutX="75.0" layoutY="341.0" onSort="#TabelaVenda" prefHeight="397.0" prefWidth="1342.0" style="-fx-background-color: ffffff;">
+      <TableView fx:id="tblCompra" layoutX="75.0" layoutY="341.0" onSort="#TabelaVenda" prefHeight="397.0" prefWidth="1269.0" style="-fx-background-color: ffffff;">
         <columns>
-          <TableColumn fx:id="clmItem" prefWidth="141.0" style="-fx-border-color: ffffff; -fx-background-color: dbb0ea;" text="Item" />
           <TableColumn fx:id="clmSKUCompra" prefWidth="155.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
-            <TableColumn fx:id="clmTituloCompra" prefWidth="565.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
-            <TableColumn fx:id="clmQuantidadeItem" prefWidth="144.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
-            <TableColumn fx:id="clmValorUnitario" prefWidth="174.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor UN" />
-            <TableColumn fx:id="clmValorTotalItem" prefWidth="162.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor Total Item" />
+            <TableColumn fx:id="clmTituloCompra" prefWidth="622.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
+            <TableColumn fx:id="clmQuantidadeItem" prefWidth="146.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
+            <TableColumn fx:id="clmValorUnitario" prefWidth="173.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor UN" />
+            <TableColumn fx:id="clmValorTotalItem" prefWidth="172.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor Total Item" />
         </columns>
       </TableView>
-      <Button fx:id="btnExcluirItem" layoutX="1432.0" layoutY="361.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />
-      <Button fx:id="btnConfirmarCompra" layoutX="1429.0" layoutY="682.0" mnemonicParsing="false" onAction="#ConfimarCompra" prefHeight="56.0" prefWidth="158.0" text="Confirmar Compra">
+      <Button fx:id="btnConfirmarCompra" layoutX="1399.0" layoutY="682.0" mnemonicParsing="false" onAction="#ConfimarCompra" prefHeight="56.0" prefWidth="158.0" text="Confirmar Compra">
          <font>
             <Font size="16.0" />
          </font>
