@@ -136,7 +136,7 @@ public class TelaCadastroClienteController {
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException, IOException {
     	
-    	if (Validacao.ValidaCPF(txtCPF.getText()) == true) {
+    	if (Validacao.ValidaCPF(txtCPF.getText().replaceAll("[^0-9]", "")) == true) {
     		Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getValue(), txtCidade.getText(), 
         			txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
         	

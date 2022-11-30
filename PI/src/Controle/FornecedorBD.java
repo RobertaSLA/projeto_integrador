@@ -20,7 +20,7 @@ public class FornecedorBD {
 	public void InserirFornecedor(Fornecedor fornecedor) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "insert into fornecedor (Nome, CNPJ, Inscricao_Estadual, Fone, Celular, Email, idEndereco) values (?, ?, ?, ?, ?, ?, ?);";
+			String sql = "insert into fornecedor (Nome, CNPJ, Inscricao_Estadual, Telefone, Celular, Email, idEndereco) values (?, ?, ?, ?, ?, ?, ?);";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			

@@ -3,6 +3,8 @@ package Controle;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import Modelo.Endereco;
 import Modelo.Fornecedor;
 import javafx.event.ActionEvent;
@@ -139,14 +141,21 @@ public class TelaCadastroFornecedorController {
 
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException {
-    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getTypeSelector(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
-    	Fornecedor forn = new Fornecedor(txtNomeFant.getText(), txtCNPJ.getText(), txtInscEstd.getText(), txtFone.getText(), txtCelular.getText(), txtEmail.getText(), end);
     	
-    	EnderecoBD endbd = new EnderecoBD();
-    	endbd.InserirEndereco(end);
-    	
-    	FornecedorBD forbd = new FornecedorBD();
-    	forbd.InserirFornecedor(forn);
+    	if (Validacao.ValidaCNPJ(txtCNPJ.getText().replaceAll("[^0-9]", "")) == true){
+    		Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getTypeSelector(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+        	Fornecedor forn = new Fornecedor(txtNomeFant.getText(), txtCNPJ.getText(), txtInscEstd.getText(), txtFone.getText(), txtCelular.getText(), txtEmail.getText(), end);
+        	
+        	EnderecoBD endbd = new EnderecoBD();
+        	endbd.InserirEndereco(end);
+        	
+        	FornecedorBD forbd = new FornecedorBD();
+        	forbd.InserirFornecedor(forn);
+        	
+        	
+    	} else {
+    		JOptionPane.showMessageDialog(null, "O CNPJ informado é inválido");
+    	}
     	
     }
     
