@@ -78,7 +78,7 @@ public class LivroBD {
 			stmt.close(); 
 			con.close();
 			
-			JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
+			JOptionPane.showMessageDialog(null, "Livro atualizado com sucesso");
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}

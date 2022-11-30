@@ -114,7 +114,8 @@ public class TelaFormaPagamentoController {
 	public void setVenda(Venda venda) {
 		this.venda = venda;
 		txtValorTotalPagamento.setText(String.valueOf(venda.getValor()));
-
+		txtValorRecebido.setText(String.valueOf(venda.getValor()));
+		txtValorTroco.setText("0.00");
 	}
 
 }

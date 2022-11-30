@@ -63,7 +63,7 @@ public class ClienteBD {
 		}
 	}
 	
-	public void AtualizarLivro(Cliente cliente) throws SQLException {
+	public void AtualizarCliente(Cliente cliente) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
 			String sql = "update cliente set Nome = ?, CPF = ?, DataNascimento = ?, Sexo = ?, Fone = ?, Celular = ? where idCliente = ?";
@@ -83,7 +83,7 @@ public class ClienteBD {
 			stmt.close(); 
 			con.close();
 			
-			JOptionPane.showMessageDialog(null, "Atualizado com sucesso");
+			JOptionPane.showMessageDialog(null, " Cliente Atualizado com sucesso");
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
@@ -177,7 +177,6 @@ public class ClienteBD {
 			stmt.close(); 
 			con.close();
 			
-			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
 			
 		}catch (SQLException e){
 			throw new SQLException(e);

@@ -45,7 +45,7 @@ public class FornecedorBD {
 	public void DeletarFornecedor(Fornecedor fornecedor) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "delete from fornecedor where IdFornecedor = ? ";
+			String sql = "delete from fornecedor where IdFornecedor = ?";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			

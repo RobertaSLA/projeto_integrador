@@ -272,6 +272,3 @@ insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoI
 insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (11, 11, 21, 19.99, 212.84);
 insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (12, 12, 9, 18.90, 398.18);
 insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (13, 13, 12, 15.20, 146.62);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (14, 14, 24, 11.11, 185.33);
-insert into Livro_has_Venda (Livro_SKU, Venda_idVenda, QuantidadeItem, DescontoItem, ValorItens) values (15, 15, 25, 10.90, 414.88);
-

@@ -201,7 +201,7 @@ public class MascarasFX {
 
                 if(textField.getText().length()==14) event.consume();
 
-                if(textField.getText().length()==0){
+                if(textField.getText().length()==1){
                     textField.setText("("+event.getCharacter());
                     textField.positionCaret(textField.getText().length());
                     event.consume();

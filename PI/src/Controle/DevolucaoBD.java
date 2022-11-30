@@ -55,7 +55,7 @@ public class DevolucaoBD {
 			stmt.execute();
 			stmt.close(); 
 			con.close();
-			JOptionPane.showMessageDialog(null, "Devolucao cadastrada com sucesso");
+			JOptionPane.showMessageDialog(null, "Devolucao realizada com sucesso");
 			
 		} catch (SQLException e){
 			throw new SQLException(e);

@@ -163,7 +163,7 @@ public class TelaEditarClienteController {
     			date.toString(), ChoiceBoxSexo.getValue(), txtCelular.getText(), txtEmail.getText());
     	
     	ClienteBD clibd = new ClienteBD();
-    	clibd.AtualizarLivro(cli);
+    	clibd.AtualizarCliente(cli);
     	
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemClientes.fxml"));
     	telaCadastroPane.getChildren().setAll(telaHomePane);
