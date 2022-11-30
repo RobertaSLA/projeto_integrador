@@ -1,4 +1,4 @@
-USE MYDB;
+	USE MYDB;
 insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (1, '61715-032', 'SP', 'Morani', 'Barby', '887 Portage Terrace', '746', 'Circle');
 insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (2, '43857-0041', 'SC', 'Sambungjaya', 'Mitchell', '485 Buena Vista Court', '8545', 'Lane');
 insert into Endereco (IdEndereco, CEP, UF, Cidade, Bairro, Endereco, Numero, Complemento) values (3, '43538-501', 'PE', 'Tamanar', 'Cardinal', '3 Rieder Junction', '4', 'Avenue');
@@ -204,11 +204,36 @@ insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Mot
 insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (4, 4, 4, 'Curabitur at ipsum ac tellus semper interdum.', '08/02/2022');
 insert into Devolucao (codDevolucao, Venda_idVenda, Venda_Cliente_idCliente, Motivo, Data) values (5, 5, 5, 'Morbi non lectus.', '02/09/2021');
 
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (586, '23/07/2022');
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (380, '20/03/2022');
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (358, '11/05/2022');
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (384, '24/04/2022');
-insert into HistoricoDePrecos (IdHistoricoDePrecos, DataAlteracao) values (565, '09/09/2021');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (1, 'Interkosmos', 1, '598637253-0', 438.73, 469.88, '12/05/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (2, 'Home Run', 2, '489831530-5', 91.14, 467.56, '23/04/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (3, 'Last Chance: Diary of Comedians, The (Bokutachi no koukan nikki)', 3, '187199228-1', 197.07, 449.5, '12/01/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (4, 'Pokémon Heroes', 4, '431348832-4', 119.12, 276.91, '19/04/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (5, 'Return of a Man Called Horse, The', 5, '315483685-3', 280.45, 233.13, '24/10/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (6, 'Hearts and Minds', 6, '152906687-5', 32.8, 232.75, '02/08/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (7, 'Disfigured', 7, '345805855-9', 106.18, 168.95, '04/11/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (8, 'Who''s Your Daddy?', 8, '369306375-3', 236.04, 338.02, '20/01/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (9, 'Conversations with My Gardener (Dialogue avec mon jardinier)', 9, '727108587-4', 305.07, 272.58, '15/06/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (10, 'Toward the Unknown', 10, '036407307-1', 105.31, 306.65, '14/09/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (11, 'Fool''s Gold', 11, '067074677-0', 304.54, 206.59, '20/06/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (12, 'Back to the Beach', 12, '940184862-9', 273.16, 177.83, '22/08/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (13, 'Eden', 13, '512542569-9', 390.93, 283.21, '28/09/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (14, 'Spy Kids 3-D: Game Over', 14, '563294288-0', 400.28, 402.93, '10/08/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (15, 'Pepi, Luci, Bom (Pepi, Luci, Bom y Otras Chicas del Montón)', 15, '109613982-0', 415.04, 282.76, '02/11/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (16, 'Sometimes Happiness, Sometimes Sorrow (Kabhi Khushi Kabhie Gham)', 16, '235299271-0', 153.23, 60.63, '29/12/2021');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (17, 'Temple Grandin', 17, '879909569-6', 109.84, 23.52, '02/07/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (18, 'Asphyx, The', 18, '868029467-5', 135.51, 230.18, '13/02/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (19, 'Goods: Live Hard, Sell Hard, The', 19, '887300393-1', 407.34, 18.33, '13/07/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (20, 'Scorpio', 20, '727804383-2', 66.2, 365.69, '03/05/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (21, '100 Men and a Girl (One Hundred Men and a Girl)', 21, '890676062-0', 175.32, 326.82, '28/07/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (22, 'Chocolate', 22, '398520688-0', 415.68, 232.61, '23/12/2021');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (23, 'Seasoning House, The', 23, '865637654-3', 487.11, 349.6, '12/02/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (24, 'Elia Kazan: A Director''s Journey', 24, '706205084-9', 135.1, 167.02, '30/11/2021');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (25, 'Wonderful Ice Cream Suit, The', 25, '314272713-2', 63.53, 405.34, '15/11/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (26, 'Bronies: The Extremely Unexpected Adult Fans of My Little Pony', 26, '777824973-1', 432.31, 59.45, '22/03/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (27, 'Derrida', 27, '156113503-8', 246.86, 159.17, '16/08/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (28, '24 Exposures', 28, '208588653-1', 52.79, 377.72, '01/04/2022');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (29, 'Midnight Man', 29, '874406400-4', 80.58, 114.41, '30/12/2021');
+insert into HistoricoDePrecos (IdHistoricoDePrecos, NomeLivro, SKU, ISBN, PrecoAnterior, PrecoAtual, DataAlteracao) values (30, 'Tripper, The', 30, '861943221-4', 312.49, 447.29, '18/04/2022');
 
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (1, 'Edgepulse', '20.242.152/0001-25', '0074-4317', '(629) 2499523', 'dsmyth0@kickstarter.com', '(233) 4942374', 1);
 insert into Fornecedor (idFornecedor, Nome, CNPJ, Inscricao_Estadual, celular, email, telefone, idEndereco) values (2, 'Vitz', '54.896.374/0001-22', '59676-570', '(787) 7881043', 'rmacconnel1@unesco.org', '(866) 2017675', 2);
