@@ -380,8 +380,28 @@ public class TelaListagemProdutoController {
     
     @FXML
     void CriarRelatorio(ActionEvent event) throws FileNotFoundException, MalformedURLException, SQLException {
-    	RelatorioProdutos rel = new RelatorioProdutos();
-    	rel.Relatorio();
+    	if (chkAutoajuda.isSelected() == true) {
+    		RelatorioProdutosAutoAjuda rel = new RelatorioProdutosAutoAjuda();
+        	rel.Relatorio();
+    	} else if (chkAcaoAventura.isSelected() == true) {
+    		RelatorioProdutosAventura rel = new RelatorioProdutosAventura();
+        	rel.Relatorio();
+    	} else if (chkRomance.isSelected() == true) {
+    		RelatorioProdutosRomance rel = new RelatorioProdutosRomance();
+        	rel.Relatorio();
+    	} else if (chkGastronomia.isSelected() == true) {
+    		RelatorioProdutosGastronomia rel = new RelatorioProdutosGastronomia();
+        	rel.Relatorio();
+    	} else if (chkTerror.isSelected() == true) {
+    		RelatorioProdutosTerror rel = new RelatorioProdutosTerror();
+        	rel.Relatorio();
+    	} else if (chkFiccao.isSelected() == true) {
+    		RelatorioProdutosFiccao rel = new RelatorioProdutosFiccao();
+        	rel.Relatorio();
+    	} else {
+    		RelatorioProdutos rel = new RelatorioProdutos();
+    		rel.Relatorio();
+    	}
     }	
     
     @FXML
