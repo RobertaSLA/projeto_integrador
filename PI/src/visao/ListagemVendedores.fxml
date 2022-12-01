@@ -107,12 +107,11 @@
       <TableView fx:id="tblListagemVendedor" layoutX="186.0" layoutY="263.0" prefHeight="521.0" prefWidth="1228.0">
         <columns>
           <TableColumn fx:id="clmCodigo" prefWidth="97.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Código" />
-          <TableColumn fx:id="clmNome" minWidth="8.0" prefWidth="260.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Nome" />
-            <TableColumn fx:id="clmCPF" minWidth="8.0" prefWidth="174.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CPF" />
-            <TableColumn fx:id="clmTelefone" minWidth="8.0" prefWidth="171.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Telefone" />
-            <TableColumn fx:id="clmEmail" minWidth="8.0" prefWidth="220.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="E-mail" />
-            <TableColumn fx:id="clmComissao" minWidth="0.0" prefWidth="139.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Comissão" />
-            <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="166.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
+          <TableColumn fx:id="clmNome" minWidth="8.0" prefWidth="405.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Nome" />
+            <TableColumn fx:id="clmCPF" minWidth="8.0" prefWidth="235.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CPF" />
+            <TableColumn fx:id="clmTelefone" minWidth="8.0" prefWidth="186.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Telefone" />
+            <TableColumn fx:id="clmComissao" minWidth="0.0" prefWidth="133.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Comissão" />
+            <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="171.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
         </columns>
       </TableView>
       <TextField fx:id="txtPesquisarVendedor" layoutX="186.0" layoutY="222.0" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />

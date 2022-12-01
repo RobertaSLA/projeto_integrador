@@ -138,5 +138,6 @@
          </image>
       </ImageView>
       <Button fx:id="btnRelatorio" layoutX="990.0" layoutY="212.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="131.0" text="Relatórios" />
+      <Button layoutX="547.0" layoutY="224.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="47.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>
