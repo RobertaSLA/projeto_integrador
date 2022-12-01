@@ -31,7 +31,7 @@ import Modelo.Conexao;
 
 
 
-public class RelatorioProdutosRomance {
+public class RelatorioProdutosAutoAjuda {
 
 	public void Relatorio() throws FileNotFoundException, SQLException, MalformedURLException {
 		
@@ -46,9 +46,8 @@ public class RelatorioProdutosRomance {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioRomance.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\RelatorioLivrosAutoAjuda.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
-			
 			
 			
 			PdfDocument pdfDocument = new PdfDocument(pdfWriter);
@@ -59,7 +58,7 @@ public class RelatorioProdutosRomance {
 			
 			
 			PdfFont fonte = PdfFontFactory.createFont(FontConstants.HELVETICA_BOLD);
-			Text titulo = new Text("Relatório Produtos (Romance)").setFont(fonte).setFontSize(15);
+			Text titulo = new Text("Relatório Produtos (AutoAjuda)").setFont(fonte).setFontSize(15);
 			Paragraph para1 = new Paragraph().add(titulo);
 			para1.setFixedPosition(190, 750, null);
 			
@@ -81,7 +80,7 @@ public class RelatorioProdutosRomance {
 			
 			String query = "select livro.nome, ISBN, autor.nome, genero, preco,"
 					+ "estoque from livro inner join autor using (idAutor) where "
-					+ "genero like '%Romance%' order by livro.nome;";
+					+ "genero like '%auto%' order by livro.nome;";
 			
 			ConexaoBD  connect = new ConexaoBD();
 			PreparedStatement ps = null;

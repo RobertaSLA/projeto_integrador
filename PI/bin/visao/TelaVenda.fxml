@@ -211,13 +211,12 @@
       </Pane>
       <TableView fx:id="tblVenda" layoutX="73.0" layoutY="361.0" onSort="#TabelaVenda" prefHeight="397.0" prefWidth="1342.0" style="-fx-background-color: ffffff;">
         <columns>
-          <TableColumn fx:id="clmItem" prefWidth="98.0" style="-fx-border-color: ffffff; -fx-background-color: dbb0ea;" text="Item" />
-          <TableColumn fx:id="clmSKUVenda" prefWidth="103.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
-            <TableColumn fx:id="clmTituloVenda" prefWidth="445.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
-            <TableColumn fx:id="clmPrecoVenda" prefWidth="166.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
-            <TableColumn fx:id="clmQuantidadeItem" prefWidth="184.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
-            <TableColumn fx:id="clmDesconto" prefWidth="181.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Desconto" />
-            <TableColumn fx:id="clmValorFinal" prefWidth="164.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor Final " />
+          <TableColumn fx:id="clmSKUVenda" prefWidth="166.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="SKU" />
+            <TableColumn fx:id="clmTituloVenda" prefWidth="499.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Título" />
+            <TableColumn fx:id="clmPrecoVenda" prefWidth="159.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Preço" />
+            <TableColumn fx:id="clmQuantidadeItem" prefWidth="155.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Quantidade" />
+            <TableColumn fx:id="clmDesconto" prefWidth="130.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Desconto" />
+            <TableColumn fx:id="clmValorFinal" prefWidth="232.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Valor Final " />
         </columns>
       </TableView>
       <Button fx:id="btnExcluirItem" layoutX="1432.0" layoutY="361.0" mnemonicParsing="false" onAction="#ExcluirItem" prefHeight="32.0" prefWidth="131.0" text="Excluir Item" />

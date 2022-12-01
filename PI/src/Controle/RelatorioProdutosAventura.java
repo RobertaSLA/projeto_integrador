@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -44,9 +46,8 @@ public class RelatorioProdutosAventura {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\PIIII\\projeto_integrador\\Relatorios\\RelatorioAcaoAventura.pdf";
+			String path = "C:\\Users\\Aluno\\Desktop\\RelatorioAcaoAventura.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
-			
 			
 			
 			PdfDocument pdfDocument = new PdfDocument(pdfWriter);
@@ -104,7 +105,7 @@ public class RelatorioProdutosAventura {
 		
 			document.close();
 						
-			System.out.println("AcaoAventura");
+			JOptionPane.showMessageDialog(null, "Relatorio exportado com sucesso");
 			}
 		
 		catch (Exception e) {

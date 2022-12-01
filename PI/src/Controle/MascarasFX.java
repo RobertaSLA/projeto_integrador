@@ -12,14 +12,14 @@ public class MascarasFX {
                 event.consume();
             }
 
-            if(event.getCharacter().trim().length()==0){ // apagando
+            if(event.getCharacter().trim().length()==0){ 
 
                 if(textField.getText().length()==6){
                     textField.setText(textField.getText().substring(0,5));
                     textField.positionCaret(textField.getText().length());
                 }
 
-            }else{ // escrevendo
+            }else{ 
 
                 if(textField.getText().length()==9) event.consume();
 
@@ -49,7 +49,7 @@ public class MascarasFX {
                 event.consume();
             }
 
-            if(event.getCharacter().trim().length()==0){ // apagando
+            if(event.getCharacter().trim().length()==0){
 
                 if(textField.getText().length()==4){
                     textField.setText(textField.getText().substring(0,3));
@@ -64,7 +64,7 @@ public class MascarasFX {
                     textField.positionCaret(textField.getText().length());
                 }
 
-            }else{ // escrevendo
+            }else{
 
                 if(textField.getText().length()==14) event.consume();
 
@@ -101,7 +101,7 @@ public class MascarasFX {
                 event.consume();
             }
 
-            if(event.getCharacter().trim().length()==0){ // apagando
+            if(event.getCharacter().trim().length()==0){ 
 
                 if(textField.getText().length()==3){
                     textField.setText(textField.getText().substring(0,2));
@@ -120,7 +120,7 @@ public class MascarasFX {
                     textField.positionCaret(textField.getText().length());
                 }
 
-            }else{ // escrevendo
+            }else{
 
                 if(textField.getText().length()==18) event.consume();
 
@@ -179,7 +179,7 @@ public class MascarasFX {
                 event.consume();
             }
 
-            if(event.getCharacter().trim().length()==0){ // apagando
+            if(event.getCharacter().trim().length()==0){
 
                 if(textField.getText().length()==10&&textField.getText().substring(9,10).equals("-")){
                     textField.setText(textField.getText().substring(0,9));
@@ -197,7 +197,7 @@ public class MascarasFX {
                     textField.setText("");
                 }
 
-            }else{ //escrevendo
+            }else{
 
                 if(textField.getText().length()==14) event.consume();
 
