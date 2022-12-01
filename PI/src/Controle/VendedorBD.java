@@ -47,7 +47,7 @@ public class VendedorBD{
 	public void DeletarVendedor(Vendedor vendedor) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "delete from venda where IdVenda = ?";
+			String sql = "delete from vendedor where IdVendedor = ?";
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
@@ -58,7 +58,7 @@ public class VendedorBD{
 			stmt.close(); 
 			con.close();
 			
-			JOptionPane.showMessageDialog(null, "Venda excluída com sucesso");
+			JOptionPane.showMessageDialog(null, "Vendedor excluída com sucesso");
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}

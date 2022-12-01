@@ -3,6 +3,8 @@ package Controle;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
 import Modelo.Endereco;
 import Modelo.Vendedor;
 import javafx.event.ActionEvent;
@@ -130,20 +132,35 @@ public class TelaCadastroVendedorController {
 
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException, IOException {
-    	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getTypeSelector(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
+    	
+    	if (Validacao.ValidaCPF(txtCPF.getText().replaceAll("[^0-9]", "")) == true) {
+    		Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getTypeSelector(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
     	
     	
-    	Vendedor vend = new Vendedor(txtNome.getText(), txtCPF.getText(), String.valueOf(dtDataNascimento.getValue()), ChoiceBoxSexo.getValue(), txtFone.getText(), txtCelular.getText(), txtEmail.getText(), end);
+    		Vendedor vend = new Vendedor(txtNome.getText(), txtCPF.getText(), String.valueOf(dtDataNascimento.getValue()), ChoiceBoxSexo.getValue(), txtFone.getText(), txtCelular.getText(), txtEmail.getText(), end);
     	
-    	EnderecoBD endBD = new EnderecoBD();
-    	endBD.InserirEndereco(end);
+    		EnderecoBD endBD = new EnderecoBD();
+    		endBD.InserirEndereco(end);
     	
-    	VendedorBD vendBD = new VendedorBD();
-    	vendBD.InserirVendedor(vend);
+    		VendedorBD vendBD = new VendedorBD();
+    		vendBD.InserirVendedor(vend);
     	
-    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
-    	telaCadastroPane.getChildren().setAll(telaHomePane);
+    		AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHome.fxml"));
+    		telaCadastroPane.getChildren().setAll(telaHomePane);
+    		
+    	} else {
+    		JOptionPane.showMessageDialog(null, "O CPF informado é inválido");
+    	}
     	
+    }
+    
+    @FXML
+    public void initialize() throws SQLException {
+		MascarasFX.mascaraCEP(txtCEP);
+		MascarasFX.mascaraCPF(txtCPF);
+		MascarasFX.mascaraEmail(txtEmail);
+		MascarasFX.mascaraTelefone(txtFone);
+		MascarasFX.mascaraTelefone(txtCelular);
     }
 
 }

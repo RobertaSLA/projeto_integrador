@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Fornecedor;
+import Modelo.Livro;
 import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -94,9 +95,6 @@ public class TelaListagemVendedoresController {
     private TableColumn<Vendedor, Float> clmComissao;
 
     @FXML
-    private TableColumn<Vendedor, String> clmEmail;
-
-    @FXML
     private TableColumn<Vendedor, String> clmNome;
 
     @FXML
@@ -158,8 +156,11 @@ public class TelaListagemVendedoresController {
     }
 
     @FXML
-    void ActionExcluirVendedor(ActionEvent event) {
-
+    void ActionExcluirVendedor(ActionEvent event) throws SQLException {
+    	VendedorBD vendbd = new VendedorBD();
+    	Vendedor vendedor = tblListagemVendedor.getSelectionModel().getSelectedItem();
+    	tblListagemVendedor.getItems().remove(vendedor);
+    	vendbd.DeletarVendedor(vendedor);
     }
 
     @FXML
@@ -262,7 +263,6 @@ public class TelaListagemVendedoresController {
 		clmNome.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmCPF.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		clmCEP.setCellValueFactory(new PropertyValueFactory<>("cep"));
-		clmEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
 		clmTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));	
 		clmComissao.setCellValueFactory(new PropertyValueFactory<>("comissao"));
 		
