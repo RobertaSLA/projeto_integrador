@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
@@ -15,45 +13,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemClientesController">
+<AnchorPane fx:id="layoutListagem" maxHeight="-Infinity" maxWidth="1648.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="837.0" prefWidth="1601.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controle.TelaListagemClientesController">
    <children>
-      <Pane layoutY="68.0" prefHeight="769.0" prefWidth="249.0" style="-fx-background-color: e3e3e3;">
-         <children>
-            <Text layoutX="60.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Filtro">
-               <font>
-                  <Font size="35.0" />
-               </font>
-            </Text>
-            <ImageView fitHeight="25.0" fitWidth="32.0" layoutX="19.0" layoutY="54.0">
-               <image>
-                  <Image url="@imagens/icon%20filtro.png" />
-               </image>
-            </ImageView>
-            <Accordion layoutY="114.0" prefHeight="264.0" prefWidth="248.0">
-               <panes>
-                  <TitledPane fx:id="filtroCompras" animated="false" prefHeight="282.0" prefWidth="172.0" style="-fx-background-color: #dbb0ea;" text="Compras">
-                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="170.0">
-                           <children>
-                              <CheckBox fx:id="chkValor100" layoutX="-1.0" layoutY="-6.0" mnemonicParsing="false" onAction="#Valor100" prefHeight="41.0" prefWidth="172.0" style="-fx-border-color: ffffff;" text="R$100,00 - R$200,00" />
-                              <CheckBox fx:id="chkValor200" layoutX="-1.0" layoutY="35.0" mnemonicParsing="false" onAction="#Valor200" prefHeight="41.0" prefWidth="172.0" style="-fx-border-color: ffffff;" text="R$200,00 - R$300,00" />
-                              <CheckBox fx:id="chkValor300" layoutX="-1.0" layoutY="76.0" mnemonicParsing="false" onAction="#Valor300" prefHeight="41.0" prefWidth="172.0" style="-fx-border-color: ffffff;" text="R$300,00 - R$500,00" />
-                              <CheckBox fx:id="chkValor500" layoutX="-1.0" layoutY="117.0" mnemonicParsing="false" onAction="#Valor500" prefHeight="41.0" prefWidth="172.0" style="-fx-border-color: ffffff;" text="R$500,00 - R$750,00" />
-                              <CheckBox fx:id="chkValor750" layoutX="-1.0" layoutY="158.0" mnemonicParsing="false" onAction="#Valor750" prefHeight="41.0" prefWidth="172.0" style="-fx-border-color: ffffff;" text="R$750,00 - R$1.000,00" />
-                              <CheckBox fx:id="chkValorAcima1000" layoutX="-1.0" layoutY="199.0" mnemonicParsing="false" onAction="#ValorAcima1000" prefHeight="41.0" prefWidth="172.0" style="-fx-border-color: ffffff;" text="Acima de R$1.000,00" />
-                           </children>
-                        </AnchorPane>
-                     </content>
-                  </TitledPane>
-               </panes>
-            </Accordion>
-            <Button fx:id="btnExcluirFiltro" layoutX="55.0" layoutY="683.0" mnemonicParsing="false" onAction="#ExcluirFiltro" prefHeight="32.0" prefWidth="139.0" text="Excluir Filtros" />
-            <ImageView fx:id="imgExcluir1" fitHeight="20.0" fitWidth="23.0" layoutX="165.0" layoutY="689.0">
-               <image>
-                  <Image url="@imagens/icon%20deletar.png" />
-               </image>
-            </ImageView>
-         </children></Pane>
       <Pane prefHeight="68.0" prefWidth="1601.0" style="-fx-background-color: dbb0ea;">
          <children>
             <TitledPane expanded="false" layoutX="636.0" layoutY="26.0" prefHeight="90.0" prefWidth="172.0" text="Produtos">
