@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import Modelo.Autor;
+import Modelo.Cliente;
 import Modelo.Endereco;
 import Modelo.Livro;
 import Modelo.Venda;
@@ -164,5 +165,36 @@ public class VendedorBD{
 		
 	}
 	
+	public ArrayList<Vendedor> BuscarVendedor(String filtro) throws SQLException {
+		ArrayList<Vendedor> Lista = new ArrayList<Vendedor>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select idVendedor, nome, CPF, fone, comissao, cep "
+					+ "from vendedor inner join endereco using (idendereco) where cpf like ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setString(1, filtro);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Endereco endereco = new Endereco(rs.getString(6));
+				Vendedor ven = new Vendedor(rs.getInt(1), rs.getString(2), rs.getString(3), 
+						rs.getString(4), rs.getFloat(5), endereco, query, query, query);
+				Lista.add(ven);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+	}
 }
 

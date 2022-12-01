@@ -137,5 +137,6 @@
             <Image url="@imagens/icon%20procurar.png" />
          </image>
       </ImageView>
+      <Button fx:id="btnPesquisarVendedor" layoutX="546.0" layoutY="222.0" mnemonicParsing="false" onAction="#btnPesquisarVendedor" prefHeight="32.0" prefWidth="32.0" style="-fx-background-color: trasnparent;" />
    </children>
 </AnchorPane>
