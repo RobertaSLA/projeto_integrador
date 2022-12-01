@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import Modelo.FormaPagamento;
 import Modelo.LivroVenda;
 import Modelo.Venda;
+import Modelo.Vendedor;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +51,8 @@ public class TelaFormaPagamentoController {
 	private String bandeiraCartao = " ";
 	
 	private Float ValorTroco;
+	
+	private Float comissao;
 
     @FXML
     void ConfirmarPagamento(ActionEvent event) throws SQLException {
@@ -64,6 +67,13 @@ public class TelaFormaPagamentoController {
 			LivroBD livbd = new LivroBD();
 			livbd.AtualizarEstoque(lv.getLivro().getSku(), lv.getLivro().getEstoque());
 		}
+    	
+    	VendedorBD vendbd = new VendedorBD();
+    	Vendedor vendedor = vendbd.CriarVendedor(venda.getVendedor().getIdVendedor()); 
+    	
+    	comissao = vendedor.getComissao() + (venda.getValor()*10/100);
+    	
+    	vendbd.AtualizarComissao(vendedor.getIdVendedor(), comissao);
     	
     	Node source = (Node) event.getSource();
     	Stage stage = (Stage) source.getScene().getWindow();

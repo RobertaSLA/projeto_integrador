@@ -108,9 +108,6 @@ public class TelaVendaController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<LivroVenda, Integer> clmItem;
-
-    @FXML
     private TableColumn<LivroVenda, Integer> clmPrecoVenda;
 
     @FXML
@@ -540,7 +537,6 @@ public class TelaVendaController {
     
     @FXML
     public void initialize() throws SQLException { 
-    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
 		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("idCompra"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("nome"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("preco"));

@@ -10,12 +10,18 @@ public class Vendedor {
 	private float comissao;
 	private Endereco endereco;
 	
+	
+	
+	public Vendedor() {
+		super();
+	}
+
+
 	public Vendedor(int idVendedor) {
 		super();
 		this.idVendedor = idVendedor;
 	}
-	
-	
+
 
 	public Vendedor(int idVendedor, String nome) {
 		super();

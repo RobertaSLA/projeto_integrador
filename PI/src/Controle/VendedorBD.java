@@ -86,5 +86,50 @@ public class VendedorBD{
 		
 	}
 	
+	public Vendedor CriarVendedor(int idVendedor) throws SQLException {
+		Vendedor vend = new Vendedor();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idVendedor, comissao from vendedor where idVendedor = " + idVendedor;
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				vend.setIdVendedor(1);
+				vend.setComissao(2);
+			}
+			
+			stmt.close(); 
+			con.close();
+						
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return vend;	
+	}
+	
+	public void AtualizarComissao(int idVendedor, float comissao) throws SQLException {
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			String sql = "update vendedor set comissao = ? where idVendedor = ?";
+			
+			PreparedStatement stmt = con.prepareStatement(sql);
+			
+			stmt.setFloat(1, comissao);
+			stmt.setInt(2, idVendedor);
+		
+			stmt.executeUpdate();
+			
+			stmt.close(); 
+			con.close();
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+	}
+	
 }
 
