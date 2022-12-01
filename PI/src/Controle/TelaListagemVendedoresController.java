@@ -205,7 +205,7 @@ public class TelaListagemVendedoresController {
     @FXML
     public void initialize() throws SQLException {
 		VendedorBD vendbd = new VendedorBD();
-		List<Vendedor> l  = vendbd.BuscarVendedor();
+		List<Vendedor> l  = vendbd.BuscarListagemVendedor();
 		
 		clmCodigo.setCellValueFactory(new PropertyValueFactory<>("idVendedor"));
 		clmNome.setCellValueFactory(new PropertyValueFactory<>("nome"));

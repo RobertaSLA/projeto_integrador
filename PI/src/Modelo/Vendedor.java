@@ -55,7 +55,7 @@ public class Vendedor {
 	}
 
 
-	public Vendedor(int idVendedor, String nome, String cpf, String telefone, float comissao,
+	public Vendedor(int idVendedor, String nome, String cpf, String telefone, String email, float comissao,
 			Endereco endereco) {
 		super();
 		this.idVendedor = idVendedor;
@@ -63,6 +63,7 @@ public class Vendedor {
 		this.cpf = cpf;
 		this.telefone = telefone;
 		this.comissao = comissao;
+		this.email = email;
 		this.endereco = endereco;
 	}
 

@@ -142,17 +142,15 @@ public class VendedorBD{
 			Connection con = ConexaoBD.Conexao_BD();
 			Statement stmt = con.createStatement();
 			
-			String query = "select idVendedor, nome, cpf, endereco.cep, fone, comissao from vendedor inner join endereco"
+			String query = "select idVendedor, nome, cpf, endereco.cep, fone, email, comissao from vendedor inner join endereco "
 					+ "using (idEndereco)";
 			
-			
 			ResultSet rs = stmt.executeQuery(query);
-			
 	
 			while(rs.next()){
 				Endereco end = new Endereco(rs.getString(4));
 				Vendedor vend = new Vendedor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(5),
-						 rs.getFloat(6), end);
+						rs.getString(6), rs.getFloat(7), end);
 				Lista.add(vend);
 			}
 			
