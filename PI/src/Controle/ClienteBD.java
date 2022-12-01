@@ -156,7 +156,7 @@ public class ClienteBD {
 			Connection con = ConexaoBD.Conexao_BD();
 			
 			String query = "select cliente.idCliente, cliente.nome, cliente.CPF, cliente.fone, cliente.email, endereco.cep "
-					+ "from cliente inner join endereco on cliente.idEndereco = endereco.idEndereco where cliente.nome like ?;";
+					+ "from cliente inner join endereco on cliente.idEndereco = endereco.idEndereco where cliente.cpf like ?;";
 			
 			PreparedStatement stmt = con.prepareStatement(query);
 			

@@ -319,7 +319,7 @@ public class TelaListagemClientesController {
     }
 
     @FXML
-    void Pesquisar(ActionEvent event) throws SQLException {
+    void btnPesquisarClientes(ActionEvent event) throws SQLException {
     	ClienteBD cli = new ClienteBD();
 		List<Cliente> c  = cli.BuscarCliente("%" + txtPesquisarCliente.getText() + "%");
 		
