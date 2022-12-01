@@ -104,7 +104,7 @@
             <Button fx:id="IDBotaoHome" layoutX="1058.0" layoutY="14.0" mnemonicParsing="false" onAction="#ActionBotaoHome" prefHeight="47.0" prefWidth="67.0" style="-fx-background-color: transparent;" />
          </children>
       </Pane>
-      <TableView fx:id="tblListagemCliente" layoutX="262.0" layoutY="265.0" prefHeight="521.0" prefWidth="1228.0">
+      <TableView fx:id="tblListagemCliente" layoutX="186.0" layoutY="263.0" prefHeight="521.0" prefWidth="1228.0">
         <columns>
           <TableColumn fx:id="clmCodigo" prefWidth="97.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Código" />
           <TableColumn fx:id="clmNome" minWidth="8.0" prefWidth="260.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Nome" />
@@ -114,29 +114,29 @@
             <TableColumn fx:id="clmCEP" minWidth="0.0" prefWidth="138.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="CEP" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarCliente" layoutX="262.0" layoutY="224.0" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
-      <Text layoutX="662.0" layoutY="161.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Clientes" wrappingWidth="428.7161865234375">
+      <TextField fx:id="txtPesquisarCliente" layoutX="186.0" layoutY="222.0" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar..." />
+      <Text layoutX="586.0" layoutY="157.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Listagem de Clientes" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />
          </font>
       </Text>
-      <Button fx:id="btnAlterar" layoutX="1213.0" layoutY="214.0" mnemonicParsing="false" onAction="#ActionAlterarCliente" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
-      <Button fx:id="btnExcluir" layoutX="1359.0" layoutY="214.0" mnemonicParsing="false" onAction="#ActionExcluirCliente" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
-      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="1452.0" layoutY="220.0">
+      <Button fx:id="btnAlterar" layoutX="1137.0" layoutY="212.0" mnemonicParsing="false" onAction="#ActionAlterarCliente" prefHeight="32.0" prefWidth="131.0" text="Alterar" />
+      <Button fx:id="btnExcluir" layoutX="1283.0" layoutY="212.0" mnemonicParsing="false" onAction="#ActionExcluirCliente" prefHeight="32.0" prefWidth="131.0" text="Excluir" />
+      <ImageView fitHeight="20.0" fitWidth="23.0" layoutX="1376.0" layoutY="218.0">
          <image>
             <Image url="@imagens/icon%20deletar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1304.0" layoutY="214.0">
+      <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1228.0" layoutY="212.0">
          <image>
             <Image url="@imagens/icon%20alterar.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="626.0" layoutY="230.0">
+      <ImageView fitHeight="25.0" fitWidth="23.0" layoutX="550.0" layoutY="228.0">
          <image>
             <Image url="@imagens/icon%20procurar.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnRelatorio" layoutX="1066.0" layoutY="214.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="131.0" text="Relatórios" />
+      <Button fx:id="btnRelatorio" layoutX="990.0" layoutY="212.0" mnemonicParsing="false" onAction="#CriarRelatorio" prefHeight="32.0" prefWidth="131.0" text="Relatórios" />
    </children>
 </AnchorPane>
