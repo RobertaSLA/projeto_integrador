@@ -106,9 +106,6 @@ public class TelaDevolucaoController {
     private Button btnVendaConsulta;
 
     @FXML
-    private TableColumn<LivroDevolucao, Integer> clmItem;
-
-    @FXML
     private TableColumn<LivroDevolucao, Float> clmPrecoVenda;
 
     @FXML
@@ -460,7 +457,6 @@ public class TelaDevolucaoController {
     
     @FXML
     public void initialize() throws SQLException { 
-    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
 		clmSKUVenda.setCellValueFactory(new PropertyValueFactory<>("sku"));
 		clmTituloVenda.setCellValueFactory(new PropertyValueFactory<>("titulo"));
 		clmPrecoVenda.setCellValueFactory(new PropertyValueFactory<>("valor"));
