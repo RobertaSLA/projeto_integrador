@@ -168,7 +168,7 @@ public class ClienteBD {
 	
 			while(rs.next()){
 				Endereco endereco = new Endereco(rs.getString(6));
-				Cliente cli = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(4), rs.getString(3), endereco, rs.getString(5), query, query, query);
+				Cliente cli = new Cliente(rs.getInt(1), rs.getString(2), rs.getString(4), rs.getString(3), endereco, rs.getString(5));
 				Lista.add(cli);
 			}
 			

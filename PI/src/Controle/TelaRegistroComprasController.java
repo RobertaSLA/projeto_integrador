@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import Modelo.Compra;
+import Modelo.Livro;
 import Modelo.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -286,8 +287,12 @@ public class TelaRegistroComprasController {
     }
 
     @FXML
-    void Valor100(ActionEvent event) {
-
+    void Valor100(ActionEvent event) throws SQLException {
+    	
+    	CompraBD com = new CompraBD();
+		List<Compra> l  = com.BuscarFiltrosPreco(100, 200);
+		
+		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     }
 
     @FXML

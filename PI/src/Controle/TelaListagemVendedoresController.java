@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
+import Modelo.Cliente;
 import Modelo.Fornecedor;
 import Modelo.Livro;
 import Modelo.Vendedor;
@@ -268,5 +269,15 @@ public class TelaListagemVendedoresController {
 		
 		tblListagemVendedor.setItems(FXCollections.observableArrayList(l));
 		
+	
 	}
+    
+    @FXML
+    void btnPesquisarVendedor(ActionEvent event) throws SQLException {
+    	VendedorBD ven = new VendedorBD();
+		List<Vendedor> c  = ven.BuscarVendedor("%" + txtPesquisarVendedor.getText() + "%");
+		
+		tblListagemVendedor.setItems(FXCollections.observableArrayList(c));
+
+    }
 }

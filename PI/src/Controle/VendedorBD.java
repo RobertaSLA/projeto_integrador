@@ -184,7 +184,7 @@ public class VendedorBD{
 			while(rs.next()){
 				Endereco endereco = new Endereco(rs.getString(6));
 				Vendedor ven = new Vendedor(rs.getInt(1), rs.getString(2), rs.getString(3), 
-						rs.getString(4), rs.getFloat(5), endereco, query, query, query);
+						rs.getString(4), rs.getFloat(5), endereco);
 				Lista.add(ven);
 			}
 			
@@ -195,6 +195,7 @@ public class VendedorBD{
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
-	}
+		return Lista;
+	}	
 }
 

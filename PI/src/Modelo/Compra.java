@@ -14,6 +14,15 @@ public class Compra {
 	
 	
 	
+	public Compra(int idCompra, Fornecedor fornecedor, int quantidade, float valor, String data) {
+		super();
+		this.idCompra = idCompra;
+		this.fornecedor = fornecedor;
+		this.quantidade = quantidade;
+		this.valor = valor;
+		this.data = data;
+	}
+
 	public Compra() {
 		super();
 	}

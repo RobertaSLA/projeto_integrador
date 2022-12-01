@@ -10,9 +10,11 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import Modelo.Autor;
 import Modelo.Cliente;
 import Modelo.Compra;
 import Modelo.Fornecedor;
+import Modelo.Livro;
 import Modelo.LivroCompra;
 import Modelo.LivroVenda;
 import Modelo.Venda;
@@ -108,6 +110,41 @@ public class CompraBD {
 			throw new SQLException(e);
 		}
 		return compra;
+		
+	}
+	
+	public ArrayList<Compra> BuscarFiltrosPreco(int filtro, int filtro2) throws SQLException {
+		ArrayList<Compra> Lista = new ArrayList<Compra>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select idCompra, quantidade, valor, data, nome "
+					+ "from compra inner join fornecedor using (idfornecedor) where valor between ? and ?;";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			stmt.setInt(1, filtro);
+			stmt.setInt(2, filtro2);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Fornecedor fornecedor = new Fornecedor(rs.getInt(5));
+				Compra com = new Compra(rs.getInt(1), fornecedor, rs.getInt(2), rs.getFloat(3), rs.getString(4));
+				Lista.add(com);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
 		
 	}
 	

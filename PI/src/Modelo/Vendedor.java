@@ -15,6 +15,17 @@ public class Vendedor {
 	
 	
 	
+	public Vendedor(int idVendedor, String nome, String cpf, String telefone, float comissao, Endereco endereco) {
+		super();
+		this.idVendedor = idVendedor;
+		this.nome = nome;
+		this.cpf = cpf;
+		this.telefone = telefone;
+		this.comissao = comissao;
+		this.endereco = endereco;
+	}
+
+
 	public Vendedor() {
 		super();
 	}
