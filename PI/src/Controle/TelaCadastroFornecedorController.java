@@ -18,7 +18,7 @@ import javafx.scene.layout.AnchorPane;
 public class TelaCadastroFornecedorController {
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxUF;
+    private ChoiceBox<String> ChoiceBoxUF;
 
     @FXML
     private Button btnCancelar;

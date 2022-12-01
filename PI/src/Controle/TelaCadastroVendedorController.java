@@ -10,16 +10,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 public class TelaCadastroVendedorController {
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxSexo;
+    private ChoiceBox<String> ChoiceBoxSexo;
 
     @FXML
-    private ChoiceBox<?> ChoiceBoxUF;
+    private ChoiceBox<String> ChoiceBoxUF;
 
     @FXML
     private Button btnCancelar;
@@ -35,6 +36,9 @@ public class TelaCadastroVendedorController {
 
     @FXML
     private TextField txtCEP;
+    
+    @FXML
+    private DatePicker dtDataNascimento;
 
     @FXML
     private TextField txtCPF;
@@ -127,7 +131,9 @@ public class TelaCadastroVendedorController {
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException, IOException {
     	Endereco end = new Endereco(txtCEP.getText(), ChoiceBoxUF.getTypeSelector(), txtCidade.getText(), txtBairro.getText(), txtEndereco.getText(), Integer.parseInt(txtNum.getText()), txtComplemento.getText());
-    	Vendedor vend = new Vendedor(txtNome.getText(), txtCPF.getText(), txtFone.getText(), txtCelular.getText(), end);
+    	
+    	
+    	Vendedor vend = new Vendedor(txtNome.getText(), txtCPF.getText(), String.valueOf(dtDataNascimento.getValue()), ChoiceBoxSexo.getValue(), txtFone.getText(), txtCelular.getText(), txtEmail.getText(), end);
     	
     	EnderecoBD endBD = new EnderecoBD();
     	endBD.InserirEndereco(end);

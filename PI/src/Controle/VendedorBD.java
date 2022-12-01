@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 import Modelo.Autor;
+import Modelo.Endereco;
 import Modelo.Livro;
 import Modelo.Venda;
 import Modelo.Vendedor;
@@ -19,16 +20,19 @@ public class VendedorBD{
 	public void InserirVendedor(Vendedor vendedor) throws SQLException {
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
-			String sql = "insert into vendedor (Nome, CPF, Telefone, Celular, idEndereco) values (?, ?, ?, ?, ?);";
+			String sql = "insert into vendedor (Nome, CPF, DataNascimento, Sexo, fone, Celular, email, idEndereco) values (?, ?, ?, ?, ?, ?, ?, ?);";
 			
 			
 			PreparedStatement stmt = con.prepareStatement(sql);
 			
 			stmt.setString(1, vendedor.getNome());
 			stmt.setString(2, vendedor.getCpf());
-			stmt.setString(3, vendedor.getTelefone());
-			stmt.setString(4, vendedor.getCelular());
-			stmt.setInt(5, vendedor.getEndereco().getIdEndereco());
+			stmt.setString(3, vendedor.getDataNascimento());
+			stmt.setString(4, vendedor.getSexo());
+			stmt.setString(5, vendedor.getTelefone());
+			stmt.setString(6, vendedor.getCelular());
+			stmt.setString(7, vendedor.getEmail());
+			stmt.setInt(8, vendedor.getEndereco().getIdEndereco());
 			
 			stmt.execute();
 			stmt.close(); 
@@ -129,6 +133,37 @@ public class VendedorBD{
 		}catch (SQLException e){
 			throw new SQLException(e);
 		}
+	}
+	
+	
+	public ArrayList<Vendedor> BuscarListagemVendedor() throws SQLException {
+		ArrayList<Vendedor> Lista = new ArrayList<Vendedor>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idVendedor, nome, cpf, endereco.cep, fone, comissao from vendedor inner join endereco"
+					+ "using (idEndereco)";
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Endereco end = new Endereco(rs.getString(4));
+				Vendedor vend = new Vendedor(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(5),
+						 rs.getFloat(6), end);
+				Lista.add(vend);
+			}
+			
+			stmt.close(); 
+			con.close();
+						
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
 	}
 	
 }

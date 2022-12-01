@@ -36,7 +36,6 @@ public class Endereco {
 	}
 	
 
-
 	public Endereco(String cep) {
 		super();
 		this.cep = cep;

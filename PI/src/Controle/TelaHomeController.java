@@ -27,6 +27,9 @@ public class TelaHomeController {
     private Button btnConsultaPreco;
     
     @FXML
+    private Button btnConsultaVendedor;
+    
+    @FXML
     private Button btnConsultaCompra;
 
     @FXML
@@ -105,6 +108,12 @@ public class TelaHomeController {
     @FXML
     void AcessoConsultaPreco(ActionEvent event) throws IOException {
     	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/TelaHistoricoDePrecos.fxml"));
+    	idTelaHome.getChildren().setAll(telaHomePane);
+    }
+    
+    @FXML
+    void ConsultaVendedor(ActionEvent event) throws IOException {
+    	AnchorPane telaHomePane = FXMLLoader.load(getClass().getResource("/visao/ListagemVendedores.fxml"));
     	idTelaHome.getChildren().setAll(telaHomePane);
     }
 
