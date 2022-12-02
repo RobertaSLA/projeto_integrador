@@ -2,21 +2,32 @@ package Modelo;
 
 public class LivroCompra {
 	
-	private int skuLivro;
-	private int idCompra;
+	private Livro livro;
+	private Compra Compra;
 	private int quantidade;
+	private float valor;
+	private float valorTotal;
 	
-	public int getSkuLivro() {
-		return skuLivro;
+	
+	public LivroCompra(Livro livro, Modelo.Compra compra, int quantidade, float valor, float valorTotal) {
+		super();
+		this.livro = livro;
+		Compra = compra;
+		this.quantidade = quantidade;
+		this.valor = valor;
+		this.valorTotal = valorTotal;
 	}
-	public void setSkuLivro(int skuLivro) {
-		this.skuLivro = skuLivro;
+	public Livro getLivro() {
+		return livro;
 	}
-	public int getIdCompra() {
-		return idCompra;
+	public void setLivro(Livro Livro) {
+		this.livro = Livro;
 	}
-	public void setIdCompra(int idCompra) {
-		this.idCompra = idCompra;
+	public Compra getCompra() {
+		return Compra;
+	}
+	public void Compra(Compra Compra) {
+		this.Compra = Compra;
 	}
 	public int getQuantidade() {
 		return quantidade;
@@ -24,6 +35,27 @@ public class LivroCompra {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
+	public float getValor() {
+		return valor;
+	}
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
 	
+	public int getSku() {
+		return livro.getSku();
+	}
+	public String getTitulo() {
+		return livro.getNome();
+	}
+	public float getValorTotal() {
+		return valorTotal;
+	}
+	public void setValorTotal(float valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+	public void setCompra(Compra compra) {
+		Compra = compra;
+	}
 	
 }

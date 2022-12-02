@@ -1,17 +1,58 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Venda {
 	
 	private int idVenda;
-	private int skuLivro;
-	private String formaPagamento;
+	private FormaPagamento formaPagamento;
 	private Date data;
 	private float valor;
-	private int idCliente;
-	private int idVendedor;
+	private float desconto;
+	private Cliente Cliente;
+	private Vendedor Vendedor;
+	private ArrayList<LivroVenda> listaitens = new ArrayList<LivroVenda>();
 	
+	public Venda() {
+		super();
+	}
+
+	
+	public Venda(int idVenda, Modelo.Cliente cliente) {
+		super();
+		this.idVenda = idVenda;
+		Cliente = cliente;
+	}
+
+
+	public Venda(int idVenda, float valor, Modelo.Cliente cliente) {
+		super();
+		this.idVenda = idVenda;
+		this.valor = valor;
+		Cliente = cliente;
+	}
+
+
+	public Venda(int idVenda, float valor, float desconto, Modelo.Cliente cliente,
+			Modelo.Vendedor vendedor) {
+		super();
+		this.idVenda = idVenda;
+		this.valor = valor;
+		this.desconto = desconto;
+		Cliente = cliente;
+		Vendedor = vendedor;
+	}
+
+
+
+
+	public Venda(int idVenda, Date data, Cliente Cliente) {
+		super();
+		this.idVenda = idVenda;
+		this.data = data;
+		this.Cliente = Cliente;
+	}
 	
 	public int getIdVenda() {
 		return idVenda;
@@ -19,16 +60,16 @@ public class Venda {
 	public void setIdVenda(int idVenda) {
 		this.idVenda = idVenda;
 	}
-	public int getSkuLivro() {
-		return skuLivro;
+	public float getDesconto() {
+		return desconto;
 	}
-	public void setSkuLivro(int skuLivro) {
-		this.skuLivro = skuLivro;
+	public void setDesconto(float desconto) {
+		this.desconto = desconto;
 	}
-	public String getFormaPagamento() {
+	public FormaPagamento getFormaPagamento() {
 		return formaPagamento;
 	}
-	public void setFormaPagamento(String formaPagamento) {
+	public void setFormaPagamento(FormaPagamento formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
 	public Date getData() {
@@ -43,21 +84,35 @@ public class Venda {
 	public void setValor(float valor) {
 		this.valor = valor;
 	}
-	public int getIdCliente() {
-		return idCliente;
+	public Cliente getCliente() {
+		return Cliente;
 	}
-	public void setIdCliente(int idCliente) {
-		this.idCliente = idCliente;
+	public void setCliente(Cliente Cliente) {
+		this.Cliente = Cliente;
 	}
-	public int getIdVendedor() {
-		return idVendedor;
+	public Vendedor getVendedor() {
+		return Vendedor;
 	}
-	public void setIdVendedor(int idVendedor) {
-		this.idVendedor = idVendedor;
+	public void setVendedor(Vendedor Vendedor) {
+		this.Vendedor = Vendedor;
 	}
 	
+	public ArrayList<LivroVenda> getListaitens() {
+		return listaitens;
+	}
+	public void setListaitens(ArrayList<LivroVenda> listaitens) {
+		this.listaitens = listaitens;
+	}
 	
+	public int getItem() {
+		return 1;
+	}
 	
-	
+	public String getNomeCliente() {
+		return Cliente.getNome();
+	}
+	public String getNomeVendedor() {
+		return Vendedor.getNome();
+	}
 	
 }

@@ -1,9 +1,14 @@
 package Controle;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import Modelo.Autor;
+import Modelo.HistoricoDePrecos;
 import Modelo.Livro;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,7 +16,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
 
 public class TelaCadastroLivroController {
 
@@ -96,11 +100,22 @@ public class TelaCadastroLivroController {
    
     @FXML
     void SalvarCadastro(ActionEvent event) throws SQLException {
-    	Autor aut = new Autor(1, "h");
+    	Autor aut = new Autor(txtAutor.getText());
     	Livro liv = new Livro(Integer.parseInt(txtSKU.getText()), txtISBN.getText(), txtTitulo.getText(), txtEditora.getText(), Integer.parseInt(txtQuantidade.getText()), txtGenero.getText(), Float.parseFloat(txtPrecoVenda.getText()), aut);
+    	
+    	DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+    	Date date = new Date();
+    	
+    	HistoricoDePrecos his = new HistoricoDePrecos(Integer.parseInt(txtSKU.getText()), txtTitulo.getText(), txtISBN.getText(), Float.parseFloat(txtPrecoVenda.getText()), Float.parseFloat(txtPrecoVenda.getText()), dateFormat.format(date));
+    	
+    	AutorBD autbd = new AutorBD();
+    	autbd.InserirAutor(aut);
     	
     	LivroBD livbd = new LivroBD();
     	livbd.InserirLivro(liv);
+    	
+    	HistoricoDePrecosBD hist = new HistoricoDePrecosBD();
+    	hist.InserirHistorico(his);
     }
 
 }

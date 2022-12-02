@@ -1,6 +1,5 @@
 package Modelo;
 
-import java.util.ArrayList;
 
 public class Livro {
 	
@@ -13,7 +12,17 @@ public class Livro {
 	private float preco;
 	private Autor autor;
 	
+	public Livro() {
+		
+	}
 	
+	public Livro(int sku, String isbn, String nome) {
+		super();
+		this.sku = sku;
+		this.isbn = isbn;
+		this.nome = nome;
+	}
+
 	public Livro(int sku, String isbn, String nome, String editora, int estoque, String genero, float preco,
 			Autor autor) {
 		super();
@@ -79,6 +88,12 @@ public class Livro {
 	public void setAutor(Autor autor) {
 		this.autor = autor;
 	}
+	
+	public String getNomeAutor() {
+		return autor.getNome();
+	}
+	
+	
 
 	
 	
