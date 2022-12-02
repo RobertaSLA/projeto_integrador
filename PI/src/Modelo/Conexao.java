@@ -2,7 +2,7 @@ package Modelo;
 
 public class Conexao {
 	
-	private static String caminho = "jdbc:mysql://localhost/db_projetointegrador";
+	private static String caminho = "jdbc:mysql://localhost/mydb";
 	private static String usuario = "root";
 	private static String senha = "aluno";
 	
