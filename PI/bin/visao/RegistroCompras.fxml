@@ -155,7 +155,7 @@
             <TableColumn fx:id="clmIDForn" minWidth="8.0" prefWidth="227.0" style="-fx-background-color: dbb0ea; -fx-border-color: ffffff;" text="Fornecedor" />
         </columns>
       </TableView>
-      <TextField fx:id="txtPesquisarVenda" layoutX="405.0" layoutY="280.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar cliente, data, livro..." />
+      <TextField fx:id="txtPesquisarVenda" layoutX="405.0" layoutY="280.0" onAction="#PesquisarLivro" prefHeight="34.0" prefWidth="350.0" promptText="Pesquisar compra" />
       <Text layoutX="662.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Compras" wrappingWidth="428.7161865234375">
          <font>
             <Font name="System Bold" size="40.0" />

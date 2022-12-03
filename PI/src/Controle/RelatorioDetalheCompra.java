@@ -42,9 +42,7 @@ public class RelatorioDetalheCompra {
 			logoFundo.setHeight(120);
 			logoFundo.setWidth(130);
 			
-			
-			
-			String path = "C:\\Users\\Aluno\\Desktop\\RelatorioDetalheCompra.pdf";
+			String path = "C:\\Users\\Usuario\\Desktop\\RelatorioDetalheCompra.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -68,7 +66,7 @@ public class RelatorioDetalheCompra {
 			
 			String query1 = "select idCompra, valortotal, fornecedor.nome from fornecedor inner join \r\n"
 					+ "compra on (compra.IdFornecedor=fornecedor.idfornecedor) inner join livro_has_compra on \r\n"
-					+ "(compra_idCompra=idCompra) where idCompra = 2;";
+					+ "(compra_idCompra=idCompra) where idCompra = ?;";
 			
 			PreparedStatement stmt = con.prepareStatement(query1);
 			stmt.setInt(1, codCompra);

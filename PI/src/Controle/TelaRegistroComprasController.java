@@ -277,47 +277,78 @@ public class TelaRegistroComprasController {
 
 
     @FXML
-    void Pesquisar(ActionEvent event) {
-
+    void Pesquisar(ActionEvent event) throws NumberFormatException, SQLException {
+    	CompraBD compbd = new CompraBD();
+    	List<Compra> l = compbd.BuscarCodCompra(Integer.parseInt(txtPesquisarVenda.getText()));
+    	
+    	tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     }
 
     @FXML
     void PesquisarLivro(ActionEvent event) {
-
+    	
     }
 
     @FXML
     void Valor100(ActionEvent event) throws SQLException {
     	
-    	CompraBD com = new CompraBD();
-		List<Compra> l  = com.BuscarFiltrosPreco(100, 200);
-		
-		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	if (chkValor100.isSelected() == true) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarFiltrosPreco(100, 200);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
+    	
     }
 
     @FXML
-    void Valor200(ActionEvent event) {
-
+    void Valor200(ActionEvent event) throws SQLException {
+    	if (chkValor200.isSelected() == true) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarFiltrosPreco(200, 300);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void Valor300(ActionEvent event) {
-
+    void Valor300(ActionEvent event) throws SQLException {
+    	if (chkValor300.isSelected() == true) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarFiltrosPreco(300, 500);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void Valor500(ActionEvent event) {
-
+    void Valor500(ActionEvent event) throws SQLException {
+    	if (chkValor500.isSelected() == true) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarFiltrosPreco(500, 750);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void Valor750(ActionEvent event) {
-
+    void Valor750(ActionEvent event) throws SQLException {
+    	if (chkValor750.isSelected() == true) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarFiltrosPreco(750, 1000);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void ValorAcima1000(ActionEvent event) {
-
+    void ValorAcima1000(ActionEvent event) throws SQLException {
+    	if (chkValorAcima1000.isSelected() == true) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarFiltrosPrecoAcima1000();
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
     
     @FXML

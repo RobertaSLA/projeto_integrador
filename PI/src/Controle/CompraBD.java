@@ -113,12 +113,42 @@ public class CompraBD {
 		
 	}
 	
+	public ArrayList<Compra> BuscarCodCompra(int idCompra) throws SQLException {
+		ArrayList<Compra> compra = new ArrayList<Compra>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			Statement stmt = con.createStatement();
+			
+			String query = "select idCompra, Data, Valor, Quantidade, Fornecedor.IdFornecedor, Fornecedor.nome"
+					+ " from compra inner join fornecedor using (idFornecedor) where idCompra = " + idCompra;
+			
+			
+			ResultSet rs = stmt.executeQuery(query);
+			
+	
+			while(rs.next()){
+				Fornecedor forne = new Fornecedor(rs.getInt(5), rs.getString(6));
+				Compra comp = new Compra(rs.getInt(1), rs.getString(2), rs.getFloat(3), rs.getInt(4), forne);
+				
+				compra.add(comp);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return compra;
+		
+	}
+	
 	public ArrayList<Compra> BuscarFiltrosPreco(int filtro, int filtro2) throws SQLException {
 		ArrayList<Compra> Lista = new ArrayList<Compra>();
 		try {
 			Connection con = ConexaoBD.Conexao_BD();
 			
-			String query = "select idCompra, quantidade, valor, data, nome "
+			String query = "select idCompra, quantidade, valor, data, fornecedor.idFornecedor, fornecedor.nome "
 					+ "from compra inner join fornecedor using (idfornecedor) where valor between ? and ?;";
 			
 			PreparedStatement stmt = con.prepareStatement(query);
@@ -131,7 +161,7 @@ public class CompraBD {
 			
 	
 			while(rs.next()){
-				Fornecedor fornecedor = new Fornecedor(rs.getInt(5));
+				Fornecedor fornecedor = new Fornecedor(rs.getInt(5), rs.getString(6));
 				Compra com = new Compra(rs.getInt(1), fornecedor, rs.getInt(2), rs.getFloat(3), rs.getString(4));
 				Lista.add(com);
 			}
@@ -139,7 +169,37 @@ public class CompraBD {
 			stmt.close(); 
 			con.close();
 			
-			JOptionPane.showMessageDialog(null, "Seletado com sucesso");
+			
+		}catch (SQLException e){
+			throw new SQLException(e);
+		}
+		return Lista;
+		
+	}
+	
+	public ArrayList<Compra> BuscarFiltrosPrecoAcima1000() throws SQLException {
+		ArrayList<Compra> Lista = new ArrayList<Compra>();
+		try {
+			Connection con = ConexaoBD.Conexao_BD();
+			
+			String query = "select idCompra, quantidade, valor, data, fornecedor.idFornecedor, fornecedor.nome "
+					+ "from compra inner join fornecedor using (idfornecedor) where valor > 1000";
+			
+			PreparedStatement stmt = con.prepareStatement(query);
+			
+			
+			ResultSet rs = stmt.executeQuery();
+			
+	
+			while(rs.next()){
+				Fornecedor fornecedor = new Fornecedor(rs.getInt(5), rs.getString(6));
+				Compra com = new Compra(rs.getInt(1), fornecedor, rs.getInt(2), rs.getFloat(3), rs.getString(4));
+				Lista.add(com);
+			}
+			
+			stmt.close(); 
+			con.close();
+			
 			
 		}catch (SQLException e){
 			throw new SQLException(e);
