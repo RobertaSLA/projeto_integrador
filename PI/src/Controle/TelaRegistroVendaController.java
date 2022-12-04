@@ -317,6 +317,7 @@ public class TelaRegistroVendaController {
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
 
+
     }
 
     @FXML
@@ -326,6 +327,7 @@ public class TelaRegistroVendaController {
     		List<Venda> l = vendbd.BuscarVendasFiltro(200, 300);
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
+
     }
 
     @FXML
@@ -357,11 +359,12 @@ public class TelaRegistroVendaController {
 
     @FXML
     void ValorAcima1000(ActionEvent event) throws SQLException {
-    	if (chkValor750.isSelected() == true) {
+    	if (chkValorAcima1000.isSelected() == true) {
     		VendaBD vendbd = new VendaBD();
     		List<Venda> l = vendbd.BuscarVendasAcima1000();
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
+    		
     }
     
     @FXML

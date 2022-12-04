@@ -108,7 +108,7 @@ public class RelatorioDetalheVenda {
 			
 			
 			
-			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from\r\n"
+			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from"
 					+ "livro inner join livro_has_venda on (sku=Livro_SKU) where Venda_idVenda = ?;";
 			
 			PreparedStatement stmt2 = con.prepareStatement(query);

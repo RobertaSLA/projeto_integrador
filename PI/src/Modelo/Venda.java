@@ -7,7 +7,7 @@ public class Venda {
 	
 	private int idVenda;
 	private FormaPagamento formaPagamento;
-	private Date data;
+	private String data;
 	private float valor;
 	private float desconto;
 	private Cliente Cliente;
@@ -47,7 +47,7 @@ public class Venda {
 
 
 
-	public Venda(int idVenda, Date data, Cliente Cliente) {
+	public Venda(int idVenda, String data, Cliente Cliente) {
 		super();
 		this.idVenda = idVenda;
 		this.data = data;
@@ -72,10 +72,10 @@ public class Venda {
 	public void setFormaPagamento(FormaPagamento formaPagamento) {
 		this.formaPagamento = formaPagamento;
 	}
-	public Date getData() {
+	public String getData() {
 		return data;
 	}
-	public void setData(Date data) {
+	public void setData(String data) {
 		this.data = data;
 	}
 	public float getValor() {

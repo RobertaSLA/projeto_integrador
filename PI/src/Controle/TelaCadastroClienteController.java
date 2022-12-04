@@ -153,6 +153,7 @@ public class TelaCadastroClienteController {
         	Node source = (Node) event.getSource();
         	Stage stage = (Stage) source.getScene().getWindow();
         	stage.close();
+        	
     	} else {
     		JOptionPane.showMessageDialog(null, "O CPF informado é inválido");
     	}

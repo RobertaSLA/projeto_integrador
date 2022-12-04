@@ -299,6 +299,12 @@ public class TelaRegistroComprasController {
     		
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
+    	if (chkValor100.isSelected() == false) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarCompras();
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     	
     }
 
@@ -307,6 +313,12 @@ public class TelaRegistroComprasController {
     	if (chkValor200.isSelected() == true) {
     		CompraBD com = new CompraBD();
     		List<Compra> l  = com.BuscarFiltrosPreco(200, 300);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
+    	if (chkValor200.isSelected() == false) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarCompras();
     		
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
@@ -320,6 +332,12 @@ public class TelaRegistroComprasController {
     		
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
+    	if (chkValor300.isSelected() == false) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarCompras();
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
@@ -327,6 +345,12 @@ public class TelaRegistroComprasController {
     	if (chkValor500.isSelected() == true) {
     		CompraBD com = new CompraBD();
     		List<Compra> l  = com.BuscarFiltrosPreco(500, 750);
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
+    	if (chkValor500.isSelected() == false) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarCompras();
     		
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
@@ -340,6 +364,12 @@ public class TelaRegistroComprasController {
     		
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}
+    	if (chkValor500.isSelected() == false) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarCompras();
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
@@ -347,6 +377,12 @@ public class TelaRegistroComprasController {
     	if (chkValorAcima1000.isSelected() == true) {
     		CompraBD com = new CompraBD();
     		List<Compra> l  = com.BuscarFiltrosPrecoAcima1000();
+    		
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
+    	if (chkValorAcima1000.isSelected() == false) {
+    		CompraBD com = new CompraBD();
+    		List<Compra> l  = com.BuscarCompras();
     		
     		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     	}

@@ -66,8 +66,8 @@ public class RelatorioDetalheCompra {
 			
 			
 			
-			String query1 = "select idCompra, valortotal, fornecedor.nome from fornecedor inner join \r\n"
-					+ "compra on (compra.IdFornecedor=fornecedor.idfornecedor) inner join livro_has_compra on \r\n"
+			String query1 = "select idCompra, valortotal, fornecedor.nome from fornecedor inner join"
+					+ "compra on (compra.IdFornecedor=fornecedor.idfornecedor) inner join livro_has_compra on"
 					+ "(compra_idCompra=idCompra) where idCompra = ?;";
 			
 			PreparedStatement stmt = con.prepareStatement(query1);
@@ -103,9 +103,10 @@ public class RelatorioDetalheCompra {
 			
 			
 			
-			String query = "select livro.nome, livro_has_compra.quantidade, ValorItem, data  from"
-					+ "livro inner join livro_has_compra on (sku=Livro_SKU) inner join compra on (idcompra=compra_idcompra)"  
-					+ "where idCompra = ?;";
+			String query = "select livro.Nome, livro_has_compra.quantidade, ValorItem, data  from "
+					+ "livro inner join livro_has_compra on (sku=Livro_SKU) inner join compra on (idcompra=compra_idcompra) "  
+					+ "where idCompra = ?";
+			
 			
 			PreparedStatement stmt1 = con.prepareStatement(query);
 			stmt1.setInt(1, codCompra);
@@ -113,7 +114,7 @@ public class RelatorioDetalheCompra {
 
 			
 			while (rs1.next()) {
-			    table.addCell(rs1.getString("livro.nome"));
+				table.addCell(rs1.getString("livro.Nome"));
 			    table.addCell(rs1.getString("livro_has_compra.quantidade"));
 			    table.addCell(rs1.getString("ValorItem"));
 			    table.addCell(rs1.getString("Data"));
