@@ -361,10 +361,13 @@ public class TelaListagemProdutoController {
 
     @FXML
     void Ficcao(ActionEvent event) throws SQLException {
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosGenero("%Fic%");
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	
+    	if (chkFiccao.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosGenero("%Fic%");
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
     
@@ -406,11 +409,13 @@ public class TelaListagemProdutoController {
     
     @FXML
     void Gastronomia(ActionEvent event) throws SQLException {
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosGenero("%Gastro%");
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
-
+    	
+    	if (chkGastronomia.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosGenero("%Gastro%");
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
     }
     
     @FXML
@@ -429,79 +434,98 @@ public class TelaListagemProdutoController {
 
     @FXML
     void Romance(ActionEvent event) throws SQLException {
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosGenero("%Roman%");
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	
+    	if (chkRomance.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosGenero("%Roman%");
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
     void Terror(ActionEvent event) throws SQLException {
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosGenero("%Terr%");
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	
+    	if (chkTerror.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosGenero("%Terr%");
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
     void Valor1030(ActionEvent event) throws SQLException {
     	
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosPreco(10, 30);
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	if (chkValor1030.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosPreco(10, 30);
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
     void Valor3050(ActionEvent event) throws SQLException {
     	
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosPreco(30, 50);
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	if (chkValor3050.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosPreco(30, 50);
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
     void Valor5070(ActionEvent event) throws SQLException {
     	
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosPreco(50, 70);
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	if (chkValor5070.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosPreco(50, 70);
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+
+    	}
 
     }
 
     @FXML
     void Valor7090(ActionEvent event) throws SQLException {
     	
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosPreco(70, 90);
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	if (chkValor7090.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosPreco(70, 90);
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
     void Valor90110(ActionEvent event) throws SQLException {
     	
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosPreco(90, 110);
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	if (chkValor90110.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosPreco(90, 110);
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
     void ValorAcima110(ActionEvent event) throws SQLException {
     	
-    	LivroBD liv = new LivroBD();
-		List<Livro> l  = liv.BuscarFiltrosPrecoAcima110(110);
-		
-		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	if (chkValorAcima110.isSelected() == true) {
+    		LivroBD liv = new LivroBD();
+    		List<Livro> l  = liv.BuscarFiltrosPrecoAcima110(110);
+    		
+    		tblListagem.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
     

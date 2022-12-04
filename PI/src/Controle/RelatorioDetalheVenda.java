@@ -46,7 +46,7 @@ public class RelatorioDetalheVenda {
 			
 			
 			
-			String path = "C:\\Users\\Aluno\\Desktop\\RelatorioDetalheVenda.pdf";
+			String path = "C:\\Users\\Usuario\\Desktop\\RelatorioDetalheVenda.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -113,7 +113,6 @@ public class RelatorioDetalheVenda {
 			
 			PreparedStatement stmt2 = con.prepareStatement(query);
 			stmt2.setInt(1, codVenda);
-			System.out.println(stmt2);
 			ResultSet rs1 = stmt2.executeQuery();
 			
 			

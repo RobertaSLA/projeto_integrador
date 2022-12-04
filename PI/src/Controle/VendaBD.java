@@ -108,6 +108,39 @@ public class VendaBD {
 			
 		}
 		
+		
+		public ArrayList<Venda> BuscarCodVendas(int idVenda) throws SQLException {
+			ArrayList<Venda> venda = new ArrayList<Venda>();
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				Statement stmt = con.createStatement();
+				
+				String query = "select idVenda, Cliente.idCliente, Cliente.nome, Desconto, Valor, Vendedor.idVendedor, "
+						+ "Vendedor.nome from venda inner join Cliente on (Cliente_idCliente = idCliente) inner join "
+						+ "Vendedor on (Vendedor_idVendedor = idVendedor) where idVenda = " + idVenda;
+				
+				
+				ResultSet rs = stmt.executeQuery(query);
+				
+		
+				while(rs.next()){
+					Cliente cliente = new Cliente(rs.getInt(2), rs.getString(3));
+					Vendedor vendedor = new Vendedor(rs.getInt(6), rs.getString(7));
+					Venda vend = new Venda(rs.getInt(1), rs.getFloat(5), rs.getFloat(4), cliente, vendedor);
+					
+					venda.add(vend);
+				}
+				
+				stmt.close(); 
+				con.close();
+				
+			}catch (SQLException e){
+				throw new SQLException(e);
+			}
+			return venda;
+			
+		}
+		
 		public ArrayList<Venda> ListarVendas() throws SQLException {
 			ArrayList<Venda> venda = new ArrayList<Venda>();
 			try {
@@ -181,6 +214,77 @@ public class VendaBD {
 			}catch (SQLException e){
 				throw new SQLException(e);
 			}
+		}
+		
+		public ArrayList<Venda> BuscarVendasFiltro(int filtro1, int filtro2) throws SQLException {
+			ArrayList<Venda> venda = new ArrayList<Venda>();
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				
+				String query = "select idVenda, Cliente.idCliente, Cliente.nome, "
+						+ "Desconto, Valor, Vendedor.idVendedor, Vendedor.nome from venda inner join "
+						+ "Cliente on (Cliente_idCliente = idCliente) inner join Vendedor on "
+						+ "(Vendedor_idVendedor = idVendedor) where Valor between ? and ?";
+				
+				
+				PreparedStatement stmt = con.prepareStatement(query);
+				
+				stmt.setInt(1, filtro1);
+				stmt.setInt(2, filtro2);
+				
+				
+				ResultSet rs = stmt.executeQuery();
+				
+		
+				while(rs.next()){
+					Cliente cliente = new Cliente(rs.getInt(2), rs.getString(3));
+					Vendedor vendedor = new Vendedor(rs.getInt(6), rs.getString(7));
+					Venda vend = new Venda(rs.getInt(1), rs.getFloat(5), rs.getFloat(4), cliente, vendedor);
+					
+					venda.add(vend);
+				}
+				
+				stmt.close(); 
+				con.close();
+				
+			}catch (SQLException e){
+				throw new SQLException(e);
+			}
+			return venda;
+			
+		}
+		
+		public ArrayList<Venda> BuscarVendasAcima1000() throws SQLException {
+			ArrayList<Venda> venda = new ArrayList<Venda>();
+			try {
+				Connection con = ConexaoBD.Conexao_BD();
+				
+				String query = "select idVenda, Cliente.idCliente, Cliente.nome, "
+						+ "Desconto, Valor, Vendedor.idVendedor, Vendedor.nome from venda inner join "
+						+ "Cliente on (Cliente_idCliente = idCliente) inner join Vendedor on "
+						+ "(Vendedor_idVendedor = idVendedor) where Valor > 1000";
+				
+				
+				PreparedStatement stmt = con.prepareStatement(query);
+				ResultSet rs = stmt.executeQuery();
+				
+		
+				while(rs.next()){
+					Cliente cliente = new Cliente(rs.getInt(2), rs.getString(3));
+					Vendedor vendedor = new Vendedor(rs.getInt(6), rs.getString(7));
+					Venda vend = new Venda(rs.getInt(1), rs.getFloat(5), rs.getFloat(4), cliente, vendedor);
+					
+					venda.add(vend);
+				}
+				
+				stmt.close(); 
+				con.close();
+				
+			}catch (SQLException e){
+				throw new SQLException(e);
+			}
+			return venda;
+			
 		}
 		
 }

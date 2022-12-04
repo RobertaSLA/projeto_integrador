@@ -10,6 +10,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
 import com.itextpdf.io.font.FontConstants;
 import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
@@ -93,7 +95,6 @@ public class RelatorioDetalheCompra {
 			table.setWidth(500);
 			table.setRelativePosition(25, 200, 20, 50);
 			
-			table.addHeaderCell("SKU");
 			table.addHeaderCell("Livro");
 			table.addHeaderCell("Qtd");
 			table.addHeaderCell("Valor");
@@ -102,7 +103,7 @@ public class RelatorioDetalheCompra {
 			
 			
 			
-			String query = "select SKU, livro.nome, livro_has_compra.quantidade, ValorItem, data  from\r\n"
+			String query = "select livro.nome, livro_has_compra.quantidade, ValorItem, data  from"
 					+ "livro inner join livro_has_compra on (sku=Livro_SKU) inner join compra on (idcompra=compra_idcompra)"  
 					+ "where idCompra = ?;";
 			
@@ -112,7 +113,6 @@ public class RelatorioDetalheCompra {
 
 			
 			while (rs1.next()) {
-			    table.addCell(rs1.getString("SKU"));
 			    table.addCell(rs1.getString("livro.nome"));
 			    table.addCell(rs1.getString("livro_has_compra.quantidade"));
 			    table.addCell(rs1.getString("ValorItem"));
@@ -128,7 +128,7 @@ public class RelatorioDetalheCompra {
 		
 			document.close();
 						
-			System.out.println("Finalizado");
+			JOptionPane.showMessageDialog(null, "Relatorio exportado com sucesso");
 			}
 		
 		catch (Exception e) {

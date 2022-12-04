@@ -195,8 +195,15 @@ public class TelaRegistroVendaController {
     @FXML
     void AlterarProduto(ActionEvent event) throws FileNotFoundException, MalformedURLException, SQLException {
     	Venda venda = tblRegistroVendas.getSelectionModel().getSelectedItem();
-    	RelatorioDetalheVenda rel = new RelatorioDetalheVenda();
-    	rel.Relatorio(venda.getIdVenda());
+    	
+    	if (venda == null) {
+    		RelatorioVenda rel = new RelatorioVenda();
+    		rel.Relatorio();
+    	} else {
+    		RelatorioDetalheVenda rel = new RelatorioDetalheVenda();
+        	rel.Relatorio(venda.getIdVenda());
+    	}
+    	
 
     }
     
@@ -206,8 +213,10 @@ public class TelaRegistroVendaController {
     }
     
     @FXML
-    void Pesquisar(ActionEvent event) {
-
+    void Pesquisar(ActionEvent event) throws NumberFormatException, SQLException {
+    	VendaBD vendbd = new VendaBD();
+    	List<Venda> l = vendbd.BuscarCodVendas(Integer.parseInt(txtPesquisarVenda.getText()));
+    	tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
     }
     
     @FXML
@@ -301,33 +310,58 @@ public class TelaRegistroVendaController {
     }
 
     @FXML
-    void Valor100(ActionEvent event) {
+    void Valor100(ActionEvent event) throws SQLException {
+    	if (chkValor100.isSelected() == true) {
+    		VendaBD vendbd = new VendaBD();
+    		List<Venda> l = vendbd.BuscarVendasFiltro(100, 200);
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
 
     }
 
     @FXML
-    void Valor200(ActionEvent event) {
-
+    void Valor200(ActionEvent event) throws SQLException {
+    	if (chkValor200.isSelected() == true) {
+    		VendaBD vendbd = new VendaBD();
+    		List<Venda> l = vendbd.BuscarVendasFiltro(200, 300);
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void Valor300(ActionEvent event) {
-
+    void Valor300(ActionEvent event) throws SQLException {
+    	if (chkValor300.isSelected() == true) {
+    		VendaBD vendbd = new VendaBD();
+    		List<Venda> l = vendbd.BuscarVendasFiltro(300, 500);
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void Valor500(ActionEvent event) {
-
+    void Valor500(ActionEvent event) throws SQLException {
+    	if (chkValor500.isSelected() == true) {
+    		VendaBD vendbd = new VendaBD();
+    		List<Venda> l = vendbd.BuscarVendasFiltro(500, 750);
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void Valor750(ActionEvent event) {
-
+    void Valor750(ActionEvent event) throws SQLException {
+    	if (chkValor750.isSelected() == true) {
+    		VendaBD vendbd = new VendaBD();
+    		List<Venda> l = vendbd.BuscarVendasFiltro(750, 1000);
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
 
     @FXML
-    void ValorAcima1000(ActionEvent event) {
-
+    void ValorAcima1000(ActionEvent event) throws SQLException {
+    	if (chkValor750.isSelected() == true) {
+    		VendaBD vendbd = new VendaBD();
+    		List<Venda> l = vendbd.BuscarVendasAcima1000();
+    		tblRegistroVendas.setItems(FXCollections.observableArrayList(l));
+    	}
     }
     
     @FXML

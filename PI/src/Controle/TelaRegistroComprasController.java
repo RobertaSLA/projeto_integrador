@@ -186,7 +186,8 @@ public class TelaRegistroComprasController {
     void AlterarProduto(ActionEvent event) throws FileNotFoundException, MalformedURLException, SQLException {
     	Compra compra = tblRegistroVendas.getSelectionModel().getSelectedItem();
     	RelatorioDetalheCompra rel = new RelatorioDetalheCompra();
-    	rel.Relatorio(compra.getIdCompra());
+        rel.Relatorio(compra.getIdCompra());
+    	
     }
 
     @FXML
