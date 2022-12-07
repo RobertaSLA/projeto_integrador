@@ -508,10 +508,7 @@ public class TelaVendaController {
 		venda.setValor(Float.parseFloat(txtValorTotal.getText()));
 		venda.setDesconto(Float.parseFloat(txtDescontos.getText()));
 		venda.setListaitens(listaitens);
-	
-		LocalDate localdate = dtDataVenda.getValue();
-		Date date = Date.from(localdate.atStartOfDay(ZoneId.systemDefault()).toInstant());
-		venda.setData(date);
+		venda.setData(String.valueOf(dtDataVenda.getValue()));
 	
 
 			FXMLLoader fxmlLoader = new FXMLLoader(

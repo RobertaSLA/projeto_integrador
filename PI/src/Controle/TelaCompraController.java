@@ -104,9 +104,6 @@ import javafx.stage.Stage;
 	    private Button btnConfirmarCompra;
 
 	    @FXML
-	    private TableColumn<LivroCompra, Integer> clmItem;
-
-	    @FXML
 	    private TableColumn<LivroCompra, Integer> clmQuantidadeItem;
 
 	    @FXML
@@ -427,7 +424,6 @@ import javafx.stage.Stage;
 	    
 	    @FXML
 	    public void initialize() throws SQLException { 
-	    	clmItem.setCellValueFactory(new PropertyValueFactory<>("item"));
 			clmSKUCompra.setCellValueFactory(new PropertyValueFactory<>("sku"));
 			clmTituloCompra.setCellValueFactory(new PropertyValueFactory<>("titulo"));
 			clmValorUnitario.setCellValueFactory(new PropertyValueFactory<>("valor"));

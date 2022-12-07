@@ -46,7 +46,7 @@ public class RelatorioDetalheVenda {
 			
 			
 			
-			String path = "C:\\Users\\Usuario\\Desktop\\RelatorioDetalheVenda.pdf";
+			String path = "C:\\Users\\Aluno\\Downloads\\RelatorioDetalheVenda.pdf";
 			PdfWriter pdfWriter = new PdfWriter(path);
 			
 			
@@ -66,7 +66,7 @@ public class RelatorioDetalheVenda {
 			
 			Connection con = ConexaoBD.Conexao_BD();
 			
-			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor)  where idVenda = ? ";
+			String query1 = "select idVenda, valor, cliente.nome, vendedor.nome from venda inner join cliente on (Cliente_idCliente=idCliente) inner join Vendedor on (Vendedor_idVendedor=idVendedor)  where idVenda = ?;";
 	
 
 			
@@ -108,11 +108,12 @@ public class RelatorioDetalheVenda {
 			
 			
 			
-			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from"
+			String query = "select livro.nome, preco, quantidadeItem, DescontoItem, ValorItens  from "
 					+ "livro inner join livro_has_venda on (sku=Livro_SKU) where Venda_idVenda = ?;";
 			
 			PreparedStatement stmt2 = con.prepareStatement(query);
 			stmt2.setInt(1, codVenda);
+			System.out.println(stmt2);
 			ResultSet rs1 = stmt2.executeQuery();
 			
 			
